@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+html, 
+body {
+	font-family: "Open Sans", "Hiragino Sans GB",Arial, "Microsoft YaHei", "微软雅黑";
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	font-size: 14px;
+	width: 100%;
+	height: 100%;
+}
+
+div, 
+p, 
+span, 
+h1, 
+h2, 
+h3, 
+h4, 
+ul, 
+li,
+input, 
+button,
+header {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+}
+
+ul {
+	list-style: none;
+}
+
+a, 
+button {
+	text-decoration: none;
+	color: inherit !important;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active,
+button:active {
+  outline: 0;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+input,button {	
+	border: 0;
+	outline: 0;
+}
+
+.clearfix:before, .clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
