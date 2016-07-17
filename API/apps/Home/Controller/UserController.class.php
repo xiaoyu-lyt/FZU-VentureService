@@ -19,6 +19,7 @@ class UserController extends RestController {
 		$data['level'] = 4;
 		
 		$user = D('user');
+
 		//echo $user->userExisted($data['username']);exit;
 		if( !$user->userExisted($data['username']) ) {
 			if($user->insert($data)) {
@@ -59,6 +60,11 @@ class UserController extends RestController {
 		if(!empty($userinfo)) {
 			if( md5(md5($data['password']).$userinfo['userKey']) == $userinfo['password']) {
 
+				session(array(
+					'username'=>$userinfo['username'],
+					'nickname'=>$userinfo['nickname']
+					));
+
 				$jsonReturn = array(
 					'code'	=> 200,
 					'data'	=> null,
@@ -78,15 +84,14 @@ class UserController extends RestController {
 				'msg'	=> "用户名不存在，请先注册！"
 				);
 		}
-
-
+		//return $jsonReturn;
+		echo json_encode($json_encode);
 	}
 
 	/**
 	 * 随机字符串
 	 * @return string 
 	 */
-
 	public function getRandChar() {
 		$randChar = "";
 		$str = "zxcvbnmasdfghjklqwertyuiop";
@@ -96,8 +101,6 @@ class UserController extends RestController {
 		return $randChar;
 	}
 	
-	public function test1(){
-		test();
-	}
+	
 }
 
