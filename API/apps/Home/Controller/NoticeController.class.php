@@ -8,7 +8,7 @@ class NoticeController extends RestController {
 	 * @return json
 	 */
 	public function list_get() {
-		$type = I('get.type');
+		$type = I('get.type');    //相当于$_GET['type']
 		$page = !empty(I('get.page')) ? I('get.page') : 1;
 		$pageSize = !empty(I('get.size')) ? I('get.size') : 20;
 

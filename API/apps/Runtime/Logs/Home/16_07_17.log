@@ -321,3 +321,397 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000816s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000932s ]
 
+[ 2016-07-17T11:06:54+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002014s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `eg_notice` [ RunTime:0.0022s ]
+SQL: SELECT `nid`,`theme`,`date`,`content` FROM `eg_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,20   [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000775s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000854s ]
+
+[ 2016-07-17T11:15:09+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000548s ]
+SQL: SHOW COLUMNS FROM `eg_notice` [ RunTime:0.0012s ]
+SQL: SELECT `nid`,`theme`,`date`,`content` FROM `eg_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000755s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000833s ]
+
+[ 2016-07-17T11:15:11+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+SQL: SHOW COLUMNS FROM `eg_notice` [ RunTime:0.0012s ]
+SQL: SELECT `nid`,`theme`,`date`,`content` FROM `eg_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,20   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000649s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000722s ]
+
+[ 2016-07-17T11:15:18+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `eg_notice` [ RunTime:0.0013s ]
+SQL: SELECT `nid`,`theme`,`date`,`content` FROM `eg_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000715s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000791s ]
+
+[ 2016-07-17T11:15:25+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+SQL: SHOW COLUMNS FROM `eg_notice` [ RunTime:0.0012s ]
+SQL: SELECT `nid`,`theme`,`date`,`content` FROM `eg_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,20   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000741s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000818s ]
+
+[ 2016-07-17T11:15:53+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `eg_notice` [ RunTime:0.0036s ]
+SQL: SELECT `nid`,`theme`,`date`,`content` FROM `eg_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000985s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001100s ]
+
+[ 2016-07-17T11:16:04+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `eg_notice` [ RunTime:0.0015s ]
+SQL: SELECT `nid`,`theme`,`date`,`content` FROM `eg_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000730s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000811s ]
+
+[ 2016-07-17T12:03:40+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Feild/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000782s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000974s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+ERR: 无法加载控制器:Feild
+
+[ 2016-07-17T12:04:45+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000966s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001569s ]
+SQL: SHOW COLUMNS FROM `eg_fields` [ RunTime:0.0027s ]
+SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`date` FROM `eg_fields` WHERE `type` = 1 ORDER BY date desc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001262s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001410s ]
+
+[ 2016-07-17T12:05:04+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000858s ]
+SQL: SHOW COLUMNS FROM `eg_fields` [ RunTime:0.0015s ]
+SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`date` FROM `eg_fields` WHERE `type` = 1 ORDER BY date desc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000746s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000829s ]
+
+[ 2016-07-17T12:13:19+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/detail.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000550s ]
+SQL: SHOW COLUMNS FROM `eg_fields` [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000770s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000887s ]
+
+[ 2016-07-17T12:13:50+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000548s ]
+SQL: SHOW COLUMNS FROM `eg_fields` [ RunTime:0.0012s ]
+SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`date` FROM `eg_fields` WHERE `type` = 1 ORDER BY date desc LIMIT 0,20   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000646s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000713s ]
+
+[ 2016-07-17T12:13:50+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000547s ]
+SQL: SHOW COLUMNS FROM `eg_fields` [ RunTime:0.0012s ]
+SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`date` FROM `eg_fields` WHERE `type` = 1 ORDER BY date desc LIMIT 0,20   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000754s ]
+
+[ 2016-07-17T12:15:39+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+SQL: SHOW COLUMNS FROM `eg_notice` [ RunTime:0.0017s ]
+SQL: SELECT `nid`,`theme`,`date`,`content` FROM `eg_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,20   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000672s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000758s ]
+
+[ 2016-07-17T12:15:43+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/list.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004025s ]
+SQL: SHOW COLUMNS FROM `eg_notice` [ RunTime:0.0012s ]
+SQL: SELECT `nid`,`theme`,`date`,`content` FROM `eg_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,20   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000629s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000695s ]
+
+[ 2016-07-17T12:15:55+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/list.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+SQL: SHOW COLUMNS FROM `eg_fields` [ RunTime:0.0013s ]
+SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`date` FROM `eg_fields` WHERE `type` = 0 ORDER BY date desc LIMIT 0,20   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000738s ]
+
+[ 2016-07-17T12:16:05+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/list.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+SQL: SHOW COLUMNS FROM `eg_notice` [ RunTime:0.0012s ]
+SQL: SELECT `nid`,`theme`,`date`,`content` FROM `eg_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,20   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000703s ]
+
+[ 2016-07-17T12:16:08+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/detail.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+SQL: SHOW COLUMNS FROM `eg_notice` [ RunTime:0.0012s ]
+SQL: SELECT `nid`,`theme`,`date`,`content` FROM `eg_notice` WHERE `nid` = 1  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000826s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000925s ]
+
+[ 2016-07-17T12:16:14+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/detail.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `eg_fields` [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2016-07-17T12:16:15+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/detail.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000203s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000737s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `eg_fields` [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000852s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000980s ]
+
+[ 2016-07-17T12:19:05+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/detail.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+SQL: SHOW COLUMNS FROM `eg_fields` [ RunTime:0.0020s ]
+SQL: SELECT `fid`,`name`,`pic`,`detail`,`date` FROM `eg_fields` WHERE `fid` = 1  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000682s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000763s ]
+
+[ 2016-07-17T12:19:06+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/detail.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+SQL: SHOW COLUMNS FROM `eg_fields` [ RunTime:0.0012s ]
+SQL: SELECT `fid`,`name`,`pic`,`detail`,`date` FROM `eg_fields` WHERE `fid` = 1  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000853s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000944s ]
+
+[ 2016-07-17T13:22:06+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000890s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001108s ]
+ERR: 非法操作:register
+
+[ 2016-07-17T13:22:35+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+ERR: 非法操作:register
+
+[ 2016-07-17T13:22:35+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/User/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000762s ]
+ERR: 非法操作:register
+
+[ 2016-07-17T13:23:19+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/User/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000714s ]
+ERR: 非法操作:register
+
+[ 2016-07-17T13:24:16+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/User/register?username=Liam
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000574s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000834s ]
+ERR: 非法操作:register
+
+[ 2016-07-17T13:24:31+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/User/register.html?username=Liam
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+ERR: 非法操作:register
+
+[ 2016-07-17T13:26:08+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+SQL: SHOW COLUMNS FROM `eg_fields` [ RunTime:0.0013s ]
+SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`date` FROM `eg_fields` WHERE `type` = 1 ORDER BY date desc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001168s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001251s ]
+
+[ 2016-07-17T13:26:17+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001110s ]
+SQL: SHOW COLUMNS FROM `eg_fields` [ RunTime:0.0013s ]
+SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`date` FROM `eg_fields` WHERE `type` = 1 ORDER BY date desc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001040s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001142s ]
+
+[ 2016-07-17T15:02:11+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000851s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001171s ]
+SQL: SHOW COLUMNS FROM `eg_notice` [ RunTime:0.0013s ]
+SQL: SELECT `nid`,`theme`,`date`,`content` FROM `eg_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001159s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001237s ]
+
+[ 2016-07-17T15:02:29+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+SQL: SHOW COLUMNS FROM `eg_notice` [ RunTime:0.0036s ]
+SQL: SELECT `nid`,`theme`,`date`,`content` FROM `eg_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,20   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000649s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000714s ]
+
+[ 2016-07-17T15:08:20+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Notice/type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001018s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001127s ]
+ERR: 非法操作:type=1
+
