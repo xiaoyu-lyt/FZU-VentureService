@@ -15,8 +15,8 @@ class UserController extends RestController {
 		$data['userKey'] = $this->getRandChar();//随机字符串
 		$data['password'] = md5(md5($data['password']).$data['userKey']);
 		$data['status'] = 0;
-		$data['regTime'] = date('Y-m-d H:i:s',time());
-		$data['level'] = 4;
+		$data['regTime'] = time();
+		//$data['level'] = 4;
 		
 		$user = D('user');
 
@@ -25,7 +25,12 @@ class UserController extends RestController {
 			if($user->insert($data)) {
 				$jsonReturn = array(
 					'code'	=> 200,
-					'data'	=> null,
+					'data'	=> array(
+						'username'	=> $data['username'],
+						'nickname'	=> $data['nickname'],
+						'regTime'	=> $data['regTime'],
+						'groupid'	=> $data['groupid']
+						),
 					'msg'	=> "注册成功，请返回首页登录！"
 					);
 			} else {
@@ -37,7 +42,7 @@ class UserController extends RestController {
 			}
 		} else {
 			$jsonReturn = array(
-				'code'	=> 10001,
+				'code'	=> 0,
 				'data'	=> null,
 				'msg'	=> "用户已存在"
 				);
@@ -67,7 +72,11 @@ class UserController extends RestController {
 
 				$jsonReturn = array(
 					'code'	=> 200,
-					'data'	=> null,
+					'data'	=> array(
+						'username'	=> $userinfo['username'],
+						'nickname'	=> $userinfo['nickname'],
+						'groupid'	=> $userinfo['groupid']
+						),
 					'msg'	=> "登陆成功！"
 					);
 			} else {
@@ -84,8 +93,9 @@ class UserController extends RestController {
 				'msg'	=> "用户名不存在，请先注册！"
 				);
 		}
+		//var_dump($jsonReturn);
 		//return $jsonReturn;
-		echo json_encode($json_encode);
+		echo json_encode($jsonReturn);
 	}
 
 	/**

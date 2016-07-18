@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `eg_user` (
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '用户状态',
   `regTime` varchar(50) DEFAULT NULL COMMENT '注册时间',
   `logTime` varchar(50) DEFAULT NULL COMMENT '最后登录时间',
-  `level` tinyint(1) NOT NULL COMMENT '权利级别',
+  `groupid` tinyint(1) NOT NULL COMMENT '用户组',
   PRIMARY KEY (`uid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -94,13 +94,16 @@ CREATE TABLE IF NOT EXISTS `eg_company` (
 --
 --项目信息表
 --
--- type：1、互联网 2、文化创意 3、科技产品 4、传统服务
+-- 
 --
 
 CREATE TABLE IF NOT EXISTS `eg_projects` (
   `pid` mediumint(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL COMMENT '项目名称',
+  `stage` tinyint(1) NOT NULL COMMENT '融资阶段',
+  `area` tinyint(1) NOT NULL COMMENT '所属领域',
   `type` tinyint(1) NOT NULL COMMENT '项目类别',
+  `shareholding` tinyint(1) NOT NULL COMMENT '股权结构',
   `tags` varchar(100) NOT NULL COMMENT '项目标签',
   `progress` tinyint(1) NOT NULL COMMENT '项目研发进度',
   `logo` varchar(100) NOT NULL COMMENT '项目logo',
@@ -113,10 +116,11 @@ CREATE TABLE IF NOT EXISTS `eg_projects` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 
+
 --
 --场地信息表
 --
--- type：1、孵化基地 2、校外场地 3、。。
+-- type：1、孵化基地 2、校外场地 3、、、
 --
 
 CREATE TABLE IF NOT EXISTS `eg_fields` (
@@ -126,8 +130,8 @@ CREATE TABLE IF NOT EXISTS `eg_fields` (
   `pic` varchar(100) NOT NULL COMMENT '场地照片',
   `synopsis` varchar(500) NOT NULL COMMENT '场地简介',
   `detail` mediumtext NOT NULL COMMENT '场地详情介绍',
-  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否发布',
-  `date` varchar(50) DEFAULT NULL COMMENT '发布时间',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否空闲',
+  --`date` varchar(50) DEFAULT NULL COMMENT '发布时间',
   PRIMARY KEY (`fid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 

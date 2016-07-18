@@ -321,3 +321,114 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000816s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000932s ]
 
+[ 2016-07-17T10:46:36+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001085s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'admin'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 61 行.
+NOTIC: [8] Undefined index: password D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 61 行.
+NOTIC: [8] Undefined variable: json_encode D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 88 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001070s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001205s ]
+
+[ 2016-07-17T10:46:45+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001014s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'admin'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 61 行.
+NOTIC: [8] Undefined index: password D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 61 行.
+NOTIC: [8] Undefined variable: json_encode D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 88 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001008s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001136s ]
+
+[ 2016-07-17T10:47:37+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000568s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000994s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'admin'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 61 行.
+NOTIC: [8] Undefined index: password D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 61 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001144s ]
+
+[ 2016-07-17T10:47:53+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000077s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001114s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001202s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'admin'  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 61 行.
+NOTIC: [8] Undefined index: password D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 61 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001088s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001221s ]
+
+[ 2016-07-17T10:48:12+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001839s ]
+ERR: 非法操作:login
+
+[ 2016-07-17T10:48:18+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001005s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'admin'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 61 行.
+NOTIC: [8] Undefined index: password D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 61 行.
+NOTIC: [8] Undefined variable: json_encode D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 89 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001013s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001143s ]
+
+[ 2016-07-17T10:48:44+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001036s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'admin'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 61 行.
+NOTIC: [8] Undefined index: password D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 61 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001164s ]
+
+[ 2016-07-17T10:53:26+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000861s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000995s ]
+ERR: 非法操作:login
+

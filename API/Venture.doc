@@ -1,0 +1,724 @@
+
+        <html xmlns:v="urn:schemas-microsoft-com:vml"
+        xmlns:o="urn:schemas-microsoft-com:office:office"
+        xmlns:w="urn:schemas-microsoft-com:office:word"
+        xmlns="http://www.w3.org/TR/REC-html40">
+        <head><meta http-equiv=Content-Type content="text/html;  
+        charset=utf-8">
+        <meta name=ProgId content=Word.Document>
+        <meta name=Generator content="Microsoft Word 11">
+        <meta name=Originator content="Microsoft Word 11">
+        <xml><w:WordDocument><w:View>Print</w:View></xml></head>
+        <body><h1>1、用户接口示例</h1><div style="margin-left:20px;"><h2>1.1、用户注册</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>用户注册接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/API/index.php/home/user/register.html</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">username</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td style="text-align: left;">password</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>密码</td>
+</tr>
+<tr>
+<td style="text-align: left;">nickname</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">string</td>
+<td>昵称</td>
+</tr>
+<tr>
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>邮箱</td>
+</tr>
+<tr>
+<td style="text-align: left;">groupid</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>用户组id</td>
+</tr>
+</tbody>
+</table>
+<p><strong>成功返回示例</strong></p>
+<pre><code>  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;: {
+      &quot;username&quot;: &quot;12154545&quot;,
+      &quot;nickname&quot;: &quot;林渊腾&quot;,
+      &quot;groupid&quot;: 2 ,
+      &quot;regTime&quot;: &quot;1436864169&quot;,
+    },
+    'msg':&quot;注册成功，请返回首页登录！&quot;
+  }</code></pre>
+<p><strong>失败返回示例</strong></p>
+<pre><code>  {
+    &quot;code&quot;: 0,
+    &quot;data&quot;: null,
+    'msg':&quot;用户已存在！&quot;
+  }</code></pre>
+<p><strong>返回参数说明</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">groupid</td>
+<td style="text-align: left;">int</td>
+<td>用户组id，1：学生；2：企业，3： 普通用户</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>
+</li>
+</ul></div><h2>1.2、用户登录</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>用户登录接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/API/index.php/home/user/login.html</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">username</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td style="text-align: left;">password</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>密码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>成功返回示例</strong></p>
+<pre><code>  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;: {
+      &quot;username&quot;: &quot;12154545&quot;,
+      &quot;nickname&quot;: &quot;林渊腾&quot;,
+      &quot;groupid&quot;: 2 ,
+    },
+    &quot;msg&quot;:&quot;登录成功！&quot;
+  }</code></pre>
+<p><strong>失败返回示例</strong></p>
+<pre><code>  {
+    &quot;code&quot;: 0,
+    &quot;data&quot;: null,
+    &quot;msg&quot;:&quot;密码错误，请重新登录！&quot;
+  }
+  or
+  {
+    &quot;code&quot;: 0,
+    &quot;data&quot;: null,
+    &quot;msg&quot;:&quot;用户名不存在，请先注册！&quot;
+  }</code></pre>
+<p><strong>返回参数说明</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">groupid</td>
+<td style="text-align: left;">int</td>
+<td>用户组id，1：学生；2：企业；3：普通用户</td>
+</tr>
+</tbody>
+</table></div></div><h1>2、项目信息接口示例</h1><div style="margin-left:20px;"><h2>2.1、项目列表接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取项目列表</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/API/index.php/home/project/list.html</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">area</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>所属领域</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>项目类型</td>
+</tr>
+<tr>
+<td style="text-align: left;">stage</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>融资阶段</td>
+</tr>
+<tr>
+<td style="text-align: left;">shareholding</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>股权结构</td>
+</tr>
+<tr>
+<td style="text-align: left;">page</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>页码，默认为1</td>
+</tr>
+<tr>
+<td style="text-align: left;">size</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>页大小，默认为20</td>
+</tr>
+</tbody>
+</table>
+<p><strong>成功返回示例</strong></p>
+<pre><code>  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;:[
+        {
+          &quot;pid&quot;:&quot;545&quot;,
+          &quot;name&quot;:&quot;公共自行车智能分流调度系统&quot;,
+          &quot;logo&quot;:&quot;项目略图url&quot;,
+          &quot;synopsis&quot;:&quot;团队重点研究并综合利用数据挖掘、机器学习、知识发现、分布式架构、数据可视化等技术方案来解决公共自行车“借还车难”问题。&quot;,
+          &quot;stage&quot;:&quot;天使轮&quot;,
+          &quot;area&quot;:&quot;电子商务&quot;,
+          &quot;type&quot;:&quot;网站&quot;,
+          &quot;shareholding&quot;:&quot;老师持有部分股权&quot;,
+          &quot;tags&quot;:&quot;项目标签&quot;,
+          &quot;progress&quot;:&quot;项目研发进度&quot;,
+          &quot;date&quot;:&quot;2016-07-18&quot;
+        },
+        {
+          &quot;pid&quot;:&quot;45545&quot;,
+          &quot;name&quot;:&quot;公共汽车智能分流调度系统&quot;,
+          &quot;logo&quot;:&quot;项目略图url&quot;,
+          &quot;synopsis&quot;:&quot;团队重点研究并综合利用数据挖掘、机器学习、知识发现、分布式架构、数据可视化等技术方案来解决公共自行车“借还车难”问题。&quot;,
+          &quot;stage&quot;:&quot;天使轮&quot;,
+          &quot;area&quot;:&quot;电子商务&quot;,
+          &quot;type&quot;:&quot;网站&quot;,
+          &quot;shareholding&quot;:&quot;老师持有部分股权&quot;,
+          &quot;tags&quot;:&quot;项目标签&quot;,
+          &quot;progress&quot;:&quot;项目研发进度&quot;,
+          &quot;date&quot;:&quot;2016-07-19&quot;
+        }
+    ],
+    &quot;msg&quot;:&quot;查询成功&quot;
+  }
+or
+  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;:null,
+    &quot;msg&quot;:&quot;暂无项目信息&quot;
+  }</code></pre>
+<p><strong>参数说明</strong> </p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>area</td>
+<td>int</td>
+<td>所属领域 1：电子商务；2：社交网络；3：智能硬件...</td>
+</tr>
+<tr>
+<td>type</td>
+<td>int</td>
+<td>项目类型  1：硬件；2：APP；3：网站；4：软件...</td>
+</tr>
+<tr>
+<td>stage</td>
+<td>int</td>
+<td>融资阶段 1：天使轮 2：A轮 3：B轮 4：C轮 5：D轮 6：E轮及以后 7：未融资</td>
+</tr>
+<tr>
+<td>shareholding</td>
+<td>int</td>
+<td>股权结构 1：学校或代表学校的组织机构持有部分股权 2:老师持有部分股权...</td>
+</tr>
+</tbody>
+</table></div><h2>2.2、项目详细信息接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取项目详细信息</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/API/index.php/home/project/detail.html</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pid</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>项目id</td>
+</tr>
+</tbody>
+</table>
+<p><strong>成功返回示例</strong></p>
+<pre><code>  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;: {
+        &quot;pid&quot;:&quot;2323&quot;,
+        &quot;name&quot;:&quot;项目名称&quot;,
+        &quot;stage&quot;:&quot;融资阶段&quot;,
+        &quot;area&quot;:&quot;所属领域&quot;,
+        &quot;shareholding&quot;:&quot;股份结构&quot;,
+        &quot;tags&quot;:&quot;项目标签&quot;,
+        &quot;progress&quot;:&quot;项目研发进度&quot;,
+        &quot;logo&quot;:&quot;项目略图url&quot;,
+        &quot;detail&quot;:&quot;项目详细介绍&quot;,
+        &quot;members&quot;:[
+            {
+            &quot;name&quot;:&quot;成员1&quot;，
+            &quot;tel&quot;:&quot;110&quot;
+            },
+            {
+            &quot;name&quot;:&quot;成员2&quot;，
+            &quot;tel&quot;:&quot;120&quot;
+            }
+        ],
+        &quot;date&quot;:&quot;2016-07-18&quot;
+    },
+    &quot;msg&quot;:&quot;查询成功&quot;
+  }
+  or
+  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;: null,
+    &quot;msg&quot;:&quot;暂无此项目详细内容&quot;
+  }</code></pre>
+<p><strong>返回参数说明</strong> </p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>area</td>
+<td>int</td>
+<td>所属领域 1：电子商务；2：社交网络；3：智能硬件...</td>
+</tr>
+<tr>
+<td>type</td>
+<td>int</td>
+<td>项目类型  1：硬件；2：APP；3：网站；4：软件...</td>
+</tr>
+<tr>
+<td>stage</td>
+<td>int</td>
+<td>融资阶段 1：天使轮 2：A轮 3：B轮 4：C轮 5：D轮 6：E轮及以后 7：未融资</td>
+</tr>
+<tr>
+<td>shareholding</td>
+<td>int</td>
+<td>股权结构 1：学校或代表学校的组织机构持有部分股权 2:老师持有部分股权...</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p></div></div><h1>3、场地信息接口示例</h1><div style="margin-left:20px;"><h2>3.1、场地列表接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取场地列表</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/API/index.php/home/field/list.html</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>场地类型，1、孵化基地 2、校外场地</td>
+</tr>
+<tr>
+<td style="text-align: left;">page</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>页码，默认为1</td>
+</tr>
+<tr>
+<td style="text-align: left;">size</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>页大小，默认为20</td>
+</tr>
+</tbody>
+</table>
+<p><strong>成功返回示例</strong></p>
+<pre><code>  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;:[
+        {
+          &quot;fid&quot;:&quot;121&quot;,
+          &quot;name&quot;:&quot;场地名称1&quot;,
+          &quot;pic&quot;:&quot;场地略图url&quot;,
+          &quot;synopsis&quot;:&quot;场地简介&quot;,
+          &quot;type&quot;:&quot;1&quot;,
+          &quot;status&quot;:&quot;1&quot;
+        },
+        {
+          &quot;fid&quot;:&quot;131&quot;,
+          &quot;name&quot;:&quot;场地名称2&quot;,
+          &quot;pic&quot;:&quot;场地略图url&quot;,
+          &quot;synopsis&quot;:&quot;场地简介&quot;,
+          &quot;type&quot;:&quot;2&quot;,
+          &quot;status&quot;:&quot;0&quot;
+        }
+    ],
+    &quot;msg&quot;:&quot;查询成功&quot;
+  }
+or
+  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;:null,
+    &quot;msg&quot;:&quot;暂无场地信息&quot;
+  }</code></pre>
+<p><strong>返回参数说明</strong> </p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>int</td>
+<td>项目类型 ：1、孵化基地 2、校外场地</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>场地是否空闲：0、否 1、是</td>
+</tr>
+</tbody>
+</table></div><h2>3.2、场地详细信息接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取场地详细信息</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/API/index.php/home/field/detail.html</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">fid</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>场地id</td>
+</tr>
+</tbody>
+</table>
+<p><strong>成功返回示例</strong></p>
+<pre><code>  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;: {
+        &quot;fid&quot;:&quot;121&quot;,
+        &quot;name&quot;:&quot;场地名称1&quot;,
+        &quot;pic&quot;:&quot;场地略图url&quot;,
+        &quot;synopsis&quot;:&quot;场地简介&quot;,
+        &quot;detail&quot;:&quot;场地详细介绍及申请流程&quot;,
+        &quot;type&quot;:&quot;1&quot;,
+        &quot;status&quot;:&quot;1&quot;
+    },
+    &quot;msg&quot;:&quot;查询成功&quot;
+  }
+  or
+  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;: null,
+    &quot;msg&quot;:&quot;暂无此场地详细内容&quot;
+  }</code></pre>
+<p><strong>返回参数说明</strong> </p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>int</td>
+<td>项目类型 ：1、孵化基地 2、校外场地</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>场地是否空闲：0、否 1、是</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p></div></div><h1>4、资讯接口示例</h1><div style="margin-left:20px;"><h2>4.1、资讯列表接口示例</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取资讯列表</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/API/index.php/home/notice/list.html</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>类型</td>
+</tr>
+<tr>
+<td style="text-align: left;">page</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>页码，默认1</td>
+</tr>
+<tr>
+<td style="text-align: left;">size</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>页大小，默认20</td>
+</tr>
+</tbody>
+</table>
+<p><strong>成功返回示例</strong></p>
+<pre><code>  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;:[
+        {
+        &quot;nid&quot;:&quot;1212&quot;,
+        &quot;type&quot;:&quot;1&quot;,
+        &quot;theme&quot;:&quot;福州大学2016届毕业生班级校友联络员和学院年级校友召集人聘任大会举行&quot;,
+        &quot;date&quot;:&quot;2016-07-18&quot;,
+        },
+        {
+        &quot;nid&quot;:&quot;1212121&quot;,
+        &quot;type&quot;:&quot;2&quot;,
+        &quot;theme&quot;:&quot;福州大学2016届毕业生班级校友联络员和学院年级校友召集人聘任大会举行&quot;,
+        &quot;date&quot;:&quot;2016-07-19&quot;,
+        }
+    ],
+    &quot;msg&quot;:&quot;查询成功！&quot;
+  }
+  or
+  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;:null,
+    &quot;msg&quot;:&quot;暂无通知&quot;
+  }</code></pre>
+<p><strong>返回参数说明</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">int</td>
+<td>通知类型，1、热门资讯 2、最新政策 3、通知公告 4、新闻热点</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p></div><h2>4.2、资讯详细信息接口示例</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取资讯详细信息</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/API/index.php/home/notice/detail.html</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">nid</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>资讯id</td>
+</tr>
+</tbody>
+</table>
+<p><strong>成功返回示例</strong></p>
+<pre><code>  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;: {
+        &quot;nid&quot;:&quot;1212&quot;,
+        &quot;type&quot;:&quot;1&quot;,
+        &quot;theme&quot;:&quot;福州大学2016届毕业生班级校友联络员和学院年级校友召集人聘任大会举行&quot;,
+        &quot;content&quot;:&quot;资讯详细内容&quot;,
+        &quot;date&quot;:&quot;2016-07-18&quot;,
+    },
+    &quot;msg&quot;:&quot;查询成功！&quot;
+  }
+  or
+  {
+    &quot;code&quot;: 200,
+    &quot;data&quot;:null,
+    &quot;msg&quot;:&quot;暂无此通知详细内容&quot;
+  }</code></pre>
+<p><strong>返回参数说明</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">int</td>
+<td>通知类型，1、热门资讯 2、最新政策 3、通知公告 4、新闻热点</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p></div></div></body></html>
