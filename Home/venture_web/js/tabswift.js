@@ -22,10 +22,21 @@ function removeClass(elem, className) {
 }
 
 var sideNav = document.querySelector('.side-nav');
-var oli = sideNav.querySelectorAll('li');
-var info = document.querySelectorAll('.information-detail');
+var signupList = document.querySelector('.signup-role-list');
+if(sideNav) {
+	var oli = sideNav.querySelectorAll('li');
+	var box = document.querySelectorAll('.information-detail');
+}
+else if(signupList) {
+	var oli = signupList.querySelectorAll('li');
+	var box = document.querySelectorAll('.signup-table');
+}
+
 oli = [].slice.call(oli);
-info = [].slice.call(info);
+box = [].slice.call(box);
+
+var isClass = hasClass(box[0], 'information-detail');
+
 
 (function switchTab(){
 	oli.forEach(function(elem, index) {
@@ -35,14 +46,22 @@ info = [].slice.call(info);
 		}
 	});
 	function startSwtich(i){
-		info.forEach(function(elem, index){
+		box.forEach(function(elem, index){
 			elem.style.display = 'none';
-			removeClass(oli[index], 'active')
+			if(isClass) {
+				removeClass(oli[index], 'active');
+			}
+			else {
+				removeClass(oli[index], 'now');
+			}
 		});
-		info[i].style.display = 'block';
-		addClass(oli[i], 'active');
-
-		oli[i].children[0].children[0].style.backgroundPositionX = '0px0;'
+		if(isClass) {
+			box[i].style.display = 'block';
+			addClass(oli[i], 'active');
+		} else {
+			box[i].style.display = 'table';
+			addClass(oli[i], 'now');
+		}
 	}
 	
 })();
