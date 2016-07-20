@@ -132,7 +132,7 @@ function waterfall() {
 	for(var i=0, len=projectsBox.length; i < len; i++) {
 		if(i < cols) {
 			boxHs.push(projectsBox[i].offsetHeight);
-			console.log(boxHs);
+			// console.log(boxHs);
 		} else {
 			minH = Math.min.apply(null,boxHs);
 			index = boxHs.indexOf(minH);
@@ -148,3 +148,18 @@ function waterfall() {
 }
 
 waterfall();
+
+/**
+ * 移动端导航
+ */
+(function mobileNav() {
+	var mobileMenu = document.querySelector('.mobile-menu'),
+		mobileBar = document.querySelector('.mobile-bar');
+	mobileMenu.onclick = function() {
+		if(!hasClass(mobileBar, 'open')) {
+			addClass(mobileBar, 'open');
+		} else {
+			removeClass(mobileBar, 'open');
+		}
+	}
+})()
