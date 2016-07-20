@@ -457,8 +457,9 @@ header {
 }
 
 
-.news-detail h3:hover {
-	color: #eb4f38;
+.news-detail h3:hover,
+.game-sidenav a:hover {
+	color: #eb4f38 !important;
 }
 
 .news-detail p {
@@ -836,6 +837,8 @@ footer h4 {
 	font-size: 14px;
 }
 
+
+/*登录弹窗*/
 .login-wrapper {
 	width: 100%;
 	height: 100%;
@@ -1134,7 +1137,7 @@ footer h4 {
 
 .signup-wrapper {
 	width: 100%;
-	height: 100%;
+	/*height: 100%;*/
 	background: url('../images/74833f6egw1f5lnuq65rsj21kw0w07ir.jpg') center;
 	background-size: cover;
 }
@@ -1149,7 +1152,8 @@ footer h4 {
 	width: 100%;
 }
 .signup-wrapper .container {
-	padding-top: 8%;
+	padding-top: 10%;
+	padding-bottom: 10%;
 }
 
 .signup-wrapper .signup-content{
@@ -1191,7 +1195,6 @@ footer h4 {
 	border-top: 12px solid #61A3E1;
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
-	/*border: 5px solid #61A3E1;*/
 }
 
 .signup-box {
@@ -1234,13 +1237,26 @@ footer h4 {
 	border-radius: 6px;
 }
 
+.signup-btn, 
+.verify-code-btn {
+	background-color: #61A3E1;
+	color: #fff !important;
+	border-radius: 8px;
+}
+
 .signup-btn {
 	display: block;
 	margin: 30px auto 0;
-	background-color: #61A3E1;
-	color: #fff !important;
 	padding: 10px 30px;
-	border-radius: 8px;
+}
+
+.verify-code-btn {
+	padding: 5px 10px;
+	margin-left: -110px;
+}
+
+.phone-code {
+	width: 150px !important;
 }
 
 .signup-table td:nth-child(3) {
@@ -1250,4 +1266,115 @@ footer h4 {
 .verify {
 	visibility: hidden;
 	color: #eb4f38;
+}
+
+/*比赛页面*/
+.game-wrapper {
+	padding: 30px;
+}
+
+.game-sidenav {
+	display: inline-block;
+	width: 30%;
+	border: 1px solid #cecece;
+}
+.game-sidenav ul li{
+	height: 4em;
+	line-height: 4em;
+	padding: 0 20px;
+	/*padding: 15px;*/
+	vertical-align: text-top;
+	text-overflow:ellipsis;
+    -o-text-overflow: ellipsis;   
+    white-space:nowrap;
+    overflow: hidden;
+}
+
+
+.fire {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: url('../images/fire.png') no-repeat center;
+}
+
+.game-content {
+	width: 70%;
+	padding: 15px 25px;
+}
+
+.past-game {
+	color: #999;
+}
+.game-title h1{
+	font-size: 25px;
+	text-align: center;
+	padding-bottom: 10px;
+	/*border-bottom: 2px solid #61A3E1;*/
+	/*background-color: #cecece;*/
+}
+
+.end-time b{
+	display: inline-block;
+	position: relative;
+	top: 3px;
+	right: 2px;
+	width: 16px;
+	height: 16px;
+	background: url("../images/重点符号.png") no-repeat;
+	background-size: cover;
+	text-align: middle;
+}
+
+.release-time,
+.end-time {
+	height: 50px;
+	line-height: 50px;
+	padding: 0 25px;
+}
+
+.game-introduction-top {
+	height: 50px;
+	line-height: 50px;
+	margin: 1em 0;
+}
+
+.game-introduction-top span,
+.game-introduction-top h2{
+	display: inline-block;
+	color: #61A3E1;
+	vertical-align: middle;
+}
+
+.game-introduction-top span {
+	width: 30px;
+	height: 30px;
+	margin-right: 5px;
+	background: url("../images/任务.png") no-repeat;
+	background-size: cover;
+}
+
+.game-introduction-top h2 {
+	font-size: 25px;
+	margin-right: 20px;
+}
+.game-detail p {
+	padding: 0 1em;
+	text-indent: 2em;
+	line-height: 2em;
+}
+
+.game-moment-wrapper {
+	padding-left: 20px;
+}
+.game-moment {
+	display: inline-block;
+	width: 230px;
+	height: 150px;
+	overflow: hidden;
+}
+
+.game-moment img {
+	width: 100%;
+	height: 100%;
 }
