@@ -39,6 +39,15 @@ class UserModel extends BaseModel {
     }
 
     /**
+     * 获取用户组id
+     * @return int
+     */
+    public function getGroup($uid) {
+    	$ret = $this->where('uid',$uid)->field('groupid')->find();
+    	return $ret['groupid'];
+    }
+
+    /**
      * 获取个人信息
      * @return array
      */
@@ -47,6 +56,13 @@ class UserModel extends BaseModel {
     	return M('User')->where($uid)->field('uid,username,nickname,name,gender,tel,email,groupid')->find();
     }
 
+    /**
+     * 更新用户信息
+     * @return boolen
+     */
+    public function updateInfo($data) {
+    	return M('User')->where('uid',$data['uid'])->save($data);
+    }
 
 	/**
 	 * 随机字符串

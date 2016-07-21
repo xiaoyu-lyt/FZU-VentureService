@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+	<script type="text/javascript" src="./Public/jquery.js"></script>
 	<title></title>
 </head>
 <body>
@@ -24,6 +25,27 @@
 		description: <input type="text" name="description"><br>
 		<input type="submit">
 	</form>
+	
+		uid: <input id="uid" type="text" name="uid"><br>
+		nickname: <input id="nickname" type="text" name="nickname"><br>
+		<button id="sub" onclick="sub()">修改</button>
+
 
 </body>
+<script>
+	function sub(){
+		var _uid = $("#uid").val();
+		var _nickname = $("#nickname").val();
+		$.ajax({
+			url: "http://127.0.0.1/demo/jyzd/index.php/home/user/modify.html",
+			type: "put",
+			data: {uid: _uid,nickname:_nickname},
+			success: function(data) {
+				var ret = eval("("+data+")");
+				alert(ret.msg);
+			}
+		})
+	}
+
+</script>
 </html>

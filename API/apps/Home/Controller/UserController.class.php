@@ -72,8 +72,32 @@ class UserController extends BaseController {
 		echo $json;
 	}
 
+	/**
+	 * 个人信息修改
+	 * @return json
+	 */
 	public function modify_put() {
-
+		$update = I('put.');
+		if(D('User')->updateInfo($update)) {
+			$json = $this->jsonReturn(200,"修改成功");
+		} else {
+			$json = $this->jsonReturn(0,"修改失败，请重新提交！");
+		}
+		echo $json;
+	}
+	/**
+	 * 修改密码
+	 */
+	public function setting_put() {
+		$data = I('put.');
+		$ret = M('User')->where('uid',$data['uid'])->field('userKey')->find();
+		$data['password'] = md5(md5($data['password']).$ret['userKey']);
+		if( D('User')->updateInfo($data['uid'],$data) ) {
+			$json = $this->jsonReturn(200,"成功修改密码");
+		} else {
+			$json = $this->jsonReturn(0,"密码修改失败，请重试！");
+		}
+		echo $json;
 	}
 
 	/**
@@ -89,6 +113,47 @@ class UserController extends BaseController {
 			$json = $this->jsonReturn(200,"无此用户个人信息");
 		}
 		echo $json;
+	}
+
+	/**
+	 * 获取学生信息
+	 */
+	public function student_get() {
+		$login_user = $this->checkLogin();
+		$uid = I("get.uid");
+		if(empty($login_user)) {
+			$json = $this->jsonReturn(0,"用户未登录或者登陆超时，请先登录");
+			echo $json;
+			exit();
+		}
+		$ret = D("Student")->getInfo($uid);
+		if(!empty($ret))
+			$json = $this->jsonReturn(200,"操作成功",$ret);
+		else
+			$json = $this->jsonReturn(0,"无此学生信息，请先进行学生验证");
+		echo $json;
+	}
+
+	/**
+	 * 学生认证
+	 */
+	public function stuComfirm_post() {
+		$stu_id = I('post.stu_id');
+		$stu_pwd = I('post.stu_pwd');
+	}
+
+	/**
+	 * 检查是否已进行学生认证
+	 */
+	public function isComfirm() {
+
+	}
+
+	/**
+	 * 修改手机
+	 */
+	public function phoneModify_put() {
+
 	}
 
 	/**
@@ -110,5 +175,14 @@ class UserController extends BaseController {
 		echo $this->jsonReturn(200,"注销成功");
 	}
 	
+	/**
+	 * 生成验证码
+	 */
+	public function verify_get() {
+		$code = "";
+		for($i = 1; $i <= 4; $i++) 
+			$code .= rand(0,9);
+		echo $code;
+	}
 }
 

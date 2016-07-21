@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Home\Controller\BaseController;
-class FeildController extends BaseController {
+class FieldController extends BaseController {
 	/**
 	 * 获取场地列表
 	 * @return json
@@ -12,7 +12,7 @@ class FeildController extends BaseController {
 
 		$where['type'] = I('get.type');
 		$where['status'] = 1;
-		$data = $fields->where($where)->order('date desc')->page($page,$pageSize)->field('fid,name,pic,synopsis,date')->select();
+		$data = M('fields')->where($where)->order('date desc')->page($page,$pageSize)->field('fid,name,pic,synopsis,date')->select();
 
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);

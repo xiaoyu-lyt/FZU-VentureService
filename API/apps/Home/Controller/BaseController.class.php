@@ -17,12 +17,34 @@ class BaseController extends RestController {
 				}
 			}
 		}else{
-			return  session("login_user") ;
+			return session("login_user");
 		}
 	}
 
-	public function verify($tel,$code) {
-		
+	/**
+	 * 发送短信验证码
+	 * @param int $tel 接收方电话
+	 * @param string $code 验证码
+	 */
+	public function send_verify($tel,$code) {
+		/*$url = "http://localhost/web_services.php";
+	　　$post_data = array ("username" => "bob","key" => "12345");
+
+	　　$ch = curl_init();
+
+	　　curl_setopt($ch, CURLOPT_URL, $url);
+	　　curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	　　// post数据
+	　　curl_setopt($ch, CURLOPT_POST, 1);
+	　　// post的变量
+	　　curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+
+	　　$output = curl_exec($ch);
+	　　curl_close($ch);
+
+	　　//打印获得的数据
+	　　print_r($output);*/
+		 
 	}
 
 	/**

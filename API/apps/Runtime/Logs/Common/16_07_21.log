@@ -1,0 +1,246 @@
+[ 2016-07-21T14:46:10+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000947s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:10+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:11+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:11+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000758s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:11+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:11+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:12+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:12+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:12+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:12+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:12+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:13+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:13+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:14+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:14+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:14+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:14+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:15+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:15+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:15+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:15+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:16+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:16+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:16+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:16+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:16+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:16+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:17+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:26+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:37+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:38+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:38+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:38+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:38+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:38+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000693s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:58+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:59+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:59+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:46:59+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:47:00+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+ERR: 无法加载模块:User
+
+[ 2016-07-21T14:47:00+08:00 ] 127.0.0.1 /demo/jyzd/index.php/user/modify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+ERR: 无法加载模块:User
+
