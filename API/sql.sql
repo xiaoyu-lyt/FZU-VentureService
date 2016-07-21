@@ -18,8 +18,11 @@ CREATE TABLE IF NOT EXISTS `vs_user` (
   `log_time` varchar(50) DEFAULT NULL COMMENT '最后登录时间',
   `groupid` tinyint(1) NOT NULL COMMENT '用户组',
   `tags` varchar(100) DEFAULT NULL COMMENT '标签编号，形如1-3-6-9',
+  `avatar` varchar(100) DEFAULT NULL COMMENT '用户头像url',
   PRIMARY KEY (`uid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+
 
 CREATE TABLE IF NOT EXISTS `vs_student` (
   `uid` mediumint(8) NOT NULL ,

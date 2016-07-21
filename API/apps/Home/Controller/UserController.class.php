@@ -85,19 +85,49 @@ class UserController extends BaseController {
 		}
 		echo $json;
 	}
+
 	/**
 	 * 修改密码
 	 */
 	public function setting_put() {
 		$data = I('put.');
-		$ret = M('User')->where('uid',$data['uid'])->field('userKey')->find();
-		$data['password'] = md5(md5($data['password']).$ret['userKey']);
-		if( D('User')->updateInfo($data['uid'],$data) ) {
-			$json = $this->jsonReturn(200,"成功修改密码");
+		if( $data['v_code'] == session('v_code') ) {
+			$ret = M('User')->where('uid',$data['uid'])->field('userKey')->find();
+			$data['password'] = md5(md5($data['password']).$ret['userKey']);
+			if( D('User')->updateInfo($data['uid'],$data) ) {
+				$json = $this->jsonReturn(200,"成功修改密码");
+			} else {
+				$json = $this->jsonReturn(0,"密码修改失败，请重试！");
+			}
 		} else {
-			$json = $this->jsonReturn(0,"密码修改失败，请重试！");
+			$json = $this->jsonReturn(0,"验证码有误！");
 		}
 		echo $json;
+	}
+
+	/**
+	 * 上传用户头像
+	 * @param int $uid 
+	 * @param  
+	 */
+	public function uploadAvatar_post() {
+		$uid = I('post.uid');
+		$upload = new \Think\Upload();
+		$upload->maxSize = 3145728;
+		$upload->exts = array('jpg','png','jpeg','gif');
+		$upload->rootPath = BASE_PATH.'/Public/avatar/';
+		$upload->savePath = "";
+		$upload->saveName = $uid."_".time();
+		$upload->autoSub = false; //关闭创建子目录保存文件
+		$info = $upload->upload();
+		//echo BASE_PATH;exit;
+		if(!$info) {
+			echo "failure";
+		} else {
+			foreach ($info as $file) {
+				echo SITE_URL.'/Public/avatar/'.$file['savename'];
+			}
+		}
 	}
 
 	/**
@@ -134,6 +164,14 @@ class UserController extends BaseController {
 		echo $json;
 	}
 
+
+
+
+
+
+
+
+
 	/**
 	 * 学生认证
 	 */
@@ -142,18 +180,58 @@ class UserController extends BaseController {
 		$stu_pwd = I('post.stu_pwd');
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	/**
 	 * 检查是否已进行学生认证
+	 * @param int $uid
+	 * @return boolen
 	 */
-	public function isComfirm() {
-
+	public function isComfirm_get() {
+		$uid = I('get.id');
+		if( M('Student')->where('uid',$uid)->find() )
+			return ture;
+		return false;
 	}
 
 	/**
 	 * 修改手机
+	 * @param int $uid
+	 * @param string $username 用户名
+	 * @param int $tel 用户手机
+	 * @param string $password 用户密码
+	 * @return json
 	 */
 	public function phoneModify_put() {
-
+		$data = I('put.');
+		if( $data['v_code'] == session('v_code') ) {
+			if( D('User')->checkLogin($data['username'],$data['password']) ) {
+				if(M('User')->where('uid',$data['uid'])->save(array('tel'=>$data['tel']))) {
+					$json = $this->jsonReturn(200,"手机号更新成功");
+				} else {
+					$json = $this->jsonReturn(0,"操作失败，请重新提交！");
+				}
+			} else {
+				$json = $this->jsonReturn(0,"密码错误");
+			}
+		} else {
+			$json = $this->jsonReturn(0,"验证码有误！");
+		}
+		echo $json;
 	}
 
 	/**

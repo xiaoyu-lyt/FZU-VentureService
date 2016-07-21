@@ -28,7 +28,12 @@
 	
 		uid: <input id="uid" type="text" name="uid"><br>
 		nickname: <input id="nickname" type="text" name="nickname"><br>
-		<button id="sub" onclick="sub()">修改</button>
+		<button id="sub" onclick="sub()">修改</button> <br>
+	<form action="./index.php/Home/user/uploadAvatar.html" enctype="multipart/form-data" method="post">
+		uid: <input type="text" name="uid"><br>
+		avatar: <input type="file" name="avatar"><br>
+		<input type="submit">
+	</form>
 
 
 </body>
