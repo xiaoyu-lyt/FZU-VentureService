@@ -56,6 +56,10 @@ input,button {
 	outline: 0;
 }
 
+textarea {
+	resize: none;
+}
+
 .clearfix:before, .clearfix:after {
 	content: '';
 	display: block;

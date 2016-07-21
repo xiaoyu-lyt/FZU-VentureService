@@ -458,7 +458,8 @@ header {
 
 
 .news-detail h3:hover,
-.game-sidenav a:hover {
+.game-sidenav a:hover,
+{
 	color: #eb4f38 !important;
 }
 
@@ -802,7 +803,6 @@ footer h4 {
 
 .pagination .active{
 	color: #fff;
-	/*background-color: #61A3E1 !important;*/
 }
 
 /*资讯详情页*/
@@ -1087,6 +1087,9 @@ footer h4 {
 	color: #fff !important;
 }
 
+.now:hover{
+	color: #fff !important;
+}
 .noborder {
 	border: none;
 }
@@ -1269,26 +1272,27 @@ footer h4 {
 }
 
 /*比赛页面*/
-.game-wrapper {
+.game-wrapper,
+.user-wrapper {
 	padding: 30px;
 }
 
 .game-sidenav {
-	display: inline-block;
 	width: 30%;
 	border: 1px solid #cecece;
 }
+
 .game-sidenav ul li{
 	height: 4em;
 	line-height: 4em;
 	padding: 0 20px;
-	/*padding: 15px;*/
 	vertical-align: text-top;
 	text-overflow:ellipsis;
     -o-text-overflow: ellipsis;   
     white-space:nowrap;
     overflow: hidden;
 }
+
 
 
 .fire {
@@ -1377,4 +1381,227 @@ footer h4 {
 .game-moment img {
 	width: 100%;
 	height: 100%;
+}
+
+.user-box-top {
+	width: 300px;
+	margin: 20px auto 60px;
+}
+
+.user-box-top img {
+	width: 64px;
+}
+.user-box-top h1 {
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 10px;
+	color:  #61A3E1;
+}
+
+.user-student-sidenav {
+	width: 15%;
+	text-align: center;
+}
+
+.user-student-sidenav ul li {
+	height: 3em;
+	line-height: 3em;
+	padding: 0 35px;
+	margin: 2px;
+	font-size: 1.15em;
+	cursor: pointer;
+}
+
+.user-box {
+	width: 75%;
+	margin: 0 20px;
+}
+
+.user-head-portrait {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.edit-icon {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	background-color: rgba(0, 0, 0, .7);
+	opacity: 0;
+	transition: all .5s ease-out;
+	-webkit-moz-transition: all .4s ease-out;
+	-moz-moz-transition: all .4s ease-out;
+	-ms-moz-transition: all .4s ease-out;
+	-o-moz-transition: all .4s ease-out;
+	z-index: 99;
+	color: #fff;
+}
+
+.edit-icon:before {
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	content: " ";
+	background: url("../images/icon-head.png") no-repeat center;
+}
+.user-head-portrait:hover .edit-icon {
+	opacity: 1;
+
+}
+.user-head-portrait img{
+	width: 100%;
+}
+
+.field {
+	margin-left: 30px;
+	margin-bottom: 20px;
+} 
+
+.field label {
+	display: block;
+	font-weight: normal;
+	font-size: 15px;
+}
+
+.field input{
+	width: 280px;
+	height: 3em;
+	border: 1px solid #cecece;
+	background-color: #fff;
+	color: #000;
+	border-radius: 2px;
+	text-indent: 10px;
+}
+
+.field input[disabled] {
+	color: #B6B6B6;
+}
+
+
+.field .is-certify {
+	font-size: .8em;
+	background-color: rgb(195, 215, 164);
+	color: #fff;
+	margin-left: 5px;
+	padding: 3px 5px;
+}
+
+.field label a{
+	color: #61A3E1 !important;
+}
+
+.user-student-projects {
+	width: 100%;
+}
+
+.user-student-find,
+.user-student-apply,
+.user-student-plan {
+	display: inline-block;
+	width: 160px;
+	text-align: center;
+	margin: 50px;
+}
+
+.user-student-icon {
+	width: 100%;
+	padding: 10px;
+}
+
+.user-student-projects span {
+	display: inline-block;
+	margin-top: 12px;
+	color: #61A3E1;
+	font-size: 20px;
+}
+
+.user-box {
+	display: none;
+}
+
+.block {
+	display: block;
+}
+
+.user-student-sidenav li:hover {
+	color: #eb4f38;
+}
+
+.user-apply-sidenav{
+	padding-left: 5%;
+}
+
+.user-apply-sidenav li {
+	width: 45px;
+	height: 45px;
+	line-height: 45px;
+	margin: 2px;
+	border-radius: 50%;
+	text-align: center;
+	cursor: pointer;
+}
+
+.user-apply-warn {
+	width: 85%;
+	color: #eb4f38;
+	font-size: .8em;
+	padding: 20px 60px;
+}
+
+.star {
+	display: inline-block;
+	color: #eb4f38;
+	vertical-align: middle;
+	margin-left: 2px;
+	font-size: 1.5em;
+}
+
+.apply-steps {
+	margin: 15px auto;
+	/*width: 80%;*/
+}
+
+.apply-steps td,
+.apply-steps th{
+	padding: 10px;
+	border: 1px solid #cecece;
+}
+
+
+.apply-steps th {
+	text-align: center;
+}
+.apply-steps input[type=radio] {
+	margin: 0 2px;
+}
+
+.apply-steps textarea,
+.apply-steps select {
+	width: 100%;
+}
+
+.apply-steps textarea {
+	height: 6.5em;
+	border: none;
+}
+
+.apply-setps-btn {
+	margin-left: 45%;
+}
+
+.apply-setps-btn button{
+	/*display: block;*/
+	/*margin: 0 auto;*/
+	background-color: #61A3E1;
+	color: #fff !important;
+	padding: 10px 20px;
+}
+
+.apply-setps-btn .btn-pre {
+	background-color: #fff;
+	color: #61A3E1 !important;
+	margin-left: -35px;
+	border: 1px solid #61A3E1 ;
 }
