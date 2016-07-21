@@ -1,9 +1,9 @@
 <?php
 namespace Home\Controller;
-use Think\Controller\RestController;
-header("Content-type: text/html; charset=utf-8");
+use Home\Controller\BaseController;
+//header("Content-type: text/html; charset=utf-8");
 
-class UserController extends RestController {
+class UserController extends BaseController {
 
 	/**
 	 * 用户注册
@@ -12,43 +12,22 @@ class UserController extends RestController {
 	public function register_post() {
 
 		$data = I('post.');
-		$data['userKey'] = $this->getRandChar();//随机字符串
-		$data['password'] = md5(md5($data['password']).$data['userKey']);
-		$data['status'] = 0;
-		$data['regTime'] = time();
-		//$data['level'] = 4;
-		
-		$user = D('user');
-
-		//echo $user->userExisted($data['username']);exit;
-		if( !$user->userExisted($data['username']) ) {
-			if($user->insert($data)) {
-				$jsonReturn = array(
-					'code'	=> 200,
-					'data'	=> array(
-						'username'	=> $data['username'],
-						'nickname'	=> $data['nickname'],
-						'regTime'	=> $data['regTime'],
-						'groupid'	=> $data['groupid']
-						),
-					'msg'	=> "注册成功，请返回首页登录！"
+		if( !D('user')->isExisted($data['username']) ) {
+			if( D('user')->register($data) ) {
+				$arr = array(
+					'username'	=> $data['username'],
+					'nickname'	=> $data['nickname'],
+					'groupid'	=> $data['groupid']
 					);
+				$json = $this->jsonReturn(200,"注册成功，返回首页登陆！",$arr);
 			} else {
-				$jsonReturn = array(
-					'code'	=> 0,
-					'data'	=> null,
-					'msg'	=> "操作失败，请重新提交！"
-					); 
+				$json = $this->jsonReturn(0,"操作失败，请重新提交！");
 			}
 		} else {
-			$jsonReturn = array(
-				'code'	=> 0,
-				'data'	=> null,
-				'msg'	=> "用户已存在"
-				);
+			$json = $this->jsonReturn(0,"用户已存在！");
 		}
 		//print_r($jsonReturn);
-		echo json_encode($jsonReturn);
+		echo $json;
 	}
 
 	/**
@@ -57,60 +36,79 @@ class UserController extends RestController {
 	 */
 	public function login_post() {
 
-		$data = I('post.');
-
-		$user = M('user');
-		$where['username'] = $data['username'];
-		$userinfo = $user->where($where)->select();
-		if(!empty($userinfo)) {
-			if( md5(md5($data['password']).$userinfo['userKey']) == $userinfo['password']) {
-
-				session(array(
-					'username'=>$userinfo['username'],
-					'nickname'=>$userinfo['nickname']
-					));
-
-				$jsonReturn = array(
-					'code'	=> 200,
-					'data'	=> array(
-						'username'	=> $userinfo['username'],
-						'nickname'	=> $userinfo['nickname'],
-						'groupid'	=> $userinfo['groupid']
-						),
-					'msg'	=> "登陆成功！"
-					);
+		if(IS_POST) {
+			$cookie_token = cookie('cookie_token');
+			if(!$cookie_token) {
+				$username = I('username');
+				$password = I('password');
+				$login_user = D('User')->checkLogin($username,$password);
+				if(!empty($login_user)) {
+					unset($login_user['password']);
+					session('login_user',$login_user);
+					$token = D('UserToken')->createToken($login_user['uid'],$login_user['groupid']);
+					cookie('cookie_token',$token,60*60*24);
+					$data = array(
+						'uid'		=> $login_user['uid'],
+						'username'	=> $login_user['username'],
+						'nickname'	=> $login_user['nickname'],
+						'name'		=> $login_user['name'],
+						'groupid'	=> $login_user['groupid'],
+						'token'		=> $token
+						);
+					$json = $this->jsonReturn(200,"登陆成功",$data);
+				} else {
+					$json = $this->jsonReturn(0,"密码错误，请重新登录！");
+				}
 			} else {
-				$jsonReturn = array(
-					'code'	=> 0,
-					'data'	=> null,
-					'msg'	=> "密码错误，请重新登录！"
-					);
+				//判断是否已登录
+				$ret = D('UserToken')->getToken($cookie_token);
+				if($ret && $ret['token_expire'] > time()) {
+					$login_user = M('User')->where('uid',$ret['uid'])->field('uid,username,nickname,greoupid')->find();
+					session('login_user',$login_user);
+				}
+				$json = $this->jsonReturn(200,"已登录",$login_user);
 			}
-		} else {
-			$jsonReturn = array(
-				'code'	=> 0,
-				'data'	=> null,
-				'msg'	=> "用户名不存在，请先注册！"
-				);
 		}
-		//var_dump($jsonReturn);
-		//return $jsonReturn;
-		echo json_encode($jsonReturn);
+		echo $json;
+	}
+
+	public function modify_put() {
+
 	}
 
 	/**
-	 * 随机字符串
-	 * @return string 
+	 * 获取个人信息
+	 * @param int $uid 
 	 */
-	public function getRandChar() {
-		$randChar = "";
-		$str = "zxcvbnmasdfghjklqwertyuiop";
-		for( $i = 1; $i <= 8; $i++ ) {
-			$randChar .= $str[rand(0,strlen($str))];
+	public function getUserInfo_get() {
+		$uid = I('uid');
+		$data = D('User')->getInfo($uid);
+		if(!empty($data)) {
+			$json = $this->jsonReturn(200,"",$data);
+		} else {
+			$json = $this->jsonReturn(200,"无此用户个人信息");
 		}
-		return $randChar;
+		echo $json;
 	}
-	
+
+	/**
+	 * 用户名唯一性认证
+	 * @return boolen
+	 */
+	public function isOnly_get() {
+		$username = I('username');
+		return D('User')->isExisted($username);
+	}
+
+	/**
+	 * 退出登录
+	 * @return json
+	 */
+	public function logout() {
+		session('login_user',NULL);
+		cookie('cookie_token',NULL);
+		echo $this->jsonReturn(200,"注销成功");
+	}
 	
 }
 

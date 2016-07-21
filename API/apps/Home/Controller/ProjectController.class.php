@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
-use Think\Controller\RestController;
-class ProjectController extends RestController {
+use Home\Controller\BaseController;
+class ProjectController extends BaseController {
 	/**
 	 * 获取项目列表
 	 * @return json
@@ -16,51 +16,32 @@ class ProjectController extends RestController {
 		$page = !empty(I('get.page')) ? I('get.page') : 1;
 		$pageSize = !empty(I('get.size')) ? I('get.size') : 20;
 
-		$notice = M('projects');
 		$where['status'] = 1;
-		$data = $notice->where($where)->order('date desc')->field('pid,name,logo,synopsis,stage,area,shareholding,tags,progress,type,date')->page($page,$pageSize)->select();
+		$data = M('projects')->where($where)->order('date desc')->field('pid,name,logo,synopsis,stage,area,shareholding,tags,progress,type,date')->page($page,$pageSize)->select();
 
 		if(!empty($data)) {
-			$jsonReturn = array(
-				'code'	=> 200,
-				'data'	=> $data,
-				'msg'	=> "查询成功"
-				);
+			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$jsonReturn = array(
-				'code'	=> 200,
-				'data'	=> null,
-				'msg'	=> "暂无项目信息"
-				);
+			$json = $this->jsonReturn(200,"暂无项目信息");
 		}
 		//var_dump($jsonReturn);
-		echo json_encode($jsonReturn);
+		echo $json;
 	}
 	/**
 	 * 根据id获取通知详情内容
 	 * @return json
 	 */
 	public function detail_get() {
-		$pid = I('get.pid');
-		$notice = M('projects');
-		$where['pid'] = $pid;
-		$data = $notice->where($where)->field('pid,name,stage,area,shareholding,tags,progress,logo,detail,members,date')->select();
+		$where['pid'] = I('get.pid');
+		$data = M('projects')->where($where)->field('pid,name,stage,area,shareholding,tags,progress,logo,detail,members,date')->find();
 
 		if(!empty($data)) {
-			$jsonReturn = array(
-				'code'	=> 200,
-				'data'	=> $data,
-				'msg'	=> "查询成功"
-				);
+			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$jsonReturn = array(
-				'code'	=> 0,
-				'data'	=> null,
-				'msg'	=> "暂无此项目详细内容"
-				);
+			$json = $this->jsonReturn(0,"暂无此项目详细内容");
 		}
 		//var_dump($jsonReturn);
-		echo json_encode($jsonReturn);
+		echo $json;
 	}
 	public function add_post() {
 

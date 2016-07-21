@@ -1,37 +1,27 @@
 <?php
 namespace Home\Controller;
-use Think\Controller\RestController;
+use Home\Controller\BaseController;
 //header("Content-Type:text/html;charset=utf-8");
-class NoticeController extends RestController {
+class NoticeController extends BaseController {
 	/**
 	 * 获取通知列表
 	 * @return json
 	 */
 	public function list_get() {
-		$type = I('get.type');
 		$page = !empty(I('get.page')) ? I('get.page') : 1;
-		$pageSize = !empty(I('get.size')) ? I('get.size') : 20;
+		$pageSize = !empty(I('get.size')) ? I('get.size') : 15;
 
-		$notice = M('notice');
-		$where['type'] = $type;
+		$where['type'] = I('get.type');
 		$where['status'] = 1;
-		$data = $notice->where($where)->order('overhead desc,rank desc,date desc')->page($page,$pageSize)->field('nid,type,theme,date,content')->select();
+		$data = M('Notice')->where($where)->order('overhead desc,rank desc,date desc')->page($page,$pageSize)->field('nid,type,theme,date')->select();
 
 		if(!empty($data)) {
-			$jsonReturn = array(
-				'code'	=> 200,
-				'data'	=> $data,
-				'msg'	=> "查询成功"
-				);
+			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$jsonReturn = array(
-				'code'	=> 200,
-				'data'	=> null,
-				'msg'	=> "暂无通知"
-				);
+			$json = $this->jsonReturn(200,"暂无通知");
 		}
 		//var_dump($jsonReturn);
-		echo json_encode($jsonReturn);
+		echo $json;
 	}
 
 	/**
@@ -39,26 +29,15 @@ class NoticeController extends RestController {
 	 * @return json
 	 */
 	public function detail_get() {
-		$nid = I('get.nid');
-		$notice = M('notice');
-		$where['nid'] = $nid;
-		$data = $notice->where($where)->field('nid,theme,type,date,content')->select();
-
+		$where['nid'] = I('get.nid');
+		$data = M('notice')->where($where)->field('nid,theme,type,date,content')->find();
 		if(!empty($data)) {
-			$jsonReturn = array(
-				'code'	=> 200,
-				'data'	=> $data,
-				'msg'	=> "查询成功"
-				);
+			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$jsonReturn = array(
-				'code'	=> 200,
-				'data'	=> null,
-				'msg'	=> "暂无此通知详细内容"
-				);
+			$json = $this->jsonReturn(200,"暂无此通知详细内容");
 		}
 		//var_dump($jsonReturn);
-		echo json_encode($jsonReturn);
+		echo $json;
 	}
 	public function add_post() {
 
