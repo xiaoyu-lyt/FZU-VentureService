@@ -149,17 +149,3 @@ function waterfall() {
 
 waterfall();
 
-/**
- * 移动端导航
- */
-(function mobileNav() {
-	var mobileMenu = document.querySelector('.mobile-menu'),
-		mobileBar = document.querySelector('.mobile-bar');
-	mobileMenu.onclick = function() {
-		if(!hasClass(mobileBar, 'open')) {
-			addClass(mobileBar, 'open');
-		} else {
-			removeClass(mobileBar, 'open');
-		}
-	}
-})()

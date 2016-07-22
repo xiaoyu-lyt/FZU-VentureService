@@ -48,7 +48,7 @@ a:active,
 button:active {
   outline: 0;
   text-decoration: none !important;
-  color: inherit !important;
+  color: inherit;
 }
 
 input,button {	
