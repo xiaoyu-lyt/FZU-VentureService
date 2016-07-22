@@ -45,7 +45,7 @@ header {
 	-moz-transition: all .2s ease; /* Firefox 4 */
 	-webkit-transition: all .2s ease; /* Safari ºÍ Chrome */
 	-o-transition: all .2s ease; /* Opera */
-	font-family: 'xinwei';
+	/*font-family: 'xinwei';*/
 	border-bottom: 5px solid transparent;
 	cursor: pointer;
 }
@@ -125,7 +125,7 @@ header {
 	transform: rotate(15deg);
 }
 
-@media (max-width: 766px) {
+@media (max-width: 810px) {
   .main-nav  {
   	display:none;
   }
@@ -146,7 +146,7 @@ header {
   	margin-top: 8px;
   }
   .main-nav li a {
-  	padding: 20px 8px;
+  	padding: 20px 5px;
   }
   .mobile-bar {
   	visibility: hidden !important;
@@ -162,8 +162,8 @@ header {
     margin-top: 10px;
   }
   .main-nav li a {
-  	padding: 20px 12px;
-  	font-size: 25px;
+  	padding: 20px 10px;
+  	font-size: 15px;
   }
 }
 
@@ -175,15 +175,15 @@ header {
     margin-top: 5px;
   }
     .main-nav  {
-    	left: 50%;
+    left: 50%;
   	transform: translate(-50%);
     }
   .main-nav li a {
   	padding: 20px 12px;
-  	font-size: 25px;
+  	font-size: 16px;
   }
   .login, .signup {
-  	padding: 0 15px;
+  	padding: 0 16px;
   }
 }
 
@@ -196,7 +196,7 @@ header {
   
   .main-nav li a {
   	padding: 20px 20px;
-  	font-size: 27px;
+  	font-size: 17px;
   }
   
 }
@@ -454,7 +454,7 @@ header {
 
 
 .news-detail h3:hover,
-.game-sidenav a:hover {
+.game-sidenav a:hov{
 	color: #eb4f38 !important;
 }
 
@@ -802,7 +802,7 @@ footer h4 {
 
 /*资讯详情页*/
 .article-wrapper {
-	width: 880px;
+	/*width: 880px;*/
 	margin: 0 auto;
 	padding: 20px;
 }
@@ -816,7 +816,7 @@ footer h4 {
 }
 
 .article-wrapper .article-info {
-	text-align: right;
+	/*text-align: right;*/
 	font-size: 13px;
 	padding: 20px;
 	color: #C68D59;
@@ -832,7 +832,19 @@ footer h4 {
 	font-size: 14px;
 }
 
+.article-publisher,
+.article-pageview,
+.article-publish-time {
+	display: inline-block;
+	text-align: center;
+	margin-bottom: 20px;
+}
 
+.article-accessory {
+	margin-left: 20%;
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
 /*登录弹窗*/
 .login-wrapper {
 	width: 100%;
@@ -1149,6 +1161,7 @@ footer h4 {
 .signup-logo img {
 	width: 100%;
 }
+
 .signup-wrapper .container {
 	padding-top: 10%;
 	padding-bottom: 10%;
@@ -1804,4 +1817,62 @@ footer h4 {
 	color: #61a3e1 !important;
 	padding: 10px 15px;
 	margin-bottom: 20px;
+}
+
+/*创业课堂*/
+.classroom-wrapper .container {
+	padding: 50px 0;
+}
+
+.classroom-box {
+	position: relative;
+	margin: 20px 0;
+}
+
+.classroom-box-mask {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 140px;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 99;
+	visibility: hidden;
+}
+.classroom-img {
+	display: block;
+	width: 100%;
+	height: 140px;
+	overflow: hidden;
+}
+
+.classroom-img img {
+	width: 100%;
+}
+
+.classroom-info h2{
+	height: 2em;
+	margin: 10px;
+	overflow: hidden;
+	font-size: 14px !important;
+	text-align: center;
+}
+
+.classroom-info p {
+	box-sizing: content-box;
+	position: absolute;
+	top: 0;
+	visibility: hidden;
+	padding: 1em;
+	height: 8em;
+	line-height: 1.5em;
+	color: #fff;
+	font-size: 12px;
+	overflow: hidden;
+	cursor: default;
+	z-index: 99;
+}
+
+.classroom-box:hover .classroom-box-mask,
+ .classroom-box:hover .classroom-info p {
+	visibility: visible;
 }
