@@ -16,12 +16,11 @@ CREATE TABLE IF NOT EXISTS `vs_user` (
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '用户状态',
   `reg_time` varchar(50) DEFAULT NULL COMMENT '注册时间',
   `log_time` varchar(50) DEFAULT NULL COMMENT '最后登录时间',
-  `groupid` tinyint(1) NOT NULL COMMENT '用户组',
+  `groupid` tinyint(1) NOT NULL COMMENT '用户组(0学生 1导师 2企业)',
   `tags` varchar(100) DEFAULT NULL COMMENT '标签编号，形如1-3-6-9',
   `avatar` varchar(100) DEFAULT NULL COMMENT '用户头像url',
   PRIMARY KEY (`uid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
 
 
 CREATE TABLE IF NOT EXISTS `vs_student` (
@@ -53,12 +52,30 @@ CREATE TABLE IF NOT EXISTS `vs_powerlevels` (
   PRIMARY KEY (`pid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+
+--
+--寻找团队记录表
+--
+
+CREATE TABLE IF NOT EXISTS `vs_seek_records` (
+  `sid` mediumint(8) NOT NULL AUTO_INCREMENT,
+  `theme` varchar(50) NOT NULL COMMENT '主题',
+  `advantage` mediumtext NOT NULL COMMENT '团队优势',
+  `demands` mediumtext NOT NULL COMMENT '成员要求（性格、技术）',
+  `tel` varchar(30) NOT NULL COMMENT '联系电话',
+  `email` varchar(50) NOT NULL COMMENT '联系邮箱',
+  `issue_time` int NOT NULL COMMENT '发布时间戳',
+  PRIMARY KEY (`sid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+
+
 --
 --导师信息表
 --
 CREATE TABLE IF NOT EXISTS `vs_tutors` (
   `tid` mediumint(8) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
+  `name` varchar(20) NOT NULL COMMENT '导师姓名',
   `sex` varchar(10) NOT NULL,
   `job` varchar(50) NOT NULL COMMENT '导师职务',
   `title` varchar(20) NOT NULL COMMENT '导师职称',
@@ -86,21 +103,23 @@ CREATE TABLE IF NOT EXISTS `vs_teams` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
---企业信息表
+--投资人信息表
 --
 
-CREATE TABLE IF NOT EXISTS `vs_company` (
-  `cid` mediumint(8) NOT NULL AUTO_INCREMENT,
-  `ccharge_id` varchar(50) NOT NULL COMMENT '企业负责人id',
-  `cname` varchar(50) NOT NULL COMMENT '企业名称',
-  `addr` varchar(50) NOT NULL COMMENT '企业注册地址',
-  `tel` varchar(10) NOT NULL COMMENT '联系电话',
+CREATE TABLE IF NOT EXISTS `vs_investors` (
+  `id` mediumint(8) NOT NULL AUTO_INCREMENT,
+  `charge_id` mediumint(8) NOT NULL COMMENT '投资人id',
+  `name` varchar(50) NOT NULL COMMENT '投资人姓名',
+  `company` varchar(30) NOT NULL COMMENT '公司名称',
+  `addr` varchar(50) NOT NULL COMMENT '公司注册地址',
+  `tel` varchar(11) NOT NULL COMMENT '联系电话',
   `fax` varchar(20) NOT NULL COMMENT '传真',
-  `license_url` varchar(100) NOT NULL COMMENT '营业执照',
-  `more_info` mediumtext DEFAULT NULL COMMENT '更多内容',
+  `license_url` varchar(100) DEFAULT NULL COMMENT '营业执照',
+  `more_info` mediumtext DEFAULT NULL COMMENT '企业详细内容',
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '审核状态',
   `regTime` varchar(50) DEFAULT NULL COMMENT '注册时间',
-  PRIMARY KEY (`cid`)
+  `issue_time` int NOT NULL COMMENT '发布时间戳',
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --

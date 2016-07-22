@@ -10,21 +10,24 @@ class UserController extends BaseController {
 	 * @return string json
 	 */
 	public function register_post() {
-
 		$data = I('post.');
-		if( !D('user')->isExisted($data['username']) ) {
-			if( D('user')->register($data) ) {
-				$arr = array(
-					'username'	=> $data['username'],
-					'nickname'	=> $data['nickname'],
-					'groupid'	=> $data['groupid']
-					);
-				$json = $this->jsonReturn(200,"注册成功，返回首页登陆！",$arr);
+		if( session('v_code') && $data['v_code'] == session('v_code')) {
+			if( !D('user')->isExisted($data['username']) ) {
+				if( D('user')->register($data) ) {
+					$arr = array(
+						'username'	=> $data['username'],
+						'nickname'	=> $data['nickname'],
+						'groupid'	=> $data['groupid']
+						);
+					$json = $this->jsonReturn(200,"注册成功，返回首页登陆！",$arr);
+				} else {
+					$json = $this->jsonReturn(0,"操作失败，请重新提交！");
+				}
 			} else {
-				$json = $this->jsonReturn(0,"操作失败，请重新提交！");
+				$json = $this->jsonReturn(0,"用户已存在！");
 			}
 		} else {
-			$json = $this->jsonReturn(0,"用户已存在！");
+			$json = $this->jsonReturn(0,"验证码有误！");
 		}
 		//print_r($jsonReturn);
 		echo $json;
@@ -79,7 +82,8 @@ class UserController extends BaseController {
 	public function modify_put() {
 		$update = I('put.');
 		if(D('User')->updateInfo($update)) {
-			$json = $this->jsonReturn(200,"修改成功");
+			session('login_user',$login_user);
+			$json = $this->jsonReturn(200,"修改成功",$login_user);
 		} else {
 			$json = $this->jsonReturn(0,"修改失败，请重新提交！");
 		}
@@ -96,6 +100,7 @@ class UserController extends BaseController {
 			$data['password'] = md5(md5($data['password']).$ret['userKey']);
 			if( D('User')->updateInfo($data['uid'],$data) ) {
 				$json = $this->jsonReturn(200,"成功修改密码");
+				unset($data);
 			} else {
 				$json = $this->jsonReturn(0,"密码修改失败，请重试！");
 			}
@@ -160,14 +165,9 @@ class UserController extends BaseController {
 		if(!empty($ret))
 			$json = $this->jsonReturn(200,"操作成功",$ret);
 		else
-			$json = $this->jsonReturn(0,"无此学生信息，请先进行学生验证");
+			$json = $this->jsonReturn(0,"请先进行学生验证");
 		echo $json;
 	}
-
-
-
-
-
 
 
 
@@ -179,18 +179,6 @@ class UserController extends BaseController {
 		$stu_id = I('post.stu_id');
 		$stu_pwd = I('post.stu_pwd');
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -238,7 +226,7 @@ class UserController extends BaseController {
 	 * 用户名唯一性认证
 	 * @return boolen
 	 */
-	public function isOnly_get() {
+	public function isUnique_get() {
 		$username = I('username');
 		return D('User')->isExisted($username);
 	}
@@ -255,12 +243,15 @@ class UserController extends BaseController {
 	
 	/**
 	 * 生成验证码
+	 * @param int $tel
+	 * @return json
 	 */
 	public function verify_get() {
+		$tel = I('get.tel');
 		$code = "";
-		for($i = 1; $i <= 4; $i++) 
-			$code .= rand(0,9);
-		echo $code;
+		for($i = 1; $i <= 4; $i++) $code .= rand(0,9);
+		session('v_code',$code);	
+		echo $this->send_verify($tel,$code);
 	}
 }
 
