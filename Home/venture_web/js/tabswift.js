@@ -21,57 +21,51 @@ function removeClass(elem, className) {
     }
 }
 
-var sideNav = document.querySelector('.side-nav');
-var signupList = document.querySelector('.signup-role-list');
-var userList = document.querySelector('.user-sidenav');
-if(sideNav) {
-	var oli = sideNav.querySelectorAll('li');
-	var box = document.querySelectorAll('.information-detail');
-}
-else if(signupList) {
-	var oli = signupList.querySelectorAll('li');
-	var box = document.querySelectorAll('.signup-table');
-}
+var sideNav = document.querySelector('.side-nav'),
+	signupList = document.querySelector('.signup-role-list'),
+	userList = document.querySelector('.user-sidenav'),
+	adminList = document.querySelector('admin-mangement-ul');
 
-else if(userList) {
-	var oli = userList.querySelectorAll('li');
-	var box = document.querySelectorAll('.user-box');
-}
-
+var tab = sideNav || signupList || userList;
+oli = tab.querySelectorAll('li');
 oli = [].slice.call(oli);
-box = [].slice.call(box);
 
-var isClass = hasClass(box[0], 'information-detail');
-var isSignup = hasClass(box[0], 'signup-table');
+if(sideNav) {
+	var box = document.querySelectorAll('.information-detail');
+	switchTab(oli, box, 'active', 'block');
+} else if(signupList) {
+	var box = document.querySelectorAll('.signup-table');
+	switchTab(oli, box, 'now', 'table');
+} else if(userList) {
+	var box = document.querySelectorAll('.user-box');
+	switchTab(oli, box, 'now', 'block');
+}  
 
-(function switchTab(){
-	oli.forEach(function(elem, index) {
+
+function switchTab(olis, boxs, liClass, boxDisplay){
+	olis = [].slice.call(olis);
+	boxs = [].slice.call(boxs);
+	olis.forEach(function(elem, index) {
 		elem.index = index;
 		elem.onclick = function() {
+			var isClass = this.className.split(' ')[1];
+			if(isClass) {
+				var tabList = document.querySelector('#' + isClass);
+				var lis = tabList.querySelectorAll('li');
+				var subxbox = document.querySelectorAll('.' + isClass + '-table');
+				switchTab(lis, subxbox, 'now-li', 'block');
+			}
 			startSwtich(index);
+
 		}
 	});
 	function startSwtich(i){
-		box.forEach(function(elem, index){
+		boxs.forEach(function(elem, index){
 			elem.style.display = 'none';
-			if(isClass) {
-				removeClass(oli[index], 'active');
-			}
-			else {
-				removeClass(oli[index], 'now');
-			}
+			removeClass(olis[index], liClass);
 		});
-		if(isClass) {
-			box[i].style.display = 'block';
-			addClass(oli[i], 'active');
-			return;
-		} else if(isSignup) {
-			box[i].style.display = 'table';
-		} else {
-			box[i].style.display = 'block';
-		}
-		addClass(oli[i], 'now');
+		boxs[i].style.display = boxDisplay;
+		addClass(olis[i], liClass);
 	}
-	
-})();
+}
 

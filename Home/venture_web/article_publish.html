@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>福州大学-大学生创业服务网</title>
+	<title>管理员-福州大学大学生创业服务网</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css" >
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/reset.css">
@@ -41,7 +41,7 @@
 		</a>
 		<div class="main-nav">
 			<ul class='clearfix'>
-				<li class='pull-left on'><a href="index.html">首页</a></li>
+				<li class='pull-left'><a href="index.html">首页</a></li>
 				<li class='pull-left'><a href="information.html">新闻资讯</a></li>
 				<li class='pull-left'><a href="#">孵化基地</a></li>
 				<li class='pull-left'><a href="projects.html">创业项目</a></li>
@@ -69,60 +69,38 @@
 	<!-- Header End -->
 
 	<!-- User-student Start -->
-	<div class="user-wrapper">
+	<div class="admin-wrapper article-publish-wrapper">
 		<div class="container">
 			<div class="user-box-top">
 				<img src="images/设置.png" alt="">
-				<h1>用户中心</h1>
+				<h1>管理中心</h1>
 			</div>
-			<div class="user-teacher-sidenav user-sidenav pull-left">
-				<ul>
-					<li class="now">个人信息</li>
-					<li>消息中心</li>
-				</ul>
-			</div>
-			<div class="user-box block pull-left">
-				<div class="user-head-portrait pull-left">
-					<i class="edit-icon"></i>
-					<img src="images/nopic_192.gif" alt="">
+			<div class="article-publish-form">
+				<div class="article-publish-box article-publish-column">
+					<label for=""><span class="star">*</span>栏目</label>
+					<input type="text">
 				</div>
-				<div class="user-form pull-left">
-					<div class="user-setting">
-						<div class="two-field clearfix">
-							<div class="field pull-left">
-								<label>用户名</label>
-								<input type="text" disabled="disabled" value="qerdfdsv">
-							</div>
-							<div class="field pull-left">
-								<label>姓名</label>
-								<input type="text" disabled="disabled" value="林渊腾">
-							</div>
-						</div>
-						<div class="two-field clearfix">
-							<div class="field pull-left">
-								<label>邮箱</label>
-								<input type="text" value="qerdfdsv@qq.com">
-							</div>
-							<div class="field pull-left">
-								<label>手机号<a class="pull-right" href="#">修改手机号</a></label>
-								<input type="text" value="15097861789">
-							</div>
-						</div>
-						<div class="two-field clearfix">
-							<div class="field pull-left">
-								<label>账号密码<a class="pull-right" href="#">修改密码</a></label>
-								<input type="password" disabled="disabled" value="balabalabala" >
-							</div>
-							
-					</div>
-					</div>
+				<div class="article-publish-box article-publish-title">
+					<label for=""><span class="star">*</span>标题</label>
+					<input type="text">
+					<button class="duplicate-detection">检测重复</button>
+				</div>
+				<div class="article-publish-box article-publish-abstract">
+
+					<label for=""><span class="star">*</span>内容</label>
+					<textarea></textarea>
+				</div>
+				<div class="article-publish-btn">
+					<button class="save-close">保存后自动关闭</button>
+					<button class="save-publish">保存并继续发表</button>
+					<button class="publish-close"><a href="javascript :;" onClick="javascript :history.back(-1);">关闭</a></button>
 				</div>
 			</div>
-			
 		</div>
 	</div>
+	
 	<!-- User-student End -->
-	<script src="js/tabswift.js"></script>
 	<script src="js/main.js"></script>
+	<!-- <script src="js/admin.js"></script> -->
 </body>
 </html>
