@@ -34,7 +34,7 @@ class CptController extends BaseController {
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(0,"暂无此场地详细信息");
+			$json = $this->jsonReturn(200,"暂无该比赛详细信息");
 
 		}
 		//var_dump($jsonReturn);

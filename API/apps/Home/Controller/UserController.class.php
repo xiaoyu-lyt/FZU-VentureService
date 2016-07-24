@@ -261,5 +261,85 @@ class UserController extends BaseController {
 		session('v_code',$code);	
 		echo $this->send_verify($tel,$code);
 	}
+
+	/**
+	* 查询所有标签的名称和id
+	* @return json
+	*/
+	public function tag_get(){
+		$page = !empty(I('get.page')) ? I('get.page') : 1;
+		$pageSize = !empty(I('get.size')) ? I('get.size') : 10;
+
+		$data = M('Tag')->page($page,$pageSize)->select();
+		if (!empty($data)) {
+			$json = $this->jsonReturn(200,"查询成功",$data);
+		} else {
+			$json = $this->jsonReturn(200,"暂无可用标签");
+		}
+		echo $json;
+	}
+
+	/**
+	* 用户从已有标签中选择标签添加
+	* @return json
+	*/
+	public function userTagSet_post(){
+		$login_user = session('login_user');
+		$data = I('post.');
+		
+		$where['uid'] = $login_user['uid'];
+
+		$data = M('User')->where($where)->setField('tags','json_encode($data['tag'])');
+		if (!empty($data)) {
+			$json = $this->jsonReturn(200,"标签添加成功",$data);
+		} else {
+			$json = $this->jsonReturn(0,"标签添加失败");
+		}
+	}
+
+	/**
+	* 用户移除自己添加的标签
+	* @return json
+	*/
+	public function userTagUnset_get(){
+		$data = I('get.');
+
+		$login_user = session('login_user');
+		$where['uid'] = $login_user['uid'];
+
+		$dataTag = M('User')->where($where)->field('tags')->select();
+		$arr = json_decode($dataTag);
+		$offset = array_search($data, $arr);
+		arrayRemove($arr,$offset);
+		$data = M('User')->where($where)->setField('tags','json_encode($arr)');
+		if (!empty($data)) {
+			$json = $this->jsonReturn(200,"标签修改成功",$data);
+		} else {
+			$json = $this->jsonReturn(0,"标签修改失败");
+		}
+	}
+
+	/**
+	* 管理员添加标签
+	* @return json
+	*/
+	public function adminTagAdd_post(){
+
+	}
+
+	/**
+	* 管理员移除标签
+	* @return json
+	*/
+	public function adminTagDelete_delete(){
+
+	}
+
+	/**
+	* 删除数组中的指定元素
+	*/
+	public function arrayRemove($arr,$offset){
+		array_splice($arr, $offset,1);
+	}
 }
 

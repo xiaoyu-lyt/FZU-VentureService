@@ -1461,3 +1461,69 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001209s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001385s ]
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+[ 2016-07-21T16:51:50+08:00 ] 127.0.0.1 /FZU-VentureService/API/index.php/home/user/tag.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000791s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001167s ]
+ERR: 1146:Table 'jyzd.vs_tag' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `vs_tag`
+ERR: 1146:Table 'jyzd.vs_tag' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `vs_tag`
+
+[ 2016-07-21T18:03:52+08:00 ] 127.0.0.1 /FZU-VentureService/API/index.php/home/message/list.html?uid=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004112s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001193s ]
+ERR: 1146:Table 'jyzd.vs_message' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `vs_message`
+ERR: 1146:Table 'jyzd.vs_message' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `vs_message`
+
+[ 2016-07-21T18:04:05+08:00 ] 127.0.0.1 /FZU-VentureService/API/index.php/home/message/list.html?uid=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+ERR: 1146:Table 'jyzd.vs_message' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `vs_message`
+ERR: 1146:Table 'jyzd.vs_message' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `vs_message`
+
+[ 2016-07-21T18:04:20+08:00 ] 127.0.0.1 /FZU-VentureService/API/index.php/home/message/list.html?uid=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001907s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000991s ]
+SQL: SHOW COLUMNS FROM `eg_message` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `eg_message` WHERE `from_uid` = 1 OR `to_uid` = 1 ORDER BY time desc LIMIT 0,10   [ RunTime:0.0132s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001579s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001732s ]
+
+[ 2016-07-21T18:05:48+08:00 ] 127.0.0.1 /FZU-VentureService/API/index.php/home/field/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `eg_fields` [ RunTime:0.0016s ]
+SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`date` FROM `eg_fields` WHERE `type` = 1 AND `status` = 1 ORDER BY date desc LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000807s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000894s ]
+
+>>>>>>> Stashed changes

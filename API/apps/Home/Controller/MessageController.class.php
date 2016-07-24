@@ -13,7 +13,7 @@ class MessageController extends BaseController {
 		$where['from_uid'] = I('get.uid');
 		$where['to_uid'] = I('get.uid');
 		$where['_logic'] = 'OR';
-		$data = M('Message')->where($where)->order('time desc')->page($page,$pageSize)->select();
+		$data = M('Message')->where($where)->order('time desc')->field('mid,from_uid,to_uid,time')->page($page,$pageSize)->select();
 		
 		if (!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
@@ -30,10 +30,11 @@ class MessageController extends BaseController {
 	 * @return json
 	 */
 	public function detail_get() {
+		
 		$where['from_uid'] = I('get.from_uid');
 		$where['to_uid'] = I('get.to_uid');
 
-		$data = M('Message')->where($where)->find();
+		$data = M('Message')->where($where)->order('time desc')->select();
 
 		if (!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
@@ -49,7 +50,7 @@ class MessageController extends BaseController {
 	 * @return json
 	 */
 	public function send_post() {
-		$login_user = $_session['login_user'];
+		$login_user = session('login_user');
 		$data = I('post.');
 		$data['time'] = time();
 		$data['from_uid'] = $login_user['uid'];
