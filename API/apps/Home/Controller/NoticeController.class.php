@@ -39,11 +39,57 @@ class NoticeController extends BaseController {
 		//var_dump($jsonReturn);
 		echo $json;
 	}
+
+	/**
+	 * 添加新闻资讯
+	 * @return json
+	 */
 	public function add_post() {
+		$login_user = session('login_user');
 
+		$data = I('post.');
+		
+		$data['date'] = time();
+		$data['publisher'] = $login_user['name'];
+
+		if (!M('notice')->add($data)) {
+			$json = $this->jsonReturn(200,"新闻添加成功，请返回新闻资讯列表查看",$data);
+		} else {
+			$json = $this->jsonReturn(0,"新闻添加失败，请重新添加");
+		}
+		echo $json;
 	}
-	public function delete_delete() {
 
+	/**
+	 * 编辑新闻资讯
+	 * @param $nid 新闻资讯编号
+	 * @return json
+	 */
+	public function newsEdit_put(){
+
+		$where['nid'] = I('put.nid');
+		$data[] = I('put.');
+
+		if (!M('notice')->where($where)->save($data)) {
+			$json = $this->jsonReturn(200,"新闻编辑成功，请返回新闻资讯列表查看",$data)
+		} else {
+			$json = $this->jsonReturn(0,"新闻编辑失败，请重新编辑");
+		}
+		echo $json;
+	}
+
+	/**
+	 * 删除新闻资讯
+	 * @param $nid 新闻资讯编号
+	 * @return json
+	 */
+	public function delete_delete() {
+		$where['nid'] = I('delete.nid');
+		if (!M('notice')->where($where)->delete()) {
+			$josn = $this->jsonReturn(200,"新闻删除成功");
+		} else {
+			$josn = $this->jsonReturn(0,"新闻删除失败");
+		}
 	}
 }
 

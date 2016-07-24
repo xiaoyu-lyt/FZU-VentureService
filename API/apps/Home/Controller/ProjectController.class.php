@@ -43,11 +43,36 @@ class ProjectController extends BaseController {
 		//var_dump($jsonReturn);
 		echo $json;
 	}
+
+	/**
+	 * 添加项目信息
+	 * @return json
+	 */
 	public function add_post() {
+		$data = I('post.');
+		$data['time'] = time();
 
+		if (!M('projects')->add($data)) {
+			$json = $this->jsonReturn(200,"项目添加成功",$data);
+		} else {
+			$json = $this->jsonReturn(0,"项目添加失败，请重试");
+		}
+		echo $json;
 	}
-	public function delete_delete() {
 
+	/**
+	 * 删除项目
+	 * @param $pid 新闻资讯编号
+	 * @return json
+	 */
+	public function delete_delete() {
+		$where['pid'] = I('delete.pid');
+
+		if (!M('projects')->where($where)->delete()) {
+			$josn = $this->jsonReturn(200,"项目删除成功");
+		} else {
+			$josn = $this->jsonReturn(0,"项目删除失败");
+		}
 	}
 	
 }
