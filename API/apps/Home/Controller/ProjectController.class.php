@@ -22,7 +22,7 @@ class ProjectController extends BaseController {
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(200,"暂无项目信息");
+			$json = $this->jsonReturn(0,"暂无项目信息");
 		}
 		//var_dump($jsonReturn);
 		echo $json;

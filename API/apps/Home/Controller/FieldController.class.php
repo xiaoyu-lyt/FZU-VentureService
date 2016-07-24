@@ -17,14 +17,14 @@ class FieldController extends BaseController {
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(200,"暂无场地信息");
+			$json = $this->jsonReturn(0,"暂无场地信息");
 		}
 		//var_dump($jsonReturn);
 		echo $json;
 	}
 	/**
 	 * 根据id获取场地详情介绍
-	 * @param 
+	 * @param int $fid 
 	 * @return json
 	 */
 	public function detail_get() {
@@ -34,7 +34,7 @@ class FieldController extends BaseController {
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(200,"暂无此场地详细信息");
+			$json = $this->jsonReturn(0,"暂无此场地详细信息");
 
 		}
 		//var_dump($jsonReturn);

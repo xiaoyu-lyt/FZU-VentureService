@@ -15,7 +15,7 @@ class CptController extends BaseController {
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(200,"暂无比赛信息");
+			$json = $this->jsonReturn(0,"暂无比赛信息");
 		}
 		//var_dump($jsonReturn);
 		echo $json;
@@ -23,6 +23,7 @@ class CptController extends BaseController {
 
 	/**
 	 * 根据id获取比赛详情介绍
+	 * @param int $cid
 	 * @return json
 	 */
 	public function detail_get() {
@@ -33,7 +34,7 @@ class CptController extends BaseController {
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(200,"暂无此场地详细信息");
+			$json = $this->jsonReturn(0,"暂无此场地详细信息");
 
 		}
 		//var_dump($jsonReturn);

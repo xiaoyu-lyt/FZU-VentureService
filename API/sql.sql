@@ -1,8 +1,4 @@
 
---
---用户表
---
-
 CREATE TABLE IF NOT EXISTS `vs_user` (
   `uid` mediumint(8) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
@@ -14,8 +10,8 @@ CREATE TABLE IF NOT EXISTS `vs_user` (
   `email` varchar(30) DEFAULT NULL,
   `userKey` varchar(10) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '用户状态',
-  `reg_time` varchar(50) DEFAULT NULL COMMENT '注册时间',
-  `log_time` varchar(50) DEFAULT NULL COMMENT '最后登录时间',
+  `reg_time` int(11) DEFAULT NULL COMMENT '注册时间',
+  `log_time` int(11) DEFAULT NULL COMMENT '最后登录时间',
   `groupid` tinyint(1) NOT NULL COMMENT '用户组(0学生 1导师 2企业)',
   `tags` varchar(100) DEFAULT NULL COMMENT '标签编号，形如1-3-6-9',
   `avatar` varchar(100) DEFAULT NULL COMMENT '用户头像url',
@@ -34,9 +30,7 @@ CREATE TABLE IF NOT EXISTS `vs_student` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 
---
---功能权限表
---
+
 CREATE TABLE IF NOT EXISTS `vs_powerlevels` (
   `pid` mediumint(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL COMMENT '功能名称',
@@ -53,9 +47,7 @@ CREATE TABLE IF NOT EXISTS `vs_powerlevels` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 
---
---寻找团队记录表
---
+
 
 CREATE TABLE IF NOT EXISTS `vs_seek_records` (
   `sid` mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -70,9 +62,6 @@ CREATE TABLE IF NOT EXISTS `vs_seek_records` (
 
 
 
---
---导师信息表
---
 CREATE TABLE IF NOT EXISTS `vs_tutors` (
   `tid` mediumint(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL COMMENT '导师姓名',
@@ -86,9 +75,6 @@ CREATE TABLE IF NOT EXISTS `vs_tutors` (
   PRIMARY KEY (`tid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
---
---团队信息表
---
 
 CREATE TABLE IF NOT EXISTS `vs_teams` (
   `tid` mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -102,9 +88,8 @@ CREATE TABLE IF NOT EXISTS `vs_teams` (
   PRIMARY KEY (`tid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
---投资人信息表
---
+
+
 
 CREATE TABLE IF NOT EXISTS `vs_investors` (
   `id` mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -117,16 +102,10 @@ CREATE TABLE IF NOT EXISTS `vs_investors` (
   `license_url` varchar(100) DEFAULT NULL COMMENT '营业执照',
   `more_info` mediumtext DEFAULT NULL COMMENT '企业详细内容',
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '审核状态',
-  `regTime` varchar(50) DEFAULT NULL COMMENT '注册时间',
-  `issue_time` int NOT NULL COMMENT '发布时间戳',
+  `reg_time` int(11) NOT NULL COMMENT '注册时间',
+  `issue_time` int(11) NOT NULL COMMENT '发布时间戳',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
---项目信息表
---
--- 
---
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 CREATE TABLE IF NOT EXISTS `vs_projects` (
   `pid` mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -148,11 +127,6 @@ CREATE TABLE IF NOT EXISTS `vs_projects` (
 
 
 
---
---场地信息表
---
--- type：1、孵化基地 2、校外场地 3、、、
---
 
 CREATE TABLE IF NOT EXISTS `vs_fields` (
   `fid` mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -162,7 +136,6 @@ CREATE TABLE IF NOT EXISTS `vs_fields` (
   `synopsis` varchar(500) NOT NULL COMMENT '场地简介',
   `detail` mediumtext NOT NULL COMMENT '场地详情介绍',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否空闲',
-  --`date` varchar(50) DEFAULT NULL COMMENT '发布时间',
   PRIMARY KEY (`fid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -173,10 +146,6 @@ CREATE TABLE IF NOT EXISTS `vs_fields` (
 
 
 
-
-
---创业比赛信息表
---
 CREATE TABLE IF NOT EXISTS `vs_competitions` (
   `cid` mediumint(8) NOT NULL AUTO_INCREMENT,
   `number` varchar(10) NOT NULL COMMENT '比赛编号',
@@ -189,15 +158,13 @@ CREATE TABLE IF NOT EXISTS `vs_competitions` (
   PRIMARY KEY (`cid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
---创业培训信息表
---
+
 CREATE TABLE IF NOT EXISTS `vs_training` (
   `tid` mediumint(8) NOT NULL AUTO_INCREMENT,
   `theme` varchar(20) NOT NULL COMMENT '培训主题',
   `date` varchar(50) NOT NULL COMMENT '发布时间',
   `content` mediumtext NOT NULL COMMENT '培训内容',
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '培训状态',--0：培训结束 1：培训正在进行
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '培训状态',
   PRIMARY KEY (`tid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -205,10 +172,6 @@ CREATE TABLE IF NOT EXISTS `vs_training` (
 
 
 
-
---
---type: 1、新闻热点 2、通知公告 3、政策法规
---
 
 CREATE TABLE IF NOT EXISTS `vs_notice` (
   `nid` mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -227,15 +190,6 @@ CREATE TABLE IF NOT EXISTS `vs_notice` (
 
 
 
-
-
-
-
-
---
---各类申请记录表
---
-
 CREATE TABLE IF NOT EXISTS `vs_application` (
   `aid` mediumint(8) NOT NULL AUTO_INCREMENT,
   `theme` varchar(20) NOT NULL COMMENT '申请主题',
@@ -247,17 +201,35 @@ CREATE TABLE IF NOT EXISTS `vs_application` (
 
 
 
---
---token 保存
 
 CREATE TABLE IF NOT EXISTS `vs_user_token` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `uid` int(10) NOT NULL DEFAULT '0',
-  `token` varchar(200) NOT NULL DEFAULT '',
+  `uid` int(10) NOT NULL,
+  `token` varchar(32) NOT NULL,
   `groupid` tinyint(1) NOT NULL,
-  `token_expire` int(11) NOT NULL DEFAULT '0',
+  `token_expire` int(11) NOT NULL,
   `ip` varchar(200) NOT NULL DEFAULT '',
-  `addtime` int(11) NOT NULL DEFAULT '0',
+  `addtime` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `token` (`token`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+
+CREATE TABLE IF NOT EXISTS `vs_classes` (
+  `cid` mediumint(8) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL COMMENT '课堂名称',
+  `theme` mediumtext NOT NULL COMMENT '课堂主要内容',
+  `teacher` varchar(30) NOT NULL COMMENT '主讲人',
+  `limit` int NOT NULL COMMENT '课堂限定人数',
+  `students` int NOT NULL COMMENT '报名学生数目',
+  `issue_time` int NOT NULL COMMENT '发布时间戳',
+  PRIMARY KEY (`cid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS `vs_documents` (
+  `id` mediumint(8) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL COMMENT '文件名',
+  `url` varchar(100) NOT NULL COMMENT '文件存放路径',
+  `issue_time` int NOT NULL COMMENT '上传时间',
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

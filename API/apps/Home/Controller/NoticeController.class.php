@@ -18,7 +18,7 @@ class NoticeController extends BaseController {
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(200,"暂无通知");
+			$json = $this->jsonReturn(0,"暂无通知");
 		}
 		//var_dump($jsonReturn);
 		echo $json;
@@ -34,7 +34,7 @@ class NoticeController extends BaseController {
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(200,"暂无此通知详细内容");
+			$json = $this->jsonReturn(0,"暂无此通知详细内容");
 		}
 		//var_dump($jsonReturn);
 		echo $json;

@@ -42,8 +42,8 @@ class UserController extends BaseController {
 		if(IS_POST) {
 			$cookie_token = cookie('cookie_token');
 			if(!$cookie_token) {
-				$username = I('username');
-				$password = I('password');
+				$username = I('post.username');
+				$password = I('post.password');
 				$login_user = D('User')->checkLogin($username,$password);
 				if(!empty($login_user)) {
 					unset($login_user['password']);
@@ -69,7 +69,7 @@ class UserController extends BaseController {
 					$login_user = M('User')->where('uid',$ret['uid'])->field('uid,username,nickname,greoupid')->find();
 					session('login_user',$login_user);
 				}
-				$json = $this->jsonReturn(200,"已登录",$login_user);
+				$json = $this->jsonReturn(0,"已登录",$login_user);
 			}
 		}
 		echo $json;
@@ -92,6 +92,10 @@ class UserController extends BaseController {
 
 	/**
 	 * 修改密码
+	 * @param int $uid 
+	 * @param string $v_code 手机验证码
+	 * @param string password 新密码
+	 * @return json
 	 */
 	public function setting_put() {
 		$data = I('put.');
@@ -113,7 +117,8 @@ class UserController extends BaseController {
 	/**
 	 * 上传用户头像
 	 * @param int $uid 
-	 * @param  
+	 * @param file $avatar 用户头像
+	 * @return json 
 	 */
 	public function uploadAvatar_post() {
 		$uid = I('post.uid');
@@ -126,26 +131,31 @@ class UserController extends BaseController {
 		$upload->autoSub = false; //关闭创建子目录保存文件
 		$info = $upload->upload();
 		//echo BASE_PATH;exit;
-		if(!$info) {
-			echo "failure";
-		} else {
-			foreach ($info as $file) {
-				echo SITE_URL.'/Public/avatar/'.$file['savename'];
+		if( $info ) {
+			$file = SITE_URL.'/Public/avatar/'.$info['avatar']['savename'];
+			if( M('User')->where('uid',$uid)->save(array('avatar'=>$file)) ) {
+				$json = $this->jsonReturn(200,"头像修改成功");
+			} else {
+				$json = $this->jsonReturn(0,"头像修改失败!");
 			}
+		} else {
+			$json = $this->jsonReturn(0,"头像上传失败！");
 		}
+		echo $json;
 	}
 
 	/**
 	 * 获取个人信息
-	 * @param int $uid 
+	 * @param int $uid
+	 * @return json 
 	 */
 	public function getUserInfo_get() {
 		$uid = I('uid');
 		$data = D('User')->getInfo($uid);
 		if(!empty($data)) {
-			$json = $this->jsonReturn(200,"",$data);
+			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(200,"无此用户个人信息");
+			$json = $this->jsonReturn(0,"无此用户个人信息");
 		}
 		echo $json;
 	}
@@ -158,8 +168,6 @@ class UserController extends BaseController {
 		$uid = I("get.uid");
 		if(empty($login_user)) {
 			$json = $this->jsonReturn(0,"用户未登录或者登陆超时，请先登录");
-			echo $json;
-			exit();
 		}
 		$ret = D("Student")->getInfo($uid);
 		if(!empty($ret))
@@ -242,7 +250,7 @@ class UserController extends BaseController {
 	}
 	
 	/**
-	 * 生成验证码
+	 * 发送手机验证码
 	 * @param int $tel
 	 * @return json
 	 */

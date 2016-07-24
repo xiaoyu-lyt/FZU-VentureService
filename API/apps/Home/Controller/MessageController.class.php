@@ -18,7 +18,7 @@ class MessageController extends BaseController {
 		if (!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(200,"暂无相关消息");
+			$json = $this->jsonReturn(0,"暂无相关消息");
 		}
 		//var_dump($jsonReturn);
 		echo $json;
@@ -38,7 +38,7 @@ class MessageController extends BaseController {
 		if (!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(200,"暂无相关对话消息");
+			$json = $this->jsonReturn(0,"暂无相关对话消息");
 		}
 		//var_dump($jsonReturn);
 		echo $json;
