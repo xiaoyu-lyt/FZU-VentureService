@@ -85,17 +85,17 @@ var strData = $('.base-information-box input').map(function() {
 	return ($(this).attr('name') + '=' + $(this).val());
 }).get().join('&');
 
-// var url = "http://api.xiaoyu-lyt.cn/index.php/home/";
+var url = "../../Admin/index.php/home/user/register.html";
+
 $('#submit').click(function() {
 	$.ajax({
-		url: "../../../Admin/index.php/home/user/register.html",
 		type: "post",
-		data: strData,
-        error: function(request) {
-            alert("Connection error");
-        },
-		success: function (msg) {
-			alert(msg); 
-          }   
+		url: "../../API/index.php/home/user/register.html",
+		async: false,
+		success: function(data) {
+			var jsonData = JSON.parse(data);
+			alert(jsonData.msg);
+			document.write(jsonData.msg);
+		}
 	})
 })
