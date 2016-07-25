@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 namespace Home\Controller;
 use Home\Controller\BaseController;
 //header("Content-type: text/html; charset=utf-8");
