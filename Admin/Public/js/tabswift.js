@@ -27,7 +27,7 @@ var box = document.querySelectorAll('.user-box');
 oli = userList.querySelectorAll('li');
 oli = [].slice.call(oli);
 
-switchTab(oli, box, 'now', 'block');
+// switchTab(oli, box, 'now', 'block');
 
 
 

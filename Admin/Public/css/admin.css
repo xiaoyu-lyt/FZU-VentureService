@@ -13,6 +13,7 @@
 }
 
 .admin-wrapper .container {
+	position: relative;
 	padding: 20px;
 }
 
@@ -55,8 +56,13 @@
 }
 
 .user-box {
+	/*display: none;*/
+	position: absolute;
+	right: 0;
+	top: 160px;
 	width: 80%;
-	margin: 0 20px;
+	/*margin: 0 20px;*/
+
 }
 
 @media (max-width: 992px) {
@@ -68,11 +74,6 @@
   .user-box {
 	margin: 0;
   }
-}
-
-
-.user-box {
-	display: none;
 }
 
 .user-sidenav li:hover {
@@ -372,7 +373,8 @@
 
 .signup-form .base-information {
 	padding: 10px;
-	margin-left: 15%;
+	width: 460px;
+	margin: 0 auto;
 }
 
 .submit {
