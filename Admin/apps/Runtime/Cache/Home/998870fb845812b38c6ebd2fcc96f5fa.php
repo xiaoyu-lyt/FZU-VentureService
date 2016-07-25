@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>管理员-福州大学大学生创业服务网</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css" >
-	<link rel="stylesheet" href="css/admin.css">
-	<link rel="stylesheet" href="css/reset.css">
-</head>
-<body>
-	<!-- Admin Start -->
-	<div class="admin-wrapper">
-		<div class="container">
-			<div class="user-box-top">
-				<img src="images/setting.png" alt="">
-				<h1>管理中心</h1>
-			</div>
-			<div class="user-student-sidenav user-sidenav pull-left">
-				<ul>
-					<li class="now">资讯管理</li>
-					<li class="user-sidnav-li admin-users">用户管理</li>
-					<li class="user-sidnav-li admin-projects">项目管理</li>
-					<li>入驻申请</li>
-					<li>培训管理</li>
-					<li>教材管理</li>
-					<li>比赛管理</li>
-				</ul>
-			</div>
+<?php if (!defined('THINK_PATH')) exit();?>
 			<!-- 咨询管理 -->
 			<div class="user-box block admin-info-management pull-right">
 				<div class="admin-top">
@@ -35,17 +6,17 @@
 				</div>
 				<div class="admin-info-table admin-table">
 					<table>
-						<tr>
-							<th class="admin-th-select">
-								<input class="admin-article-select-btn" type="checkbox"> 全选
-							</th>
-							<th class="admin-th-article-id admin-th-id"><span>ID</span></th>
-							<th class="admin-th-article-title admin-th-title"><span>标题</span></th>
-							<th class="admin-th-article-pageview admin-th-pageview"><span>点击量</span></th>
-							<th class="admin-th-article-publisher admin-th-publisher"><span>发布人</span></th>
-							<th class="admin-th-article-updatetime admin-th-updatetime"><span>更新时间</span></th>
-							<th class="admin-th-article-operation admin-th-operation"><span>管理操作</span></th>
-						</tr>
+							<tr>
+								<th class="admin-th-select">
+									<input class="admin-article-select-btn" type="checkbox"> 全选
+								</th>
+								<th class="admin-th-article-id admin-th-id"><span>ID</span></th>
+								<th class="admin-th-article-title admin-th-title"><span>标题</span></th>
+								<th class="admin-th-article-pageview admin-th-pageview"><span>点击量</span></th>
+								<th class="admin-th-article-publisher admin-th-publisher"><span>发布人</span></th>
+								<th class="admin-th-article-updatetime admin-th-updatetime"><span>更新时间</span></th>
+								<th class="admin-th-article-operation admin-th-operation"><span>管理操作</span></th>
+							</tr>
 						<tr>
 							<td class="admin-article-select">
 								<input class="admin-article-select-btn" type="checkbox">
@@ -112,8 +83,8 @@
 						</tr>
 					</table>
 				</div>
-
 			</div>
+			
 			<!-- 用户管理 -->
 			<div class="user-box admin-users-management pull-right">
 				<div class="admin-top">
@@ -126,7 +97,7 @@
 						<li class="pull-left">管理员信息</li>
 					</ul>
 				</div>
-				<!-- 教师审核 -->
+								<!-- 教师审核 -->
 				<div class="admin-teachers-table admin-users-table admin-table block" id="teachers-check-table">
 					<table>
 						<tr>
@@ -140,56 +111,23 @@
 							<th class="admin-th-teacher-email admin-th-email"><span>邮箱</span></th>
 							<th class="admin-th-teacher-management admin-th-management"><span>管理操作</span></th>
 						</tr>
-						<tr>
-							<td class="admin-teacher-select">
-								<input class="admin-teacher-select-btn" type="checkbox">
-							</td>
-							<td class="admin-teacher-id">1</td>
-							<td class="admin-teacher-username">
-								<a href="">oipqeu</a>
-							</td>
-							<td class="admin-teacher-name"><a href="">林渊腾</a></td>
-							<td class="admin-teacher-phone"><span>15648973275</span></td>
-							<td class="admin-teacher-email"><span>55647854@qq.com</span></td>
-							<td class="admin-teacher-operation admin-operation">
-								<span class="admin-teacher-pass admin-pass">通过</span>
-								<span class="admin-teacher-refuse admin-refuse">拒绝</span>
-							</td>
-						</tr>
-						
-					</table>
-				</div>
-				<!-- 投资人审核 -->
-				<div class="admin-investors-table admin-users-table admin-table" id="investors-check-table">
-					<table>
-						<tr>
-							<th class="admin-th-select">
-								<input class="admin-investor-select-btn" type="checkbox"> 全选
-							</th>
-							<th class="admin-th-investor-id admin-th-id"><span>ID</span></th>
-							<th class="admin-th-investor-username admin-th-username"><span>用户名</span></th>
-							<th class="admin-th-investor-name admin-th-name"><span>姓名</span></th>
-							<th class="admin-th-investor-phone admin-th-phone"><span>手机号</span></th>
-							<th class="admin-th-investor-email admin-th-email"><span>邮箱</span></th>
-							<th class="admin-th-investor-management admin-th-management"><span>管理操作</span></th>
-						</tr>
-						<tr>
-							<td class="admin-investor-select">
-								<input class="admin-investor-select-btn" type="checkbox">
-							</td>
-							<td class="admin-investor-id">1</td>
-							<td class="admin-investor-username">
-								<span>joipouqew</span>
-							</td>
-							<td class="admin-investor-name"><a href="">宋一博</a></td>
-							<td class="admin-investor-phone"><span>18476931485</span></td>
-							<td class="admin-investor-email"><span>jasduiu@163.com</span></td>
-							<td class="admin-investor-operation admin-operation">
-								<span class="admin-investor-pass admin-pass">通过</span>
-								<span class="admin-investor-refsuse admin-refuse">拒绝</span>
-							</td>
-						</tr>
-						
+
+						<?php if(is_array($teachers)): $i = 0; $__LIST__ = $teachers;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if( $vo["status"] == 0): ?><tr>
+									<td class="admin-teacher-select">
+										<input class="admin-teacher-select-btn" type="checkbox">
+									</td>
+									<td class="admin-teacher-id"><?php echo ($i); ?></td>
+									<td class="admin-teacher-username">
+										<a href=""><?php echo ($vo["username"]); ?></a>
+									</td>
+									<td class="admin-teacher-name"><a href=""><?php echo ($vo["name"]); ?></a></td>
+									<td class="admin-teacher-phone"><span><?php echo ($vo["tel"]); ?></span></td>
+									<td class="admin-teacher-email"><span><?php echo ($vo["email"]); ?></span></td>
+									<td class="admin-teacher-operation admin-operation">
+										<span class="admin-teacher-pass admin-pass">通过</span>
+										<span class="admin-teacher-refuse admin-refuse">拒绝</span>
+									</td>
+								</tr><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 					</table>
 				</div>
 				<!-- 教师信息 -->
@@ -206,24 +144,58 @@
 							<th class="admin-th-investor-email admin-th-email"><span>邮箱</span></th>
 							<th class="admin-th-investor-management admin-th-management"><span>管理操作</span></th>
 						</tr>
+						<?php if(is_array($teachers)): $i = 0; $__LIST__ = $teachers;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if( $v["status"] == 1): ?><tr>
+									<td class="admin-investor-select">
+										<input class="admin-investors-select-btn" type="checkbox">
+									</td>
+									<td class="admin-investor-id"><?php echo ($i); ?></td>
+									<td class="admin-investor-username">
+										<span><?php echo ($v["username"]); ?></span>
+									</td>
+									<td class="admin-investor-name"><a href=""><?php echo ($v["name"]); ?></a></td>
+									<td class="admin-investor-phone"><span><?php echo ($v["tel"]); ?></span></td>
+									<td class="admin-investor-email"><span><?php echo ($v["email"]); ?></span></td>
+									<td class="admin-investor-operation admin-operation">
+										<a href=""><span class="admin-view-info">查看信息</span></a>
+									</td>
+								</tr><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+					</table>
+				</div>
+								<!-- 投资人审核 -->
+				<div class="admin-investors-table admin-users-table admin-table" id="investors-check-table">
+					<table>
 						<tr>
-							<td class="admin-investor-select">
-								<input class="admin-investors-select-btn" type="checkbox">
-							</td>
-							<td class="admin-investor-id">1</td>
-							<td class="admin-investor-username">
-								<span>joipouqew</span>
-							</td>
-							<td class="admin-investor-name"><a href="">balal</a></td>
-							<td class="admin-investor-phone"><span>18476931485</span></td>
-							<td class="admin-investor-email"><span>jasduiu@163.com</span></td>
-							<td class="admin-investor-operation admin-operation">
-								<a href=""><span class="admin-view-info">查看信息</span></a>
-							</td>
+							<th class="admin-th-select">
+								<input class="admin-investor-select-btn" type="checkbox"> 全选
+							</th>
+							<th class="admin-th-investor-id admin-th-id"><span>ID</span></th>
+							<th class="admin-th-investor-username admin-th-username"><span>用户名</span></th>
+							<th class="admin-th-investor-name admin-th-name"><span>姓名</span></th>
+							<th class="admin-th-investor-phone admin-th-phone"><span>手机号</span></th>
+							<th class="admin-th-investor-email admin-th-email"><span>邮箱</span></th>
+							<th class="admin-th-investor-management admin-th-management"><span>管理操作</span></th>
 						</tr>
+
+						<?php if(is_array($investors)): $i = 0; $__LIST__ = $investors;if( count($__LIST__)==0 ) : echo "暂无待审核的投资人信息" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if($v["status"] == 0): ?><tr>
+									<td class="admin-teacher-select">
+										<input class="admin-teachers-select-btn" type="checkbox">
+									</td>
+									<td class="admin-teacher-id"><?php echo ($i); ?></td>
+									<td class="admin-teacher-username">
+										<a href=""><?php echo ($v["username"]); ?></a>
+									</td>
+									<td class="admin-teacher-name"><span><?php echo ($v["name"]); ?></span></td>
+									<td class="admin-teacher-phone"><span><?php echo ($v["tel"]); ?></span></td>
+									<td class="admin-teacher-email"><span><?php echo ($v["email"]); ?></span></td>
+									<td class="admin-teacher-operation admin-operation">
+										<a href=""><span class="admin-view-info">查看信息</span></a>
+									</td>
+								</tr><?php endif; endforeach; endif; else: echo "暂无待审核的投资人信息" ;endif; ?>
 						
 					</table>
 				</div>
+				
+
 				<!-- 投资人信息 -->
 				<div class="admin-investors-box admin-users-table admin-table" id="investors-info-table">
 					<table>
@@ -238,25 +210,24 @@
 							<th class="admin-th-investor-email admin-th-email"><span>邮箱</span></th>
 							<th class="admin-th-investor-management admin-th-management"><span>管理操作</span></th>
 						</tr>
-						<tr>
-							<td class="admin-teacher-select">
-								<input class="admin-teachers-select-btn" type="checkbox">
-							</td>
-							<td class="admin-teacher-id">1</td>
-							<td class="admin-teacher-username">
-								<a href="">joipouqew</a>
-							</td>
-							<td class="admin-teacher-name"><span>123</span></td>
-							<td class="admin-teacher-phone"><span>18476931485</span></td>
-							<td class="admin-teacher-email"><span>jasduiu@163.com</span></td>
-							<td class="admin-teacher-operation admin-operation">
-								<a href=""><span class="admin-view-info">查看信息</span></a>
-							</td>
-						</tr>
-						
+						<?php if(is_array($investors)): $i = 0; $__LIST__ = $investors;if( count($__LIST__)==0 ) : echo "暂无投资人信息" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if($v["status"] == 1): ?><tr>
+									<td class="admin-teacher-select">
+										<input class="admin-teachers-select-btn" type="checkbox">
+									</td>
+									<td class="admin-teacher-id"><?php echo ($i+1); ?></td>
+									<td class="admin-teacher-username">
+										<a href=""><?php echo ($v["username"]); ?></a>
+									</td>
+									<td class="admin-teacher-name"><span><?php echo ($v["name"]); ?></span></td>
+									<td class="admin-teacher-phone"><span><?php echo ($v["tel"]); ?></span></td>
+									<td class="admin-teacher-email"><span><?php echo ($v["email"]); ?></span></td>
+									<td class="admin-teacher-operation admin-operation">
+										<a href=""><span class="admin-view-info">查看信息</span></a>
+									</td>
+								</tr><?php endif; endforeach; endif; else: echo "暂无投资人信息" ;endif; ?>
 					</table>
 				</div>
-				<!-- 学生信息 -->
+								<!-- 学生信息 -->
 				<div class="admin-students-table admin-users-table admin-table" id="students-info-table">
 					<table>
 						<tr>
@@ -270,24 +241,25 @@
 							<th class="admin-th-investor-email admin-th-email"><span>邮箱</span></th>
 							<th class="admin-th-investor-management admin-th-management"><span>管理操作</span></th>
 						</tr>
-						<tr>
-							<td class="admin-investor-select">
-								<input class="admin-investors-select-btn" type="checkbox">
-							</td>
-							<td class="admin-investor-id">1</td>
-							<td class="admin-investor-username">
-								<span>joipouqew</span>
-							</td>
-							<td class="admin-investor-name"><span>123</span></td>
-							<td class="admin-investor-phone"><span>18476931485</span></td>
-							<td class="admin-investor-email"><span>jasduiu@163.com</span></td>
-							<td class="admin-investor-operation admin-operation">
-								<a href=""><span class="admin-view-info">查看信息</span></a>
-							</td>
-						</tr>
+						<?php if(is_array($students)): $i = 0; $__LIST__ = $students;if( count($__LIST__)==0 ) : echo "暂无学生信息" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><tr>
+									<td class="admin-teacher-select">
+										<input class="admin-teachers-select-btn" type="checkbox">
+									</td>
+									<td class="admin-teacher-id"><?php echo ($i); ?></td>
+									<td class="admin-teacher-username">
+										<a href=""><?php echo ($v["username"]); ?></a>
+									</td>
+									<td class="admin-teacher-name"><span><?php echo ($v["name"]); ?></span></td>
+									<td class="admin-teacher-phone"><span><?php echo ($v["tel"]); ?></span></td>
+									<td class="admin-teacher-email"><span><?php echo ($v["email"]); ?></span></td>
+									<td class="admin-teacher-operation admin-operation">
+										<a href=""><span class="admin-view-info">查看信息</span></a>
+									</td>
+								</tr><?php endforeach; endif; else: echo "暂无学生信息" ;endif; ?>
 						
 					</table>
 				</div>
+
 				<!-- 管理员信息 -->
 				<div class="admin-administrators-table admin-users-table admin-table" id="administrators-info-table">
 					<table>
@@ -302,21 +274,21 @@
 							<th class="admin-th-administrator-email admin-th-email"><span>邮箱</span></th>
 							<th class="admin-th-administrator-management admin-th-management"><span>管理操作</span></th>
 						</tr>
-						<tr>
-							<td class="admin-administrator-select">
-								<input class="admin-administrators-select-btn" type="checkbox">
-							</td>
-							<td class="admin-administrator-id">1</td>
-							<td class="admin-administrator-username">
-								<span>joipouqew</span>
-							</td>
-							<td class="admin-administrator-name"><span>123</span></td>
-							<td class="admin-administrator-phone"><span>18476931485</span></td>
-							<td class="admin-administrator-email"><span>jasduiu@163.com</span></td>
-							<td class="admin-administrator-operation admin-operation">
-								<a href=""><span class="admin-view-info">查看信息</span></a>
-							</td>
-						</tr>
+						<?php if(is_array($admins)): $i = 0; $__LIST__ = $admins;if( count($__LIST__)==0 ) : echo "暂无普通管理员信息" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><tr>
+									<td class="admin-teacher-select">
+										<input class="admin-teachers-select-btn" type="checkbox">
+									</td>
+									<td class="admin-teacher-id"><?php echo ($i+1); ?></td>
+									<td class="admin-teacher-username">
+										<a href=""><?php echo ($v["username"]); ?></a>
+									</td>
+									<td class="admin-teacher-name"><span><?php echo ($v["name"]); ?></span></td>
+									<td class="admin-teacher-phone"><span><?php echo ($v["tel"]); ?></span></td>
+									<td class="admin-teacher-email"><span><?php echo ($v["email"]); ?></span></td>
+									<td class="admin-teacher-operation admin-operation">
+										<a href=""><span class="admin-view-info">查看信息</span></a>
+									</td>
+								</tr><?php endforeach; endif; else: echo "暂无普通管理员信息" ;endif; ?>
 						
 					</table>
 				</div>
@@ -516,12 +488,4 @@
 						<span class="yes pull-left">确认</span>
 						<span class="no pull-right">取消</span></div>
 				</div>
-			</div>	
-		</div>
-	</div>
-	
-	<!-- Admin End -->
-	<script src="js/tabswift.js"></script>
-	<script src="js/admin.js"></script>
-</body>
-</html>
+			</div>

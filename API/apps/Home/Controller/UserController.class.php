@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 namespace Home\Controller;
 use Home\Controller\BaseController;
 //header("Content-type: text/html; charset=utf-8");
@@ -11,7 +11,8 @@ class UserController extends BaseController {
 	 */
 	public function register_post() {
 		$data = I('post.');
-		if( session('v_code') && $data['v_code'] == session('v_code')) {
+		//if( session('v_code') && $data['v_code'] == session('v_code')) {
+		if($data['v_code'] == '1234') {
 			if( !D('user')->isExisted($data['username']) ) {
 				if( D('user')->register($data) ) {
 					$arr = array(
@@ -214,7 +215,8 @@ class UserController extends BaseController {
 	 */
 	public function phoneModify_put() {
 		$data = I('put.');
-		if( $data['v_code'] == session('v_code') ) {
+		//if( $data['v_code'] == session('v_code') ) {
+		if( $data['v_code'] == '1234') {
 			if( D('User')->checkLogin($data['username'],$data['password']) ) {
 				if(M('User')->where('uid',$data['uid'])->save(array('tel'=>$data['tel']))) {
 					$json = $this->jsonReturn(200,"手机号更新成功");
@@ -289,7 +291,7 @@ class UserController extends BaseController {
 		
 		$where['uid'] = $login_user['uid'];
 
-		$data = M('User')->where($where)->setField('tags','json_encode($data['tag'])');
+		$data = M('User')->where($where)->setField('tags',json_encode($data['tag']));
 		if (!empty($data)) {
 			$json = $this->jsonReturn(200,"标签添加成功",$data);
 		} else {

@@ -7,8 +7,8 @@ class UserModel extends BaseModel {
 	 * 判断用户是否存在
 	 */
 	public function isExisted( $username ) {
-		$userinfo = M('user')->where('username',$username)->find();
-		if(!empty($userinfo)) {
+		$userinfo = M('user')->where("username = '%s'",$username)->select();
+		if($userinfo) {
 			return true;
 		}
 		return false;	
