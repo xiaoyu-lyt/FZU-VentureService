@@ -88,10 +88,8 @@ var strData = $('.base-information-box input').map(function() {
 // var url = "http://api.xiaoyu-lyt.cn/index.php/home/";
 $('#submit').click(function() {
 	$.ajax({
-		url: "http://120.27.114.158/ThinkPHP/API/eGo//index.php/API/Login/loginCheck",
+		url: "",
 		type: "post",
-		// dataType: "jsonp",
-		// jsonp: 'jsoncallback',
 		data: {
 			jwchId: 221300313,
 			jwchPassword: 942698 
