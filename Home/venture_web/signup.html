@@ -40,118 +40,64 @@
 				<div class="signup-logo">
 					<a href="index.html"><img src="images/logo.png" alt=""></a>
 				</div>
-				 
-				<ul class="signup-role-list clearfix">
-					<li class="pull-left now">福大学子</li>
-					<li class="pull-left">创业导师</li>
-					<li class="pull-left">投资企业</li>
-				</ul>
 				<div class="signup-box">
-					<table class="signup-table display">
-						<tr>
-							<td><span>学号：</span></td>
-							<td><input class="identity" type="text"></input></td>
-							<td><span class='verify-id verify'>请输入学号</span></td>
-						</tr>
-						<tr>
-							<td><span>密码：</span></td>
-							<td><input class="password1" type="password"></input></td>
-							<td><span></span></td>
-						</tr>
-						<tr>
-							<td><span>确认密码：</span></td>
-							<td><input class="password2" type="password"></input></td>
-							<td><span class="verify-psw verify">两次密码不一致</span></td>
-						</tr>
-						<tr>
-							<td><span>邮箱：</span></td>
-							<td><input class="email" type="text"></input></td>
-							<td><span class="verify-email verify"></span></td>
-						</tr>
-						<tr>
-							<td><span>手机号：</span></td>
-							<td><input class="phone" type="text"></input></td>
-							<td><span class="verify-phone verify"></span></td>
-						</tr>
-						<tr>
-							<td><span>手机验证码：</span></td>
-							<td><input class="phone-code" type="text"></input></td>
-							<td><button class="verify-code-btn">发送验证码</button></td>
-						</tr>
-					</table>
-					<table class="signup-table">
-						<tr>
-							<td><span>账号：</span></td>
-							<td><input class="identity" type="text"></input></td>
-							<td><span class='verify-id verify'>请输入账号</span></td>
-						</tr>
-						<tr>
-							<td><span>密码：</span></td>
-							<td><input class="password1" type="password"></input></td>
-							<td><span></span></td>
-						</tr>
-						<tr>
-							<td><span>确认密码：</span></td>
-							<td><input class="password2" type="password"></input></td>
-							<td><span class="verify-psw verify">两次密码不一致</span></td>
-						</tr>
-						<tr>
-							<td><span>邮箱：</span></td>
-							<td><input class="email" type="text"></input></td>
-							<td><span class="verify-email verify"></span></td>
-						</tr>
-						<tr>
-							<td><span>手机号：</span></td>
-							<td><input class="phone" type="text"></input></td>
-							<td><span class="verify-phone verify"></span></td>
-						</tr>
-						<tr>
-							<td><span>手机验证码：</span></td>
-							<td><input class="phone-code" type="text"></input></td>
-							<td><button class="verify-code-btn">发送验证码</button></td>
-						</tr>
-					</table>
-					<table class="signup-table">
-						<tr>
-							<td><span>用户名：</span></td>
-							<td><input class="identity"type="text"></input></td>
-							<td><span class='verify-id verify'>请输入用户名</span></td>
-						</tr>
-						<tr>
-							<td><span>密码：</span></td>
-							<td><input class="password1" type="password"></input></td>
-							<td><span></span></td>
-						</tr>
-						<tr>
-							<td><span>确认密码：</span></td>
-							<td><input class="password2" type="password"></input></td>
-							<td><span class="verify-psw verify">两次密码不一致</span></td>
-						</tr>
-						<tr>
-							<td><span>邮箱：</span></td>
-							<td><input class="email" type="text"></input></td>
-							<td><span class="verify-email verify"></span></td>
-						</tr>
-						<tr>
-							<td><span>手机号：</span></td>
-							<td><input class="phone" type="text"></input></td>
-							<td><span class="verify-phone verify"></span></td>
-						</tr>
-						<tr>
-							<td><span>手机验证码：</span></td>
-							<td><input class="phone-code" type="text"></input></td>
-							<td><button class="verify-code-btn">发送验证码</button></td>
-						</tr>
-					</table>
-					<button class="signup-btn">
-						提交
-					</button>
+					<div class="signup-form-wrapper block">
+						<form id="signup-form" class="signup-form-users" action="">
+							<div class="signup-role-select">
+								<input type="radio" checked="checked" name="student" id="select0" class="st">
+									<span class="role now">福大学子</span>
+								<input type="radio" name="teacher" id="select1" class="st">
+									<span class="role">创业导师</span>
+								<input type="radio" name="investor" id="select2" class="st">
+									<span class="role">投资企业</span>
+							</div>
+							<div class="base-information-box">
+								<p class="base-information">
+									<label for="username">用户名：</label>
+									<input id="username" name="username" type="text" required>
+								</p> 
+								<p class="base-information">
+									<label for="name">姓名：</label>
+									<input id="name" name="name" type="text" required>
+								</p> 
+
+								<p class="base-information">
+									<label for="apassword">密码：</label>
+									<input id="apassword" name="password" type="password" required>
+								</p>
+								<p class="base-information">
+									<label for="confirm-password">确认密码：</label>
+									<input id="confirm-password" name="confirm_password" type="password" required>
+								</p>
+								<p class="base-information">
+									<label for="email">邮箱：</label>
+									<input id="email" name="email" type="email">
+								</p>
+								<p class="base-information">
+									<label for="tel">手机号：</label>
+									<input id="tel" name="tel" type="text">
+								</p>
+								<p class="base-information">
+									<label for="auth-code">短信验证码：</label>
+									<input class="auth-code" type="auth-code" name="auth_code" type="text">
+									<!-- <a class="send-code" href="javascripts:">发送验证码</a> -->
+									<input type="button" class="send-code" value='发送验证码'>
+								</p>
+							</div>
+							<p>
+								<input id="submit" class="submit" type="button" value="提交">
+							</p>
+						</form>
+					</div>
+					
 				</div>
 
 			</div>
 		</div>
 	</div>
-	<script src="js/tabswift.js"></script>
-	<script src="js/verify.js"></script>
+	<!-- <script src="js/jquery.js"></script> -->
+	<script src="js/jquery-3.1.0"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/signup.js"></script>
 </body>
 </html>

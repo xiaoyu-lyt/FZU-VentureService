@@ -32,17 +32,17 @@ oli = [].slice.call(oli);
 
 if(sideNav) {
 	var box = document.querySelectorAll('.information-detail');
-	switchTab(oli, box, 'active', 'block');
+	switchTab(oli, box, 'active');
 } else if(signupList) {
-	var box = document.querySelectorAll('.signup-table');
-	switchTab(oli, box, 'now', 'table');
+	var box = document.querySelectorAll('.signup-form');
+	switchTab(oli, box, 'now');
 } else if(userList) {
 	var box = document.querySelectorAll('.user-box');
-	switchTab(oli, box, 'now', 'block');
+	switchTab(oli, box, 'now');
 }  
 
 
-function switchTab(olis, boxs, liClass, boxDisplay){
+function switchTab(olis, boxs, liClass){
 	olis = [].slice.call(olis);
 	boxs = [].slice.call(boxs);
 	olis.forEach(function(elem, index) {
@@ -53,7 +53,7 @@ function switchTab(olis, boxs, liClass, boxDisplay){
 				var tabList = document.querySelector('#' + isClass);
 				var lis = tabList.querySelectorAll('li');
 				var subxbox = document.querySelectorAll('.' + isClass + '-table');
-				switchTab(lis, subxbox, 'now-li', 'block');
+				switchTab(lis, subxbox, 'now-li');
 			}
 			startSwtich(index);
 
@@ -64,7 +64,7 @@ function switchTab(olis, boxs, liClass, boxDisplay){
 			elem.style.display = 'none';
 			removeClass(olis[index], liClass);
 		});
-		boxs[i].style.display = boxDisplay;
+		boxs[i].style.display = 'block';
 		addClass(olis[i], liClass);
 	}
 }

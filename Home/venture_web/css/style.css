@@ -236,8 +236,8 @@ header {
 }
 
 .part1 .track-wrapper {
-	position: absolute;
-	top: 150px;
+	position: fixed;
+	top: 40%;
 	right: 0;
 	width: 150px;
 	margin-right: -100px;
@@ -1148,6 +1148,7 @@ footer h4 {
 	overflow: hidden;
 }
 
+/*注册页面*/
 .signup-wrapper {
 	width: 100%;
 	/*height: 100%;*/
@@ -1171,34 +1172,11 @@ footer h4 {
 }
 
 .signup-wrapper .signup-content{
+	position: relative;
 	background-color: rgba(255, 255, 255, .8);
 }
 
-.signup-content .signup-role-list {
-	width: 600px;
-	margin: 0 auto;
-}
-
-.signup-role-list li {
-	position: relative;
-	text-align: center;
-	width: 200px;
-	padding: .8em 0;
-	cursor: pointer;
-	font-size: 17px;
-	color: #27294B;
-	transition: all .1s ease-in-out;
-	-moz-transition: all .1s ease-in-out; /* Firefox 4 */
-	-webkit-transition: all .1s ease-in-out; /* Safari ºÍ Chrome */
-	-o-transition: all .1s ease-in-out; /* Opera */
-	cursor: pointer;
-}
-
-.signup-role-list li:hover {
-	color: #eb4f38;
-}
-
-.signup-role-list .now:after {
+.signup-role-select .now:after {
 	position: absolute;
 	bottom: 0;
 	left: 50%;
@@ -1209,77 +1187,123 @@ footer h4 {
 	border-top: 12px solid #61A3E1;
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
+
+}
+
+.signup-role-select {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.signup-role-select .st,
+.signup-role-select .st + span{
+	display: inline-block;
+	position: absolute;
+	top: 130px;
+	left: 0;
+	width: 18%;
+	cursor: pointer;
+	height: 50px;
+	line-height: 50px;
+	vertical-align: middle;
+}
+
+.signup-role-select .st {
+	opacity: 0;
+	z-index: 999;
+}
+.signup-role-select span {
+	text-align: center;
+}
+
+#select0, #select0 + span {
+	left: 23%;
+}
+
+#select1, #select1 + span {
+	left: 41%;
+}
+
+#select2, #select2 + span {
+	left: 59%;
+}
+
+.signup-role-select span {
+	text-align: center;
+	cursor: pointer;
+	font-size: 17px;
+	color: #27294B;
+	transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out; /* Firefox 4 */
+	-webkit-transition: all .1s ease-in-out; /* Safari ºÍ Chrome */
+	-o-transition: all .1s ease-in-out; /* Opera */
+	cursor: pointer;
 }
 
 .signup-box {
 	padding: 50px;
 }
 
+.base-information-box {
+	 width: 530px;
+	 margin: 0 auto;
+}
+.signup-form-wrapper .base-information {
+	padding: 10px;
+}
 
-.signup-table{
-	margin: 0 auto;
+.signup-form-wrapper {
 	display: none;
+	margin-top: 35px;
 }
 
-.display {
-	display: table;
-}
-
-.signup-table td:nth-child(1) {
+.signup-form-wrapper label{
+	width: 90px;
 	text-align: right;
-	color: #27294B;
+	margin-right: 5px;
+	font-weight: normal;
 }
 
-.signup-table td {
-	padding: 6px 0 ;
-}
-
-.signup-table span {
-	display: inline-block;
-	height: 30px;
-	line-height: 30px;
-	margin-right: 20px;
-}
-
-
-.signup-table input {
-	width: 280px;
+.signup-form-wrapper .base-information input {
+	width: 290px;
 	height: 36px;
 	line-height: 36px;
 	text-align: center;
-	border: 1px solid #cecece;
+	/*border: 1px solid #cecece;*/
 	border-radius: 6px;
 }
 
-.signup-btn, 
-.verify-code-btn {
+.signup-form-wrapper .base-information .auth-code {
+	width: 130px;
+}
+
+.send-code {
+	margin-left: 25px;
+}
+
+.send-code {
+	display: inlnie-block;
+	padding: none;
+	width: 120px !important;
+}
+
+.submit {
 	background-color: #61A3E1;
 	color: #fff !important;
 	border-radius: 8px;
 }
 
-.signup-btn {
+.submit {
 	display: block;
 	margin: 30px auto 0;
 	padding: 10px 30px;
 }
 
-.verify-code-btn {
-	padding: 5px 10px;
-	margin-left: -110px;
-}
-
-.phone-code {
-	width: 150px !important;
-}
-
-.signup-table td:nth-child(3) {
-	padding-left: 10px; 
-}
-
-.verify {
-	visibility: hidden;
+.signup-form-wrapper label.error {
+	display: inline;
 	color: #eb4f38;
+	width: auto;
+	margin-left: 10px;
 }
 
 /*比赛页面*/
@@ -1597,7 +1621,7 @@ footer h4 {
 	color: #eb4f38;
 	vertical-align: middle;
 	margin-left: 2px;
-	font-size: 1.5em;
+	font-size: 1em;
 }
 
 .apply-steps {
