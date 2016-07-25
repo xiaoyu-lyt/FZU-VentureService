@@ -88,19 +88,14 @@ var strData = $('.base-information-box input').map(function() {
 // var url = "http://api.xiaoyu-lyt.cn/index.php/home/";
 $('#submit').click(function() {
 	$.ajax({
-		url: "",
+		url: "../../../Admin/index.php/home/user/register.html",
 		type: "post",
-		data: {
-			jwchId: 221300313,
-			jwchPassword: 942698 
-		},
+		data: strData,
         error: function(request) {
             alert("Connection error");
         },
-		success: function (json) { //客户端jquery预先定义好的callback函数，成功获取跨域服务器上的json数据后，会动态执行这个callback函数    
-              if(json.actionErrors.length!=0){    
-                  alert(json.actionErrors);    
-              }    
+		success: function (msg) {
+			alert(msg); 
           }   
 	})
 })
