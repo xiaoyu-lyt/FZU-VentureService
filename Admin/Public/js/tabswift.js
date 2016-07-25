@@ -21,40 +21,31 @@ function removeClass(elem, className) {
     }
 }
 
-var userList = document.querySelector('.user-sidenav');
-var box = document.querySelectorAll('.user-box');
+var ul = document.querySelectorAll('.admin-management-ul');
+ul = [].slice.call(ul);
+var adminBox = document.querySelectorAll('.sub-management');
 
-oli = userList.querySelectorAll('li');
-oli = [].slice.call(oli);
-
-// switchTab(oli, box, 'now', 'block');
-
-
-
-function switchTab(olis, boxs, liClass, boxDisplay){
-	olis = [].slice.call(olis);
-	boxs = [].slice.call(boxs);
-	olis.forEach(function(elem, index) {
-		elem.index = index;
-		elem.onclick = function() {
-			var isClass = this.className.split(' ')[1];
-			if(isClass) {
-				var tabList = document.querySelector('#' + isClass);
-				var lis = tabList.querySelectorAll('li');
-				var subxbox = document.querySelectorAll('.' + isClass + '-table');
-				switchTab(lis, subxbox, 'now-li', 'block');
-			}
-			startSwtich(index);
-
+ul.forEach(function(elem, index) {
+	var oli = elem.querySelectorAll('li');
+	var box = adminBox[index];
+	oli = [].slice.call(oli);
+	oli.forEach(function(e,i) {
+		e.index = i;
+		e.onclick = function() {
+			startSwitch(this);
 		}
-	});
-	function startSwtich(i){
-		boxs.forEach(function(elem, index){
+	})
+	function startSwitch(li) {
+		var table = box.querySelectorAll('.admin-table');
+		table = [].slice.call(table);
+		oli.forEach(function(elem) {
+			removeClass(elem, 'now-li');
+			addClass(li,'now-li');
+		})
+		table.forEach(function(elem) {
 			elem.style.display = 'none';
-			removeClass(olis[index], liClass);
-		});
-		boxs[i].style.display = boxDisplay;
-		addClass(olis[i], liClass);
+		})
+		table[li.index].style.display = 'block';
 	}
-}
+})
 
