@@ -6,29 +6,14 @@ class UserController extends Controller {
 
 	public function index() {
 
-		$teachers = M('User')->where('groupid = 1')->select();
-		for($i=0;$i<count($teachers);$i++) {
-			$teachers[$i]['reg_time'] = date('Y-m-d',$teachers[$i]['reg_time']);
-			$teachers[$i]['log_time'] = date('Y-m-d',$teachers[$i]['log_time']);
-		}
+		$teachers = D('User')->userinfo(1);
 
-		$investors = M('User')->where('groupid = 2 ')->select();
-		for($i=0;$i<count($investors);$i++) {
-			$investors[$i]['reg_time'] = date('Y-m-d',$investors[$i]['reg_time']);
-			$investors[$i]['log_time'] = date('Y-m-d',$investors[$i]['log_time']);
-		}
+		$investors = D('User')->userinfo(2);
 
-		$students = M('User')->where('groupid = 0')->select();
-		for($i=0;$i<count($students);$i++) {
-			$students[$i]['reg_time'] = date('Y-m-d',$students[$i]['reg_time']);
-			$students[$i]['log_time'] = date('Y-m-d',$students[$i]['log_time']);
-		}
+		$students = D('User')->userinfo(0);
 
-		$admins = M('User')->where('groupid = 6')->select();
-		for($i=0;$i<count($admins);$i++) {
-			$admins[$i]['reg_time'] = date('Y-m-d',$admins[$i]['reg_time']);
-			$admins[$i]['log_time'] = date('Y-m-d',$admins[$i]['log_time']);
-		}
+		$admins = D('User')->userinfo(6);
+		
 		$data = array(
 			'teachers'	=> $teachers,
 			'investors'	=> $investors,

@@ -1,0 +1,625 @@
+[ 2016-07-26T08:14:08+08:00 ] 127.0.0.1 /demo/jyzd/Admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.170996s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.046927s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.047164s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.125603s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.125781s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.785797s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.785990s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.048369s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.048572s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.067225s ]
+INFO: [ app_end ] --END-- [ RunTime:0.067401s ]
+
+[ 2016-07-26T08:14:16+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/Home/notice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000852s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051454s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051590s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000670s ]
+
+[ 2016-07-26T08:14:23+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0489s ]
+SQL: SELECT * FROM `vs_user` WHERE ( groupid = 1 )  [ RunTime:0.7003s ]
+SQL: SELECT * FROM `vs_user` WHERE ( groupid = 2  )  [ RunTime:0.0220s ]
+SQL: SELECT * FROM `vs_user` WHERE ( groupid = 0 )  [ RunTime:0.2473s ]
+SQL: SELECT * FROM `vs_user` WHERE ( groupid = 6 )  [ RunTime:0.0243s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000262s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020759s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020894s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000710s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000830s ]
+
+[ 2016-07-26T08:28:36+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000706s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0202s ]
+SQL: SELECT `uid`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0198s ]
+SQL: SELECT `uid`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0203s ]
+SQL: SELECT `uid`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0191s ]
+SQL: SELECT `uid`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0211s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000246s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000478s ]
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: username D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 65 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: username D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 65 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: username D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 65 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: username D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 65 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: username D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 65 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: username D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 97 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: username D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 97 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+NOTIC: [8] Undefined index: username D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 195 行.
+NOTIC: [8] Undefined index: username D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 195 行.
+NOTIC: [8] Undefined index: username D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 195 行.
+NOTIC: [8] Undefined index: username D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 195 行.
+NOTIC: [8] Undefined index: username D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 227 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023036s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023151s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000805s ]
+
+[ 2016-07-26T08:29:45+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000856s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0208s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0202s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0192s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0189s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0193s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000191s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000386s ]
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027077s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027236s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001225s ]
+
+[ 2016-07-26T08:30:05+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/admin/pass?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000752s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0233s ]
+SQL: UPDATE `vs_user` SET `status`='1' WHERE `uid` = 1 [ RunTime:0.0192s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000794s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000906s ]
+
+[ 2016-07-26T08:30:09+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000486s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0194s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0188s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0192s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0192s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0199s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000237s ]
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019866s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019984s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000626s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000743s ]
+
+[ 2016-07-26T08:30:11+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0202s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0197s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0187s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0191s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0188s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000404s ]
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025373s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025490s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000776s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000959s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001161s ]
+
+[ 2016-07-26T08:30:49+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000804s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001529s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0204s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0198s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0206s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0191s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0194s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000225s ]
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021768s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021880s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000738s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000817s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000938s ]
+
+[ 2016-07-26T08:30:50+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000868s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0194s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0195s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0196s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0193s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0193s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020640s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020751s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000818s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000936s ]
+
+[ 2016-07-26T08:30:52+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/admin/pass?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0197s ]
+SQL: UPDATE `vs_user` SET `status`='1' WHERE `uid` = 1 [ RunTime:0.0185s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000869s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000979s ]
+
+[ 2016-07-26T08:31:01+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0197s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0192s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0195s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0199s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0222s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020048s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020160s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000660s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000853s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000986s ]
+
+[ 2016-07-26T08:32:07+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000712s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0197s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0190s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0190s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0194s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0189s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 59 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 91 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 125 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+NOTIC: [8] Undefined index: status D:\wamp\www\demo\jyzd\Admin\apps\Runtime\Cache\Home\dba8dba581f6abc18da38de9433404f8.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020934s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021051s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000990s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000712s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000829s ]
+
+[ 2016-07-26T08:32:12+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/admin/pass?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000716s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0237s ]
+SQL: UPDATE `vs_user` SET `status`='1' WHERE `uid` = 3 [ RunTime:0.0191s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000855s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000963s ]
+
+[ 2016-07-26T08:32:50+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0199s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0197s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0195s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0196s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0198s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000229s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020207s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020323s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000685s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000805s ]
+
+[ 2016-07-26T08:32:53+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000752s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001047s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.6777s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0197s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.2394s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0193s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0187s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022153s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022273s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001057s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002769s ]
+
+[ 2016-07-26T08:33:04+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/admin/pass?id=14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000714s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000838s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0201s ]
+SQL: UPDATE `vs_user` SET `status`='1' WHERE `uid` = 14 [ RunTime:0.0243s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050793s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050920s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000616s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000785s ]
+
+[ 2016-07-26T08:33:05+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php?s=/Home/user/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0205s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0195s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0191s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.2344s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0190s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000374s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031904s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032033s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001120s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001335s ]
+
+[ 2016-07-26T08:35:08+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php?s=/Home/user/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000665s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0264s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0235s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0241s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0225s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0194s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020522s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020638s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001099s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001265s ]
+
+[ 2016-07-26T08:35:36+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php?s=/Home/user/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.1021s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0936s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0428s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0373s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.3786s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000230s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020512s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020630s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001054s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001256s ]
+
+[ 2016-07-26T08:35:49+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php?s=/Home/user/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0198s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0231s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0190s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0188s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0191s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018551s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018670s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000556s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000661s ]
+
+[ 2016-07-26T08:35:57+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000638s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0232s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0197s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0191s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0195s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0193s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019307s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019428s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000635s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000751s ]
+

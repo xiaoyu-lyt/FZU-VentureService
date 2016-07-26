@@ -41,10 +41,10 @@ ul.forEach(function(elem, index) {
 		oli.forEach(function(elem) {
 			removeClass(elem, 'now-li');
 			addClass(li,'now-li');
-		})
+		});
 		table.forEach(function(elem) {
 			elem.style.display = 'none';
-		})
+		});
 		table[li.index].style.display = 'block';
 	}
 })

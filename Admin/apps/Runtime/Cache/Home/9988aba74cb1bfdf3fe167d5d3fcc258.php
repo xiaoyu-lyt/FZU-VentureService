@@ -20,7 +20,7 @@
 			<div class="user-student-sidenav user-sidenav pull-left">
 				<ul>
 					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>">资讯管理</li>
-					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'Admin') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/user">用户管理</a></li>
+					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/user">用户管理</a></li>
 					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>">项目管理</li>
 					<li>入驻申请</li>
 					<li>培训管理</li>

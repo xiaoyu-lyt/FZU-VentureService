@@ -97,7 +97,6 @@
 						<li class="pull-left">管理员信息</li>
 					</ul>
 				</div>
-
 				<!-- 教师审核 -->
 <div class="admin-teachers-table admin-users-table admin-table block" id="teachers-check-table">
 	<table>
@@ -189,7 +188,8 @@
 					<td class="admin-teacher-phone"><span><?php echo ($v["tel"]); ?></span></td>
 					<td class="admin-teacher-email"><span><?php echo ($v["email"]); ?></span></td>
 					<td class="admin-teacher-operation admin-operation">
-						<a href=""><span class="admin-view-info">查看信息</span></a>
+						<span class="admin-teacher-pass admin-pass"><a href="/demo/jyzd/Admin/index.php/home/admin/pass?id=<?php echo ($vo["uid"]); ?>">通过</a></span>
+						<span class="admin-teacher-refuse admin-refuse">拒绝</span>
 					</td>
 				</tr><?php endif; endforeach; endif; else: echo "暂无待审核的投资人信息" ;endif; ?>
 
@@ -288,11 +288,9 @@
 					</td>
 				</tr><?php endforeach; endif; else: echo "暂无普通管理员信息" ;endif; ?>
 	</table>
-</div>
-
-				
-
+</div>	
 			</div>
+
 			<!-- 项目管理 -->
 			<div class="user-box admin-projects-management pull-right">
 				<div class="admin-top">
@@ -472,6 +470,8 @@
 					<a class="admin-publish-game" href="">发布比赛通知</a>
 				</div>
 			</div>
+
+
 			<div class="admin-popup">
 				<div class="popup-delete">
 					<p>确认删除？</p>

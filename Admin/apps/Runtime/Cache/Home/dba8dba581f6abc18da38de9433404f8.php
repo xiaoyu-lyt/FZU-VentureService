@@ -1,4 +1,33 @@
-<include file="Public:header"/>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>管理员-福州大学大学生创业服务网</title>
+	<link rel="stylesheet" type="text/css" href="/demo/jyzd/Admin/Public/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/demo/jyzd/Admin/Public/css/admin.css" />
+	<link rel="stylesheet" type="text/css" href="/demo/jyzd/Admin/Public/css/reset.css" />
+</head>
+<body>
+	<!-- Admin Start -->
+	<div class="admin-wrapper">
+		<div class="container">
+			<div class="user-box-top">
+				<img src="/demo/jyzd/Admin/Public/images/setting.png" alt="">
+				<h1>管理中心</h1>
+			</div>
+			<div class="user-student-sidenav user-sidenav pull-left">
+				<ul>
+					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/notice">资讯管理</a></li>
+					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/user">用户管理</a></li>
+					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/project">项目管理</a></li>
+					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/field">入驻申请</a></li>
+					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/class">培训管理</a></li>
+					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/document">教材管理</a></li>
+					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/competition">比赛管理</a></li>
+				</ul>
+			</div>
 
 			<!-- 用户管理 -->
 			<div class="user-box admin-users-management sub-management pull-right">
@@ -27,26 +56,22 @@
 							<th class="admin-th-teacher-management admin-th-management"><span>管理操作</span></th>
 						</tr>
 
-						<volist name="teachers" id="vo" empty="暂无要审核的教师信息">
-							<if condition=" $vo.status eq 0">
-								<tr>
+						<?php if(is_array($teachers)): $i = 0; $__LIST__ = $teachers;if( count($__LIST__)==0 ) : echo "暂无要审核的教师信息" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if( $vo["status"] == 0): ?><tr>
 									<td class="admin-teacher-select">
 										<input class="admin-teacher-select-btn" type="checkbox">
 									</td>
-									<td class="admin-teacher-id">{$i}</td>
+									<td class="admin-teacher-id"><?php echo ($i); ?></td>
 									<td class="admin-teacher-username">
-										<a href="">{$vo.username}</a>
+										<a href=""><?php echo ($vo["username"]); ?></a>
 									</td>
-									<td class="admin-teacher-name"><a href="">{$vo.name}</a></td>
-									<td class="admin-teacher-phone"><span>{$vo.tel}</span></td>
-									<td class="admin-teacher-email"><span>{$vo.email}</span></td>
+									<td class="admin-teacher-name"><a href=""><?php echo ($vo["name"]); ?></a></td>
+									<td class="admin-teacher-phone"><span><?php echo ($vo["tel"]); ?></span></td>
+									<td class="admin-teacher-email"><span><?php echo ($vo["email"]); ?></span></td>
 									<td class="admin-teacher-operation admin-operation">
-										<span class="admin-teacher-pass admin-pass"><a href="__ROOT__/index.php/home/admin/pass?id={$vo.uid}">通过</a></span>
+										<span class="admin-teacher-pass admin-pass"><a href="/demo/jyzd/Admin/index.php/home/admin/pass?id=<?php echo ($vo["uid"]); ?>">通过</a></span>
 										<span class="admin-teacher-refuse admin-refuse">拒绝</span>
 									</td>
-								</tr>
-							</if>
-						</volist>
+								</tr><?php endif; endforeach; endif; else: echo "暂无要审核的教师信息" ;endif; ?>
 					</table>
 				</div>
 				<!-- 投资人审核 -->
@@ -63,26 +88,22 @@
 							<th class="admin-th-investor-email admin-th-email"><span>邮箱</span></th>
 							<th class="admin-th-investor-management admin-th-management"><span>管理操作</span></th>
 						</tr>
-						<volist name="investors" id="v" empty="暂无待审核的投资人信息">
-							<if condition="$v.status eq 0">
-								<tr>
+						<?php if(is_array($investors)): $i = 0; $__LIST__ = $investors;if( count($__LIST__)==0 ) : echo "暂无待审核的投资人信息" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if($v["status"] == 0): ?><tr>
 									<td class="admin-teacher-select">
 										<input class="admin-teachers-select-btn" type="checkbox">
 									</td>
-									<td class="admin-teacher-id">{$i}</td>
+									<td class="admin-teacher-id"><?php echo ($i); ?></td>
 									<td class="admin-teacher-username">
-										<a href="">{$v.username}</a>
+										<a href=""><?php echo ($v["username"]); ?></a>
 									</td>
-									<td class="admin-teacher-name"><span>{$v.name}</span></td>
-									<td class="admin-teacher-phone"><span>{$v.tel}</span></td>
-									<td class="admin-teacher-email"><span>{$v.email}</span></td>
+									<td class="admin-teacher-name"><span><?php echo ($v["name"]); ?></span></td>
+									<td class="admin-teacher-phone"><span><?php echo ($v["tel"]); ?></span></td>
+									<td class="admin-teacher-email"><span><?php echo ($v["email"]); ?></span></td>
 									<td class="admin-teacher-operation admin-operation">
-										<span class="admin-teacher-pass admin-pass"><a href="__ROOT__/index.php/home/admin/pass?id={$vo.uid}">通过</a></span>
+										<span class="admin-teacher-pass admin-pass"><a href="/demo/jyzd/Admin/index.php/home/admin/pass?id=<?php echo ($vo["uid"]); ?>">通过</a></span>
 										<span class="admin-teacher-refuse admin-refuse">拒绝</span>
 									</td>
-								</tr>
-							</if>
-						</volist>
+								</tr><?php endif; endforeach; endif; else: echo "暂无待审核的投资人信息" ;endif; ?>
 
 						
 					</table>
@@ -101,25 +122,21 @@
 							<th class="admin-th-investor-email admin-th-email"><span>邮箱</span></th>
 							<th class="admin-th-investor-management admin-th-management"><span>管理操作</span></th>
 						</tr>
-						<volist name="teachers" id="v">
-							<if condition=" $v.status eq 1">
-								<tr>
+						<?php if(is_array($teachers)): $i = 0; $__LIST__ = $teachers;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if( $v["status"] == 1): ?><tr>
 									<td class="admin-investor-select">
 										<input class="admin-investors-select-btn" type="checkbox">
 									</td>
-									<td class="admin-investor-id">{$i}</td>
+									<td class="admin-investor-id"><?php echo ($i); ?></td>
 									<td class="admin-investor-username">
-										<span>{$v.username}</span>
+										<span><?php echo ($v["username"]); ?></span>
 									</td>
-									<td class="admin-investor-name"><a href="">{$v.name}</a></td>
-									<td class="admin-investor-phone"><span>{$v.tel}</span></td>
-									<td class="admin-investor-email"><span>{$v.email}</span></td>
+									<td class="admin-investor-name"><a href=""><?php echo ($v["name"]); ?></a></td>
+									<td class="admin-investor-phone"><span><?php echo ($v["tel"]); ?></span></td>
+									<td class="admin-investor-email"><span><?php echo ($v["email"]); ?></span></td>
 									<td class="admin-investor-operation admin-operation">
 										<a href=""><span class="admin-view-info">查看信息</span></a>
 									</td>
-								</tr>
-							</if>
-						</volist>
+								</tr><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 						
 					</table>
 				</div>
@@ -137,25 +154,21 @@
 							<th class="admin-th-investor-email admin-th-email"><span>邮箱</span></th>
 							<th class="admin-th-investor-management admin-th-management"><span>管理操作</span></th>
 						</tr>
-						<volist name="investors" id="v" empty="暂无投资人信息">
-							<if condition="$v.status eq 1">
-								<tr>
+						<?php if(is_array($investors)): $i = 0; $__LIST__ = $investors;if( count($__LIST__)==0 ) : echo "暂无投资人信息" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if($v["status"] == 1): ?><tr>
 									<td class="admin-teacher-select">
 										<input class="admin-teachers-select-btn" type="checkbox">
 									</td>
-									<td class="admin-teacher-id">{$i}</td>
+									<td class="admin-teacher-id"><?php echo ($i); ?></td>
 									<td class="admin-teacher-username">
-										<a href="">{$v.username}</a>
+										<a href=""><?php echo ($v["username"]); ?></a>
 									</td>
-									<td class="admin-teacher-name"><span>{$v.name}</span></td>
-									<td class="admin-teacher-phone"><span>{$v.tel}</span></td>
-									<td class="admin-teacher-email"><span>{$v.email}</span></td>
+									<td class="admin-teacher-name"><span><?php echo ($v["name"]); ?></span></td>
+									<td class="admin-teacher-phone"><span><?php echo ($v["tel"]); ?></span></td>
+									<td class="admin-teacher-email"><span><?php echo ($v["email"]); ?></span></td>
 									<td class="admin-teacher-operation admin-operation">
 										<a href=""><span class="admin-view-info">查看信息</span></a>
 									</td>
-								</tr>
-							</if>
-						</volist>
+								</tr><?php endif; endforeach; endif; else: echo "暂无投资人信息" ;endif; ?>
 						
 					</table>
 				</div>
@@ -173,23 +186,21 @@
 							<th class="admin-th-investor-email admin-th-email"><span>邮箱</span></th>
 							<th class="admin-th-investor-management admin-th-management"><span>管理操作</span></th>
 						</tr>
-						<volist name="students" id="v" empty="暂无学生信息">
-								<tr>
+						<?php if(is_array($students)): $i = 0; $__LIST__ = $students;if( count($__LIST__)==0 ) : echo "暂无学生信息" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><tr>
 									<td class="admin-teacher-select">
 										<input class="admin-teachers-select-btn" type="checkbox">
 									</td>
-									<td class="admin-teacher-id">{$i}</td>
+									<td class="admin-teacher-id"><?php echo ($i); ?></td>
 									<td class="admin-teacher-username">
-										<a href="">{$v.username}</a>
+										<a href=""><?php echo ($v["username"]); ?></a>
 									</td>
-									<td class="admin-teacher-name"><span>{$v.name}</span></td>
-									<td class="admin-teacher-phone"><span>{$v.tel}</span></td>
-									<td class="admin-teacher-email"><span>{$v.email}</span></td>
+									<td class="admin-teacher-name"><span><?php echo ($v["name"]); ?></span></td>
+									<td class="admin-teacher-phone"><span><?php echo ($v["tel"]); ?></span></td>
+									<td class="admin-teacher-email"><span><?php echo ($v["email"]); ?></span></td>
 									<td class="admin-teacher-operation admin-operation">
 										<a href=""><span class="admin-view-info">查看信息</span></a>
 									</td>
-								</tr>
-						</volist>
+								</tr><?php endforeach; endif; else: echo "暂无学生信息" ;endif; ?>
 						
 					</table>
 				</div>
@@ -207,26 +218,31 @@
 							<th class="admin-th-administrator-email admin-th-email"><span>邮箱</span></th>
 							<th class="admin-th-administrator-management admin-th-management"><span>管理操作</span></th>
 						</tr>
-						<volist name="admins" id="v" empty="暂无普通管理员信息">
-								<tr>
+						<?php if(is_array($admins)): $i = 0; $__LIST__ = $admins;if( count($__LIST__)==0 ) : echo "暂无普通管理员信息" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><tr>
 									<td class="admin-teacher-select">
 										<input class="admin-teachers-select-btn" type="checkbox">
 									</td>
-									<td class="admin-teacher-id">{$i+1}</td>
+									<td class="admin-teacher-id"><?php echo ($i+1); ?></td>
 									<td class="admin-teacher-username">
-										<a href="">{$v.username}</a>
+										<a href=""><?php echo ($v["username"]); ?></a>
 									</td>
-									<td class="admin-teacher-name"><span>{$v.name}</span></td>
-									<td class="admin-teacher-phone"><span>{$v.tel}</span></td>
-									<td class="admin-teacher-email"><span>{$v.email}</span></td>
+									<td class="admin-teacher-name"><span><?php echo ($v["name"]); ?></span></td>
+									<td class="admin-teacher-phone"><span><?php echo ($v["tel"]); ?></span></td>
+									<td class="admin-teacher-email"><span><?php echo ($v["email"]); ?></span></td>
 									<td class="admin-teacher-operation admin-operation">
 										<a href=""><span class="admin-view-info">查看信息</span></a>
 									</td>
-								</tr>
-						</volist>
+								</tr><?php endforeach; endif; else: echo "暂无普通管理员信息" ;endif; ?>
 										
 					</table>
 				</div>
 
 			</div>
-<include file="Public:footer"/>
+		</div>
+	</div>
+	
+	<!-- Admin End -->
+	<script src="/demo/jyzd/Admin/Public/js/tabswift.js"></script>
+	<script src="/demo/jyzd/Admin/Public/js/admin.js"></script>
+</body>
+</html>
