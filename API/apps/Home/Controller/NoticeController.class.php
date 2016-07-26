@@ -21,7 +21,7 @@ class NoticeController extends BaseController {
 			$json = $this->jsonReturn(0,"暂无通知");
 		}
 		//var_dump($jsonReturn);
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -37,7 +37,7 @@ class NoticeController extends BaseController {
 			$json = $this->jsonReturn(0,"暂无此通知详细内容");
 		}
 		//var_dump($jsonReturn);
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -57,7 +57,7 @@ class NoticeController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"新闻添加失败，请重新添加");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -71,11 +71,11 @@ class NoticeController extends BaseController {
 		$data[] = I('put.');
 
 		if (!M('notice')->where($where)->save($data)) {
-			$json = $this->jsonReturn(200,"新闻编辑成功，请返回新闻资讯列表查看",$data)
+			$json = $this->jsonReturn(200,"新闻编辑成功，请返回新闻资讯列表查看",$data);
 		} else {
 			$json = $this->jsonReturn(0,"新闻编辑失败，请重新编辑");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
