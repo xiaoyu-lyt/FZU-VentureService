@@ -3,6 +3,12 @@ namespace Home\controller;
 use Think\Controller;
 class HomeController extends Controller {
 	
+	public $MODULE_NAME = "Home";
+	public function index(){
+		$this->assign('MODULE',$this->MODULE_NAME);	
+		$this->display('login');
+	}
+	
 	public function isLogin() {
 		$username = I('post.username');
 		$password = I('post.password');
