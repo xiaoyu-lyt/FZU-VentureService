@@ -84,17 +84,25 @@
 .admin-wrapper .container,{
 	position: relative;
 }
+
 .admin-top {
+	position: relative;
 	margin-top: 20px;
+	height: 46px;
 }
 
 .admin-publish-article,
 .admin-publish-classes,
 .admin-publish-textbook,
 .admin-publish-game {
+	position: absolute;
+	right: 50px;
+	top: 10px;
 	padding: 6px 8px;
 	border: 1px solid #61a3e1;
 	color: #61a3e1 !important;
+	margin-right: 20px;
+
 }
 
 .admin-table table {
@@ -168,7 +176,8 @@
 }
 
 .admin-users-table,
-.admin-projects-table {
+.admin-projects-table,
+.admin-info-table {
 	display: none;
 
 }
@@ -263,8 +272,7 @@
 
 /*发布文章表单*/
 .article-publish-form {
-	padding: 50px 100px;
-	background-color: #D5E8F9;
+	padding: 30px 0;
 	color: #666;
 }
 
@@ -281,13 +289,13 @@
 .article-publish-form input {
 	height: 2em;
 	width: 82%;
+	border: 1px solid #cecece;
 }
 
 .article-publish-form input,
 .article-publish-form textarea {
 	padding-left: .5em;
 	outline: none;
-	border: none;
 }
 
 .article-publish-title input {

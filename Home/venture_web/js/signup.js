@@ -92,6 +92,9 @@ $('#submit').click(function() {
 		type: "post",
 		url: "../../API/index.php/home/user/register.html",
 		async: false,
+		error: function(){
+			alert('eroor!');
+		},
 		success: function(data) {
 			var jsonData = JSON.parse(data);
 			alert(jsonData.msg);
