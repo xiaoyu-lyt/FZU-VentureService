@@ -301,3 +301,13 @@ INFO: [ app_begin ] --END-- [ RunTime:0.000535s ]
 SQL: SHOW COLUMNS FROM `vs_fields` [ RunTime:0.0199s ]
 SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`run_time` FROM `vs_fields` WHERE `status` = 1 ORDER BY run_time desc LIMIT 0,10   [ RunTime:0.0196s ]
 
+[ 2016-07-26T15:42:53+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000961s ]
+SQL: SHOW COLUMNS FROM `vs_fields` [ RunTime:0.0199s ]
+SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`run_time` FROM `vs_fields` WHERE `status` = 1 ORDER BY run_time desc LIMIT 0,10   [ RunTime:0.0191s ]
+

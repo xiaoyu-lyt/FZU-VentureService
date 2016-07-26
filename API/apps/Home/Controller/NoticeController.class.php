@@ -50,7 +50,7 @@ class NoticeController extends BaseController {
 		$data = I('post.');
 		
 		$data['date'] = time();
-		$data['publisher'] = $login_user['name'];
+		$data['uid'] = $login_user['uid'];
 
 		if (!M('notice')->add($data)) {
 			$json = $this->jsonReturn(200,"新闻添加成功，请返回新闻资讯列表查看",$data);

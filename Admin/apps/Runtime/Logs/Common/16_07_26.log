@@ -4,3 +4,21 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
 ERR: 无法加载模块:User
 
+[ 2016-07-26T18:03:30+08:00 ] ::1 /FZU-VentureService/Admin/Public/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+ERR: 无法加载模块:Public
+
+[ 2016-07-26T18:05:30+08:00 ] ::1 /FZU-VentureService/Admin/Public/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+ERR: 无法加载模块:Public
+
+[ 2016-07-26T18:05:48+08:00 ] ::1 /FZU-VentureService/Admin/Public/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000641s ]
+ERR: 无法加载模块:Public
+

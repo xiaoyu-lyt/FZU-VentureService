@@ -14,7 +14,9 @@ class AdminController extends Controller {
 			session('login_manager',$login_manager);
 			return true;
 		}
-		return false;	
+		else {
+			return false;
+		}	
 	}
 
 

@@ -225,6 +225,7 @@ CREATE TABLE IF NOT EXISTS `vs_training` (
 
 CREATE TABLE IF NOT EXISTS `vs_notice` (
   `nid` mediumint(8) NOT NULL AUTO_INCREMENT,
+  `uid` mediumint(8) NOT NULL COMMENT '发布者id',
   `theme` varchar(20) NOT NULL COMMENT '通知主题',
   `type` tinyint(1) NOT NULL COMMENT '通知类型',
   `date` varchar(50) NOT NULL COMMENT '发布时间',

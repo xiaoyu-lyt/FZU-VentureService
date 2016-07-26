@@ -1,5 +1,5 @@
 <include file="Public:header"/>
-			<!-- 资讯管理 -->
+<!-- 资讯管理 -->
 			<div class="user-box  admin-info-management sub-management pull-right">
 				<div class="admin-top">
 					<ul class="admin-management-ul clearfix" id="admin-articles">
@@ -22,69 +22,25 @@
 							<th class="admin-th-article-updatetime admin-th-updatetime"><span>更新时间</span></th>
 							<th class="admin-th-article-operation admin-th-operation"><span>管理操作</span></th>
 						</tr>
-						<tr>
-							<td class="admin-article-select">
-								<input class="admin-news-select-btn" type="checkbox">
-							</td>
-							<td class="admin-article-id">1</td>
-							<td class="admin-article-title">
-								<a href="article.html">福州大学第二十九届学生文化艺术节圆满落幕</a>
-							</td>
-							<td class="admin-article-pageview"><span>123</span></td>
-							<td class="admin-article-publisher"><span>admin-1</span></td>
-							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
-							<td class="admin-article-operation admin-operation">
-								<span class="admin-article-modify">修改</span>
-								
-							</td>
-						</tr>
-						<tr>
-							<td class="admin-article-select">
-								<input class="admin-news-select-btn" type="checkbox">
-							</td>
-							<td class="admin-article-id">1</td>
-							<td class="admin-article-title">
-								<a href="article.html">福州大学第十七届青年教师“最佳一节课”竞赛圆满落幕</a>
-							</td>
-							<td class="admin-article-pageview"><span>123</span></td>
-							<td class="admin-article-publisher"><span>admin-1</span></td>
-							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
-							<td class="admin-article-operation admin-operation">
-								<span class="admin-article-modify">修改</span>
-								
-							</td>
-						</tr>
-						<tr>
-							<td class="admin-article-select">
-								<input class="admin-news-select-btn" type="checkbox">
-							</td>
-							<td class="admin-article-id">1</td>
-							<td class="admin-article-title">
-								<a href="article.html">福大学子写三行情诗致父母，让爱回家传递孝悌之情</a>
-							</td>
-							<td class="admin-article-pageview"><span>123</span></td>
-							<td class="admin-article-publisher"><span>admin-1</span></td>
-							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
-							<td class="admin-article-operation admin-operation">
-								<span class="admin-article-modify">修改</span>
-								
-							</td>
-						</tr>
-					 	<tr>
-							<td class="admin-article-select">
-								<input class="admin-news-select-btn" type="checkbox">
-							</td>
-							<td class="admin-article-id">1</td>
-							<td class="admin-article-title">
-								<a href="article.html">福州大学2016届毕业生班级校友联络员和学院年级校友召集人聘任大会举行</a>
-							</td>
-							<td class="admin-article-pageview"><span>123</span></td>
-							<td class="admin-article-publisher"><span>admin-1</span></td>
-							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
-							<td class="admin-article-operation admin-operation">
-								<span class="admin-article-modify">修改</span>
-							</td>
-						</tr>
+
+						<volist name="news" id="v">
+							<tr>
+								<td class="admin-article-select">
+									<input class="admin-news-select-btn" type="checkbox">
+								</td>
+								<td class="admin-article-id">{$i}</td>
+								<td class="admin-article-title">
+									<a href="article.html">{$v.theme}</a>
+								</td>
+								<td class="admin-article-pageview"><span>{$v.hits}</span></td>
+								<td class="admin-article-publisher"><span>{$v.name.name}</span></td>
+								<td class="admin-article-updatetime"><span>{$v.date}</span></td>
+								<td class="admin-article-operation admin-operation">
+									<span class="admin-article-modify">修改</span>
+									
+								</td>
+							</tr>
+						</volist>
 						<tr>
 							<td colspan="6"></td>
 							<td>
@@ -108,54 +64,26 @@
 							<th class="admin-th-article-updatetime admin-th-updatetime"><span>更新时间</span></th>
 							<th class="admin-th-article-operation admin-th-operation"><span>管理操作</span></th>
 						</tr>
-						
-						<tr>
-							<td class="admin-article-select">
-								<input class="admin-notice-select-btn" type="checkbox">
-							</td>
-							<td class="admin-article-id">1</td>
-							<td class="admin-article-title">
-								<a href="article.html">福州大学第十七届青年教师“最佳一节课”竞赛圆满落幕</a>
-							</td>
-							<td class="admin-article-pageview"><span>123</span></td>
-							<td class="admin-article-publisher"><span>admin-1</span></td>
-							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
-							<td class="admin-article-operation admin-operation">
-								<span class="admin-article-modify">修改</span>
-								
-							</td>
-						</tr>
-						<tr>
-							<td class="admin-article-select">
-								<input class="admin-notice-select-btn" type="checkbox">
-							</td>
-							<td class="admin-article-id">1</td>
-							<td class="admin-article-title">
-								<a href="article.html">福大学子写三行情诗致父母，让爱回家传递孝悌之情</a>
-							</td>
-							<td class="admin-article-pageview"><span>123</span></td>
-							<td class="admin-article-publisher"><span>admin-1</span></td>
-							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
-							<td class="admin-article-operation admin-operation">
-								<span class="admin-article-modify">修改</span>
-								
-							</td>
-						</tr>
-					 	<tr>
-							<td class="admin-article-select">
-								<input class="admin-notice-select-btn" type="checkbox">
-							</td>
-							<td class="admin-article-id">1</td>
-							<td class="admin-article-title">
-								<a href="article.html">福州大学2016届毕业生班级校友联络员和学院年级校友召集人聘任大会举行</a>
-							</td>
-							<td class="admin-article-pageview"><span>123</span></td>
-							<td class="admin-article-publisher"><span>admin-1</span></td>
-							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
-							<td class="admin-article-operation admin-operation">
-								<span class="admin-article-modify">修改</span>
-							</td>
-						</tr>
+
+						<volist name="notices" id="v">
+							<tr>
+								<td class="admin-article-select">
+									<input class="admin-notice-select-btn" type="checkbox">
+								</td>
+								<td class="admin-article-id">{$i}</td>
+								<td class="admin-article-title">
+									<a href="article.html">{$v.theme}</a>
+								</td>
+								<td class="admin-article-pageview"><span>{$v.hits}</span></td>
+								<td class="admin-article-publisher"><span>{$v.name.name}</span></td>
+								<td class="admin-article-updatetime"><span>{$v.date}</span></td>
+								<td class="admin-article-operation admin-operation">
+									<span class="admin-article-modify">修改</span>
+									
+								</td>
+							</tr>
+						</volist>
+
 						<tr>
 							<td></td>
 							<td></td>
@@ -184,53 +112,26 @@
 							<th class="admin-th-article-updatetime admin-th-updatetime"><span>更新时间</span></th>
 							<th class="admin-th-article-operation admin-th-operation"><span>管理操作</span></th>
 						</tr>
-						<tr>
-							<td class="admin-article-select">
-								<input class="admin-policy-select-btn" type="checkbox">
-							</td>
-							<td class="admin-article-id">1</td>
-							<td class="admin-article-title">
-								<a href="article.html">福州大学第二十九届学生文化艺术节圆满落幕</a>
-							</td>
-							<td class="admin-article-pageview"><span>123</span></td>
-							<td class="admin-article-publisher"><span>admin-1</span></td>
-							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
-							<td class="admin-article-operation admin-operation">
-								<span class="admin-article-modify">修改</span>
-								
-							</td>
-						</tr>
-						<tr>
-							<td class="admin-article-select">
-								<input class="admin-policy-select-btn" type="checkbox">
-							</td>
-							<td class="admin-article-id">1</td>
-							<td class="admin-article-title">
-								<a href="article.html">福州大学第十七届青年教师“最佳一节课”竞赛圆满落幕</a>
-							</td>
-							<td class="admin-article-pageview"><span>123</span></td>
-							<td class="admin-article-publisher"><span>admin-1</span></td>
-							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
-							<td class="admin-article-operation admin-operation">
-								<span class="admin-article-modify">修改</span>
-								
-							</td>
-						</tr>
-					 	<tr>
-							<td class="admin-article-select">
-								<input class="admin-policy-select-btn" type="checkbox">
-							</td>
-							<td class="admin-article-id">1</td>
-							<td class="admin-article-title">
-								<a href="article.html">福州大学2016届毕业生班级校友联络员和学院年级校友召集人聘任大会举行</a>
-							</td>
-							<td class="admin-article-pageview"><span>123</span></td>
-							<td class="admin-article-publisher"><span>admin-1</span></td>
-							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
-							<td class="admin-article-operation admin-operation">
-								<span class="admin-article-modify">修改</span>
-							</td>
-						</tr>
+
+						<volist name="policy" id="v">
+							<tr>
+								<td class="admin-article-select">
+									<input class="admin-policy-select-btn" type="checkbox">
+								</td>
+								<td class="admin-article-id">{$i}</td>
+								<td class="admin-article-title">
+									<a href="article.html">{$v.theme}</a>
+								</td>
+								<td class="admin-article-pageview"><span>{$v.hits}</span></td>
+								<td class="admin-article-publisher"><span>{$v.name.name}</span></td>
+								<td class="admin-article-updatetime"><span>{$v.date}</span></td>
+								<td class="admin-article-operation admin-operation">
+									<span class="admin-article-modify">修改</span>
+									
+								</td>
+							</tr>
+						</volist>
+
 						<tr>
 							<td></td>
 							<td></td>
