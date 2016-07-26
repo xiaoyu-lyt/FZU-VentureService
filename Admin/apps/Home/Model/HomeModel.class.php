@@ -7,7 +7,6 @@ class HomeModel extends Model {
 	public function checkLogin($username,$password) {
 
 		 $userinfo = M('User')->where(array('username'=>$username))->field('uid,username,nickname,name,password,userKey,groupid')->find();
-		
 		 $password = md5(md5($password).$userinfo['userKey']);
 
 		 if ($password == $userinfo['password']) {

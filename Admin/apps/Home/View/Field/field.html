@@ -13,22 +13,23 @@
 				<th class="admin-th-base-time admin-th-time"><span>申请时间</span></th>
 				<th class="admin-th-base-management admin-th-management"><span>管理操作</span></th>
 			</tr>
-			<tr>
-				<td class="admin-base-select">
-					<input class="admin-base-select-btn" type="checkbox">
-				</td>
-				<td class="admin-base-id">1</td>
-				<td class="admin-base-name">
-					<a href="">balbal创业基地</a>
-				</td>
-				<td class="admin-base-username"><span>林渊腾</span></td>
-				<td class="admin-base-time"><span>2016-07-23</span></td>
-				<td class="admin-base-operation admin-operation">
-					<span class="admin-base-pass admin-pass">通过</span>
-					<span class="admin-base-refuse admin-refuse">拒绝</span>
-				</td>
-			</tr>
-			
+			<volist name="records" id="vo">
+				<tr>
+					<td class="admin-base-select">
+						<input class="admin-base-select-btn" type="checkbox">
+					</td>
+					<td class="admin-base-id">{$vo.id}</td>
+					<td class="admin-base-name">
+						<a href="">{$vo.field.name}</a>
+					</td>
+					<td class="admin-base-username"><span>{$vo.applicant.name}</span></td>
+					<td class="admin-base-time"><span>{$vo.apply_time}</span></td>
+					<td class="admin-base-operation admin-operation">
+						<span class="admin-base-pass admin-pass">通过</span>
+						<span class="admin-base-refuse admin-refuse" id="{$vo.applicant.tel}" onclick="refuse(this)">拒绝</span>
+					</td>
+				</tr>
+			</volist>
 		</table>
 	</div>
 </div>
