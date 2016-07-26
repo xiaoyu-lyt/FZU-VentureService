@@ -33,7 +33,7 @@ class ClassController extends BaseController {
 	 * 培训课报名
 	 */
 	public function  enlist_post() {
-
+		
 	}
 	/**
 	 * 获取所有可下载的材料

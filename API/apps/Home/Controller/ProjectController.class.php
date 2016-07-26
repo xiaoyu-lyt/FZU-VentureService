@@ -28,7 +28,7 @@ class ProjectController extends BaseController {
 		echo $json;
 	}
 	/**
-	 * 根据id获取通知详情内容
+	 * 根据id获取项目详情内容
 	 * @return json
 	 */
 	public function detail_get() {
@@ -74,5 +74,7 @@ class ProjectController extends BaseController {
 			$josn = $this->jsonReturn(0,"项目删除失败");
 		}
 	}
+
+
 	
 }

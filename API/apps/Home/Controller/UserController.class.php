@@ -326,7 +326,13 @@ class UserController extends BaseController {
 	* @return json
 	*/
 	public function adminTagAdd_post(){
+		$data = I('post.');
 
+		if (M('tags')->add($data)) {
+			$json = $this->jsonReturn(200,"标签添加成功",$data);
+		} else {
+			$json = $this->jsonReturn(0,"标签添加失败");
+		}
 	}
 
 	/**
@@ -334,7 +340,12 @@ class UserController extends BaseController {
 	* @return json
 	*/
 	public function adminTagDelete_delete(){
-
+		$where['tid'] = I('delete.tid');
+		if (M('tags')->where($where)->delete()) {
+			$json = $this->jsonReturn(200,"标签删除成功");
+		} else {
+			$json = $this->jsonReturn(0,"标签删除失败");
+		}
 	}
 
 	/**

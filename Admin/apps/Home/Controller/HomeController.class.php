@@ -20,7 +20,7 @@ class HomeController extends Controller {
 				);
 			$this->success('登录成功',U('Notice/index'));
 		} else {
-			$this->error('密码错误或您不是管理员，请重试或联系管理员');
+			$this->error('密码错误或您不是管理员，请重试或联系管理员',U('Home/index'));
 		}
 	}
 }
