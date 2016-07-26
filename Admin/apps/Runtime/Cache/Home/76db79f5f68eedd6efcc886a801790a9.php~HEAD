@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>注册-福州大学创业服务网</title>
-	<load href="__PUBLIC__/css/bootstrap.min.css" />
-	<load href="__PUBLIC__/css/admin.css" />
-	<load href="__PUBLIC__/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/FZU-VentureService/Admin/Public/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/FZU-VentureService/Admin/Public/css/admin.css" />
+	<link rel="stylesheet" type="text/css" href="/FZU-VentureService/Admin/Public/css/reset.css" />
 	<!-- <link rel="stylesheet" href="<?php echo BASE_URL; ?>/Public/css/bootstrap.min.css" >
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>/Public/css/admin.css">
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>/Public/css/reset.css"> -->
@@ -17,12 +17,12 @@
 		<div class="container">
 			<div class="signup-content">
 				<div class="signup-logo">
-					<a href="index.html"><img src="__PUBLIC__/images/logo.png" alt=""></a>
+					<a href="index.html"><img src="/FZU-VentureService/Admin/Public/images/logo.png" alt=""></a>
 				</div>
 				
 				<div class="signup-box">
 					<div class="signup-form-student signup-form block">
-						<form id="signup-form-student" class="signup-form-users" action="__ROOT__/index.php/Home/Home/isLogin" method="post" >
+						<form id="signup-form-student" class="signup-form-users" action="/FZU-VentureService/Admin/index.php/Home/Home/isLogin" method="post" >
 							<p class="base-information">
 								<label for="susername">用户名：</label>
 								<input id="susername" name="username" type="text" required>
@@ -41,7 +41,7 @@
 			</div>
 		</div>
 	</div>
-	<load src="__PUBLIC__/js/tabswift.js" />
-	<load src="__PUBLIC__/js/verify.js" />
+	
+	
 </body>
 </html>
