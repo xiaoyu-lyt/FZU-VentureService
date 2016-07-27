@@ -36,7 +36,7 @@ class PartnerController extends BaseController {
 	 */
 	public function seekDetail_get() {
 		$sid = I('get.sid');
-		$data = M('seekRecords')->where('sid',$sid)->find();
+		$data = M('seekRecords')->where(array('sid'=>$sid))->find();
 		if( !empty($data) ) {
 			$data['issue_time'] = date('Y-m-d',$data['issue_time']);
 			$json = $this->jsonReturn(200,"查询成功",$data);
@@ -95,7 +95,7 @@ class PartnerController extends BaseController {
 		$page = !empty(I('get.page')) ? I('get.page') : 1;
 		$pageSize = !empty(I('get.size')) ? I('get.size') : 15;
 
-		$data = M('Tutors')->page($page,$pageSize)->select();
+		$data = M('Tutors')->page($page,$pageSize)->field('name,sex,job,introduction')->select();
 
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
@@ -113,11 +113,11 @@ class PartnerController extends BaseController {
 	 */
 	public function tutorDetail_get() {
 		$tid = I('get.tid');
-		$data = M('Tutors')->where('tid',$tid)->find();
+		$data = M('Tutors')->where(array('tid'=>$tid))->find();
 		if( !empty($data) ) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(0,"查询失败或者该投资人不存在！");
+			$json = $this->jsonReturn(0,"查询失败或者该导师不存在！");
 		}
 		$this->ajaxReturn($json);
 	}
@@ -135,7 +135,7 @@ class PartnerController extends BaseController {
 		$page = !empty(I('get.page')) ? I('get.page') : 1;
 		$pageSize = !empty(I('get.size')) ? I('get.size') : 15;
 
-		$data = M('Investors')->page($page,$pageSize)->select();
+		$data = M('Investors')->field('name,company,tel,reg_time')->page($page,$pageSize)->select();
 
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
@@ -148,12 +148,12 @@ class PartnerController extends BaseController {
 
 	/**
 	 * 获取投资人详细信息
-	 * @param int $tid 导师id
+	 * @param int $id 投资人id
 	 * @return json
 	 */
 	public function investorDetail_get() {
 		$id = I('get.id');
-		$data = M('Investor')->where('id',$id)->find();
+		$data = M('Investors')->where(array('id'=>$id))->find();
 		if( !empty($data) ) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {

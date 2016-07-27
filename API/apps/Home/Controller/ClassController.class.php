@@ -23,7 +23,7 @@ class ClassController extends BaseController {
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(0,"暂无培训信息");
+			$json = $this->jsonReturn(0,"暂无培训课堂信息");
 		}
 		//var_dump($jsonReturn);
 		$this->ajaxReturn($json);
@@ -37,16 +37,16 @@ class ClassController extends BaseController {
 	}
 	/**
 	 * 获取所有可下载的材料
-	 * @param int $type 类型：1 文档类 2视频类
+	 * @param int $type 类型：0 文档类 1视频类
 	 * @return json
 	 */
 	public function downloads_get() {
 		$type = I('get.type');
-		$data = M('Documents')->where('type',$type)->order('issue_time desc')->select();
+		$data = M('Documents')->where(array('type'=>$type))->order('issue_time desc')->select();
 		if(!empty($data)){
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(0,"查询失败");
+			$json = $this->jsonReturn(0,"暂无可下载的培训材料");
 		}
 		$this->ajaxReturn($json);
 	}
