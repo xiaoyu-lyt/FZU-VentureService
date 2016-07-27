@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 namespace Home\Controller;
 use Think\Controller\RestController;
 class BaseController extends RestController {
@@ -71,6 +71,6 @@ class BaseController extends RestController {
 			'data'	=> $data,
 			'msg'	=> $msg
 			);
-		return json_encode($arr);
+		return $arr;
 	}
 }
