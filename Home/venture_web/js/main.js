@@ -21,6 +21,9 @@ function removeClass(elem, className) {
     }
 }
 
+/**
+ * 登录界面
+ */
 var loginbtn = document.querySelector('.login');
 var loginWrapper = document.querySelector('.login-wrapper');
 
@@ -32,7 +35,6 @@ var loginWrapper = document.querySelector('.login-wrapper');
 
 loginWrapper.addEventListener('click',function(e) {
 	var dom = e.srcElement || e.target;
-	console.log(dom.className);
 	if((dom.className === 'login-wrapper')||(dom.className === 'close')) {
 		loginWrapper.style.display ='none';
 	}

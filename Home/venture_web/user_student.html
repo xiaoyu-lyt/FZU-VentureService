@@ -18,11 +18,11 @@
 				<span>欢迎登录</span>
 			</div>
 			<div class="login-line1 login-line">
-				<img src="images/用户.png" alt="">
+				<img src="images/icon-users.png" alt="">
 				<input type="text" name="username" id="username" placeholder="请输入用户名">
 			</div>
 			<div class="login-line2 login-line">
-				<img src="images/密码.png" alt="">
+				<img src="images/icon-password.png" alt="">
 				<input type="password" name="password" id="password" placeholder="请输入密码">
 			</div>
 			<div class="login-line3">
@@ -33,15 +33,71 @@
 			<button>登录</button>
 		</div>
 	</div>
+	
+	<!-- Modify Start -->
+	<div class="modify-wrapper">
+		<div class="modify-tel-box modify-box">
+			<span class="close"></span>
+			<form action="" id="modify-tel" class="modify-form">
+				<p class="password-line">
+					<input type="text" name="password" placeholder="密码">
+				</p>
+				<p class="tel-line">
+					<input type="text" name="tel" placeholder="设置新手机号">
+				</p>
+				<p class="code-line">	
+					<input type="text" name="v_code" placeholder="短信验证码">
+					<input class="send-btn" type="button"  value="发送验证码">
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="确认修改">
+				</p>
+			</form>
+		</div>
+		<div class="modify-password-box modify-box">
+			<span class="close"></span>
+			<form action="" id="modify-password" class="modify-form">
+				<p class="tel-line">
+					<input type="text" name="tel" placeholder="手机号">
+					</p>
+				<p class="code-line">	
+					<input type="text" name="v_code" placeholder="短信验证码">
+					<input class="send-btn" type="button"  value="发送验证码">
+				</p>
+				<p class="password-line">
+					<input type="text" name="new_password" placeholder="设置新密码">
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="确认修改">
+				</p>
+			</form>
+		</div>
+		<div class="verify-studnet-box modify-box">
+			<span class="close"></span>
+			<form action="" id="verify-studnet" class="modify-form">
+				<p class="snum-line">
+					<input type="text" name="snum" placeholder="学号">
+					</p>
+				<p class="spassword-line">
+					<input type="text" name="spassword" placeholder="密码">
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="开始认证">
+				</p>
+			</form>
+		</div>
+		
+	</div>
+	<!-- Modify End -->
 
 	<!-- Header Start -->
 	<header>
-		<a href="" id="logo">
+		<a href="index.html" id="logo">
 			<!-- <img src="images/logo.jpg" alt=""> -->
 		</a>
 		<div class="main-nav">
 			<ul class='clearfix'>
-				<li class='pull-left on'><a href="index.html">首页</a></li>
+				<li class='pull-left'><a href="index.html">首页</a></li>
 				<li class='pull-left'><a href="information.html">新闻资讯</a></li>
 				<li class='pull-left'><a href="#">孵化基地</a></li>
 				<li class='pull-left'><a href="projects.html">创业项目</a></li>
@@ -67,6 +123,8 @@
 		</ul>
 	</div>
 	<!-- Header End -->
+	
+	
 
 	<!-- User-student Start -->
 	<div class="user-wrapper">
@@ -106,26 +164,26 @@
 								<input type="text" value="qerdfdsv@qq.com">
 							</div>
 							<div class="field pull-left">
-								<label>手机号<a class="pull-right" href="#">修改手机号</a></label>
+								<label>手机号<a class="modify-tel pull-right" href="javascript:void(0)" onclick="modifyInfo(this)">修改手机号</a></label>
 								<input type="text" value="15097861789">
 							</div>
 						</div>
 						<div class="two-field clearfix">
 							<div class="field pull-left">
-								<label>账号密码<a class="pull-right" href="#">修改密码</a></label>
+								<label>账号密码<a class="modify-password pull-right" href="javascript:void(0)"  onclick="modifyInfo(this)">修改密码</a></label>
 								<input type="password" disabled="disabled" value="balabalabala" >
 							</div>
 							<div class="field pull-left">
-								<label>学生认证<span class="is-certify">未认证</span><a class="pull-right" href="#">我要认证</a></label>
-								<input type="text" >
+								<label>学号<span class="is-certify">未认证</span><a class="verify-studnet pull-right" href="javascript:void(0)"  onclick="modifyInfo(this)">我要认证</a></label>
+								<input type="text" disabled="disabled">
 							</div>
-					</div>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="user-box pull-left">
 				<div class="user-student-projects clearfix">
-					<a href="find_partner.html" class="user-student-find pull-left">
+					<a href="" class="user-student-find pull-left">
 						<img class="user-student-icon" src="images/members.png" alt="">
 						<span>寻找合伙人</span>
 					</a>
@@ -141,5 +199,8 @@
 	<!-- User-student End -->
 	<script src="js/tabswift.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/jquery-3.1.0.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/modify_info.js"></script>
 </body>
 </html>

@@ -676,9 +676,11 @@ footer h4 {
 }
 
 .information-wrapper .side-nav {
+	position: relative;
 	width: 198px;
 	display: inline-block;
 	line-height: 30px;
+	background-color: #fff;
 	margin-right: -1px;
 	
 }
@@ -746,7 +748,9 @@ footer h4 {
 }
 
 .information {
+	position: relative;
 	width: 838px;
+	height: 676px;
 	padding: 20px;
 	border: 1px solid #999;
 	box-shadow: 3px 0 5px 0 #cecece;
@@ -761,7 +765,7 @@ footer h4 {
 	display: block;
 }
 
-.information-detail ul li a {
+.information-ul li a {
 	display: inline-block;
 	width: 680px;
 	height: 32px;
@@ -774,22 +778,22 @@ footer h4 {
     white-space:nowrap;
 }
 
-.information-detail ul li a:hover {
+.information-ul li a:hover {
 	color: #000;
 }
 
-.information-detail ul li a:before {
+.information-ul li a:before {
 	content:'';
 	display: inline-block;
 	line-height: 32px;
 	width: 13px;
 	height: 13px;
 	margin-right: 5px;
-	background: url('../images/圈圈.png') no-repeat;
+	background: url('../images/circle.png') no-repeat;
 	background-size: contain;
 }
 
-.information-detail ul li span {
+.information-ul li span {
 	color: #999;
 	font-size: .9em;
 	line-height: 32px;
@@ -800,6 +804,11 @@ footer h4 {
 	color: #fff;
 }
 
+.pagination {
+	position: absolute;
+	bottom: 0;
+	right: 25px;
+}
 /*资讯详情页*/
 .article-wrapper {
 	/*width: 880px;*/
@@ -807,7 +816,7 @@ footer h4 {
 	padding: 20px;
 }
 
-.article-wrapper .article-title h1{
+.article-wrapper #article-title h1{
 	text-align: center;
 	font-weight: normal;
 	padding: 23px;
@@ -848,17 +857,24 @@ footer h4 {
 	margin-top: 20px;
 	margin-bottom: 60px;
 }
+
 /*登录弹窗*/
-.login-wrapper {
+.login-wrapper,
+.modify-wrapper {
 	width: 100%;
 	height: 100%;
 	position: fixed;
 	display: none;
-	z-index: 999;
+	z-index: 3999;
 	background-color: rgba(49, 57, 68, .95);
 }
 
-.login-wrapper .login-box {
+.modify-wrapper {
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.login-wrapper .login-box,
+.modify-wrapper .modify-box {
 	position: fixed;
 	width: 500px;
 	height: 370px;
@@ -953,7 +969,6 @@ footer h4 {
 	color: #fff !important;
 	cursor: pointer;
 }
-
 
 .base-wrapper {
 	width: 100%;
@@ -1191,7 +1206,10 @@ footer h4 {
 }
 
 .signup-role-select {
-	width: 600px;
+	position: relative;
+	width: 100%;
+	top: -50px;
+	height: 50px;
 	margin: 0 auto;
 }
 
@@ -1199,7 +1217,7 @@ footer h4 {
 .signup-role-select .st + span{
 	display: inline-block;
 	position: absolute;
-	top: 130px;
+	top: 0;
 	left: 0;
 	width: 18%;
 	cursor: pointer;
@@ -1269,20 +1287,16 @@ footer h4 {
 	height: 36px;
 	line-height: 36px;
 	text-align: center;
-	/*border: 1px solid #cecece;*/
 	border-radius: 6px;
 }
 
-.signup-form-wrapper .base-information .auth-code {
+.signup-form-wrapper .base-information .v-code {
 	width: 130px;
 }
 
-.send-code {
-	margin-left: 25px;
-}
 
 .send-code {
-	display: inlnie-block;
+	margin-left: 25px;
 	padding: none;
 	width: 120px !important;
 }
@@ -1300,7 +1314,9 @@ footer h4 {
 }
 
 .signup-form-wrapper label.error {
-	display: inline;
+	position: absolute;
+	height: 36px;
+	line-height: 36px;
 	color: #eb4f38;
 	width: auto;
 	margin-left: 10px;
@@ -1309,7 +1325,8 @@ footer h4 {
 /*比赛页面*/
 .game-wrapper,
 .user-wrapper,
-.admin-wrapper {
+.admin-wrapper,
+.personal-wrapper {
 	padding: 30px;
 }
 
@@ -1467,6 +1484,7 @@ footer h4 {
 }
 
 .user-box {
+	display: none;
 	width: 80%;
 	margin: 0 20px;
 }
@@ -1586,14 +1604,60 @@ footer h4 {
 	font-size: 20px;
 }
 
-.user-box {
+/*修改信息弹窗*/
+.modify-box {
 	display: none;
+	padding: 40px;
+}
+
+.modify-form input{
+	height: 40px;
+	border: 1px solid #cecece;
+	display: block;
+	
+	padding: 10px;
+}
+
+.modify-form p{
+	width: 330px;
+	margin: 28px auto;
+}
+
+.tel-line input,
+.password-line input{
+	width: 100%;
+}
+
+.code-line {
+	position: relative;
+}
+
+.send-btn {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.modify-form label.error {
+	position: absolute;
+	font-weight: normal;
+	color: #eb4f38;
+	width: auto;
+	margin-left: 10px;
 }
 
 .user-sidenav li:hover {
 	color: #eb4f38;
 }
 
+.snum-line input,
+.spassword-line input{
+	width: 100%;
+}
+
+.verify-studnet-box.modify-box {
+	height: 300px;
+}
 /*项目申请*/
 .user-apply-sidenav{
 	padding-left: 5%;
@@ -1657,7 +1721,7 @@ footer h4 {
 	margin-left: 45%;
 }
 
-.apply-setps-btn button{
+.step-btn {
 	background-color: #61A3E1;
 	color: #fff !important;
 	padding: 10px 20px;
@@ -1668,8 +1732,64 @@ footer h4 {
 	color: #61A3E1 !important;
 	margin-left: -35px;
 	border: 1px solid #61A3E1 ;
+	cursor: pointer;
 }
 
+.form-title {
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	font-size: 16px;
+	background-color: #eee;
+}
+
+.apply-steps p {
+	border-bottom: 1px solid #cecece;
+}
+
+.apply-steps {
+	border:1px solid #cecece;
+}
+
+.apply-steps label {
+	font-weight: normal;
+
+}
+
+.step-label {
+	height: 38px;
+	line-height: 38px;
+	width: 150px;
+	text-align: center;
+	margin: 0;
+	border-right: 1px solid #cecece;
+}
+
+.apply-steps td {
+	position: relative;
+}
+.apply-steps label.error {
+	display: block;
+	background-color: #61aee1;
+	position: absolute;
+	right: 5px;
+	top: -10px;
+	padding: 2px 5px;
+	color: #fff;
+	z-index: 299;
+	box-shadow: 0 0 1px 1px #cecece;
+}
+
+.apply-steps label.error:after {
+	content: '';
+	display: block;
+	position: absolute;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 8px solid #61aee1;
+	/*box-shadow: 0 0 1px 1px #cecece;*/
+	/*border-left: 10px solid #000;*/
+}
 /*寻找合伙人*/
 
 .icon-user-projects {
@@ -2213,4 +2333,63 @@ footer h4 {
 
 .block {
 	display: block;
+}
+
+/*个人信息*/
+.personal-head-portrait {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.personal-info-wrapper,
+.personal-info-box {
+	padding: 20px;
+}
+
+.personal-head-portrait img {
+	width: 100%;
+	height: 100%
+}
+
+
+.personal-username {
+	font-size: 24px;
+	font-weight: normal;
+	margin: 20px 0;
+}
+
+.aligned.center {
+	text-align: center;
+}
+
+.personal-name {
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+.personal-email,
+.personal-tel {
+	padding: 8px 0;
+}
+
+.personal-info-box {
+	margin: 20px;
+	border: 1px solid #cecece;
+	border-radius: 5px;
+}
+
+.personal-info-title {
+	font-size: 17px;
+}
+
+.join-project-detail,
+.team-detail {
+	margin: 20px 0;
+}
+
+.join-project-detail a{
+	color: #61a3e1 !important;
 }

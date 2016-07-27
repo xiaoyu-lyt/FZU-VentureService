@@ -10,30 +10,6 @@
 	<link rel="stylesheet" href="css/reset.css">
 </head>
 <body>
-	<div class="login-wrapper">
-		<div class="login-box">
-			<span class="close"></span>
-			<div class="login-top">
-				<img src="images/logo.jpg" alt="">
-				<span>欢迎登录</span>
-			</div>
-			<div class="login-line1 login-line">
-				<img src="images/用户.png" alt="">
-				<input type="text" name="username" id="username" placeholder="请输入用户名">
-			</div>
-			<div class="login-line2 login-line">
-				<img src="images/密码.png" alt="">
-				<input type="password" name="password" id="password" placeholder="请输入密码">
-			</div>
-			<div class="login-line3">
-				<span><input id="checkbox" type="checkbox" value="" />
-				<label for="checkbox"></label><span>记住密码</span></span>
-				<a class="pull-right" href="#"><span class="forgot">忘记密码</span></a>
-			</div>
-			<button>登录</button>
-		</div>
-	</div>
-	
 	<div class="signup-wrapper">
 		<div class="container">
 			<div class="signup-content">
@@ -62,8 +38,8 @@
 								</p> 
 
 								<p class="base-information">
-									<label for="apassword">密码：</label>
-									<input id="apassword" name="password" type="password" required>
+									<label for="password">密码：</label>
+									<input id="password" name="password" type="password" required>
 								</p>
 								<p class="base-information">
 									<label for="confirm-password">确认密码：</label>
@@ -78,8 +54,8 @@
 									<input id="tel" name="tel" type="text">
 								</p>
 								<p class="base-information">
-									<label for="auth-code">短信验证码：</label>
-									<input class="auth-code" type="auth-code" name="auth_code" type="text">
+									<label for="v-code">短信验证码：</label>
+									<input id="v-code" class="v-code" type="v-code" name="v_code" type="text">
 									<input type="button" class="send-code" value='发送验证码'>
 								</p>
 							</div>

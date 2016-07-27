@@ -4,14 +4,29 @@ $().ready(function() {
 		var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
 		return this.optional(element) || (length == 11 && mobile.test(value));
 	});
+	jQuery.validator.addMethod("isUsername", function(value, element) {
+		var uname = /^[a-zA-Z0-9_]*$/;
+		return this.optional(element) || (uname.test(value));
+	});
+	jQuery.validator.addMethod("isName", function(value, element) {
+		var iname = /^[\u4e00-\u9fa5]+$/;
+		return this.optional(element) || (iname.test(value));
+	});
+
 	$('#signup-form').validate({
 		rules: {
-			username: "required",
-			name: "required",
+			username: {
+				required: true,	
+				isUsername: true
+			},
+			name: {
+				required: true,
+				isName: true
+			},
 			password: "required",
 			confirm_password: {
 				required: true,
-				equalTo: "#apassword"
+				equalTo: "#password"
 			},
 			email: {
 				required: true,
@@ -23,8 +38,14 @@ $().ready(function() {
 			}
 		},
 		messages: {
-			username: "请输入用户名",
-			name: "请输入姓名",
+			username: {
+				required: "请输入用户名",
+				isUsername: "字母下划线和数字组成"
+			},
+			name: {
+				required: "请输入姓名",
+				isName: "姓名不合法"
+			},
 			password: "请输入密码",
 			confirm_password: {
 				required: "请输入确认密码",
@@ -79,26 +100,40 @@ sendBtn.onclick = function () {
 	}
 }
 
+var _groupid = 0;
+var select = document.querySelector('.signup-role-select');
 
+select.addEventListener('click', function(event) {
+	_groupid = event.target.id.slice(-1);
 
-var strData = $('.base-information-box input').map(function() {
-	return ($(this).attr('name') + '=' + $(this).val());
-}).get().join('&');
-
-var url = "../../Admin/index.php/home/user/register.html";
+})
 
 $('#submit').click(function() {
+	var _username = $('#username').val(),
+		_name = $('#name').val(),
+		_password = $('#apassword').val(),
+		_email = $('#email').val(),
+		_tel = $('#tel').val(),
+		v_code = $('#v-code').val();
 	$.ajax({
 		type: "post",
 		url: "../../API/index.php/home/user/register.html",
 		async: false,
+		data: {
+			username: _username,
+			name: _name,
+			password: _password,
+			email: _email,
+			tel: _tel,
+			v_code: v_code,
+			groupid: _groupid
+		},
 		error: function(){
-			alert('eroor!');
+			alert('error!');
 		},
 		success: function(data) {
 			var jsonData = JSON.parse(data);
 			alert(jsonData.msg);
-			document.write(jsonData.msg);
 		}
 	})
 })
