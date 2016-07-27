@@ -31,7 +31,7 @@ class UserController extends BaseController {
 			$json = $this->jsonReturn(0,"验证码有误！");
 		}
 		//print_r($jsonReturn);
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -73,7 +73,7 @@ class UserController extends BaseController {
 				$json = $this->jsonReturn(0,"已登录",$login_user);
 			}
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -88,7 +88,7 @@ class UserController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"修改失败，请重新提交！");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -112,7 +112,7 @@ class UserController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"验证码有误！");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -142,7 +142,7 @@ class UserController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"头像上传失败！");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -158,7 +158,7 @@ class UserController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"无此用户个人信息");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -175,7 +175,7 @@ class UserController extends BaseController {
 			$json = $this->jsonReturn(200,"操作成功",$ret);
 		else
 			$json = $this->jsonReturn(0,"请先进行学生验证");
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 
@@ -229,7 +229,7 @@ class UserController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"验证码有误！");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -278,7 +278,7 @@ class UserController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(200,"暂无可用标签");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -297,6 +297,7 @@ class UserController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"标签添加失败");
 		}
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -319,6 +320,7 @@ class UserController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"标签修改失败");
 		}
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -333,6 +335,7 @@ class UserController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"标签添加失败");
 		}
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -346,6 +349,7 @@ class UserController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"标签删除失败");
 		}
+		$this->ajaxReturn($json);
 	}
 
 	/**

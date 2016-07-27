@@ -18,7 +18,7 @@ class CptController extends BaseController {
 			$json = $this->jsonReturn(0,"暂无比赛信息");
 		}
 		//var_dump($jsonReturn);
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -38,7 +38,7 @@ class CptController extends BaseController {
 
 		}
 		//var_dump($jsonReturn);
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -55,7 +55,7 @@ class CptController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(200,"暂无该比赛往届信息");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 	/**
 	 * 添加比赛信息
@@ -73,7 +73,7 @@ class CptController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"添加失败，请重试。");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**

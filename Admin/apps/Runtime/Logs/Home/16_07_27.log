@@ -1,0 +1,412 @@
+[ 2016-07-27T10:31:49+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001273s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000876s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000944s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0236s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0232s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0557s ]
+SQL: SELECT `uid`,`username`,`nickname`,`groupid` FROM `vs_user` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0235s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0237s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0232s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0260s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0232s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0235s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036039s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036155s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001143s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001311s ]
+
+[ 2016-07-27T10:31:51+08:00 ] ::1 /FZU-VentureService/Admin/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+
+[ 2016-07-27T10:31:51+08:00 ] ::1 /FZU-VentureService/Admin/index.php?s=/Home/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0236s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0232s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0238s ]
+SQL: SELECT `uid`,`username`,`nickname`,`groupid` FROM `vs_user` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0254s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0232s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0  [ RunTime:0.0236s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0233s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0273s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 1  [ RunTime:0.0341s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 6 LIMIT 1   [ RunTime:0.0232s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 3 LIMIT 1   [ RunTime:0.0230s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 2  [ RunTime:0.0255s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 4 LIMIT 1   [ RunTime:0.0233s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0233s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017448s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017544s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000164s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000798s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000874s ]
+
+[ 2016-07-27T10:32:11+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0202s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0206s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0198s ]
+SQL: SELECT `uid`,`username`,`nickname`,`groupid` FROM `vs_user` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0207s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0199s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0190s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0192s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0216s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0473s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030105s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030217s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000161s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000795s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000926s ]
+
+[ 2016-07-27T10:32:15+08:00 ] ::1 /FZU-VentureService/Admin/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000559s ]
+
+[ 2016-07-27T10:32:15+08:00 ] ::1 /FZU-VentureService/Admin/index.php?s=/Home/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000524s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0198s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0188s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0202s ]
+SQL: SELECT `uid`,`username`,`nickname`,`groupid` FROM `vs_user` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0196s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0198s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0  [ RunTime:0.0192s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0189s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0198s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 1  [ RunTime:0.0192s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 6 LIMIT 1   [ RunTime:0.0192s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 3 LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 2  [ RunTime:0.0254s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 4 LIMIT 1   [ RunTime:0.0266s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0216s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018842s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018953s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000167s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000789s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000917s ]
+
+[ 2016-07-27T10:32:15+08:00 ] ::1 /FZU-VentureService/Admin/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+
+[ 2016-07-27T10:32:16+08:00 ] ::1 /FZU-VentureService/Admin/index.php?s=/Home/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0196s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0194s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0192s ]
+SQL: SELECT `uid`,`username`,`nickname`,`groupid` FROM `vs_user` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0190s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0193s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0  [ RunTime:0.0189s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0196s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0192s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 1  [ RunTime:0.0189s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 6 LIMIT 1   [ RunTime:0.0188s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 3 LIMIT 1   [ RunTime:0.0190s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 2  [ RunTime:0.0192s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 4 LIMIT 1   [ RunTime:0.0192s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0194s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019529s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019643s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000826s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000964s ]
+
+[ 2016-07-27T10:32:32+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000809s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000969s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001093s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0244s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0194s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0199s ]
+SQL: SELECT `uid`,`username`,`nickname`,`groupid` FROM `vs_user` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0209s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0195s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0194s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0188s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0192s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0188s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027375s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000184s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000242s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000604s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000667s ]
+
+[ 2016-07-27T10:32:32+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/Home/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0202s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0201s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '' LIMIT 1   [ RunTime:0.0211s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011083s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011214s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000345s ]
+
+[ 2016-07-27T10:32:34+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/Home/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0238s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0235s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '' LIMIT 1   [ RunTime:0.0228s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000142s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009422s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009497s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000192s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000274s ]
+
+[ 2016-07-27T10:32:39+08:00 ] ::1 /FZU-VentureService/Admin/index.php?s=/Home/Home/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+
+[ 2016-07-27T10:32:40+08:00 ] ::1 /FZU-VentureService/Admin/index.php?s=/Home/notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0213s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0436s ]
+SQL: SELECT `uid`,`username`,`nickname`,`groupid` FROM `vs_user` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0191s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0202s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0  [ RunTime:0.0194s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0190s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 1  [ RunTime:0.0190s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 6 LIMIT 1   [ RunTime:0.0207s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 3 LIMIT 1   [ RunTime:0.0194s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 2  [ RunTime:0.0188s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 4 LIMIT 1   [ RunTime:0.0196s ]
+SQL: SELECT * FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0192s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018811s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018919s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000161s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000762s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000840s ]
+
+[ 2016-07-27T10:32:44+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+ERR: 模板不存在:./apps/Home/View/Admin/article_publisher.html
+
+[ 2016-07-27T10:33:08+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009215s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009282s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000160s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000509s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2016-07-27T10:33:08+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/css/bootstrap.min.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000574s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001051s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001168s ]
+ERR: 无法加载控制器:Css
+
+[ 2016-07-27T10:33:08+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/css/reset.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011993s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003142s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003279s ]
+ERR: 无法加载控制器:Css
+
+[ 2016-07-27T10:33:08+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/images/setting.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001061s ]
+
+[ 2016-07-27T10:33:08+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/js/main.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000325s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001185s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001325s ]
+ERR: 无法加载控制器:Js
+
+[ 2016-07-27T10:33:08+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/css/admin.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009972s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000995s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001137s ]
+ERR: 无法加载控制器:Css
+
+[ 2016-07-27T10:34:35+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: href /Applications/MAMP/htdocs/FZU-VentureService/Admin/ThinkPHP/Library/Think/Template/TagLib/Cx.class.php 第 451 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008142s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008217s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000168s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000526s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000583s ]
+
+[ 2016-07-27T10:34:35+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/images/setting.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000729s ]
+
+[ 2016-07-27T10:37:26+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000833s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: href /Applications/MAMP/htdocs/FZU-VentureService/Admin/ThinkPHP/Library/Think/Template/TagLib/Cx.class.php 第 451 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007790s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007855s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000158s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000514s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000570s ]
+

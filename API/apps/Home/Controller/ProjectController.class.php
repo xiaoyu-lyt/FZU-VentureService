@@ -25,7 +25,7 @@ class ProjectController extends BaseController {
 			$json = $this->jsonReturn(0,"暂无项目信息");
 		}
 		//var_dump($jsonReturn);
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 	/**
 	 * 根据id获取项目详情内容
@@ -41,7 +41,7 @@ class ProjectController extends BaseController {
 			$json = $this->jsonReturn(0,"暂无此项目详细内容");
 		}
 		//var_dump($jsonReturn);
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -57,7 +57,7 @@ class ProjectController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"项目添加失败，请重试");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -73,6 +73,7 @@ class ProjectController extends BaseController {
 		} else {
 			$josn = $this->jsonReturn(0,"项目删除失败");
 		}
+		$this->ajaxReturn($json);
 	}
 
 

@@ -21,7 +21,7 @@ class FieldController extends BaseController {
 		}
 		//var_dump($jsonReturn);
 		// echo $json;
-		echo $this->ajaxReturn($data,'JSON');
+		$this->ajaxReturn($json);
 	}
 	/**
 	 * 根据id获取场地详情介绍
@@ -39,7 +39,8 @@ class FieldController extends BaseController {
 
 		}
 		//var_dump($jsonReturn);
-		echo $json;
+		// echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -54,7 +55,7 @@ class FieldController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"场地添加失败，请重新添加");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -68,7 +69,7 @@ class FieldController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"场地删除失败");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 }
 

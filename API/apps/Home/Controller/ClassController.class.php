@@ -26,7 +26,7 @@ class ClassController extends BaseController {
 			$json = $this->jsonReturn(0,"暂无培训信息");
 		}
 		//var_dump($jsonReturn);
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -48,7 +48,7 @@ class ClassController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"查询失败");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 }

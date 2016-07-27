@@ -26,7 +26,7 @@ class PartnerController extends BaseController {
 			$json = $this->jsonReturn(0,"暂无团队成员寻找记录");
 		}
 		//var_dump($jsonReturn);
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -43,7 +43,7 @@ class PartnerController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"查询失败或者该记录不存在！");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -62,7 +62,7 @@ class PartnerController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"用户未登录，请先登录");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -79,7 +79,7 @@ class PartnerController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,'暂无符合条件的记录');
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 /******************************导师*****************************************/
@@ -103,7 +103,7 @@ class PartnerController extends BaseController {
 			$json = $this->jsonReturn(0,"暂无任何导师信息");
 		}
 		//var_dump($jsonReturn);
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -119,7 +119,7 @@ class PartnerController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"查询失败或者该投资人不存在！");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 /******************************投资人*****************************************/
@@ -143,7 +143,7 @@ class PartnerController extends BaseController {
 			$json = $this->jsonReturn(200,"暂无任何投资人信息！");
 		}
 		//var_dump($jsonReturn);
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -159,7 +159,7 @@ class PartnerController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"查询失败或者该企业不存在！");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 

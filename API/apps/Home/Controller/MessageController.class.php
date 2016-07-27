@@ -21,7 +21,7 @@ class MessageController extends BaseController {
 			$json = $this->jsonReturn(0,"暂无相关消息");
 		}
 		//var_dump($jsonReturn);
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -42,7 +42,7 @@ class MessageController extends BaseController {
 			$json = $this->jsonReturn(0,"暂无相关对话消息");
 		}
 		//var_dump($jsonReturn);
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -60,6 +60,6 @@ class MessageController extends BaseController {
 		} else {
 			$json = $this->jsonReturn(0,"消息发送失败，请重试！");
 		}
-		echo $json;
+		$this->ajaxReturn($json);
 	}
 }

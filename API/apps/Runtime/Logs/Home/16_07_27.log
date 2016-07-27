@@ -1,0 +1,20 @@
+[ 2016-07-27T08:27:40+08:00 ] 127.0.0.1 /FZU-VentureService/API/index.php/Home/Field/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000849s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001028s ]
+SQL: SHOW COLUMNS FROM `vs_fields` [ RunTime:0.0203s ]
+SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`run_time` FROM `vs_fields` WHERE `status` = 1 ORDER BY run_time desc LIMIT 0,10   [ RunTime:0.0195s ]
+
+[ 2016-07-27T08:28:32+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000846s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001072s ]
+SQL: SHOW COLUMNS FROM `vs_fields` [ RunTime:0.0233s ]
+SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`run_time` FROM `vs_fields` WHERE `status` = 1 ORDER BY run_time desc LIMIT 0,10   [ RunTime:0.0190s ]
+

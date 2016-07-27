@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>管理员-福州大学大学生创业服务网</title>
-	<load href="__PUBLIC__/css/bootstrap.min.css" />
-	<load href="__PUBLIC__/css/admin.css" />
-	<load href="__PUBLIC__/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/FZU-VentureService/Admin/Public/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/FZU-VentureService/Admin/Public/css/admin.css" />
+	<link rel="stylesheet" type="text/css" href="/FZU-VentureService/Admin/Public/css/reset.css" />
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 	<div class="admin-wrapper article-publish-wrapper">
 		<div class="container">
 			<div class="user-box-top">
-				<img src="__PUBLIC__/images/setting.png" alt="">
+				<img src="/FZU-VentureService/Admin/Public/images/setting.png" alt="">
 				<h1>管理中心</h1>
 			</div>
 			<div class="article-publish-form">
@@ -43,6 +43,6 @@
 	</div>
 	
 	<!-- Article-publish End -->
-	<load src="__PUBLIC__/js/main.js" />
+	
 </body>
 </html>

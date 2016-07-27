@@ -90,6 +90,7 @@ class NoticeController extends BaseController {
 		} else {
 			$josn = $this->jsonReturn(0,"新闻删除失败");
 		}
+		$this->ajaxReturn($json);
 	}
 }
 
