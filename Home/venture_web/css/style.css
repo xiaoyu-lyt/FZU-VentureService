@@ -7,7 +7,7 @@
 
 @font-face {
 	font-family: 'shufa';
-	src: url('../font/禹卫书法行书简体.ttf') format('truetype');
+	src: url('../font/SHUFA.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -761,11 +761,6 @@ footer h4 {
 	display: none;
 }
 
-
-.info {
-	display: block;
-}
-
 .information-ul li a {
 	display: inline-block;
 	width: 680px;
@@ -801,13 +796,13 @@ footer h4 {
 }
 
 
-.pagination {
+.information-page .pagination {
 	position: absolute;
 	bottom: 0;
 	right: 25px;
 }
 
-.information-page .pagination .active{
+.pagination .active{
 	color: #fff !important; 
 }
 
@@ -942,6 +937,7 @@ footer h4 {
 	border-radius: 5px;
 	text-indent: 1em;
 }
+
 .login-wrapper .login-box .login-line3 {
 	width: 50%;
 	margin: 10px auto;
@@ -968,7 +964,7 @@ footer h4 {
 	text-decoration: underline;
 }
 
-.login-wrapper button {
+.login-wrapper #login-btn {
 	display: block;
 	width: 220px;
 	height: 35px;
@@ -1057,6 +1053,15 @@ footer h4 {
 }
 
 /*项目列表页*/
+
+.project-pagination {
+	position: relative;
+}
+
+.project-pagination .pagination {
+	position: absolute;
+	right: 30px;
+}
 .projects-select-box {
 	margin-top: 30px;
 	margin-bottom: 30px;
@@ -1159,6 +1164,7 @@ footer h4 {
 .projects-describe-tags span{
 	display: inline-block;
 	padding: 2px 5px;
+	margin: 0 2px;
 	background-color: rgb(195, 215, 164);
 	color: #fff;
 }

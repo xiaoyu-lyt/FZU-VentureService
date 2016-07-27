@@ -30,6 +30,31 @@ var loginWrapper = document.querySelector('.login-wrapper');
 (function loginInterface() {
 	loginbtn.onclick = function() {
 		loginWrapper.style.display = 'block';
+		var _username = $('#username').val(),
+			_password = $('#password').val(),
+			loginBox = document.querySelector('.login-box'),
+			btn = document.querySelector('#login-btn');
+		$(loginBox).keyup(function(event) {
+			keycode = event.which || event.keyCode;
+			if(keycode == 13) {
+				$('#login-btn').trigger('click');
+			} 
+		});
+		$('#login-btn').click(function() {
+			$.ajax({
+				type: 'post',
+				url: "../../API/index.php/home/user/login.html",
+				data: {
+					username: _username,
+					password: _password
+				},
+				success: function(result) {
+					var jsonData = JSON.parse(result);
+					alert(jsonData.msg);
+				}
+			});
+		});
+
 	}	
 })();
 
@@ -53,7 +78,4 @@ loginWrapper.addEventListener('click',function(e) {
 			removeClass(mobileBar, 'open');
 		}
 	}
-})()
-
-
-
+})();

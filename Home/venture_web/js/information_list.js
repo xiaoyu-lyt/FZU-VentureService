@@ -22,6 +22,11 @@ getData(0,1);
 getData(1,1);
 getData(2,1);
 
+/**
+ * 渲染资讯列表
+ * @param  {string} _type 资讯类型
+ * @param  {number} _page 当前页码
+ */
 function getData(_type, _page) {
 	var _size = 3, //页大小
 		nowType = typeState[_type],
@@ -107,7 +112,9 @@ $(function() {
 				pageNum = event.target.rel;
 			types[type].count = pageNum;
 			// console.log(pageNum);
-			getData(curType, pageNum);
+			if(pageNum) {
+				getData(curType, pageNum);
+			}
 		})
 	})
 })
