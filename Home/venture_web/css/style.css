@@ -708,6 +708,7 @@ footer h4 {
 .side-news{
 	background: url('../images/info-icon.png') no-repeat -32px -30px;
 }
+
 .side-notice{
 	background: url('../images/info-icon.png') no-repeat -32px 0;
 }
@@ -716,15 +717,15 @@ footer h4 {
 	background: url('../images/info-icon.png') no-repeat -32px -60px;
 }
 
-.active .side-news {
+.sideNav .active-li .side-news {
 	background-position: 0px -30px;
 }
 
-.active .side-notice {
+.sideNav .active-li .side-notice {
 	background-position: 0px 0;
 }
 
-.active .side-policy {
+.sideNav .active-li .side-policy {
 	background-position: 0px -60px;
 }
 
@@ -732,18 +733,18 @@ footer h4 {
 	display: inline-block;
 }
 
-.information-wrapper .side-nav .active {
+.information-wrapper .side-nav .active-li {
 	border: 1px solid #999;
 	border-right: 1px solid #fff;
 }
 
-.information-wrapper .side-nav .active,
+.information-wrapper .side-nav .active-li,
 .information-wrapper .side-nav a:hover,
 .projects-select-list li:hover {
 	color:  #eb4f38;
 }
 
-.information-wrapper .side-nav .active span {
+.information-wrapper .side-nav .active-li span {
 	background-position-x: 0px; 
 }
 
@@ -800,14 +801,21 @@ footer h4 {
 }
 
 
-.pagination .active{
-	color: #fff;
-}
-
 .pagination {
 	position: absolute;
 	bottom: 0;
 	right: 25px;
+}
+
+.information-page .pagination .active{
+	color: #fff !important; 
+}
+
+.pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover {
+	background-color: #61a3e1;
+	border-color: #61a3e1;
 }
 /*资讯详情页*/
 .article-wrapper {
