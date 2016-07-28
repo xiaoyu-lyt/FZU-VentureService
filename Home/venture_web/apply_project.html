@@ -18,11 +18,11 @@
 				<span>欢迎登录</span>
 			</div>
 			<div class="login-line1 login-line">
-				<img src="images/用户.png" alt="">
+				<img src="images/icon-users.png" alt="">
 				<input type="text" name="username" id="username" placeholder="请输入用户名">
 			</div>
 			<div class="login-line2 login-line">
-				<img src="images/密码.png" alt="">
+				<img src="images/icon-password.png" alt="">
 				<input type="password" name="password" id="password" placeholder="请输入密码">
 			</div>
 			<div class="login-line3">
@@ -30,7 +30,7 @@
 				<label for="checkbox"></label><span>记住密码</span></span>
 				<a class="pull-right" href="#"><span class="forgot">忘记密码</span></a>
 			</div>
-			<button>登录</button>
+			<button id='login-btn'>登录</button>
 		</div>
 	</div>
 
@@ -95,12 +95,24 @@
 						<th colspan="2">项目基本信息</th>
 					</tr>
 					<tr>
-						<td>项目简介<span class="star">*</span></td>
-						<td>
-							<textarea name="项目基本信息_项目简介"></textarea>
-						</td>
+						<td>项目名称<span class="star">*</span></td>
+						<td><input type="text"></td>
 					</tr>
 					<tr>
+						<td>项目图片<span class="star">*</span></td>
+						<td><input type="file" required></td>
+					</tr>
+					<tr>
+						<td>项目LOGO</td>
+						<td><input type="file"></td>
+					</tr>
+					<tr>
+						<td>项目简介<span class="star">*</span></td>
+						<td>
+							<textarea name="项目基本信息_项目简介"  required></textarea>
+						</td>
+					</tr>
+					<!-- <tr>
 						<td>项目所属技术领域<span class="star">*</span></td>
 						<td>
 							<select name="项目基本信息_项目所属技术领域" id="">
@@ -119,23 +131,31 @@
 	                            <option value="其他">其他</option>
 							</select>
 						</td>
-					</tr>
+					</tr> -->
 					<tr>
 						<td>联系地址及邮编<span class="star">*</span></td>
 						<td>
 							<input type="text" name="项目基本信息_联系地址及邮编">
 						</td>
 					</tr>
-					<tr>
+				<!-- 	<tr>
 						<td>团队人数<span class="star">*</span></td>
 						<td>
 							<input type="text" name="项目基本信息_团队人数">
 						</td>
-					</tr>
+					</tr> -->
 					<tr>
 						<td>项目启动时间<span class="star">*</span></td>
 						<td>
 							<input type="text" name="项目基本信息_项目启动时间">
+						</td>
+					</tr>
+
+					<tr>
+						<td>是否已成立公司<span class="star">*</span></td>
+						<td>
+							<input type="radio" name="项目基本信息_是否已成立公司" value="是" />是
+				          	<input type="radio" name="项目基本信息_是否已成立公司" value="否" />否
 						</td>
 					</tr>
 					<tr>
@@ -156,6 +176,8 @@
 				          	<input type="radio" name="项目基本信息_是否大学生创业" value="否" />否
 						</td>
 					</tr>
+					
+
 					<tr>
 						<td>商业计划书<span class="star">*</span></td>
 						<td>
@@ -508,53 +530,10 @@
 		</div>
 	</div>
 	<!-- User-apply End -->
-	<script src="js/tabswift.js"></script>
+
 	<script src="js/main.js"></script>
-	<script>
-		//hasClass
-		function hasClass(elem, className) {
-			return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-		}
-
-		// addClass
-		function addClass(elem, className) {
-		    if (!hasClass(elem, className)) {
-		    	elem.className += ' ' + className;
-		    }
-		}
-
-		// removeClass
-		function removeClass(elem, className) {
-			var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
-			if (hasClass(elem, className)) {
-		        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
-		            newClass = newClass.replace(' ' + className + ' ', ' ');
-		        }
-		        elem.className = newClass.replace(/^\s+|\s+$/g, '');
-		    }
-		}
-
-		var userBox = document.querySelectorAll('.user-box'),
-			stepBtn = document.querySelectorAll('.apply-setps-btn'),
-			oli = document.querySelector('.user-apply-sidenav').querySelectorAll('li');
-		userBox = [].slice.call(userBox);
-		stepBtn = [].slice.call(stepBtn);
-		stepBtn.forEach(function(elem, index) {
-			elem.addEventListener('click', function(event) {
-				if(hasClass(event.target,'btn-next')) {
-					console.log('next');
-					userBox[index].style.display = 'none';
-					removeClass(oli[index], 'now');
-					userBox[index+1].style.display = 'block';
-					addClass(oli[index+1], 'now');
-				} else if(hasClass(event.target, 'btn-pre')) {
-					userBox[index].style.display = 'none';
-					removeClass(oli[index], 'now');
-					userBox[index-1].style.display = 'block';
-					removeClass(oli[index-1], 'now');
-				}
-			})
-		});
-	</script>
+	<script src="js/jquery-3.1.0.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/apply_project.js"></script>
 </body>
 </html>

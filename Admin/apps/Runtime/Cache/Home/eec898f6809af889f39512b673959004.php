@@ -5,20 +5,21 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>管理员-福州大学大学生创业服务网</title>
-	<link rel="stylesheet" type="text/css" href="/demo/jyzd/Admin/Public/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="/demo/jyzd/Admin/Public/css/admin.css" />
-	<link rel="stylesheet" type="text/css" href="/demo/jyzd/Admin/Public/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/FZU-VentureService/Admin/Public/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/FZU-VentureService/Admin/Public/css/admin.css" />
+	<link rel="stylesheet" type="text/css" href="/FZU-VentureService/Admin/Public/css/reset.css" />
 </head>
 <body>
 	<!-- Admin Start -->
 	<div class="admin-wrapper">
 		<div class="container">
 			<div class="user-box-top">
-				<img src="/demo/jyzd/Admin/Public/images/setting.png" alt="">
+				<img src="/FZU-VentureService/Admin/Public/images/setting.png" alt="">
 				<h1>管理中心</h1>
 			</div>
 			<div class="user-student-sidenav user-sidenav pull-left">
 				<ul>
+<<<<<<< HEAD
 					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/notice">资讯管理</a></li>
 					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/user">用户管理</a></li>
 					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/project">项目管理</a></li>
@@ -26,6 +27,15 @@
 					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/class">培训管理</a></li>
 					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/document">教材管理</a></li>
 					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/competition">比赛管理</a></li>
+=======
+					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/notice">资讯管理</a></li>
+					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/user">用户管理</a></li>
+					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Projects') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/project">项目管理</a></li>
+					<li class="<?php if( $MODULE == 'Fields') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/field">入驻申请</a></li>
+					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/class">培训管理</a></li>
+					<li class="<?php if( $MODULE == 'Documents') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/document">教材管理</a></li>
+					<li class="<?php if( $MODULE == 'Competitions') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/competition">比赛管理</a></li>
+>>>>>>> origin/master
 				</ul>
 			</div>
 <!-- 入驻申请 -->
@@ -61,8 +71,18 @@
 	</div>
 </div>
 			<div class="admin-popup">
+<<<<<<< HEAD
+=======
+				<div class="popup-delete">
+					<p>确认删除？</p>
+					<div class="popup-select clearfix">
+						<span class="yes pull-left"><a href="/FZU-VentureService/Admin/index.php/home/admin/delete">确认</a></span>
+						<span class="no pull-right">取消</span></div>
+				</div>
+
+>>>>>>> origin/master
 				<div class="popup-refuse">
-					<form action="/demo/jyzd/Admin/index.php/home/admin/refuse" method="post">
+					<form action="/FZU-VentureService/Admin/index.php/home/admin/refuse" method="post">
 						<p>请填写拒绝理由</p>
 						<p class="refuse-hint">拒绝后将通过短信通知</p>
 						<input id="module" type="hidden" name="module" value="<?php echo ($MODULE); ?>">
@@ -84,7 +104,7 @@
 		}
 	</script>
 	<!-- Admin End -->
-	<script src="/demo/jyzd/Admin/Public/js/tabswift.js"></script>
-	<script src="/demo/jyzd/Admin/Public/js/admin.js"></script>
+	<script src="/FZU-VentureService/Admin/Public/js/tabswift.js"></script>
+	<script src="/FZU-VentureService/Admin/Public/js/admin.js"></script>
 </body>
 </html>
