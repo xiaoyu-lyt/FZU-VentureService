@@ -17,11 +17,6 @@
 	padding: 20px;
 }
 
-.game-title h1{
-	font-size: 25px;
-	text-align: center;
-	padding-bottom: 10px;
-}
 
 .user-box-top {
 	width: 300px;
@@ -41,6 +36,24 @@
 	color:  #61A3E1;
 }
 
+.admin-modify {
+	position: absolute;
+	right: 0;
+	color: #888;
+}
+
+.admin-modify .psbtn{
+	padding: 5px 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	color: #61a3e1 !important;
+	border:1px solid #61a3e1;
+	cursor: pointer;
+}
+
+.admin-modify .exit {
+	cursor: pointer;
+}
 .user-sidenav {
 	width: 15%;
 	text-align: center;
@@ -56,12 +69,11 @@
 }
 
 .user-box {
-	/*display: none;*/
+	display: none;
 	position: absolute;
 	right: 0;
 	top: 160px;
 	width: 80%;
-	/*margin: 0 20px;*/
 
 }
 
@@ -171,6 +183,13 @@
 	cursor: pointer;
 }
 
+.delete-all {
+	position: absolute;
+	right: 170px;
+	top: 27px;
+	color: #61a3e1 !important;
+
+}
 .admin-article-operation a:hover {
 	text-decoration: underline !important;
 }
@@ -198,7 +217,6 @@
 	width: 280px;
 	height: 160px;
 	margin-left: -140px;
-	
 }
 .popup-refuse  {
 	width: 350px;
@@ -272,7 +290,6 @@
 
 /*发布文章表单*/
 .article-publish-form {
-	/* width: 880px; */
 	padding: 30px 0;
 	color: #666;
 }
@@ -289,7 +306,7 @@
 
 .article-publish-form input {
 	height: 2em;
-	/* width: 82%; */
+	width: 82%;
 	border: 1px solid #cecece;
 }
 
@@ -414,3 +431,99 @@
 	border-radius: 6px;
 }
 
+.modify-wrapper {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 3999;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.modify-wrapper .modify-box {
+	position: fixed;
+	width: 500px;
+	height: 320px;
+	left: 50%;
+	top: 50%;
+	padding: 35px;
+	margin: -200px 0 0 -250px ; 
+	background-color: #fff;
+	z-index:1000;
+}
+
+.modify-form p{
+	width: 330px;
+	margin: 28px auto;
+}
+
+.modify-form input{
+	height: 40px;
+	border: 1px solid #cecece;
+	display: block;
+	padding: 10px;
+}
+
+.modify-form .old-line input,
+.modify-form .new-line input{
+	width: 100%;
+}
+
+/*查看个人信息*/
+.personal-head-portrait {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.personal-info-wrapper,
+.personal-info-box {
+	padding: 30px;
+}
+
+.personal-head-portrait img {
+	width: 100%;
+	height: 100%
+}
+
+
+.personal-username {
+	font-size: 24px;
+	font-weight: normal;
+	margin: 20px 0;
+}
+
+.aligned.center {
+	text-align: center;
+}
+
+.personal-name {
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+.personal-email,
+.personal-tel {
+	padding: 8px 0;
+}
+
+.personal-info-box {
+	margin: 20px;
+	border: 1px solid #cecece;
+	border-radius: 5px;
+}
+
+.personal-info-title {
+	font-size: 17px;
+}
+
+.join-project-detail,
+.team-detail {
+	margin: 20px 0;
+}
+
+.join-project-detail a{
+	color: #61a3e1 !important;
+}
