@@ -48,7 +48,7 @@
 
 			<label for=""><span class="star">*</span>内容:</label>
 				<!-- 加载编辑器的容器 -->
-			    <script id="_container" name="content" type="text/plain" style="width: 740px; height:250px; margin-left:190px;"><?php echo ($article["content"]); ?>
+			    <script id="_container" name="content" type="text/plain" style="width: 740px; height:250px; margin-left:190px;"><?php echo htmlspecialchars_decode($article['content']); ?>
 			    </script>
 			    <!-- 配置文件 -->
 			    <script type="text/javascript" src="/demo/jyzd/Admin/Public/ueditor/ueditor.config.js"></script>

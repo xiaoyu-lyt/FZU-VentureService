@@ -12,6 +12,7 @@ class NoticeModel extends Model {
 		$data = $this->where(array('type'=>$type))->select();
 		for ($i=0; $i < count($data) ; $i++) { 
 			$data[$i]['name'] = M('User')->where(array('uid'=>$data[$i]['uid']))->field('username,name')->find();
+			$data[$i]['date'] = date('Y-m-d',$data[$i]['date']);
 		}
 		return $data;
 	}

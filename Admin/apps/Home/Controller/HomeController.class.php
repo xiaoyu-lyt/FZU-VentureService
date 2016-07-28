@@ -35,6 +35,6 @@ class HomeController extends Controller {
 	public function logout() {
 		session('login_manager',NULL);
 		cookie('cookie_token',NULL);
-		$this->success('注销成功','index');
+		$this->success('注销成功',U('index'));
 	}
 }
