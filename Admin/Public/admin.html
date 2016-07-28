@@ -10,12 +10,35 @@
 	<link rel="stylesheet" href="css/reset.css">
 </head>
 <body>
+<!-- Modify Start -->
+	<div class="modify-wrapper">
+		<div class="modify-password-box modify-box">
+			<span class="close"></span>
+			<form action="" id="modify-password" class="modify-form">
+				<p class="old-line">	
+					<input type="text" name="old_password" placeholder="旧密码" required>
+				</p>
+				<p class="new-line">
+					<input type="text" name="new_password" placeholder="新密码" required>
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="确认修改">
+				</p>
+			</form>
+		</div>
+	</div>
+	<!-- Modify End -->
+
 	<!-- Admin Start -->
 	<div class="admin-wrapper">
 		<div class="container">
 			<div class="user-box-top">
 				<img src="images/setting.png" alt="">
 				<h1>管理中心</h1>
+				<div class="admin-modify">
+					<p>你好，<span>超级管理员！</span><span class="psbtn">修改密码</span><span class="exit">退出</span></p>
+
+				</div>
 			</div>
 			<div class="user-student-sidenav user-sidenav pull-left">
 				<ul>
@@ -29,7 +52,7 @@
 				</ul>
 			</div>
 			<!-- 资讯管理 -->
-			<div class="user-box  admin-info-management sub-management pull-right">
+			<div class="user-box block admin-info-management sub-management pull-right">
 				<div class="admin-top">
 					<ul class="admin-management-ul clearfix" id="admin-articles">
 						<li class="pull-left now-li">新闻资讯</li>
@@ -64,6 +87,7 @@
 							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
 							<td class="admin-article-operation admin-operation">
 								<span class="admin-article-modify">修改</span>
+								<span class="admin-article-delete">删除</span>
 								
 							</td>
 						</tr>
@@ -80,6 +104,7 @@
 							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
 							<td class="admin-article-operation admin-operation">
 								<span class="admin-article-modify">修改</span>
+								<span class="admin-article-delete">删除</span>
 								
 							</td>
 						</tr>
@@ -96,6 +121,7 @@
 							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
 							<td class="admin-article-operation admin-operation">
 								<span class="admin-article-modify">修改</span>
+								<span class="admin-article-delete">删除</span>
 								
 							</td>
 						</tr>
@@ -112,13 +138,13 @@
 							<td class="admin-article-updatetime"><span>2016-07-23</span></td>
 							<td class="admin-article-operation admin-operation">
 								<span class="admin-article-modify">修改</span>
+								<span class="admin-article-delete">删除</span>
 							</td>
 						</tr>
 						<tr>
-							<td colspan="6"></td>
-							<td>
+							<td colspan="2">
 								<div class="admin-article-operation admin-operation">
-									<span class="admin-article-delete">删除</span>
+									<span class="admin-article-delete delete-all">批量删除</span>
 								</div>
 							</td>
 						</tr>
@@ -186,15 +212,10 @@
 							</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>
+		
+							<td colspan="2">
 								<div class="admin-article-operation admin-operation">
-									<span class="admin-article-delete">删除</span>
+									<span class="admin-article-delete delete-all">批量删除</span>
 								</div>
 							</td>
 						</tr>
@@ -261,21 +282,25 @@
 							</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>
+		
+							<td colspan="2">
 								<div class="admin-article-operation admin-operation">
-									<span class="admin-article-delete">删除</span>
+									<span class="admin-article-delete delete-all">批量删除</span>
 								</div>
 							</td>
 						</tr>
 					</table>
 				</div>
-				
+				<div class="pull-right">
+					<ul class="pagination">
+						<li><a href="#">&laquo;</a></li>
+						<li><a href="#">1 <span class="sr-only">(current)</span></a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">&raquo;</a></li>
+					</ul>
+				</div>
 			</div>
 			<!-- 用户管理 -->
 			<div class="user-box  admin-users-management sub-management pull-right">

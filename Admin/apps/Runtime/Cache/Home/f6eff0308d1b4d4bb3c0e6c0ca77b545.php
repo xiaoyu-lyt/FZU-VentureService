@@ -28,48 +28,43 @@
 					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/competition">比赛管理</a></li>
 				</ul>
 			</div>
-<!-- 比赛管理 -->
-<div class="user-box admin-games-management pull-right">
-	<div class="admin-top">
-		<a class="admin-publish-game" href="/FZU-VentureService/Admin/index.php/home/competition/publish">发布比赛通知</a>
-	</div>
+<!-- Aricle-publish Start -->
+<div class="article-publish-form">
+	<form action="/FZU-VentureService/Admin/index.php/home/competition/publish/do" method="post">
 
-	<div class="admin-new-table admin-info-table admin-table block">
-		<table>
-			<tr>
-				<th class="admin-th-select">
-					<input class="admin-news-select-btn" type="checkbox">
-				</th>
-				<th class="admin-th-article-id admin-th-id"><span>ID</span></th>
-				<th class="admin-th-article-title admin-th-title"><span>标题</span></th>
-				<th class="admin-th-article-times admin-th-times"><span>届数</span></th>
-				<th class="admin-th-article-publishtime admin-th-publishtime"><span>发布时间</span></th>
-				<th class="admin-th-article-deadline admin-th-deadline"><span>截止时间</span></th>
-				<th class="admin-th-article-operation admin-th-operation"><span>管理操作</span></th>
-			</tr>
+		<div class="article-publish-box article-publish-title">
+			<label for=""><span class="star">*</span>标题:</label>
+			<input type="text" name="name" value="">
+			<button class="duplicate-detection">检测重复</button>
+		</div>
 
-			<?php if(is_array($competition)): $i = 0; $__LIST__ = $competition;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><tr>
-					<td class="admin-article-select">
-						<input class="admin-policy-select-btn" type="checkbox">
-					</td>
-					<td class="admin-article-id"><?php echo ($i); ?></td>
-					<td class="admin-article-title">
-						<a href="article.html"><?php echo ($v["name"]); ?></a>
-					</td>
-					<td class="admin-article-times"><span><?php echo ($v["times"]); ?></span></td>
-					<td class="admin-article-publishtime"><span><?php echo ($v["issue_time"]); ?></span></td>
-					<td class="admin-article-deadline"><span><?php echo ($v["deadline"]); ?></span></td>
-					<td class="admin-article-operation admin-operation">
-						<span class="admin-article-modify"><a href="/FZU-VentureService/Admin/index.php/home/competiton/modify?nid=<?php echo ($v["cid"]); ?>">修改</a></span>
-						
-					</td>
-				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+		<div class="article-publish-box article-publish-title">
+			<label for=""><span class="star">*</span>届数:</label>
+			<input type="text" name="times" value="">
+		</div>
 
-		</table>
+		<div class="article-publish-box article-publish-abstract">
 
-	</div>
-
+			<label for=""><span class="star">*</span>内容:</label>
+				<!-- 加载编辑器的容器 -->
+			    <script id="_container" name="description" type="text/plain" style="width: 740px; height:250px; margin-left:190px;"> 
+			    </script>
+			    <!-- 配置文件 -->
+			    <script type="text/javascript" src="/FZU-VentureService/Admin/Public/ueditor/ueditor.config.js"></script>
+			    <!-- 编辑器源码文件 -->
+			    <script type="text/javascript" src="/FZU-VentureService/Admin/Public/ueditor/ueditor.all.js"></script>
+			    <!-- 实例化编辑器 -->
+		</div>
+		<div class="article-publish-btn">
+			<button type="submit" name="sub" class="save-close">保存后自动关闭</button>
+			<button class="save-publish">保存并继续发表</button>
+			<button class="publish-close"><a href="javascript :;" onClick="javascript :history.back(-1);">关闭</a></button>
+		</div>
+	</form>
 </div>
+<script type="text/javascript">
+	        var ue = UE.getEditor('_container');
+</script>
 			<div class="admin-popup">
 				<div class="popup-refuse">
 					<form action="/FZU-VentureService/Admin/index.php/home/admin/refuse" method="post">

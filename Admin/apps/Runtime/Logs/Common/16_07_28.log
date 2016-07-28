@@ -1,6 +1,57 @@
+<<<<<<< HEAD
 [ 2016-07-28T08:24:32+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/notice
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
 ERR: 无法加载模块:Notice
 
+=======
+[ 2016-07-28T09:05:45+08:00 ] ::1 /FZU-VentureService/Admin/Public/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+ERR: 无法加载模块:Public
+
+[ 2016-07-28T09:05:45+08:00 ] ::1 /FZU-VentureService/Admin/Public/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+ERR: 无法加载模块:Public
+
+[ 2016-07-28T09:44:41+08:00 ] ::1 /FZU-VentureService/Admin/article.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+ERR: 无法加载模块:Article
+
+[ 2016-07-28T09:44:45+08:00 ] ::1 /FZU-VentureService/Admin/article.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000075s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+ERR: 无法加载模块:Article
+
+[ 2016-07-28T09:53:52+08:00 ] ::1 /FZU-VentureService/Admin/Public/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+ERR: 无法加载模块:Public
+
+[ 2016-07-28T09:54:03+08:00 ] ::1 /FZU-VentureService/Admin/Public/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+ERR: 无法加载模块:Public
+
+[ 2016-07-28T13:14:58+08:00 ] ::1 /FZU-VentureService/Admin/Public/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+ERR: 无法加载模块:Public
+
+[ 2016-07-28T13:14:59+08:00 ] ::1 /FZU-VentureService/Admin/Public/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+ERR: 无法加载模块:Public
+
+>>>>>>> origin/master

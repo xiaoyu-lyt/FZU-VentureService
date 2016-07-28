@@ -19,6 +19,7 @@
 			</div>
 			<div class="user-student-sidenav user-sidenav pull-left">
 				<ul>
+<<<<<<< HEAD
 					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/notice">资讯管理</a></li>
 					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/user">用户管理</a></li>
 					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/project">项目管理</a></li>
@@ -26,6 +27,15 @@
 					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/class">培训管理</a></li>
 					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/document">教材管理</a></li>
 					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/competition">比赛管理</a></li>
+=======
+					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/notice">资讯管理</a></li>
+					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/user">用户管理</a></li>
+					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/project">项目管理</a></li>
+					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/field">入驻申请</a></li>
+					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/class">培训管理</a></li>
+					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/document">教材管理</a></li>
+					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/FZU-VentureService/Admin/index.php/home/competition">比赛管理</a></li>
+>>>>>>> origin/master
 				</ul>
 			</div>
 <!-- 入驻申请 -->
@@ -53,7 +63,7 @@
 					<td class="admin-base-username"><span><?php echo ($vo["applicant"]["name"]); ?></span></td>
 					<td class="admin-base-time"><span><?php echo ($vo["apply_time"]); ?></span></td>
 					<td class="admin-base-operation admin-operation">
-						<span class="admin-base-pass admin-pass"><a href="/demo/jyzd/Admin/index.php/home/field/pass?id=<?php echo ($vo["id"]); ?>">通过</a></span>
+						<span class="admin-base-pass admin-pass"><a href="/FZU-VentureService/Admin/index.php/home/field/pass?id=<?php echo ($vo["id"]); ?>">通过</a></span>
 						<span class="admin-base-refuse admin-refuse" id="<?php echo ($vo["applicant"]["tel"]); ?>" onclick="refuse(this)">拒绝</span>
 					</td>
 				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
