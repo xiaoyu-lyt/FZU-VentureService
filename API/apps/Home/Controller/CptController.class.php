@@ -19,6 +19,7 @@ class CptController extends BaseController {
 		}
 		//var_dump($jsonReturn);
 		$this->ajaxReturn($json);
+		// echo $json;
 	}
 
 	/**
@@ -43,20 +44,23 @@ class CptController extends BaseController {
 
 	/**
 	 * 获取往届比赛信息
-	 * @param int $cid 比赛id
+	 * @param int $number 比赛编号
+	 * @param int $times 比赛届数
 	 * @return json
 	 */
 	public function previous_get() {
-		$where['cid'] = I('cid');
-		$ret = M('Competitions')->where($where)->field('number')->find();
-		$data = M('Competitions')->where("number = '%s' && deadline < '%d'",array($ret['number'],time()))->select();
+		$number = I('get.number');
+		$times = I('get.times');
+		$data = M('Competitions')->where("number = '%d' && times < '%d' ",array($number,$times))->order('times asc')->select();// 查询编号为$number 的往届比赛
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(200,"暂无该比赛往届信息");
+			$json = $this->jsonReturn(200,"暂无往届比赛信息");
 		}
 		$this->ajaxReturn($json);
 	}
+
+	
 	/**
 	 * 添加比赛信息
 	 * @return json

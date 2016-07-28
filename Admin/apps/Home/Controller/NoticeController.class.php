@@ -29,9 +29,12 @@ class NoticeController extends AdminController {
 	}
 	
 	public function publish($action = '') {
+		
+		$login_manager = session('login_manager');
 		if($action == 'do') {
 			$data = I('post.');
 			$data['date'] = time();
+			$data['uid'] = $login_manager['uid'];
 			if(M('Notice')->add($data)) {
 				$this->success("发布成功",U('index'));
 			} else {
