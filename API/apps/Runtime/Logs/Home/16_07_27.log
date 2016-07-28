@@ -1,20 +1,373 @@
-[ 2016-07-27T08:27:40+08:00 ] 127.0.0.1 /FZU-VentureService/API/index.php/Home/Field/list.html
+[ 2016-07-27T10:45:48+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004633s ]
+ERR: 无法加载控制器:
+
+[ 2016-07-27T10:45:58+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001159s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001280s ]
+ERR: 无法加载控制器:
+
+[ 2016-07-27T10:46:05+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000996s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001118s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001239s ]
+ERR: 非法操作:
+
+[ 2016-07-27T10:46:10+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/user/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002242s ]
+ERR: 非法操作:login
+
+[ 2016-07-27T12:15:23+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/notice/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000714s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+
+[ 2016-07-27T12:15:47+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/notice/list.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000849s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000928s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001028s ]
-SQL: SHOW COLUMNS FROM `vs_fields` [ RunTime:0.0203s ]
-SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`run_time` FROM `vs_fields` WHERE `status` = 1 ORDER BY run_time desc LIMIT 0,10   [ RunTime:0.0195s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001047s ]
 
-[ 2016-07-27T08:28:32+08:00 ] ::1 /FZU-VentureService/API/index.php/Home/Field/list.html
+[ 2016-07-27T12:16:17+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/notice/list.html
 INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000846s ]
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000682s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000922s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001072s ]
-SQL: SHOW COLUMNS FROM `vs_fields` [ RunTime:0.0233s ]
-SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`run_time` FROM `vs_fields` WHERE `status` = 1 ORDER BY run_time desc LIMIT 0,10   [ RunTime:0.0190s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001033s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0202s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,15   [ RunTime:0.0270s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vs_notice` LIMIT 1   [ RunTime:0.0197s ]
+
+[ 2016-07-27T12:19:53+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/notice/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001108s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0207s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,15   [ RunTime:0.0205s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vs_notice` LIMIT 1   [ RunTime:0.0189s ]
+
+[ 2016-07-27T16:55:57+08:00 ] 127.0.0.1 /demo/jyzd/API/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001585s ]
+ERR: 无法加载控制器:
+
+[ 2016-07-27T16:56:09+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001511s ]
+ERR: 非法操作:list
+
+[ 2016-07-27T16:56:40+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/home/notice/list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000817s ]
+ERR: 无法加载控制器:Home
+
+[ 2016-07-27T16:56:49+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001401s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001578s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0206s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,15   [ RunTime:0.0199s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vs_notice` LIMIT 1   [ RunTime:0.0190s ]
+
+[ 2016-07-27T16:56:55+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001057s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0196s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,15   [ RunTime:0.0188s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vs_notice` LIMIT 1   [ RunTime:0.0187s ]
+
+[ 2016-07-27T17:00:46+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001496s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0238s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,15   [ RunTime:0.0225s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vs_notice` LIMIT 1   [ RunTime:0.0223s ]
+
+[ 2016-07-27T17:01:21+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?size=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001905s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0202s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,1   [ RunTime:0.0189s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vs_notice` LIMIT 1   [ RunTime:0.0205s ]
+
+[ 2016-07-27T17:01:47+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?page=1&size=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000929s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0237s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,1   [ RunTime:0.0231s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vs_notice` LIMIT 1   [ RunTime:0.0228s ]
+
+[ 2016-07-27T17:02:33+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?page=1&size=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000575s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001657s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0287s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,3   [ RunTime:0.0230s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vs_notice` LIMIT 1   [ RunTime:0.0243s ]
+
+[ 2016-07-27T17:02:39+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?page=1&size=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001681s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0199s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,4   [ RunTime:0.0196s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vs_notice` LIMIT 1   [ RunTime:0.0193s ]
+
+[ 2016-07-27T17:06:59+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?page=1&size=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001196s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0208s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,4   [ RunTime:0.0188s ]
+NOTIC: [8] Undefined variable: type D:\wamp\www\demo\jyzd\API\apps\Home\Controller\NoticeController.class.php 第 17 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `vs_notice` WHERE `type` = null LIMIT 1   [ RunTime:0.0192s ]
+
+[ 2016-07-27T17:07:20+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?page=1&size=4&type=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000751s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001574s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0204s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,4   [ RunTime:0.0191s ]
+NOTIC: [8] Undefined variable: type D:\wamp\www\demo\jyzd\API\apps\Home\Controller\NoticeController.class.php 第 17 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `vs_notice` WHERE `type` = null LIMIT 1   [ RunTime:0.0188s ]
+
+[ 2016-07-27T17:07:26+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?page=1&size=4&type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001524s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0202s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,4   [ RunTime:0.0189s ]
+NOTIC: [8] Undefined variable: type D:\wamp\www\demo\jyzd\API\apps\Home\Controller\NoticeController.class.php 第 17 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `vs_notice` WHERE `type` = null LIMIT 1   [ RunTime:0.0208s ]
+
+[ 2016-07-27T17:08:27+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?page=1&size=4&type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000185s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000990s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0238s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,4   [ RunTime:0.0234s ]
+
+[ 2016-07-27T17:08:33+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?page=1&size=4&type=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000808s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001027s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0209s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,4   [ RunTime:0.0204s ]
+
+[ 2016-07-27T17:08:38+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?page=1&size=2&type=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000949s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001092s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0264s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,2   [ RunTime:0.0265s ]
+
+[ 2016-07-27T17:08:55+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?page=1&size=2&type=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000796s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001008s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0246s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,2   [ RunTime:0.0227s ]
+
+[ 2016-07-27T17:09:37+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?page=1&size=2&type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001465s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0201s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,2   [ RunTime:0.0189s ]
+
+[ 2016-07-27T17:10:06+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?type=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000846s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001013s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0216s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,15   [ RunTime:0.0202s ]
+
+[ 2016-07-27T17:12:20+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?type=0&page=1&size=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001761s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0238s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,1   [ RunTime:0.0227s ]
+
+[ 2016-07-27T17:12:28+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?type=0&page=2&size=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000952s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000879s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001035s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0196s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 1,1   [ RunTime:0.0191s ]
+
+[ 2016-07-27T17:12:37+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?type=0&page=1&size=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000926s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001652s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0196s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,1   [ RunTime:0.0194s ]
+
+[ 2016-07-27T17:14:01+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?type=0&page=1&size=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001630s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0197s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,1   [ RunTime:0.0191s ]
+NOTIC: [8] Undefined variable: type D:\wamp\www\demo\jyzd\API\apps\Home\Controller\NoticeController.class.php 第 17 行.
+SQL: SELECT * FROM `vs_notice` WHERE `type` = null  [ RunTime:0.0195s ]
+
+[ 2016-07-27T17:14:29+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?type=0&page=1&size=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000866s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001564s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0204s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,2   [ RunTime:0.0193s ]
+NOTIC: [8] Undefined variable: type D:\wamp\www\demo\jyzd\API\apps\Home\Controller\NoticeController.class.php 第 17 行.
+SQL: SELECT * FROM `vs_notice` WHERE `type` = null  [ RunTime:0.0194s ]
+
+[ 2016-07-27T17:15:08+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?type=0&page=1&size=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0209s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,2   [ RunTime:0.0191s ]
+NOTIC: [8] Undefined variable: type D:\wamp\www\demo\jyzd\API\apps\Home\Controller\NoticeController.class.php 第 17 行.
+SQL: SELECT * FROM `vs_notice` WHERE `type` = null  [ RunTime:0.0188s ]
+
+[ 2016-07-27T17:17:07+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?type=0&page=1&size=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001507s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0201s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0 AND `status` = 1  [ RunTime:0.0196s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,2   [ RunTime:0.0191s ]
+
+[ 2016-07-27T17:17:29+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?type=0&page=2&size=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000824s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001744s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0278s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0 AND `status` = 1  [ RunTime:0.0234s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 2,2   [ RunTime:0.0234s ]
+
+[ 2016-07-27T17:18:08+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/home/notice/list.html?type=0&page=2&size=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001442s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0242s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0 AND `status` = 1  [ RunTime:0.0232s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 2,2   [ RunTime:0.0264s ]
 

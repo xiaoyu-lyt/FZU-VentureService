@@ -21,11 +21,11 @@
 				<ul>
 					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/notice">资讯管理</a></li>
 					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/user">用户管理</a></li>
-					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Projects') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/project">项目管理</a></li>
-					<li class="<?php if( $MODULE == 'Fields') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/field">入驻申请</a></li>
+					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/project">项目管理</a></li>
+					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/field">入驻申请</a></li>
 					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/class">培训管理</a></li>
-					<li class="<?php if( $MODULE == 'Documents') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/document">教材管理</a></li>
-					<li class="<?php if( $MODULE == 'Competitions') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/competition">比赛管理</a></li>
+					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/document">教材管理</a></li>
+					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/competition">比赛管理</a></li>
 				</ul>
 			</div>
 <!-- 教材管理 -->
@@ -41,21 +41,23 @@
 				</th>
 				<th class="admin-th-textbook-id admin-th-id"><span>ID</span></th>
 				<th class="admin-th-textbook-name admin-th-username"><span>教材名</span></th>
+				<th class="admin-th-textbook-name admin-th-username"><span>发布时间</span></th>
 				<th class="admin-th-textbook-management admin-th-management"><span>管理操作</span></th>
 			</tr>
-			<tr>
-				<td class="admin-textbook-select">
-					<input class="admin-textbook-select-btn" type="checkbox">
-				</td>
-				<td class="admin-textbook-id">1</td>
-				<td class="admin-textbook-name">
-					<a href="">Excel培训</a>
-				</td>
-				<td class="admin-textbook-operation admin-operation">
-					<span class="admin-article-modify">修改</span>
-					<span class="admin-article-delete">删除</span>
-				</td>
-			</tr>
+			<?php if(is_array($documents)): $i = 0; $__LIST__ = $documents;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+					<td class="admin-textbook-select">
+						<input class="admin-textbook-select-btn" type="checkbox">
+					</td>
+					<td class="admin-textbook-id"><?php echo ($vo["id"]); ?></td>
+					<td class="admin-textbook-name">
+						<a href=""><?php echo ($vo["name"]); ?></a>
+					</td>
+					<td><?php echo ($vo["issue_time"]); ?></td>
+					<td class="admin-textbook-operation admin-operation">
+						<span class="admin-article-modify">修改</span>
+						<span class="admin-article-delete">删除</span>
+					</td>
+				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 			
 		</table>
 	</div>
@@ -64,7 +66,7 @@
 				<div class="popup-delete">
 					<p>确认删除？</p>
 					<div class="popup-select clearfix">
-						<span class="yes pull-left">确认</span>
+						<span class="yes pull-left"><a href="/demo/jyzd/Admin/index.php/home/admin/delete">确认</a></span>
 						<span class="no pull-right">取消</span></div>
 				</div>
 

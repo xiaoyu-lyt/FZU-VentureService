@@ -1,0 +1,40 @@
+<include file="Public:header"/>
+<!-- Aricle-publish Start -->
+<div class="article-publish-form">
+	<form action="__ROOT__/index.php/home/notice/publish/do" method="post">
+		<div class="article-publish-box article-publish-column">
+			<label for=""><span class="star">*</span>栏目:</label>
+			<select name="type" >
+				<option value="0">新闻热点</option>
+				<option value="1">通知公告</option>
+				<option value="2">政策法规</option>
+			</select>
+		</div>
+		<div class="article-publish-box article-publish-title">
+			<label for=""><span class="star">*</span>标题:</label>
+			<input type="text" name="theme" value="">
+			<button class="duplicate-detection">检测重复</button>
+		</div>
+		<div class="article-publish-box article-publish-abstract">
+
+			<label for=""><span class="star">*</span>内容:</label>
+				<!-- 加载编辑器的容器 -->
+			    <script id="_container" name="content" type="text/plain" style="width: 740px; height:250px; margin-left:190px;"> 
+			    </script>
+			    <!-- 配置文件 -->
+			    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+			    <!-- 编辑器源码文件 -->
+			    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.js"></script>
+			    <!-- 实例化编辑器 -->
+		</div>
+		<div class="article-publish-btn">
+			<button type="submit" name="sub" class="save-close">保存后自动关闭</button>
+			<button class="save-publish">保存并继续发表</button>
+			<button class="publish-close"><a href="javascript :;" onClick="javascript :history.back(-1);">关闭</a></button>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+	        var ue = UE.getEditor('_container');
+</script>
+<include file="Public:footer"/>

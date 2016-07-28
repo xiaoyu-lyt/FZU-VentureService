@@ -3,6 +3,7 @@ namespace Home\Model;
 use Home\Model\BaseModel;
 class UserModel extends BaseModel {
 
+
 	/**
 	 * 判断用户是否存在
 	 */
@@ -32,7 +33,7 @@ class UserModel extends BaseModel {
         $password = md5(md5($password).$userinfo['userKey']);
         unset($userinfo['userKey']);
     	if($password == $userinfo['password']){
-    		$this->where('username',$username)->save(array('log_time'=>time()));
+    		$this->where(array('username'=>$username))->save(array('log_time'=>time()));
     		return $userinfo;
     	}
         return false;

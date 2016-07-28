@@ -13,7 +13,10 @@ class NoticeController extends BaseController {
 
 		$where['type'] = I('get.type');
 		$where['status'] = 1;
+		$count = count(M('Notice')->where($where)->select());
 		$data = M('Notice')->where($where)->order('overhead desc,rank desc,date desc')->page($page,$pageSize)->field('nid,type,theme,date')->select();
+
+		$data['pages'] = ceil($count/$pageSize);
 
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
@@ -50,7 +53,7 @@ class NoticeController extends BaseController {
 		$data = I('post.');
 		
 		$data['date'] = time();
-		$data['uid'] = $login_user['uid'];
+		$data['publisher'] = $login_user['name'];
 
 		if (!M('notice')->add($data)) {
 			$json = $this->jsonReturn(200,"新闻添加成功，请返回新闻资讯列表查看",$data);

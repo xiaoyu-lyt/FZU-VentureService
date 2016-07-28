@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="./Public/jquery.js"></script>
+	<title></title>
+</head>
+<body>
+<!-- http://xiaoyu-lyt.cn/FZU-VentureService/API -->
+	<form action="http://xiaoyu-lyt.cn/FZU-VentureService/API/index.php/Home/User/register.html" method="post">
+		username: <input type="text" name="username"><br>
+		password: <input type="password" name="password"><br>
+		tel: <input type="text" name="tel"><br>
+		email: <input type="email" name="email"><br>
+		nickname: <input type="text" name="nickname"><br>
+		v_code: <input type="text" name="v_code"><br>
+		groupid: <input type="text" name="groupid"><br>
+		<input type="submit">
+	</form><hr>
+	<form action="./index.php/Home/User/login.html" method="post">
+		Username: <input type="text" name="username"><br>
+		password: <input type="password" name="password"><br>
+		<input type="submit">
+	</form><hr>
+	<form action="./index.php/Home/cpt/add.html" method="post">
+		number: <input type="text" name="number"><br>
+		name: <input type="text" name="name"><br>
+		times: <input type="number" name="times"><br>
+		description: <input type="text" name="description"><br>
+		<input type="submit">
+	</form><hr>
+	
+		uid: <input id="uid" type="text" name="uid"><br>
+		nickname: <input id="nickname" type="text" name="nickname"><br>
+		<button id="sub" onclick="sub()">修改</button> <br>
+		<hr>
+	<form action="./index.php/Home/user/uploadAvatar.html" enctype="multipart/form-data" method="post">
+		uid: <input type="text" name="uid"><br>
+		avatar: <input type="file" name="avatar"><br>
+		<input type="submit">
+	</form><hr>
+	<form action="./index.php/Home/partner/search.html" method="get">
+		condition: <input type="text" name="condition" ><br>
+		<input type="submit">
+	</form><hr>
+
+</body>
+<script>
+	function sub(){
+		var _uid = $("#uid").val();
+		var _nickname = $("#nickname").val();
+		$.ajax({
+			url: "http://127.0.0.1/demo/jyzd/index.php/home/user/modify.html",
+			type: "put",
+			data: {uid: _uid,nickname:_nickname},
+			success: function(data) {
+				var ret = eval("("+data+")");
+				alert(ret.msg);
+			}
+		})
+	}
+
+</script>
+</html>

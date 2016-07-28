@@ -1,6 +1,7 @@
 <?php
 return array(
 	//'配置项'=>'配置值'
+    'DB_PARAMS'             =>   array(\PDO::ATTR_CASE => \PDO::CASE_NATURAL),
 	'DB_TYPE'               =>  'mysql',     // 数据库类型
     'DB_HOST'               =>  '123.207.58.12', // 服务器地址
     'DB_NAME'               =>  'jyzd',      // 数据库名
@@ -20,4 +21,5 @@ return array(
     'TOKEN_NAME'    =>    '__hash__',    // 令牌验证的表单隐藏字段名称，默认为__hash__
     'TOKEN_TYPE'    =>    'md5',  //令牌哈希验证规则 默认为MD5
     'TOKEN_RESET'   =>    true  //令牌验证出错后是否重置令牌 默认为true
+
 );

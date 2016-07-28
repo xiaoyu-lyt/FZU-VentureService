@@ -32,8 +32,8 @@ class ClassController extends BaseController {
 	/**
 	 * 培训课报名
 	 */
-	public function  enlist_post() {
-		
+	public function enlist_post() {
+
 	}
 	/**
 	 * 获取所有可下载的材料
@@ -68,6 +68,7 @@ class ClassController extends BaseController {
 CREATE TABLE IF NOT EXISTS `vs_documents` (
   `id` mediumint(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL COMMENT '文件名',
+  `type` tinyint(1) NOT NULL COMMENT '文件类型 1：文档 2：视频',
   `url` varchar(100) NOT NULL COMMENT '文件存放路径',
   `issue_time` int NOT NULL COMMENT '上传时间',
   PRIMARY KEY (`id`)

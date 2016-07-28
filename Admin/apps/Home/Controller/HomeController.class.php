@@ -31,7 +31,6 @@ class HomeController extends Controller {
 
 	/**
 	 * 退出登录
-	 * @return json
 	 */
 	public function logout() {
 		session('login_manager',NULL);

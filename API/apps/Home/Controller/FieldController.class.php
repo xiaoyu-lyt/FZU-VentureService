@@ -10,17 +10,16 @@ class FieldController extends BaseController {
 		$page = !empty(I('get.page')) ? I('get.page') : 1;
 		$pageSize = !empty(I('get.size')) ? I('get.size') : 10;
 
-		// $where['type'] = I('get.type');
+		$where['type'] = I('get.type');
 		$where['status'] = 1;
-		$data = M('fields')->where($where)->order('run_time desc')->page($page,$pageSize)->field('fid,name,pic,synopsis,run_time')->select();
+		$data = M('fields')->where($where)->order('date desc')->page($page,$pageSize)->field('fid,name,pic,synopsis,date')->select();
 
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(200,"暂无场地信息");
+			$json = $this->jsonReturn(0,"暂无场地信息");
 		}
 		//var_dump($jsonReturn);
-		// echo $json;
 		$this->ajaxReturn($json);
 	}
 	/**
@@ -30,7 +29,7 @@ class FieldController extends BaseController {
 	 */
 	public function detail_get() {
 		$where['fid'] = I('get.fid');
-		$data = M('fields')->where($where)->find();
+		$data = M('fields')->where($where)->field('fid,name,pic,detail,date')->find();
 
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
@@ -39,37 +38,16 @@ class FieldController extends BaseController {
 
 		}
 		//var_dump($jsonReturn);
-		// echo $json;
 		$this->ajaxReturn($json);
 	}
-
 	/**
-	 * 添加场地信息
+	 * 
 	 */
-	public function add_post() {
+	public function apply_post() {
 
-		$data = I('post.');
-
-		if (M('fields')->add($data)) {
-			$json = $this->jsonReturn(200,"场地添加成功",$data);
-		} else {
-			$json = $this->jsonReturn(0,"场地添加失败，请重新添加");
-		}
-		$this->ajaxReturn($json);
 	}
-
-	/**
-	 * 删除场地信息
-	 */
 	public function delete_delete() {
 
-		$where['fid'] = I('delete.fid');
-		if (M('fields')->where($where)->delete()) {
-			$json = $this->jsonReturn(200,"场地删除成功");
-		} else {
-			$json = $this->jsonReturn(0,"场地删除失败");
-		}
-		$this->ajaxReturn($json);
 	}
 }
 

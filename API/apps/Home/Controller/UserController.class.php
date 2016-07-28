@@ -67,7 +67,7 @@ class UserController extends BaseController {
 				//判断是否已登录
 				$ret = D('UserToken')->getToken($cookie_token);
 				if($ret && $ret['token_expire'] > time()) {
-					$login_user = M('User')->where('uid',$ret['uid'])->field('uid,username,nickname,greoupid')->find();
+					$login_user = M('User')->where(array('uid'=>$ret['uid']))->field('uid,username,nickname,groupid')->find();
 					session('login_user',$login_user);
 				}
 				$json = $this->jsonReturn(0,"已登录",$login_user);
@@ -248,7 +248,8 @@ class UserController extends BaseController {
 	public function logout() {
 		session('login_user',NULL);
 		cookie('cookie_token',NULL);
-		echo $this->jsonReturn(200,"注销成功");
+		$json = $this->jsonReturn(200,"注销成功");
+		$this->ajaxReturn($json);
 	}
 	
 	/**
@@ -328,14 +329,7 @@ class UserController extends BaseController {
 	* @return json
 	*/
 	public function adminTagAdd_post(){
-		$data = I('post.');
 
-		if (M('tags')->add($data)) {
-			$json = $this->jsonReturn(200,"标签添加成功",$data);
-		} else {
-			$json = $this->jsonReturn(0,"标签添加失败");
-		}
-		$this->ajaxReturn($json);
 	}
 
 	/**
@@ -343,13 +337,7 @@ class UserController extends BaseController {
 	* @return json
 	*/
 	public function adminTagDelete_delete(){
-		$where['tid'] = I('delete.tid');
-		if (M('tags')->where($where)->delete()) {
-			$json = $this->jsonReturn(200,"标签删除成功");
-		} else {
-			$json = $this->jsonReturn(0,"标签删除失败");
-		}
-		$this->ajaxReturn($json);
+
 	}
 
 	/**

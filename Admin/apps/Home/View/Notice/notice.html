@@ -7,7 +7,7 @@
 			<li class="pull-left">通知公告</li>
 			<li class="pull-left">最新政策</li>
 		</ul>
-		<a class="admin-publish-article" href="javascript:void(0)" onclick="publish()">发布文章</a>
+		<a class="admin-publish-article" href="__ROOT__/index.php/home/notice/publish">发布文章</a>
 	</div>
 	<div class="admin-new-table admin-info-table admin-table block">
 		<table>
@@ -36,7 +36,7 @@
 					<td class="admin-article-publisher"><span>{$v.name.name}</span></td>
 					<td class="admin-article-updatetime"><span>{$v.date}</span></td>
 					<td class="admin-article-operation admin-operation">
-						<span class="admin-article-modify">修改</span>
+						<span class="admin-article-modify"><a href="__ROOT__/index.php/home/notice/modify?nid={$v.nid}">修改</a></span>
 						
 					</td>
 				</tr>
@@ -78,7 +78,7 @@
 					<td class="admin-article-publisher"><span>{$v.name.name}</span></td>
 					<td class="admin-article-updatetime"><span>{$v.date}</span></td>
 					<td class="admin-article-operation admin-operation">
-						<span class="admin-article-modify">修改</span>
+						<span class="admin-article-modify"><a href="__ROOT__/index.php/home/notice/modify?nid={$v.nid}">修改</a></span>
 						
 					</td>
 				</tr>
@@ -126,7 +126,7 @@
 					<td class="admin-article-publisher"><span>{$v.name.name}</span></td>
 					<td class="admin-article-updatetime"><span>{$v.date}</span></td>
 					<td class="admin-article-operation admin-operation">
-						<span class="admin-article-modify">修改</span>
+						<span class="admin-article-modify"><a href="__ROOT__/index.php/home/notice/modify?nid={$v.nid}">修改</a></span>
 						
 					</td>
 				</tr>

@@ -2,7 +2,7 @@
 namespace Home\Controller;
 use Home\Controller\AdminController;
 class ProjectController extends AdminController {
-	public $MODULE_NAME = "Projects";
+	public $MODULE_NAME = "Project";
 	public function __construct() {
 		parent::__construct();
 		if( !$this->isLogin() )
@@ -16,7 +16,6 @@ class ProjectController extends AdminController {
 			$projects[$i]['issue_time'] = date('Y-m-d H:i:s',$projects[$i]['issue_time']);
 			$projects[$i]['charge'] = M('User')->where(array('uid'=>$projects[$i]['uid']))->field('name,tel,email')->find();
 		}
-
 		$this->assign('projects',$projects);
 		$this->assign('MODULE',$this->MODULE_NAME);
 		$this->display('project');
@@ -51,7 +50,7 @@ class ProjectController extends AdminController {
 		$detail['charge'] = M('User')->where(array('uid'=>$detail['uid']))->field('name,tel,email')->find();
 
 		$this->assign('detail',$detail);
-		print_r($detail);
+		$this->ajaxReturn($detail);
 		//$this->display('detail'); 
 	}
 

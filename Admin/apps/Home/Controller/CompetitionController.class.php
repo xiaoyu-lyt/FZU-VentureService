@@ -2,7 +2,7 @@
 namespace Home\Controller;
 use Home\Controller\AdminController;
 class CompetitionController extends AdminController {
-	public $MODULE_NAME = "Competitions";
+	public $MODULE_NAME = "Competition";
 	public function __construct() {
 		parent::__construct();
 		if( !$this->isLogin() )

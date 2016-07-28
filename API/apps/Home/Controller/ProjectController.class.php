@@ -28,7 +28,7 @@ class ProjectController extends BaseController {
 		$this->ajaxReturn($json);
 	}
 	/**
-	 * 根据id获取项目详情内容
+	 * 根据id获取通知详情内容
 	 * @return json
 	 */
 	public function detail_get() {
@@ -75,7 +75,5 @@ class ProjectController extends BaseController {
 		}
 		$this->ajaxReturn($json);
 	}
-
-
 	
 }

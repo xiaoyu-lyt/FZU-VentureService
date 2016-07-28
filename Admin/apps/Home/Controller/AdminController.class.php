@@ -3,9 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 class AdminController extends Controller {
 
-	public function index() {
-		$this->display('article_publish');
-	}
+
 
 	public function isLogin() {
 		$cookie_token = cookie('cookie_token');
@@ -16,9 +14,7 @@ class AdminController extends Controller {
 			session('login_manager',$login_manager);
 			return true;
 		}
-		else {
-			return false;
-		}	
+		return false;	
 	}
 
 

@@ -17,22 +17,24 @@
 				<th class="admin-th-student-email admin-th-email"><span>邮箱</span></th>
 				<th class="admin-th-student-management admin-th-management"><span>管理操作</span></th>
 			</tr>
-			<tr>
-				<td class="admin-student-select">
-					<input class="admin-students-select-btn" type="checkbox">
-				</td>
-				<td class="admin-student-id">1</td>
-				<td class="admin-student-username">
-					<a href="">joipouqew</a>
-				</td>
-				<td class="admin-student-name"><a href="">qewrqew</a></td>
-				<td class="admin-student-phone"><span>18476931485</span></td>
-				<td class="admin-student-email"><span>jasduiu@163.com</span></td>
-				<td class="admin-student-operation admin-operation">
-					<span class="admin-project-pass admin-pass">通过</span>
-					<span class="admin-project-refuse admin-refuse">拒绝</span>
-				</td>
-			</tr>
+			<volist name="enlist" id="vo">
+				<tr>
+					<td class="admin-student-select">
+						<input class="admin-students-select-btn" type="checkbox">
+					</td>
+					<td class="admin-student-id">{$vo.id}</td>
+					<td class="admin-student-username">
+						<a href="">{$vo.stu.username}</a>
+					</td>
+					<td class="admin-student-name"><a href="">{$vo.stu.name}</a></td>
+					<td class="admin-student-phone"><span>{$vo.stu.tel}</span></td>
+					<td class="admin-student-email"><span>{$vo.stu.email}</span></td>
+					<td class="admin-student-operation admin-operation">
+						<span class="admin-project-pass admin-pass"><a href="__ROOT__/index.php/home/class/pass?id={$vo.id}">通过</a></span>
+						<span class="admin-project-refuse admin-refuse">拒绝</span>
+					</td>
+				</tr>
+			</volist>
 			
 		</table>
 	</div>

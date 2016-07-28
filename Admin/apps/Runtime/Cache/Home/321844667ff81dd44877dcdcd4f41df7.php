@@ -21,11 +21,11 @@
 				<ul>
 					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/notice">资讯管理</a></li>
 					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/user">用户管理</a></li>
-					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Projects') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/project">项目管理</a></li>
-					<li class="<?php if( $MODULE == 'Fields') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/field">入驻申请</a></li>
+					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/project">项目管理</a></li>
+					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/field">入驻申请</a></li>
 					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/class">培训管理</a></li>
-					<li class="<?php if( $MODULE == 'Documents') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/document">教材管理</a></li>
-					<li class="<?php if( $MODULE == 'Competitions') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/competition">比赛管理</a></li>
+					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/document">教材管理</a></li>
+					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/competition">比赛管理</a></li>
 				</ul>
 			</div>
 <!-- 培训管理 -->
@@ -46,34 +46,27 @@
 				<th class="admin-th-student-email admin-th-email"><span>邮箱</span></th>
 				<th class="admin-th-student-management admin-th-management"><span>管理操作</span></th>
 			</tr>
-			<tr>
-				<td class="admin-student-select">
-					<input class="admin-students-select-btn" type="checkbox">
-				</td>
-				<td class="admin-student-id">1</td>
-				<td class="admin-student-username">
-					<a href="">joipouqew</a>
-				</td>
-				<td class="admin-student-name"><a href="">qewrqew</a></td>
-				<td class="admin-student-phone"><span>18476931485</span></td>
-				<td class="admin-student-email"><span>jasduiu@163.com</span></td>
-				<td class="admin-student-operation admin-operation">
-					<span class="admin-project-pass admin-pass">通过</span>
-					<span class="admin-project-refuse admin-refuse">拒绝</span>
-				</td>
-			</tr>
+			<?php if(is_array($enlist)): $i = 0; $__LIST__ = $enlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+					<td class="admin-student-select">
+						<input class="admin-students-select-btn" type="checkbox">
+					</td>
+					<td class="admin-student-id"><?php echo ($vo["id"]); ?></td>
+					<td class="admin-student-username">
+						<a href=""><?php echo ($vo["stu"]["username"]); ?></a>
+					</td>
+					<td class="admin-student-name"><a href=""><?php echo ($vo["stu"]["name"]); ?></a></td>
+					<td class="admin-student-phone"><span><?php echo ($vo["stu"]["tel"]); ?></span></td>
+					<td class="admin-student-email"><span><?php echo ($vo["stu"]["email"]); ?></span></td>
+					<td class="admin-student-operation admin-operation">
+						<span class="admin-project-pass admin-pass"><a href="/demo/jyzd/Admin/index.php/home/class/pass?id=<?php echo ($vo["id"]); ?>">通过</a></span>
+						<span class="admin-project-refuse admin-refuse">拒绝</span>
+					</td>
+				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 			
 		</table>
 	</div>
 </div>
 			<div class="admin-popup">
-				<div class="popup-delete">
-					<p>确认删除？</p>
-					<div class="popup-select clearfix">
-						<span class="yes pull-left">确认</span>
-						<span class="no pull-right">取消</span></div>
-				</div>
-
 				<div class="popup-refuse">
 					<form action="/demo/jyzd/Admin/index.php/home/admin/refuse" method="post">
 						<p>请填写拒绝理由</p>

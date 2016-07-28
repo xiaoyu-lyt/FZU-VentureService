@@ -33,6 +33,6 @@ class UserTokenModel extends Model {
 	 * @param array
 	 */
 	public function getToken($token){
-		return $this->where("token",$token)->find();
+		return $this->where(array('token'=>$token))->find();
 	}
 }

@@ -272,6 +272,7 @@
 
 /*发布文章表单*/
 .article-publish-form {
+	/* width: 880px; */
 	padding: 30px 0;
 	color: #666;
 }
@@ -288,7 +289,7 @@
 
 .article-publish-form input {
 	height: 2em;
-	width: 82%;
+	/* width: 82%; */
 	border: 1px solid #cecece;
 }
 

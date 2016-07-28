@@ -582,3 +582,248 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001560s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001763s ]
 
+[ 2016-07-25T17:03:22+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000971s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001130s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0722s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '10000' LIMIT 1   [ RunTime:0.0717s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001178s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001317s ]
+
+[ 2016-07-25T17:05:14+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000882s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003127s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003529s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0201s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '10000' LIMIT 1   [ RunTime:0.0192s ]
+
+[ 2016-07-25T17:06:05+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001926s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003057s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0195s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '10000' LIMIT 1   [ RunTime:0.0186s ]
+
+[ 2016-07-25T17:06:09+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0201s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '10000' LIMIT 1   [ RunTime:0.0192s ]
+
+[ 2016-07-25T17:06:18+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001938s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001495s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0241s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '10000' LIMIT 1   [ RunTime:0.0233s ]
+
+[ 2016-07-25T17:06:35+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000568s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001247s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0236s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '10000' LIMIT 1   [ RunTime:0.0190s ]
+
+[ 2016-07-25T17:11:17+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0038s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '10000' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Array to string conversion D:\wamp\www\demo\jyzd\API\apps\Home\Model\UserModel.class.php 第 33 行.
+
+[ 2016-07-25T17:11:34+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000944s ]
+ERR: 非法操作:login
+
+[ 2016-07-25T17:11:41+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000591s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001154s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0040s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '10000' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `vs_user` SET `log_time`='1469437901' WHERE `username` = '10000' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0039s ]
+SQL: INSERT INTO `vs_user_token` (`uid`,`groupid`,`token`,`token_expire`,`addtime`) VALUES ('7','5','c6323c1ff9a13571bf41965f7f6abcab','1477213901','1469437901') [ RunTime:0.0005s ]
+SQL: DELETE FROM `vs_user_token` WHERE ( token_expire < 1469437901 ) [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001231s ]
+
+[ 2016-07-25T17:13:20+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000959s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001157s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0196s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0192s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0198s ]
+ERR: 1054:Unknown column 'greoupid' in 'field list'
+ [ SQL语句 ] : SELECT `uid`,`username`,`nickname`,`greoupid` FROM `vs_user` WHERE ( uid ) LIMIT 1  
+ERR: 1054:Unknown column 'greoupid' in 'field list'
+ [ SQL语句 ] : SELECT `uid`,`username`,`nickname`,`greoupid` FROM `vs_user` WHERE ( uid ) LIMIT 1  
+
+[ 2016-07-25T17:15:23+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000852s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000930s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0237s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0235s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0237s ]
+SQL: SELECT `uid`,`username`,`nickname`,`groupid` FROM `vs_user` WHERE ( uid ) LIMIT 1   [ RunTime:0.0234s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000920s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001050s ]
+
+[ 2016-07-25T17:16:14+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000970s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0193s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0195s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0197s ]
+SQL: SELECT `uid`,`username`,`nickname`,`groupid` FROM `vs_user` WHERE ( uid ) LIMIT 1   [ RunTime:0.0188s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000935s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001103s ]
+
+[ 2016-07-25T17:17:58+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000832s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009156s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0240s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0231s ]
+NOTIC: [8] Undefined variable: login_user D:\wamp\www\demo\jyzd\API\apps\Home\Controller\UserController.class.php 第 73 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000934s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001061s ]
+
+[ 2016-07-25T17:18:34+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001035s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0230s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0224s ]
+NOTIC: [8] Undefined variable: login_user D:\wamp\www\demo\jyzd\API\apps\Home\Controller\UserController.class.php 第 73 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000918s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001046s ]
+
+[ 2016-07-25T17:19:43+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000799s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001120s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0196s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0188s ]
+NOTIC: [8] Undefined variable: login_user D:\wamp\www\demo\jyzd\API\apps\Home\Controller\UserController.class.php 第 73 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001239s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001419s ]
+
+[ 2016-07-25T17:20:13+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000892s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000794s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000932s ]
+
+[ 2016-07-25T17:20:19+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000160s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002578s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000820s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000975s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0197s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '10245688' LIMIT 1   [ RunTime:0.0191s ]
+SQL: UPDATE `vs_user` SET `log_time`='1469438419' WHERE `username` = '10245688' [ RunTime:0.0194s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0196s ]
+SQL: INSERT INTO `vs_user_token` (`uid`,`groupid`,`token`,`token_expire`,`addtime`) VALUES ('8','2','6dbf25c0c627d51a29e79b63ff3bd2c0','1477214419','1469438419') [ RunTime:0.0189s ]
+SQL: DELETE FROM `vs_user_token` WHERE ( token_expire < 1469438419 ) [ RunTime:0.0185s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000913s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001047s ]
+
+[ 2016-07-25T17:20:56+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000591s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000975s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0234s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0229s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0234s ]
+SQL: SELECT `uid`,`username`,`nickname`,`groupid` FROM `vs_user` WHERE ( uid ) LIMIT 1   [ RunTime:0.0237s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000952s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001100s ]
+
+[ 2016-07-25T17:21:59+08:00 ] 127.0.0.1 /demo/jyzd/API/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002828s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0238s ]
+SQL: SELECT * FROM `vs_user_token` WHERE ( token ) LIMIT 1   [ RunTime:0.0233s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0244s ]
+SQL: SELECT `uid`,`username`,`nickname`,`groupid` FROM `vs_user` WHERE `uid` = 8 LIMIT 1   [ RunTime:0.0240s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002749s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002938s ]
+

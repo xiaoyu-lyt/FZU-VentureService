@@ -12,21 +12,25 @@
 				</th>
 				<th class="admin-th-textbook-id admin-th-id"><span>ID</span></th>
 				<th class="admin-th-textbook-name admin-th-username"><span>教材名</span></th>
+				<th class="admin-th-textbook-name admin-th-username"><span>发布时间</span></th>
 				<th class="admin-th-textbook-management admin-th-management"><span>管理操作</span></th>
 			</tr>
-			<tr>
-				<td class="admin-textbook-select">
-					<input class="admin-textbook-select-btn" type="checkbox">
-				</td>
-				<td class="admin-textbook-id">1</td>
-				<td class="admin-textbook-name">
-					<a href="">Excel培训</a>
-				</td>
-				<td class="admin-textbook-operation admin-operation">
-					<span class="admin-article-modify">修改</span>
-					<span class="admin-article-delete">删除</span>
-				</td>
-			</tr>
+			<volist	name="documents" id="vo">
+				<tr>
+					<td class="admin-textbook-select">
+						<input class="admin-textbook-select-btn" type="checkbox">
+					</td>
+					<td class="admin-textbook-id">{$vo.id}</td>
+					<td class="admin-textbook-name">
+						<a href="">{$vo.name}</a>
+					</td>
+					<td>{$vo.issue_time}</td>
+					<td class="admin-textbook-operation admin-operation">
+						<span class="admin-article-modify">修改</span>
+						<span class="admin-article-delete">删除</span>
+					</td>
+				</tr>
+			</volist>
 			
 		</table>
 	</div>

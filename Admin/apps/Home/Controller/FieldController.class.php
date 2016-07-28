@@ -2,7 +2,7 @@
 namespace Home\Controller;
 use Home\Controller\AdminController;
 class FieldController extends AdminController {
-	public $MODULE_NAME = "Fields";
+	public $MODULE_NAME = "Field";
 	public function __construct() {
 		parent::__construct();
 		if( !$this->isLogin() )
@@ -24,9 +24,9 @@ class FieldController extends AdminController {
 
 	/**
 	 * 入驻申请审核
-	 * @param int $id 申请id
+	 * @param int $id 申请记录id
 	 */
-	public function pass($uid) {
+	public function pass($id) {
 		$ret = M('FieldApply')->where(array('id'=>$id))->setField('status',1);
 		if($ret) {
 			$this->success("审核成功",U('index'));

@@ -25,7 +25,7 @@
 					<td class="admin-base-username"><span>{$vo.applicant.name}</span></td>
 					<td class="admin-base-time"><span>{$vo.apply_time}</span></td>
 					<td class="admin-base-operation admin-operation">
-						<span class="admin-base-pass admin-pass">通过</span>
+						<span class="admin-base-pass admin-pass"><a href="__ROOT__/index.php/home/field/pass?id={$vo.id}">通过</a></span>
 						<span class="admin-base-refuse admin-refuse" id="{$vo.applicant.tel}" onclick="refuse(this)">拒绝</span>
 					</td>
 				</tr>

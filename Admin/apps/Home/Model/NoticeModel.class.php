@@ -8,11 +8,12 @@ class NoticeModel extends Model {
 	 * @param int $type 资讯类型
 	 * @return array
 	 */
-	public function noticetype( $type ) {
+	public function noticeType( $type ) {
 		$data = $this->where(array('type'=>$type))->select();
-		for ($i=0; $i <count($data) ; $i++) { 
-			$data[$i]['name'] = M('User')->where(array('uid'=>$data[$i]['uid']))->find();
+		for ($i=0; $i < count($data) ; $i++) { 
+			$data[$i]['name'] = M('User')->where(array('uid'=>$data[$i]['uid']))->field('username,name')->find();
 		}
 		return $data;
 	}
+	
 }

@@ -225,7 +225,6 @@ CREATE TABLE IF NOT EXISTS `vs_training` (
 
 CREATE TABLE IF NOT EXISTS `vs_notice` (
   `nid` mediumint(8) NOT NULL AUTO_INCREMENT,
-  `uid` mediumint(8) NOT NULL COMMENT '发布者id',
   `theme` varchar(20) NOT NULL COMMENT '通知主题',
   `type` tinyint(1) NOT NULL COMMENT '通知类型',
   `date` varchar(50) NOT NULL COMMENT '发布时间',
@@ -233,7 +232,6 @@ CREATE TABLE IF NOT EXISTS `vs_notice` (
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否发布',
   `rank` smallint(5) NOT NULL COMMENT '排序',
   `overhead` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否顶置',
-  `hits` int(10) NOT NULL DEFAULT '0' COMMENT '点击量',
   PRIMARY KEY (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 

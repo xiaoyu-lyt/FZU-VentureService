@@ -32,20 +32,36 @@ class UserController extends AdminController {
 	 * 用户审核
 	 * @param int $uid 用户id
 	 */
-	public function pass($uid) {
-		$ret = M('User')->where(array('uid'=>$uid))->setField('status',1);
-		if($ret) {
-			$login_manager = session('login_manager');
-			$log = array(
-				'obj'	=> $uid,
-				'operate' => "用户通过审核"
-				);
-			$this->addLog($login_manager['uid'],json_encode($log));//添加操作日志
+	public function pass() {
+		$uid = I('uid');
+		if( !is_array($uid) ) {
+			$ret = M('User')->where(array('uid'=>$uid))->setField('status',1);
+			if($ret) {
+				$login_manager = session('login_manager');
+				$log = array(
+					'obj'	=> $uid,
+					'operate' => "用户通过审核"
+					);
+				$this->addLog($login_manager['uid'],json_encode($log));//添加操作日志
 
-			$this->success("审核成功",U('index'));
-		} else {
-			$this->error("操作失败",U('index'));
+				$this->success("审核成功",U('index'));
+			} else {
+				$this->error("操作失败",U('index'));
+			}
 		}
+	}
+	/**
+	 * 查看用户信息
+	 * @param int $uid 用户id
+	 */
+	public function detail($uid) {
+		$ret = M('User')->where(array('uid'=>$uid))->field('password,userKey,status',true)->find();
+		$ret['reg_time'] = date('Y-m-d',$ret['reg_time']);
+		$ret['log_time'] = date('Y-m-d',$ret['log_time']);
+
+		$this->assign('userinfo',$ret);
+		print_r($ret);
+		print_r(cookie());
 	}
 
 }
