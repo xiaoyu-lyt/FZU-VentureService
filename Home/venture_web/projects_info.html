@@ -37,14 +37,14 @@
 	
 	<!-- Header Start -->
 	<header>
-		<a href="" id="logo">
+		<a href="index.html" id="logo">
 			<!-- <img src="images/logo.jpg" alt=""> -->
 		</a>
 		<div class="main-nav">
 			<ul class='clearfix'>
 				<li class='pull-left on'><a href="index.html">首页</a></li>
 				<li class='pull-left'><a href="information.html">新闻资讯</a></li>
-				<li class='pull-left'><a href="#">孵化基地</a></li>
+				<li class='pull-left'><a href="base.html">孵化基地</a></li>
 				<li class='pull-left'><a href="projects.html">创业项目</a></li>
 				<li class='pull-left'><a href="game.html">相关比赛</a></li>
 				<li class='pull-left'><a href="#">培训课堂</a></li>
@@ -77,53 +77,69 @@
 				<div class="projects-info-top clearfix">
 					<div class="projects-info-img pull-left"><img src="images/user-projects1.png" alt=""></div>
 					<div class="projects-info-list pull-left">
-						<div class="projects-info-name projects-info-line"><span class="projects-info-title">项目名称：</span>互联网技术威客兼职预约平台</div>
-						<div class="projects-info-field projects-info-line"><span class="projects-info-title">项目所属领域：</span>企业服务&服务业&外保服务</div>
-						<div class="projects-info-starttime projects-info-line"><span class="projects-info-title">创建时间：</span>2016-07-20</div>
-						<div class="projects-info-team projects-info-line"><span class="projects-info-title">团队人数：</span>125</div>
-						<div class="projects-info-leader projects-info-line"><span class="projects-info-title">项目负责人：</span>林渊腾 <a href=""><img class="icon-chat"src="images/chat.png" alt=""></a></div>
+						<div class="projects-info-name projects-info-line"><span class="projects-info-title">项目名称：</span><span id="project-name">互联网技术威客兼职预约平台</span></div>
+						<div class="projects-info-field projects-info-line"><span class="projects-info-title">项目所属领域：</span><span id="project-area">企业服务&服务业&外保服务</span></div>
+						<div class="projects-info-starttime projects-info-line"><span class="projects-info-title">创建时间：</span><span id="project-time">2016-07-20</span></div>
+						<div class="projects-info-team projects-info-line"><span class="projects-info-title">团队人数：</span><span id="project-members">125</span></div>
+						<div class="projects-info-leader projects-info-line"><span class="projects-info-title">项目负责人：</span><span id="project-principal">林渊腾</span> <a href=""><img class="icon-chat"src="images/chat.png" alt=""></a></div>
 					</div>
 				</div>
 				<div class="projects-info-details">
 					<div class="projects-info-detail projects-info-introduction">
 						<img class="icon-info-detail" src="images/icon-info-detail1.png" alt="">
 						<h3>项目简介</h3>
-						<p>预约知名互联网公司的产品、美工、前端、后端等技术人员到创业团队坐班兼职。平台抽取每单的提成，具体可以详细了解</p>
+						<div id="project-brief">
+							<p>预约知名互联网公司的产品、美工、前端、后端等技术人员到创业团队坐班兼职。平台抽取每单的提成，具体可以详细了解</p>
+						</div>
 					</div>
 					<div class="projects-info-detail projects-info-bright">
 						<img class="icon-info-detail" src="images/icon-info-detail2.png" alt="">
 						<h3>项目亮点</h3>
-						<p>解决创业团队找不到技术人才的问题</p>
+						<div id="project-bright">
+							<p>解决创业团队找不到技术人才的问题</p>
+						</div>
 					</div>
 					<div class="projects-info-detail projects-info-bright">
 						<img class="icon-info-detail" src="images/icon-info-detail3.png" alt="">
 						<h3>竞争优势</h3>
-						<p>市场前景好，服务水平高</p>
+						<div id="project-advantage">
+							<p>市场前景好，服务水平高</p>
+						</div>
 					</div>
 					<div class="projects-info-detail projects-info-bright">
 						<img class="icon-info-detail" src="images/icon-info-detail4.png" alt="">
 						<h3>项目阶段</h3>
-						<p>产品研发中</p>
+						<div id="project-stage">
+							<p>产品研发中</p>
+						</div>
 					</div>
 					<div class="projects-info-detail projects-info-apprisement">
 						<img class="icon-info-detail" src="images/icon-info-detail5.png" alt="">
 						<h3>项目估值</h3>
-						<p>1000万</p>
+						<div id="project-value">
+							<p>1000万</p>
+						</div>
 					</div>
 					<div class="projects-info-detail projects-info-investment">
 						<img class="icon-info-detail" src="images/icon-info-detail6.png" alt="">
 						<h3>项目总投资</h3>
-						<p>100万</p>
+						<div id="project-invest">
+							<p>100万</p>
+						</div>
 					</div>
 					<div class="projects-info-detail projects-info-require">
 						<img class="icon-info-detail" src="images/icon-info-detail7.png" alt="">
 						<h3>资金需求</h3>
-						<p>30万</p>
+						<div id="project-need">
+							<p>30万</p>
+						</div>
 					</div>
 					<div class="projects-info-detail projects-info-partner">
 						<img class="icon-info-detail" src="images/icon-info-detail8.png" alt="">
 						<h3>寻找合伙人</h3>
-						<p>营销合伙人，资源合伙人，投融资合伙人</p>
+						<div id="project-partner">
+							<p>营销合伙人，资源合伙人，投融资合伙人</p>
+						</div>
 					</div>
 					
 				</div>
@@ -133,5 +149,7 @@
 	</div>
 	<!-- Porjects-info End -->
 	<script src="js/main.js"></script>
+	<script src="js/jquery-3.1.0.js"></script>
+	<script src="js/project_detail.js"></script>
 </body>
 </html>

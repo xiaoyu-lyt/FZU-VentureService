@@ -99,7 +99,7 @@
 			<ul class='clearfix'>
 				<li class='pull-left'><a href="index.html">首页</a></li>
 				<li class='pull-left'><a href="information.html">新闻资讯</a></li>
-				<li class='pull-left'><a href="#">孵化基地</a></li>
+				<li class='pull-left'><a href="base.html">孵化基地</a></li>
 				<li class='pull-left'><a href="projects.html">创业项目</a></li>
 				<li class='pull-left'><a href="game.html">相关比赛</a></li>
 				<li class='pull-left'><a href="#">培训课堂</a></li>
@@ -145,9 +145,10 @@
 				<div class="user-head-portrait pull-left">
 					<i class="edit-icon"></i>
 					<img src="images/nopic_192.gif" alt="">
+				<input type="file" id="head-file" name="head">
 				</div>
 				<div class="user-form pull-left">
-					<div class="user-setting">
+					<div class="user-setting" id="user-info-box">
 						<div class="two-field clearfix">
 							<div class="field pull-left">
 								<label>用户名</label>
@@ -183,7 +184,7 @@
 			</div>
 			<div class="user-box pull-left">
 				<div class="user-student-projects clearfix">
-					<a href="" class="user-student-find pull-left">
+					<a href="javascript:void(0)" class="user-student-find pull-left" onclick="findPartner()">
 						<img class="user-student-icon" src="images/members.png" alt="">
 						<span>寻找合伙人</span>
 					</a>
@@ -194,7 +195,25 @@
 						<img class="user-student-icon" src="images/状态.png" alt=""><span>申请状态</span>
 					</a>
 				</div>
-		</div>
+				<div class="find-partner-list">
+					<div class="published-find-top">
+						<h3>已发布的寻找</h3>
+						<span class="find-btn">发布寻找</span>
+					</div>
+					<ul id="find-partner-ul">
+						<li><a href="">寻找balabalabala</a></li>
+						<li><a href="">找呀找呀找朋友</a></li>
+
+					</ul>
+					<ul class="pagination" id="find-partner-pagination">
+						<li><a href="#">&laquo;</a></li>
+					 	<li><a href="#">1</a></li>
+					 	<li><a href="#">2</a></li>
+					 	<li><a href="#">3</a></li>
+					 	<li><a href="#">&raquo;</a></li>
+					</ul>
+				</div>
+			</div>
 	</div>
 	<!-- User-student End -->
 	<script src="js/tabswift.js"></script>
@@ -202,5 +221,7 @@
 	<script src="js/jquery-3.1.0.js"></script>
 	<script src="js/jquery.validate.min.js"></script>
 	<script src="js/modify_info.js"></script>
+	<script src="js/user_center.js"></script>
+	<script src="js/ajaxfileupload.js"></script>
 </body>
 </html>

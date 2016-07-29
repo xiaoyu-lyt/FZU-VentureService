@@ -1,5 +1,4 @@
 var pageNum=1, pages; //当前页码
-
 getData(pageNum);
 
 /**
@@ -9,7 +8,7 @@ getData(pageNum);
  * @return {[type]}       [description]
  */
 function getData(_page) {
-	var _size = 1, //页大小
+	var _size = 3, //页大小
 		pages;
 	$.ajax({
 		type: "get",

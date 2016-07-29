@@ -37,14 +37,14 @@
 	</div>
 	<!-- Header Start -->
 	<header>
-		<a href="" id="logo">
+		<a href="index.html" id="logo">
 			<!-- <img src="images/logo.jpg" alt=""> -->
 		</a>
 		<div class="main-nav">
 			<ul class='clearfix'>
 				<li class='pull-left'><a href="index.html">首页</a></li>
 				<li class='pull-left on'><a href="information.html">新闻资讯</a></li>
-				<li class='pull-left'><a href="#">孵化基地</a></li>
+				<li class='pull-left'><a href="base.html">孵化基地</a></li>
 				<li class='pull-left'><a href="projects.html">创业项目</a></li>
 				<li class='pull-left'><a href="game.html">相关比赛</a></li>
 				<li class='pull-left'><a href="#">培训课堂</a></li>
@@ -61,7 +61,7 @@
 		<ul>			
 			<li><a href="index.html">首页</a></li>
 			<li><a href="information.html">新闻资讯</a></li>
-			<li><a href="">孵化基地</a></li>
+			<li><a href="base.html">孵化基地</a></li>
 			<li><a href="projects.html">创业项目</a></li>
 			<li><a href="game.html">相关比赛</a></li>
 			<li><a href="classroom.html">培训课堂</a></li>
@@ -71,15 +71,15 @@
 	<div class="top-background">
 	</div>
 	<div class="container">
-		<div class="article-wrapper">
+		<div class="article-wrapper" id="article-wrapper">
 			<div class="article">
-				<div id="article-title"><h1></h1></div>
+				<div><h1 id="article-title"></h1></div>
 				<div class="article-info">
 					<div class="col-md-4">发布时间: <span id="article-publish-time"></span></div>
 					<div class="col-md-4">发布者：<span id="article-publisher"></span></div>
 					<div class="col-md-4">浏览量：<span id="article-pageview"></span></div>
 				</div>
-				<div class="article-detail">
+				<div class="article-detail" id="article-content">
 					<p>日前，在中央电视台财经频道“中国创业榜样”大型公益活动中，福州大学两个大学生创业项目晋级中国创业榜样训练营，该校余之喜和杨华玮两位同学双双获得中国创业榜样“未来之星”称号。</p>
 					<p>“年轻人就要用梦想开创自己的一片天地。”余之喜在总结自己的获胜秘诀时说，“我要感谢学校的创业教育，这些培训课程我从没落下过。”</p>
 					<p>福州大学的创业教育，不但打开了余之喜的梦想之门，如今更成为学生发展路上的助推器，成才路上的领航灯。</p>
@@ -100,9 +100,10 @@
 					<p>“要让大学生创业‘成功部分人、带动一批人、影响多数人’。”陈永正表示，今后，学校将进一步致力于创业型人才的培养，形成“学习、创新、创业，再学习、再创新、再创业”的良性循环。</p>
 				</div>
 			</div>
-		</div>
-		<div class="article-accessory">
-			附件：
+		
+			<div class="article-accessory">
+				附件：
+			</div>
 		</div>
 		<a class="return" href="javascript :;" onClick="javascript :history.back(-1);" >返回上一级</a>
 	</div>
@@ -135,6 +136,24 @@
 	</footer>
 	<script src='js/main.js'></script>
 	<script src='js/jquery-3.1.0.js'></script>
+	<script src='js/handlebars-v4.0.5.js'></script>
+	<script id="article-template" type="text/x-handlebars-template">
+		<div class="article">
+				<div><h1 id="article-title">{{theme}}</h1></div>
+				<div class="article-info">
+					<div class="col-md-4">发布时间: <span>{{date}}</span></div>
+					<div class="col-md-4">发布者：<span>{{name.name}}</span></div>
+					<div class="col-md-4">浏览量：<span>{{hits}}</span></div>
+				</div>
+				<div class="article-detail" id="article-content">
+					{{{content}}}
+				</div>
+			</div>
+		
+			<div class="article-accessory">
+				附件：
+			</div>
+	</script>
 	<script src='js/information_detail.js'></script>
 </body>
 </html>

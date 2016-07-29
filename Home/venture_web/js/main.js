@@ -24,12 +24,16 @@ function removeClass(elem, className) {
 /**
  * 登录界面
  */
-var loginbtn = document.querySelector('.login');
-var loginWrapper = document.querySelector('.login-wrapper');
+var loginbtn = document.querySelector('.login'),
+	cancelbtn = document.querySelector('.user-cancel'),
+	loginWrapper = document.querySelector('.login-wrapper'),
+	loginBox, cancelBox; 
 
-(function loginInterface() {
+if(loginbtn) {
 	loginbtn.onclick = function() {
+		loginBox = document.querySelector('.login-box');
 		loginWrapper.style.display = 'block';
+		loginBox.style.display = 'block';
 		var _username = $('#username').val(),
 			_password = $('#password').val(),
 			loginBox = document.querySelector('.login-box'),
@@ -49,19 +53,26 @@ var loginWrapper = document.querySelector('.login-wrapper');
 					password: _password
 				},
 				success: function(result) {
-					var jsonData = JSON.parse(result);
-					alert(jsonData.msg);
+					alert(result.data);
 				}
 			});
 		});
+	}
+} else if(cancelbtn) {
+	cancelbtn.onclick = function() {
+		cancelBox = document.querySelector('.cancel-box');
+		loginWrapper.style.display = 'block'; 
+		cancelBox.style.display = 'block';
+	}
+}
 
-	}	
-})();
+
 
 loginWrapper.addEventListener('click',function(e) {
 	var dom = e.srcElement || e.target;
 	if((dom.className === 'login-wrapper')||(dom.className === 'close')) {
 		loginWrapper.style.display ='none';
+		loginWrapper.style.display = 'none';
 	}
 });
 

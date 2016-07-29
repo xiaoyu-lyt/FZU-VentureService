@@ -47,7 +47,7 @@ function switchTab(olis, boxs, liClass){
 	olis.forEach(function(elem, index) {
 		elem.index = index;
 		elem.onclick = function() {
-			console.log(elem);
+			// console.log(elem);
 			var isClass = this.className.split(' ')[1];
 			if(isClass) {
 				var tabList = document.querySelector('#' + isClass);
@@ -62,7 +62,7 @@ function switchTab(olis, boxs, liClass){
 	function startSwtich(i){
 		boxs.forEach(function(elem, index){
 			elem.style.display = 'none';
-			console.log(olis[index]);
+			// console.log(olis[index]);
 			removeClass(olis[index], liClass);
 			
 		});

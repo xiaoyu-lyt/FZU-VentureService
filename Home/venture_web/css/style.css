@@ -90,6 +90,7 @@ header {
 	color: #293352;
 	box-shadow: 0 0 1px 0 #cecece;
 }
+
 .mobile-bar a {
 	display: inline-block;
 	padding: 10px 20px;
@@ -103,7 +104,10 @@ header {
 	top: 25px;
 }
 
-.login, .signup {
+.login, 
+.signup,
+.user-center,
+.user-cancel {
 	transition: all .2s ease;	
 	-moz-transition: all .2s ease; /* Firefox 4 */
 	-webkit-transition: all .2s ease; /* Safari ºÍ Chrome */
@@ -112,7 +116,9 @@ header {
 }
 
 .login:hover, 
-.signup:hover {
+.signup:hover,
+.user-center:hover,
+.user-cancel:hover {
 	color: #61A3E1;
 } 
 
@@ -182,7 +188,7 @@ header {
   	padding: 20px 12px;
   	font-size: 16px;
   }
-  .login, .signup {
+  .login, .signup, .user-center, .user-cancel {
   	padding: 0 16px;
   }
 }
@@ -717,15 +723,15 @@ footer h4 {
 	background: url('../images/info-icon.png') no-repeat -32px -60px;
 }
 
-.sideNav .active-li .side-news {
+.side-nav .active-li .side-news {
 	background-position: 0px -30px;
 }
 
-.sideNav .active-li .side-notice {
+.side-nav .active-li .side-notice {
 	background-position: 0px 0;
 }
 
-.sideNav .active-li .side-policy {
+.side-nav .active-li .side-policy {
 	background-position: 0px -60px;
 }
 
@@ -744,9 +750,6 @@ footer h4 {
 	color:  #eb4f38;
 }
 
-.information-wrapper .side-nav .active-li span {
-	background-position-x: 0px; 
-}
 
 .information {
 	position: relative;
@@ -819,7 +822,7 @@ footer h4 {
 	padding: 20px;
 }
 
-.article-wrapper #article-title h1{
+.article-wrapper #article-title{
 	text-align: center;
 	font-weight: normal;
 	padding: 23px;
@@ -917,6 +920,10 @@ footer h4 {
 	margin-bottom: 20px;
 }
 
+.login-box {
+	display: none;
+}
+
 .login-line {
 	width: 60%;
 	margin: 0 auto;
@@ -964,9 +971,22 @@ footer h4 {
 	text-decoration: underline;
 }
 
-.login-wrapper #login-btn {
+.cancel-box {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-top: -75px;
+	margin-left: -150px;
+	padding: 20px;
+	width: 300px;
+	height: 150px;
+	background-color: #fff;
+}
+
+.login-wrapper #login-btn,
+.cancel-box #cancel-btn {
 	display: block;
-	width: 220px;
+	width: 200px;
 	height: 35px;
 	margin: 30px auto;
 	background-color:  #61A3E1;
@@ -1034,6 +1054,7 @@ footer h4 {
 	text-align: center;
 	display: inline-block;
 	margin-bottom: 50px;
+	cursor: default;
 }
 
 .teacher-img img{
@@ -1336,20 +1357,23 @@ footer h4 {
 	margin-left: 10px;
 }
 
-/*比赛页面*/
+/*比赛页面、基地页面*/
 .game-wrapper,
 .user-wrapper,
 .admin-wrapper,
-.personal-wrapper {
+.personal-wrapper,
+.bases-wrapper {
 	padding: 30px;
 }
 
-.game-sidenav {
+.game-sidenav,
+.bases-sidenav {
 	width: 30%;
 	border: 1px solid #cecece;
 }
 
-.game-sidenav ul li{
+.game-sidenav ul li,
+.bases-sidenav ul li{
 	height: 4em;
 	line-height: 4em;
 	padding: 0 20px;
@@ -1358,9 +1382,8 @@ footer h4 {
     -o-text-overflow: ellipsis;   
     white-space:nowrap;
     overflow: hidden;
+    cursor: pointer;
 }
-
-
 
 .fire {
 	display: inline-block;
@@ -1369,18 +1392,19 @@ footer h4 {
 	background: url('../images/fire.png') no-repeat center;
 }
 
-.game-content {
+.game-content,
+.bases-content {
 	width: 70%;
 	padding: 15px 25px;
 }
 
-.past-game {
+.past {
 	color: #999;
 }
 
-
-.game-title h1{
-	font-size: 25px;
+.game-title h1,
+.bases-title h1{
+	font-size: 28px;
 	text-align: center;
 	padding-bottom: 10px;
 }
@@ -1389,6 +1413,7 @@ footer h4 {
 	width: 70%;
 	margin: 0 auto;
 }
+
 .end-time b{
 	display: inline-block;
 	position: relative;
@@ -1396,7 +1421,7 @@ footer h4 {
 	right: 2px;
 	width: 16px;
 	height: 16px;
-	background: url("../images/重点符号.png") no-repeat;
+	background: url("../images/icon-symbol.png") no-repeat;
 	background-size: cover;
 	text-align: middle;
 }
@@ -1408,32 +1433,39 @@ footer h4 {
 	padding: 0 25px;
 }
 
-.game-introduction-top {
+.game-introduction-top,
+.bases-introduction-top {
 	height: 50px;
 	line-height: 50px;
 	margin: 1em 0;
 }
 
 .game-introduction-top span,
-.game-introduction-top h2{
+.game-introduction-top h2,
+.bases-introduction-top span,
+.bases-introduction-top h2{
 	display: inline-block;
 	color: #61A3E1;
 	vertical-align: middle;
 }
 
-.game-introduction-top span {
+.game-introduction-top .icon-task,
+.bases-introduction-top .icon-task {
 	width: 30px;
 	height: 30px;
 	margin-right: 5px;
-	background: url("../images/任务.png") no-repeat;
+	background: url("../images/icon-task.png") no-repeat;
 	background-size: cover;
 }
 
-.game-introduction-top h2 {
+.game-introduction-top h2,
+.bases-introduction-top h2 {
 	font-size: 25px;
 	margin-right: 20px;
 }
-.game-detail p {
+
+.game-detail p,
+.bases-detail p {
 	padding: 0 1em;
 	text-indent: 2em;
 	line-height: 2em;
@@ -1442,6 +1474,7 @@ footer h4 {
 .game-moment-wrapper {
 	padding-left: 20px;
 }
+
 .game-moment {
 	display: inline-block;
 	width: 230px;
@@ -1454,15 +1487,29 @@ footer h4 {
 	height: 100%;
 }
 
+#past-games {
+	display: none;
+}
 .past-games-list{
 	text-indent: 3em;
 }
 
+.past-games-list a {
+	display: block;
+	padding: 5px 0;
+}
 .past-games-list a:hover {
 	text-decoration: underline !important;
 	color: #999 !important;
 }
 
+.bases-img-box {
+	display: inline-block;
+	margin: 1%;
+	width: 48%;
+	height: 200px;
+	overflow: hidden;
+}
 /*用户中心*/
 .user-box-top {
 	width: 300px;
@@ -1517,6 +1564,7 @@ footer h4 {
 
 
 .user-head-portrait {
+	position: relative;
 	width: 150px;
 	height: 150px;
 	overflow: hidden;
@@ -1546,6 +1594,19 @@ footer h4 {
 	background: url("../images/icon-head.png") no-repeat center;
 }
 
+#head-file {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	cursor: pointer;
+	opacity: 0;
+	filter:Alpha(opacity=0);
+}
 
 .user-head-portrait:hover .edit-icon {
 	opacity: 1;
@@ -1606,6 +1667,52 @@ footer h4 {
 	margin: 50px;
 }
 
+.find-partner-list {
+	position: relative;
+	height: 280px;
+	display: none;
+	padding: 50px 30px;
+}
+
+.published-find-top {
+	position: relative;
+	
+}
+.published-find-top h3{
+	font-size: 19px;
+	color: #61a3e1;
+	margin-bottom: 20px;
+}
+
+.find-btn {
+	position: absolute;
+	right: 50px;
+	top: 0;
+	padding: 5px 10px;
+	background-color: #fff;
+	border: 1px solid #61a3e1;
+	color: #61a3e1 !important;
+	cursor: pointer;
+}
+
+#find-partner-ul {
+	margin-left: 20px;
+}
+#find-partner-ul a {
+	line-height: 40px;
+	color: #666!important;
+}
+
+#find-partner-ul a:hover {
+	color: #61a3e1 !important;
+}
+
+#find-partner-pagination {
+	position: absolute;
+	right: 50px;
+	bottom: 0;
+}
+
 .user-student-icon {
 	width: 100%;
 	padding: 10px;
@@ -1616,6 +1723,23 @@ footer h4 {
 	margin-top: 12px;
 	color: #61A3E1;
 	font-size: 20px;
+}
+
+.user-box {
+	position: relative;
+}
+
+.user-box .pagination {
+	position: absolute;
+	right: 50px;
+}
+
+#user-projects-box,
+#teachers-box,
+#investors-box {
+	position: relative;
+	height: 600px;
+	overflow: hidden;
 }
 
 /*修改信息弹窗*/
@@ -1804,6 +1928,7 @@ footer h4 {
 	/*box-shadow: 0 0 1px 1px #cecece;*/
 	/*border-left: 10px solid #000;*/
 }
+
 /*寻找合伙人*/
 
 .icon-user-projects {
@@ -1898,27 +2023,33 @@ footer h4 {
 	color: #eb4f38 !important;
 }
 
-.find-teachers-box  {
+.find-teachers-box,
+.find-investors-box  {
 	margin-top: 20px;
 }
-.find-teachers-box p{
+.find-teachers-box p,
+.find-investors-box p{
+	padding: 3px;
 	text-align: center;
 }
 
-.teachers-img {
+.teachers-img,
+.investors-img {
 	width: 130px;
 	height: 130px;
 	margin: 0 auto;
 	overflow: hidden;
 }
 
-.teachers-img img {
+.teachers-img img,
+.investors-img img  {
 	width: 100%;
 }
 
-.teachers-info {
-	height: 3em;
-	padding: 0 20px;
+.teachers-info,
+.investors-info {
+	height: 2em;
+	padding: 0 10px;
 	overflow: hidden;
 }
 
@@ -1993,6 +2124,9 @@ footer h4 {
 	margin-bottom: 20px;
 }
 
+/*创业基地*/
+
+
 /*创业课堂*/
 .classroom-wrapper .container {
 	padding: 50px 0;
@@ -2011,7 +2145,7 @@ footer h4 {
 	padding: 1em;
 	background-color: rgba(0, 0, 0, .5);
 	z-index: 99;
-	visibility: hidden;
+	display: none;
 	overflow: hidden;
 
 }
@@ -2022,6 +2156,7 @@ footer h4 {
 	overflow: hidden;
 	color: #fff;
 }
+
 .classroom-img {
 	display: block;
 	width: 100%;
@@ -2045,7 +2180,7 @@ footer h4 {
 
 .classroom-box:hover .classroom-box-mask,
  .classroom-box:hover .classroom-info p {
-	visibility: visible;
+	display: block;
 }
 
 .classroom-title {
@@ -2065,6 +2200,9 @@ footer h4 {
 	position: relative;
 }
 
+.classroom-training {
+	margin-bottom: 50px;
+}
 .classroom-lessons .classroom-box .classroom-img img {
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;

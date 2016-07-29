@@ -41,8 +41,7 @@ function getData(_type, _page) {
 			page: _page //当前页码
  		},
 		success: function(result) {
-			var jsonData = JSON.parse(result),
-				dataArr = jsonData.data,
+			var	dataArr = result.data,
 				li = '';
 			pages = dataArr.pages; //总页数
 			// console.log(pages);
@@ -52,7 +51,7 @@ function getData(_type, _page) {
 				if(index === 'pages') {
 					return false
 				}
-				li += "<li><a href='article.html?id= "+ elem.nid + "'>" + elem.theme + "</a><span class='information-time pull-right'>" + elem.date +"</span></li>"
+				li += "<li><a href='article.html?id="+ elem.nid + "'>" + elem.theme + "</a><span class='information-time pull-right'>" + elem.date +"</span></li>"
 			})
 			$(nowType + ' .information-ul').append(li);
 		},
@@ -62,7 +61,11 @@ function getData(_type, _page) {
 	});
 }
 
-// 获取分页条
+/**
+ * 获取分页条
+ * @param  {string} typeName 类别名称：news/notice/policy
+ * @param  {string} pages    当前类别总页数
+ */
 function getPageBar(typeName, pages) {
 	var pageStr = '',
 		pagination,
