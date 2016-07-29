@@ -42,7 +42,8 @@
 	color: #888;
 }
 
-.admin-modify .psbtn{
+.admin-modify .psbtn,
+.return-btn{
 	padding: 5px 10px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -51,6 +52,12 @@
 	cursor: pointer;
 }
 
+.return-btn {
+	position: absolute;
+	/*margin: 50px 0;*/
+	bottom: -19px;
+    left: 6%;
+}
 .admin-modify .exit {
 	cursor: pointer;
 }
@@ -69,10 +76,10 @@
 }
 
 .user-box {
-	display: none;
+	/*display: none;*/
 	position: absolute;
 	right: 0;
-	top: 160px;
+	top: 150px;
 	width: 80%;
 
 }
@@ -526,4 +533,9 @@
 
 .join-project-detail a{
 	color: #61a3e1 !important;
+}
+
+.projects-name {
+	display: block;
+	line-height: 30px;
 }

@@ -17,9 +17,16 @@ class PartnerController extends BaseController {
 		$page = !empty(I('get.page')) ? I('get.page') : 1;
 		$pageSize = !empty(I('get.size')) ? I('get.size') : 15;
 
-		$data = M('seekRecords')->order('issue_time desc')->page($page,$pageSize)->field('sid,theme,issue_time')->select();
-		for( $i = 0; $i < count($data); $i++)
-			$data[$i]['issue_time'] = date('Y-m-d',$data[$i]['issue_time']);
+		$data = M('Projects')->where(array('is_seek'=>1))->order('issue_time desc')->page($page,$pageSize)->field('pid,uid,tid,synopsis,name,logo,pic,issue_time')->select();
+		for( $i = 0; $i < count($data); $i++) {
+			$data[$i]['issue_time'] = date('Y/m/d',$data[$i]['issue_time']);
+			$data[$i]['charge'] = M('User')->where(array('uid'=>$data[$i]['uid']))->field('username,name,tel,email')->find();
+			$data[$i]['teams'] = M('Teams')->where(array('tid'=>$data[$i]['tid']))->field('tcharge,tname,tel')->find();
+		}
+		
+		$count = count(M('Projects')->where(array('is_seek'=>1))->select());
+		$data['pages'] = ceil($count/$pageSize);
+
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
@@ -36,7 +43,7 @@ class PartnerController extends BaseController {
 	 */
 	public function seekDetail_get() {
 		$sid = I('get.sid');
-		$data = M('seekRecords')->where(array('sid'=>$sid))->find();
+		$data = M('seekRecords')->where('sid',$sid)->find();
 		if( !empty($data) ) {
 			$data['issue_time'] = date('Y-m-d',$data['issue_time']);
 			$json = $this->jsonReturn(200,"查询成功",$data);
@@ -95,7 +102,7 @@ class PartnerController extends BaseController {
 		$page = !empty(I('get.page')) ? I('get.page') : 1;
 		$pageSize = !empty(I('get.size')) ? I('get.size') : 15;
 
-		$data = M('Tutors')->page($page,$pageSize)->field('name,sex,job,introduction')->select();
+		$data = M('Tutors')->page($page,$pageSize)->select();
 
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
@@ -113,11 +120,11 @@ class PartnerController extends BaseController {
 	 */
 	public function tutorDetail_get() {
 		$tid = I('get.tid');
-		$data = M('Tutors')->where(array('tid'=>$tid))->find();
+		$data = M('Tutors')->where('tid',$tid)->find();
 		if( !empty($data) ) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(0,"查询失败或者该导师不存在！");
+			$json = $this->jsonReturn(0,"查询失败或者该投资人不存在！");
 		}
 		$this->ajaxReturn($json);
 	}
@@ -135,7 +142,7 @@ class PartnerController extends BaseController {
 		$page = !empty(I('get.page')) ? I('get.page') : 1;
 		$pageSize = !empty(I('get.size')) ? I('get.size') : 15;
 
-		$data = M('Investors')->field('name,company,tel,reg_time')->page($page,$pageSize)->select();
+		$data = M('Investors')->page($page,$pageSize)->select();
 
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
@@ -148,12 +155,12 @@ class PartnerController extends BaseController {
 
 	/**
 	 * 获取投资人详细信息
-	 * @param int $id 投资人id
+	 * @param int $tid 导师id
 	 * @return json
 	 */
 	public function investorDetail_get() {
 		$id = I('get.id');
-		$data = M('Investors')->where(array('id'=>$id))->find();
+		$data = M('Investor')->where('id',$id)->find();
 		if( !empty($data) ) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {

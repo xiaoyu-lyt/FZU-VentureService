@@ -12,7 +12,10 @@ class FieldController extends BaseController {
 
 		$where['type'] = I('get.type');
 		$where['status'] = 1;
-		$data = M('fields')->where($where)->order('date desc')->page($page,$pageSize)->field('fid,name,pic,synopsis,date')->select();
+		$data = M('Fields')->where($where)->order('date desc')->page($page,$pageSize)->field('fid,name,pic,synopsis,date')->select();
+
+		$count = count(M('Fields')->where($where)->select());
+		$data['pages'] = ceil($count/$pageSize);
 
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);

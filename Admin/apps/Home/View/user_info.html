@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>管理员-福州大学大学生创业服务网</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" >
+	<link rel="stylesheet" href="css/admin.css">
+	<link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+	<!-- Modify Start -->
+	<div class="modify-wrapper">
+		<div class="modify-password-box modify-box">
+			<span class="close"></span>
+			<form action="" id="modify-password" class="modify-form">
+				<p class="old-line">	
+					<input type="text" name="old_password" placeholder="旧密码" required>
+				</p>
+				<p class="new-line">
+					<input type="text" name="new_password" placeholder="新密码" required>
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="确认修改">
+				</p>
+			</form>
+		</div>
+	</div>
+	<!-- Modify End -->
+
+	<!-- Admin Start -->
+	<div class="admin-wrapper">
+		<div class="container">
+			<div class="user-box-top">
+				<img src="images/setting.png" alt="">
+				<h1>管理中心</h1>
+				<div class="admin-modify">
+					<p>你好，<span>超级管理员！</span><span class="psbtn">修改密码</span><span class="exit">退出</span></p>
+
+				</div>
+			</div>
+			<div class="user-student-sidenav user-sidenav pull-left">
+				<ul>
+					<li>资讯管理</li>
+					<li class="user-sidnav-li now admin-users">用户管理</li>
+					<li class="user-sidnav-li admin-projects">项目管理</li>
+					<li>入驻申请</li>
+					<li>培训管理</li>
+					<li>教材管理</li>
+					<li>比赛管理</li>
+				</ul>
+			</div>
+			<!-- 用户信息管理 -->
+			<div class="user-box block admin-info-managementpull-right">
+				
+				<div class="personal-info-wrapper col-md-4 col-sm-4">
+					<div class="personal-head-portrait">
+						<img src="images/nopic_192.gif" alt="">
+					</div>
+					<div class="personal-base-info">
+						<div class="personal-username aligned center">DanieLam</div>
+						<div class="personal-name aligned center">林渊腾</div>
+						<div class="personal-email aligned center">balabalabala@qq.com</div>
+						<div class="personal-tel aligned center">15345678912</div>
+					</div>
+				</div>
+				<div class="personal-info-box personal-join-project col-md-7 col-sm-7">
+					<div class="personal-info-title">参与项目</div>
+					<div class="join-project-detail">
+						<a href="projects_info.html">互联网技术威客兼职预约平台</a>
+					</div>
+				</div>	
+				<div class="personal-info-box personal-team col-md-7 col-sm-7">
+					<div class="personal-info-title">所属团队</div>
+					<div class="team-detail">
+						暂无团队
+					</div>
+				</div>	
+			</div>
+			
+		</div>
+	</div>
+	
+	<!-- Admin End -->
+	<!-- <script src="js/tabswift.js"></script> -->
+	<script src="js/admin.js"></script>
+</body>
+</html>

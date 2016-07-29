@@ -19,11 +19,20 @@ class ClassController extends BaseController {
 			$data = M('Classes')->where('status = 1')->order('issue_time desc')->page($page,$pageSize)->select();
 		else
 			$data = M('Classes')->order('issue_time desc')->page($page,$pageSize)->select();
-
+		
+		for ($i=0; $i < count($data); $i++) { 
+			$data[$i]['issue_time'] = date('Y/m/d H:i',$data[$i]['issue_time']);
+			$data[$i]['start_time'] = date('Y/m/d H:i',$data[$i]['start_time']);
+			$data[$i]['deadline'] = date('Y/m/d H:i',$data[$i]['deadline']);
+		}
+		
+		$count = count(M('Classes')->where($where)->select());
+		$data['pages'] = ceil($count/$pageSize);
+		
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(0,"暂无培训课堂信息");
+			$json = $this->jsonReturn(0,"暂无培训信息");
 		}
 		//var_dump($jsonReturn);
 		$this->ajaxReturn($json);
@@ -37,16 +46,16 @@ class ClassController extends BaseController {
 	}
 	/**
 	 * 获取所有可下载的材料
-	 * @param int $type 类型：0 文档类 1视频类
+	 * @param int $type 类型：1 文档类 2视频类
 	 * @return json
 	 */
 	public function downloads_get() {
 		$type = I('get.type');
-		$data = M('Documents')->where(array('type'=>$type))->order('issue_time desc')->select();
+		$data = M('Documents')->where('type',$type)->order('issue_time desc')->select();
 		if(!empty($data)){
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(0,"暂无可下载的培训材料");
+			$json = $this->jsonReturn(0,"查询失败");
 		}
 		$this->ajaxReturn($json);
 	}

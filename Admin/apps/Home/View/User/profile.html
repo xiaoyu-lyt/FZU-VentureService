@@ -1,0 +1,38 @@
+<include file="Public:header"/>
+<!-- 用户信息管理 -->
+<div class="user-box block admin-info-managementpull-right">
+	
+	<div class="personal-info-wrapper col-md-3 col-sm-3">
+		<div class="personal-head-portrait">
+			<if condition="$profile.avatar neq '' ">
+				<img src="{$profile.avatar}" alt="">
+			<else />
+				<img src="__PUBLIC__/images/nopic_192.gif" alt="">
+			</if>	
+		</div>
+		<div class="personal-base-info">
+			<div class="personal-username aligned center">{$profile.username}</div>
+			<div class="personal-name aligned center">{$profile.name}</div>
+			<div class="personal-email aligned center">EMAIL: {$profile.email}</div>
+			<div class="personal-tel aligned center">TEL: {$profile.tel}</div>
+		</div>
+	</div>
+	<div class="personal-info-box personal-join-project col-md-6 col-sm-7">
+		<div class="personal-info-title">参与项目</div>
+		<div class="join-project-detail">
+			<volist name="projects" id="vo" empty="暂无项目">
+				<a class="projects-name" href="projects_info.html">{$vo.name}</a>
+			</volist>
+		</div>
+	</div>	
+	<div class="personal-info-box personal-team col-md-6 col-sm-7">
+		<div class="personal-info-title">所属团队</div>
+		<div class="team-detail">
+			<volist name="teams" id="vo" empty="暂无团队">
+				<a class="teams-name">{$vo.tname}</a>
+			</volist>
+		</div>
+	</div>	
+	<a class="return-btn" href="javascript :;" onClick="javascript :history.back(-1);">返回上一级</a>
+</div>
+<include file="Public:footer"/>

@@ -7,17 +7,21 @@ class ProjectController extends BaseController {
 	 * @return json
 	 */
 	public function list_get() {
-		$area = !empty(I('get.area')) ? I('get.area') : '';
-		$type = !empty(I('get.type')) ? I('get.type') : '';
-		$stage = !empty(I('get.stage')) ? I('get.stage') : '';
-		$shareholding = !empty(I('get.shareholding')) ? I('get.shareholding') : '';
+		// $area = !empty(I('get.area')) ? I('get.area') : '';
+		// $type = !empty(I('get.type')) ? I('get.type') : '';
+		// $stage = !empty(I('get.stage')) ? I('get.stage') : '';
+		// $shareholding = !empty(I('get.shareholding')) ? I('get.shareholding') : '';
 
 
 		$page = !empty(I('get.page')) ? I('get.page') : 1;
 		$pageSize = !empty(I('get.size')) ? I('get.size') : 20;
 
 		$where['status'] = 1;
-		$data = M('projects')->where($where)->order('date desc')->field('pid,name,logo,synopsis,stage,area,shareholding,tags,progress,type,date')->page($page,$pageSize)->select();
+
+		$data = M('Projects')->where($where)->->page($page,$pageSize)->select();
+
+		$count = count(M('Projects')->where($where)->select());
+		$data['pages'] = ceil($count/$pageSize);
 
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);

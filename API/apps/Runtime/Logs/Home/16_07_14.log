@@ -1,8 +1,0 @@
-[ 2016-07-14T17:55:17+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/test1
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001047s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001253s ]
-

@@ -13,9 +13,10 @@ class NoticeController extends BaseController {
 
 		$where['type'] = I('get.type');
 		$where['status'] = 1;
-		$count = count(M('Notice')->where($where)->select());
+		
 		$data = M('Notice')->where($where)->order('overhead desc,rank desc,date desc')->page($page,$pageSize)->field('nid,type,theme,date')->select();
 
+		$count = count(M('Notice')->where($where)->select());
 		$data['pages'] = ceil($count/$pageSize);
 
 		if(!empty($data)) {

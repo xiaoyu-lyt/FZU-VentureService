@@ -282,6 +282,5 @@ CREATE TABLE IF NOT EXISTS `vs_documents` (
   `name` varchar(100) NOT NULL COMMENT '文件名',
   `url` varchar(100) NOT NULL COMMENT '文件存放路径',
   `issue_time` int NOT NULL COMMENT '上传时间',
-  `type` tinyint(1) NOT NULL COMMENT '文件类型',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

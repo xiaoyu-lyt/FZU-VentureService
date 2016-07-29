@@ -10,12 +10,34 @@
 	<load href="__PUBLIC__/css/reset.css" />
 </head>
 <body>
+	<!-- Modify Start -->
+	<div class="modify-wrapper">
+		<div class="modify-password-box modify-box">
+			<span class="close"></span>
+			<form action="__ROOT__/index.php/home/admin/pwdModify" id="modify-password" class="modify-form" method="post">
+				<p class="old-line">	
+					<input type="password" name="old_pwd" placeholder="旧密码" value="" required>
+				</p>
+				<p class="new-line">
+					<input type="password" name="new_pwd" placeholder="新密码" value="" required>
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="确认修改">
+				</p>
+			</form>
+		</div>
+	</div>
+	<!-- Modify End -->
+
 	<!-- Admin Start -->
 	<div class="admin-wrapper">
 		<div class="container">
 			<div class="user-box-top">
 				<img src="__PUBLIC__/images/setting.png" alt="">
 				<h1>管理中心</h1>
+				<div class="admin-modify">
+					<p>你好，<span><?php $user = session('login_manager'); echo $user['name']; ?>！</span><span class="psbtn">修改密码</span><span class="exit"><a href="__ROOT__/index.php/home/home/logout">注销登录</a></span></p>
+				</div>
 			</div>
 			<div class="user-student-sidenav user-sidenav pull-left">
 				<ul>

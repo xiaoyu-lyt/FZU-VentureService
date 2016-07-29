@@ -55,13 +55,19 @@ class UserController extends AdminController {
 	 * @param int $uid 用户id
 	 */
 	public function detail($uid) {
-		$ret = M('User')->where(array('uid'=>$uid))->field('password,userKey,status',true)->find();
-		$ret['reg_time'] = date('Y-m-d',$ret['reg_time']);
-		$ret['log_time'] = date('Y-m-d',$ret['log_time']);
+		$profile = M('User')->where(array('uid'=>$uid))->field('password,userKey,status',true)->find();
+		$profile['reg_time'] = date('Y-m-d',$profile['reg_time']);
+		$profile['log_time'] = date('Y-m-d',$profile['log_time']);
 
-		$this->assign('userinfo',$ret);
-		print_r($ret);
-		print_r(cookie());
+		$projects = M('Projects')->where(array('uid'=>$profile['uid']))->field('pid,name')->select();
+		$tems = M('Teams')->where(array('tcharge'=>$profile['uid']))->select();
+
+		$this->assign('teams',$teams);
+		$this->assign('profile',$profile);
+		$this->assign('projects',$projects);
+
+		$this->assign('MODULE',$this->MODULE_NAME);	
+		$this->display('profile');
 	}
 
 }

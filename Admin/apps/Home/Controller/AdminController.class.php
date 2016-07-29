@@ -10,7 +10,7 @@ class AdminController extends Controller {
 		//判断是否已登录
 		$ret = D('UserToken')->getToken($cookie_token);
 		if($ret && $ret['token_expire'] > time()) {
-			$login_manager = M('User')->where(array('uid'=>$ret['uid']))->field('uid,username,nickname,groupid')->find();
+			$login_manager = M('User')->where(array('uid'=>$ret['uid']))->field('uid,username,nickname,name,groupid')->find();
 			session('login_manager',$login_manager);
 			return true;
 		}
@@ -82,5 +82,24 @@ class AdminController extends Controller {
 			'date'	=> time()
 			);
 		M('Logs')->add($data);
+	}
+
+	public function pwdModify() {
+		$old_pwd = I('post.old_pwd');
+		$new_pwd = I('post.new_pwd');
+		$login_manager = session('login_manager');
+		$ret = M('User')->where(array('uid'=>$login_manager['uid']))->field('password,userKey')->find();
+		$old_pwd = md5(md5($old_pwd).$ret['userKey']);
+		if( $old_pwd == $ret['password']) {
+			$new_pwd = md5(md5($new_pwd).$ret['userKey']);
+			$ret2 = M('User')->where(array('uid'=>$login_manager['uid']))->setField(array('password'=>$new_pwd));
+			if( $ret2 ) {
+				$this->success("密码修改成功",U('notice/index'));
+			} else {
+				$this->error("密码修改失败",U('notice/index'));
+			}
+		} else {
+			$this->error("原密码不一致",U('notice/index'));
+		}
 	}
 }
