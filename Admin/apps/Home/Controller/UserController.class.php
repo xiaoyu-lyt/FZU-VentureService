@@ -3,30 +3,141 @@ namespace Home\Controller;
 use Home\Controller\AdminController;
 class UserController extends AdminController {
 	public $MODULE_NAME = "User";
+	public $pageSize = 8;
 	public function __construct() {
 		parent::__construct();
 		if( !$this->isLogin() )
 			$this->error('请先登录！',U('home/index'));
 	}
 
-	public function index() {
+	public function index($page = 1) {
 
-		$teachers = D('User')->userinfo(1);
-		$investors = D('User')->userinfo(2);
-		$students = D('User')->userinfo(0);
-		$admins = D('User')->userinfo(6);
-		
-		$data = array(
-			'teachers'	=> $teachers,
-			'investors'	=> $investors,
-			'students'	=> $students,
-			'admins'	=> $admins
+		$total = count(M('User')->where(array('status'=>0,'groupid'=>1))->select());
+		$totalPage = ceil($total/$this->pageSize);//总页数
+
+		$teachers = M('User')->where(array('status'=>0,'groupid'=>1))->field('password,userKey',true)->page($page,$this->pageSize)->select();
+		$pageBar = array(
+			'total'	=> $total,
+			'totalPage'	=> $totalPage+1,
+			'pageSize' => $this->pageSize,
+			'curPage'	=> $page
 			);
-		$this->assign($data);
+		$this->assign($pageBar);
+
+		$this->assign('teachers',$teachers);
 		
+		$this->assign('now','index');
 		$this->assign('MODULE',$this->MODULE_NAME);	
-		$this->display('user');
+		$this->display('teacher_audit');
 	}
+
+	public function investor_audit($page = 1) {
+
+		$total = count(M('User')->where(array('status'=>0,'groupid'=>2))->select());
+		$totalPage = ceil($total/$this->pageSize);//总页数
+
+		$investors = M('User')->where(array('status'=>0,'groupid'=>2))->field('password,userKey',true)->page($page,$this->pageSize)->select();
+		$pageBar = array(
+			'total'	=> $total,
+			'totalPage'	=> $totalPage+1,
+			'pageSize' => $this->pageSize,
+			'curPage'	=> $page
+			);
+		$this->assign($pageBar);
+
+		$this->assign('investors',$investors);
+		
+		$this->assign('now','investor_audit');
+		$this->assign('MODULE',$this->MODULE_NAME);	
+		$this->display('investor_audit');
+	}
+
+	public function teacher($page = 1) {
+
+		$total = count(M('User')->where(array('status'=>1,'groupid'=>1))->select());
+		$totalPage = ceil($total/$this->pageSize);//总页数
+
+		$teachers = M('User')->where(array('status'=>1,'groupid'=>1))->field('password,userKey',true)->page($page,$this->pageSize)->select();
+		$pageBar = array(
+			'total'	=> $total,
+			'totalPage'	=> $totalPage+1,
+			'pageSize' => $this->pageSize,
+			'curPage'	=> $page
+			);
+		$this->assign($pageBar);
+
+		$this->assign('teachers',$teachers);
+		
+		$this->assign('now','teacher');
+		$this->assign('MODULE',$this->MODULE_NAME);	
+		$this->display('teacher');
+	}
+
+	public function investor($page = 1) {
+
+		$total = count(M('User')->where(array('status'=>1,'groupid'=>2))->select());
+		$totalPage = ceil($total/$this->pageSize);//总页数
+		
+		$investors = M('User')->where(array('status'=>1,'groupid'=>2))->field('password,userKey',true)->page($page,$this->pageSize)->select();
+
+		$pageBar = array(
+			'total'	=> $total,
+			'totalPage'	=> $totalPage+1,
+			'pageSize' => $this->pageSize,
+			'curPage'	=> $page
+			);
+		$this->assign($pageBar);
+
+		$this->assign('investors',$investors);
+		
+		$this->assign('now','investor');
+		$this->assign('MODULE',$this->MODULE_NAME);	
+		$this->display('investor');
+	}
+
+	public function student($page = 1) {
+
+		$total = count(M('User')->where(array('groupid'=>0))->select());
+		$totalPage = ceil($total/$this->pageSize);//总页数
+
+		$students = M('User')->where(array('groupid'=>0))->field('password,userKey',true)->page($page, $this->pageSize)->select();
+
+
+		$pageBar = array(
+			'total'	=> $total,
+			'totalPage'	=> $totalPage+1,
+			'pageSize' => $this->pageSize,
+			'curPage'	=> $page
+			);
+		$this->assign($pageBar);
+		$this->assign('students',$students);
+
+		$this->assign('MODULE',$this->MODULE_NAME);
+		$this->assign('now','student');
+		$this->display('student');
+	}
+
+	public function admin($page = 1) {
+
+		$total = count(M('User')->where(array('groupid'=>6))->select());
+		$totalPage = ceil($total/$this->pageSize);//总页数
+		$admins = M('User')->where(array('groupid'=>6))->field('password,userKey',true)->page($page,$this->pageSize)->select();
+
+		$pageBar = array(
+			'total'	=> $total,
+			'totalPage'	=> $totalPage+1,
+			'pageSize' => $this->pageSize,
+			'curPage'	=> $page
+			);
+		$this->assign($pageBar);
+
+		$this->assign('admins',$admins);
+		
+		$this->assign('now','admin');
+		$this->assign('MODULE',$this->MODULE_NAME);	
+		$this->display('admin');
+	}
+
 
 	/**
 	 * 用户审核
@@ -69,5 +180,8 @@ class UserController extends AdminController {
 		$this->assign('MODULE',$this->MODULE_NAME);	
 		$this->display('profile');
 	}
+
+
+
 
 }

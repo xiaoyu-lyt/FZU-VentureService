@@ -1,0 +1,39 @@
+<include file="Public:header"/>
+<!-- Aricle-publish Start -->
+<div class="article-publish-form">
+	<form action="__ROOT__/index.php/home/competition/publish/do" method="post">
+
+		<div class="article-publish-box article-publish-title">
+			<label for=""><span class="star">*</span>标题:</label>
+			<input type="text" name="name" value="{$competition.name}">
+			<button class="duplicate-detection">检测重复</button>
+		</div>
+
+		<div class="article-publish-box article-publish-title">
+			<label for=""><span class="star">*</span>届数:</label>
+			<input type="text" name="times" value="{$competition.times}">
+		</div>
+
+		<div class="article-publish-box article-publish-abstract">
+
+			<label for=""><span class="star">*</span>内容:</label>
+				<!-- 加载编辑器的容器 -->
+			    <script id="_container" name="description" type="text/plain" style="width: 740px; height:250px; margin-left:190px;"> <?php echo htmlspecialchars_decode($competition['description']); ?>
+			    </script>
+			    <!-- 配置文件 -->
+			    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+			    <!-- 编辑器源码文件 -->
+			    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.js"></script>
+			    <!-- 实例化编辑器 -->
+		</div>
+		<div class="article-publish-btn">
+			<button type="submit" name="sub" class="save-close">保存后自动关闭</button>
+			<button class="save-publish">保存并继续发表</button>
+			<button class="publish-close"><a href="javascript :;" onClick="javascript :history.back(-1);">关闭</a></button>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+	        var ue = UE.getEditor('_container');
+</script>
+<include file="Public:footer"/>

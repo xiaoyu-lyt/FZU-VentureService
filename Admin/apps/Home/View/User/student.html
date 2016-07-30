@@ -1,34 +1,47 @@
-<!-- 学生信息 -->
-<div class="admin-students-table admin-users-table admin-table" id="students-info-table">
-	<table>
-		<tr>
-			<th class="admin-th-select">
-				<input class="admin-investors-select-btn" type="checkbox"> 全选
-			</th>
-			<th class="admin-th-investor-id admin-th-id"><span>ID</span></th>
-			<th class="admin-th-investor-username admin-th-username"><span>用户名</span></th>
-			<th class="admin-th-investor-name admin-th-name"><span>姓名</span></th>
-			<th class="admin-th-investor-phone admin-th-phone"><span>手机号</span></th>
-			<th class="admin-th-investor-email admin-th-email"><span>邮箱</span></th>
-			<th class="admin-th-investor-management admin-th-management"><span>管理操作</span></th>
-		</tr>
-		<volist name="students" id="v" empty="暂无学生信息">
-				<tr>
-					<td class="admin-teacher-select">
-						<input class="admin-teachers-select-btn" type="checkbox">
-					</td>
-					<td class="admin-teacher-id">{$i}</td>
-					<td class="admin-teacher-username">
-						<a href="">{$v.username}</a>
-					</td>
-					<td class="admin-teacher-name"><span>{$v.name}</span></td>
-					<td class="admin-teacher-phone"><span>{$v.tel}</span></td>
-					<td class="admin-teacher-email"><span>{$v.email}</span></td>
-					<td class="admin-teacher-operation admin-operation">
-						<a href=""><span class="admin-view-info">查看信息</span></a>
+<include file="Public:header"/>
+<include file="user_header"/>
+
+	<!-- 学生信息 -->
+	<div class="admin-students-table admin-users-table admin-table block" id="students-info-table">
+		<table>
+			<tr>
+				<th class="admin-th-select">
+					<input class="admin-investors-select-btn" type="checkbox"> 全选
+				</th>
+				<th class="admin-th-investor-id admin-th-id"><span>ID</span></th>
+				<th class="admin-th-investor-username admin-th-username"><span>用户名</span></th>
+				<th class="admin-th-investor-name admin-th-name"><span>姓名</span></th>
+				<th class="admin-th-investor-phone admin-th-phone"><span>手机号</span></th>
+				<th class="admin-th-investor-email admin-th-email"><span>邮箱</span></th>
+				<th class="admin-th-investor-management admin-th-management"><span>管理操作</span></th>
+			</tr>
+			<empty name="students">
+				<tr align="center">
+					<td colspan="6">
+						暂无学生信息
 					</td>
 				</tr>
-		</volist>
-		
-	</table>
-</div>
+			<else />
+				<volist name="students" id="v">
+					<tr>
+						<td class="admin-teacher-select">
+							<input class="admin-teachers-select-btn" type="checkbox">
+						</td>
+						<td class="admin-teacher-id">{$i}</td>
+						<td class="admin-teacher-username">
+							<a href="">{$v.username}</a>
+						</td>
+						<td class="admin-teacher-name"><span>{$v.name}</span></td>
+						<td class="admin-teacher-phone"><span>{$v.tel}</span></td>
+						<td class="admin-teacher-email"><span>{$v.email}</span></td>
+						<td class="admin-teacher-operation admin-operation">
+							<a href="__ROOT__/index.php/home/user/detail?uid={$v.uid}"><span class="admin-view-info">查看信息</span></a>
+						</td>
+					</tr>
+				</volist>
+			</empty>
+		</table>
+	</div>
+
+<include file="user_footer"/>
+<include file="Public:footer"/>

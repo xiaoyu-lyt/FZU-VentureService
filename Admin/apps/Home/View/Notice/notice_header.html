@@ -1,0 +1,10 @@
+<!-- 资讯管理 -->
+<div class="user-box admin-info-management sub-management pull-right">
+	<div class="admin-top">
+		<ul class="admin-management-ul clearfix" id="admin-articles">
+			<li class="pull-left <?php if($now == 'index' ) echo 'now-li';?>"><a href="__ROOT__/index.php/home/notice/index">新闻资讯</a></li>
+			<li class="pull-left <?php if($now == 'notice' ) echo 'now-li';?>"><a href="__ROOT__/index.php/home/notice/notice">通知公告</li>
+			<li class="pull-left <?php if($now == 'policy' ) echo 'now-li';?>"><a href="__ROOT__/index.php/home/notice/policy">最新政策</a></li>
+		</ul>
+		<a class="admin-publish-article" href="__ROOT__/index.php/home/notice/publish">发布文章</a>
+	</div>

@@ -18,7 +18,7 @@ class ProjectController extends BaseController {
 
 		$where['status'] = 1;
 
-		$data = M('Projects')->where($where)->->page($page,$pageSize)->select();
+		$data = M('Projects')->where($where)->page($page,$pageSize)->select();
 
 		$count = count(M('Projects')->where($where)->select());
 		$data['pages'] = ceil($count/$pageSize);

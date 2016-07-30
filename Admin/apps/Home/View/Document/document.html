@@ -15,24 +15,65 @@
 				<th class="admin-th-textbook-name admin-th-username"><span>发布时间</span></th>
 				<th class="admin-th-textbook-management admin-th-management"><span>管理操作</span></th>
 			</tr>
-			<volist	name="documents" id="vo">
-				<tr>
-					<td class="admin-textbook-select">
-						<input class="admin-textbook-select-btn" type="checkbox">
-					</td>
-					<td class="admin-textbook-id">{$vo.id}</td>
-					<td class="admin-textbook-name">
-						<a href="">{$vo.name}</a>
-					</td>
-					<td>{$vo.issue_time}</td>
-					<td class="admin-textbook-operation admin-operation">
-						<span class="admin-article-modify">修改</span>
-						<span class="admin-article-delete">删除</span>
+			<empty name="documents">
+				<tr align="center">
+					<td colspan="6">
+						暂无教材信息
 					</td>
 				</tr>
-			</volist>
-			
+			<else />
+				<volist	name="documents" id="vo">
+					<tr>
+						<td class="admin-textbook-select">
+							<input class="admin-textbook-select-btn" type="checkbox">
+						</td>
+						<td class="admin-textbook-id">{$vo.id}</td>
+						<td class="admin-textbook-name">
+							<a href="">{$vo.name}</a>
+						</td>
+						<td>{$vo.issue_time}</td>
+						<td class="admin-textbook-operation admin-operation">
+							<span class="admin-article-modify">修改</span>
+							<span class="admin-article-delete">删除</span>
+						</td>
+					</tr>
+				</volist>
+			</empty>
 		</table>
+	</div>
+	<!-- 分页栏 -->
+	<div class="pull-right">
+		<ul class="pagination">
+			<if condition="$curPage neq 1 ">	
+				<li><a href="__ROOT__/index.php/home/user/{$now}/1" >首页</a></li>
+				<li><a href="__ROOT__/index.php/home/user/{$now}/{$curPage-1}">上一页</a></li>
+			</if>
+
+			<if condition="($curPage gt 3) AND ($curPage lt $totalPage-2)">
+				<for start="$curPage-2" end="$curPage+3">
+					<li><a <?php if($i==$curPage) echo "class='now'"; ?> href="__ROOT__/index.php/home/user/{$now}/{$i}" >{$i}</a></li>
+				</for>
+			<elseif condition="($curPage gt $totalPage-3) AND ($totalPage gt 5)" />
+				<for start="$totalPage-5" end="$totalPage">
+					<li><a <?php if($i==$curPage) echo "class='now'"; ?> href="__ROOT__/index.php/home/user/{$now}/{$i}" >{$i}</a></li>
+				</for>
+			<elseif condition="$totalPage gt 5" />
+				<for start="1" end="6">
+					<li><a <?php if($i==$curPage) echo "class='now'"; ?> href="__ROOT__/index.php/home/user/{$now}/{$i}" >{$i}</a></li>
+				</for>
+			<else />
+				<for start="1" end="$totalPage">
+					<li><a <?php if($i==$curPage) echo "class='now'"; ?> href="__ROOT__/index.php/home/user/{$now}/{$i}" >{$i}</a></li>
+				</for>
+			</if>
+
+			<if condition="$curPage lt $totalPage-1">
+				<li><a href="__ROOT__/index.php/home/user/{$now}/{$curPage+1}">下一页</a></li>
+				<li><a href="__ROOT__/index.php/home/user/{$now}/{$totalPage-1}">末页</a></li>
+			</if>
+
+			<li><a href="javascript:void(0);">共 {$total} 条记录</a></li>
+		</ul>
 	</div>
 </div>
 <include file="Public:footer"/>

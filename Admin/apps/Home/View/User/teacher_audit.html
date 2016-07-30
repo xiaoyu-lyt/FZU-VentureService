@@ -1,0 +1,48 @@
+<include file="Public:header"/>
+<include file="user_header"/>
+	<!-- 教师审核 -->
+	<div class="admin-teachers-table admin-users-table admin-table block" id="teachers-check-table">
+		<table>
+			<tr>
+				<th class="admin-th-select">
+					<input class="admin-teacher-select-btn" type="checkbox"> 全选
+				</th>
+				<th class="admin-th-teacher-id admin-th-id"><span>ID</span></th>
+				<th class="admin-th-teacher-username admin-th-username"><span>用户名</span></th>
+				<th class="admin-th-teacher-name admin-th-name"><span>姓名</span></th>
+				<th class="admin-th-teacher-phone admin-th-phone"><span>手机号</span></th>
+				<th class="admin-th-teacher-email admin-th-email"><span>邮箱</span></th>
+				<th class="admin-th-teacher-management admin-th-management"><span>管理操作</span></th>
+			</tr>
+			<empty name="teachers">
+				<tr align="center">
+					<td colspan="6">
+						暂无待审核的教师信息
+					</td>
+				</tr>
+			<else />
+				<volist name="teachers" id="vo">
+					<tr>
+						<td class="admin-teacher-select">
+							<input class="admin-teacher-select-btn" type="checkbox">
+						</td>
+						<td class="admin-teacher-id">{$i}</td>
+						<td class="admin-teacher-username">
+							<a href="">{$vo.username}</a>
+						</td>
+						<td class="admin-teacher-name"><a href="">{$vo.name}</a></td>
+						<td class="admin-teacher-phone"><span>{$vo.tel}</span></td>
+						<td class="admin-teacher-email"><span>{$vo.email}</span></td>
+						<td class="admin-teacher-operation admin-operation">
+							<span class="admin-teacher-pass admin-pass"><a href="__ROOT__/index.php/home/user/pass?uid={$vo.uid}">通过</a></span>
+							<span class="admin-teacher-refuse admin-refuse" id="{$vo.tel}" onclick="refuse(this)">拒绝</span>
+						</td>
+					</tr>
+				</volist>
+			</empty>
+		</table>
+	</div>
+
+	
+<include file="user_footer"/>
+<include file="Public:footer"/>

@@ -1,0 +1,13 @@
+<!-- 用户管理 -->
+<div class="user-box admin-users-management sub-management pull-right">
+	<div class="admin-top admin-users-management">
+		<ul class="admin-management-ul clearfix" id="admin-users">
+			<li class="pull-left <?php if($now == 'index' ) echo 'now-li';?>"><a href="__ROOT__/index.php/home/user/index">教师审核</a></li>
+			<li class="pull-left <?php if($now == 'investor_audit' ) echo 'now-li';?>"><a href="__ROOT__/index.php/home/user/investor_audit">投资人审核</li>
+			<li class="pull-left <?php if($now == 'teacher' ) echo 'now-li';?>"><a href="__ROOT__/index.php/home/user/teacher">教师信息</a></li>
+			<li class="pull-left <?php if($now == 'investor' ) echo 'now-li';?>"><a href="__ROOT__/index.php/home/user/investor">投资人信息</a></li>
+			<li class="pull-left <?php if($now == 'student' ) echo 'now-li';?>"><a href="__ROOT__/index.php/home/user/student">学生信息</a></li>
+			<li class="pull-left <?php if($now == 'admin' ) echo 'now-li';?>"><a href="__ROOT__/index.php/home/user/admin">管理员信息</a></li>
+			<li class="pull-left <?php if($now == 'add_admin' ) echo 'now-li';?>"><a href="__ROOT__/index.php/home/user/add_admin">添加管理员</a></li>
+		</ul>
+	</div>

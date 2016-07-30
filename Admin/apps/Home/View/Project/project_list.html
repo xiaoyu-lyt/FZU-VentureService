@@ -1,0 +1,47 @@
+<include file="Public:header"/>
+<include file="project_header"/>
+	<!-- 项目信息 -->
+	<div class="admin-projects-table admin-check-projects-table admin-table block" id="projects-check-table">
+		<table>
+			<tr>
+				<th class="admin-th-select">
+					<input class="admin-project-select-btn" type="checkbox"> 全选
+				</th>
+				<th class="admin-th-project-id admin-th-id"><span>ID</span></th>
+				<th class="admin-th-project-name admin-th-name"><span>项目名</span></th>
+				<th class="admin-th-project-username admin-th-username"><span>负责人</span></th>
+				<th class="admin-th-project-time admin-th-time"><span>申请时间</span></th>
+				<th class="admin-th-project-management admin-th-management"><span>管理操作</span></th>
+			</tr>
+			<empty name="projects">
+				<tr align="center">
+					<td colspan="6">
+						暂无项目信息,请先查看审核列表
+					</td>
+				</tr>
+			<else />
+				<volist name="projects" id="v" >
+					<if condition="$v.status eq 1">
+						<tr>
+							<td class="admin-project-select">
+								<input class="admin-project-select-btn" type="checkbox">
+							</td>
+							<td class="admin-project-id">{$v.pid}</td>
+							<td class="admin-project-name">
+								<a href="">{$v.name}</a>
+							</td>
+							<td class="admin-project-username"><span>{$v.charge.name}</span></td>
+							<td class="admin-project-time"><span>{$v.issue_time}</span></td>
+							<td class="admin-project-operation admin-operation">
+								<a href="__ROOT__/index.php/home/project/detail?pid={$v.pid}"><span class="admin-view-info">查看信息</span></a>	
+							</td>
+						</tr>
+					</if>
+				</volist>
+			</empty>
+		</table>
+	</div>
+
+
+<include file="project_footer"/>
+<include file="Public:footer"/>

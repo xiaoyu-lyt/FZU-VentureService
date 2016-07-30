@@ -68,6 +68,7 @@ class UserController extends BaseController {
 				$ret = D('UserToken')->getToken($cookie_token);
 				if($ret && $ret['token_expire'] > time()) {
 					$login_user = M('User')->where(array('uid'=>$ret['uid']))->field('uid,username,nickname,groupid')->find();
+					$login_user['token'] = $cookie_token;
 					session('login_user',$login_user);
 				}
 				$json = $this->jsonReturn(0,"已登录",$login_user);

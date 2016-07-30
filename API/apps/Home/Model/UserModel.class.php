@@ -19,11 +19,8 @@ class UserModel extends BaseModel {
 	public function register( $data ) {
 		$data['userKey'] = $this->getRandChar();//随机字符串
 		$data['password'] = md5(md5($data['password']).$data['userKey']);
-		if($data['groupid'] == 0){
-			$data['status'] = 1;
-		} else {
-			$data['status'] = 0;
-		}
+
+		$data['status'] = 0;
 		$data['reg_time'] = time();
 		return $this->add($data);
 	}

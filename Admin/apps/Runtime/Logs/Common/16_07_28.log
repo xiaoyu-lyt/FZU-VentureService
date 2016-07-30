@@ -1,0 +1,6 @@
+[ 2016-07-28T08:24:32+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/notice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+ERR: 无法加载模块:Notice
+

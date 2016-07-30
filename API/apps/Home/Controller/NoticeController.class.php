@@ -13,9 +13,11 @@ class NoticeController extends BaseController {
 
 		$where['type'] = I('get.type');
 		$where['status'] = 1;
-		
-		$data = M('Notice')->where($where)->order('overhead desc,rank desc,date desc')->page($page,$pageSize)->field('nid,type,theme,date')->select();
 
+		$data = M('Notice')->where($where)->order('overhead desc,rank desc,date desc')->page($page,$pageSize)->field('nid,type,theme,date')->select();
+		for ($i=0; $i < count($data); $i++) { 
+			$data[$i]['date'] = date('Y/m/d',$data[$i]['date']); 
+		}
 		$count = count(M('Notice')->where($where)->select());
 		$data['pages'] = ceil($count/$pageSize);
 
@@ -35,6 +37,7 @@ class NoticeController extends BaseController {
 	public function detail_get() {
 		$where['nid'] = I('get.nid');
 		$data = M('notice')->where($where)->field('nid,theme,type,date,content')->find();
+		$data['content'] = htmlspecialchars_decode($data['content']);
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
