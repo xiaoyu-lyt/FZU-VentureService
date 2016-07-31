@@ -40,11 +40,13 @@ function getData(_type, _page) {
 			size: _size, //页大小
 			page: _page //当前页码
  		},
+ 		error: function () {
+ 			console.log("error!");
+ 		},
 		success: function(result) {
 			var	dataArr = result.data,
 				li = '';
 			pages = dataArr.pages; //总页数
-			// console.log(pages);
 			types[nowType.split('-')[1]].npage = pages;
 			$(nowType +' .information-ul').empty();
 			$.each(dataArr, function(index, elem) {

@@ -26,11 +26,12 @@
 				<input type="password" name="password" id="password" placeholder="请输入密码">
 			</div>
 			<div class="login-line3">
-				<span><input id="checkbox" type="checkbox" value="" />
-				<label for="checkbox"></label><span>记住密码</span></span>
 				<a class="pull-right" href="#"><span class="forgot">忘记密码</span></a>
 			</div>
 			<button id='login-btn'>登录</button>
+		</div>
+		<div class="cancel-box">
+			<button id="cancel-btn">确认注销?</button>
 		</div>
 	</div>
 
@@ -42,7 +43,7 @@
 		</a>
 		<div class="main-nav">
 			<ul class='clearfix'>
-				<li class='pull-left on'><a href="index.html">首页</a></li>
+				<li class='pull-left'><a href="index.html">首页</a></li>
 				<li class='pull-left'><a href="information.html">新闻资讯</a></li>
 				<li class='pull-left'><a href="base.html">孵化基地</a></li>
 				<li class='pull-left'><a href="projects.html">创业项目</a></li>
@@ -51,11 +52,16 @@
 			</ul>
 		</div>
 		<span class="mobile-menu"></span>
-		<div class="usr-wrapper">
-			<span class="login"><a>登录</a></span>
-			<span class="separator"></span>
-			<span class="signup"><a href="signup.html">注册</a></span>
-		</div>
+		<div class="usr-wrapper login-signup">
+				<span class="login"><a>登录</a></span>
+				<span class="separator"></span>
+				<span class="signup"><a href="signup.html">注册</a></span>
+			</div>
+			<div class="usr-wrapper center-cancel">
+				<span class="user-center"><a href="user_student.html">个人中心</a></span>
+				<span class="separator"></span>
+				<span class="user-cancel"><a>注销</a></span>
+			</div>
 	</header>
 	<div class="mobile-bar">
 		<ul>			
@@ -76,33 +82,64 @@
 				<img src="images/personal.png" alt="">
 				<h1>个人首页</h1>
 			</div>
-			<div class="personal-info-wrapper col-md-3 col-sm-4">
-				<div class="personal-head-portrait">
-					<img src="images/nopic_192.gif" alt="">
+			<div id="personal-info">
+				<div class="personal-info-wrapper col-md-3 col-sm-4">
+					<div class="personal-head-portrait">
+						<img src="images/nopic_192.gif" alt="">
+					</div>
+					<div class="personal-base-info" id="base-info">
+						<div class="personal-username aligned center">DanieLam</div>
+						<div class="personal-name aligned center">林渊腾</div>
+						<div class="personal-email aligned center">balabalabala@qq.com</div>
+						<div class="personal-tel aligned center">15345678912</div>
+					</div>
 				</div>
-				<div class="personal-base-info">
-					<div class="personal-username aligned center">DanieLam</div>
-					<div class="personal-name aligned center">林渊腾</div>
-					<div class="personal-email aligned center">balabalabala@qq.com</div>
-					<div class="personal-tel aligned center">15345678912</div>
-				</div>
+				<div class="personal-info-box personal-join-project col-md-4 col-sm-7">
+					<div class="personal-info-title" id="project-info">参与项目</div>
+						<div class="join-project-detail">
+							<a href="projects_info.html">互联网技术威客兼职预约平台</a>
+						</div>
+				</div>	
+				<div class="personal-info-box personal-team col-md-4 col-sm-7">
+						<div class="personal-info-title">所属团队</div>
+					<div id="team-info" class="team-detail">
+						暂无团队
+					</div>
+				</div>	
 			</div>
-			<div class="personal-info-box personal-join-project col-md-4 col-sm-7">
-				<div class="personal-info-title">参与项目</div>
-				<div class="join-project-detail">
-					<a href="projects_info.html">互联网技术威客兼职预约平台</a>
-				</div>
-			</div>	
-			<div class="personal-info-box personal-team col-md-4 col-sm-7">
-				<div class="personal-info-title">所属团队</div>
-				<div class="team-detail">
-					暂无团队
-				</div>
-			</div>	
+			
 
 		</div>
 	</div>
 	<!-- Personal-information End -->
+	<script src="js/jquery-3.1.0.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/handlebars-v4.0.5.js"></script>
+	<script id="student-template" type="text/x-handlebars-template">
+		<div class="personal-info-wrapper col-md-3 col-sm-4">
+			<div class="personal-head-portrait">
+				<img src="images/nopic_192.gif" alt="">
+			</div>
+			<div class="personal-base-info" id="base-info">
+				<div class="personal-username aligned center">{{DanieLam}}</div>
+				<div class="personal-name aligned center">林渊腾</div>
+				<div class="personal-email aligned center">balabalabala@qq.com</div>
+				<div class="personal-tel aligned center">15345678912</div>
+			</div>
+		</div>
+		<div class="personal-info-box personal-join-project col-md-4 col-sm-7">
+			<div class="personal-info-title" id="project-info">参与项目</div>
+				<div class="join-project-detail">
+					<a href="projects_info.html">互联网技术威客兼职预约平台</a>
+				</div>
+		</div>	
+		<div class="personal-info-box personal-team col-md-4 col-sm-7">
+				<div class="personal-info-title">所属团队</div>
+			<div id="team-info" class="team-detail">
+				暂无团队
+			</div>
+		</div>	
+	</script>
+	<script src="js/user_info.js"></script>
 </body>
 </html>

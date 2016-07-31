@@ -20,13 +20,17 @@ function getData(n) {
 			var dataArr = result.data;
 				li = '';
 			// console.log(dataArr);
+			// console.log(dataArr);
 			// 渲染左侧列表
 			$('#base-list').empty();
 			$.each(dataArr, function(index, elem) {
+				if(index === 'pages') {
+					return false
+				}
 				li += '<li id=' + elem.fid + '>' + elem.name + '</li>';
 			});
 			$('#base-list').append(li);
-			oli = basesList.querySelectorAll('li');
+			oli = baseList.querySelectorAll('li');
 			$(oli[n]).addClass('now');
 			_fid = oli[n].id;
 		},
@@ -38,7 +42,7 @@ function getData(n) {
 
 //点击列表获取基地详情、渲染基地列表
 $(function(){
-	basesList.addEventListener('click', function(event) {
+	baseList.addEventListener('click', function(event) {
 		var e = event.srcElement || event.target;
 		if(e.nodeName.toUpperCase() == 'LI') {
 			$('li.now').removeClass('now');
@@ -50,7 +54,7 @@ $(function(){
 
 /**
  * 渲染基地详情
- * @param  {number} _fid 比赛id
+ * @param  {number} _fid 基地id
  * @return {[type]}      [description]
  */
 function getDetail(_fid) {
@@ -67,9 +71,10 @@ function getDetail(_fid) {
 		success: function(result) {
 			var data = result.data, 
 				box;
+			console.log(data);
 			$('#bases-introduction-box').empty();
-			$('#bases-title').text(data.name);
-			$('#bases-introduction-box').html(data.detail);
+			$('#base-title').text(data.name);
+			$('#base-introduction').text(data.detail);
 		}
 	});
 }

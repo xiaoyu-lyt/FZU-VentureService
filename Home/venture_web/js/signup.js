@@ -111,14 +111,14 @@ select.addEventListener('click', function(event) {
 $('#submit').click(function() {
 	var _username = $('#username').val(),
 		_name = $('#name').val(),
-		_password = $('#apassword').val(),
+		_password = $('#password').val(),
 		_email = $('#email').val(),
 		_tel = $('#tel').val(),
 		v_code = $('#v-code').val();
+
 	$.ajax({
 		type: "post",
 		url: "../../API/index.php/home/user/register.html",
-		async: false,
 		data: {
 			username: _username,
 			name: _name,
@@ -131,9 +131,9 @@ $('#submit').click(function() {
 		error: function(){
 			alert('error!');
 		},
-		success: function(data) {
-			var jsonData = JSON.parse(data);
-			alert(jsonData.msg);
+		success: function(result) {
+			alert(result.msg);
+			window.location.href='../venture_web/index.html';
 		}
 	})
 })

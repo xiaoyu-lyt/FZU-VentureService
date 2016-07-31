@@ -23,23 +23,6 @@ function removeClass(elem, className) {
 
 var	oli = document.querySelector('.user-apply-sidenav').querySelectorAll('li');
 	
-// userBox = [].slice.call(userBox);
-// stepBtn = [].slice.call(stepBtn);
-// stepBtn.forEach(function(elem, index) {
-// 	elem.addEventListener('click', function(event) {
-// 		if(hasClass(event.target,'btn-next')) {
-// 			userBox[index].style.display = 'none';
-// 			removeClass(oli[index], 'now');
-// 			userBox[index+1].style.display = 'block';
-// 			addClass(oli[index+1], 'now');
-// 		} else if(hasClass(event.target, 'btn-pre')) {
-// 			userBox[index].style.display = 'none';
-// 			removeClass(oli[index], 'now');
-// 			userBox[index-1].style.display = 'block';
-// 			addClass(oli[index-1], 'now');
-// 		}
-// 	})
-// });
 $('#now-income').hide();
 var isincome = document.querySelectorAll('.isincome');
 $(isincome).each(function(index, elem){

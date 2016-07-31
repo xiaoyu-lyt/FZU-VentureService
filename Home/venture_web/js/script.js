@@ -21,6 +21,73 @@ function removeClass(elem, className) {
     }
 }
 
+getInfo(0);
+getInfo(1);
+getInfo(2);
+getBase();
+getProject();
+// getHotNews();
+// 获取热门资讯
+function getHotNews() {
+	$.ajax({
+		type: "get",
+		url: "../../API/index.php/home/notice/detail.html",
+		dataType: "json",
+		data: 3,
+		error: function () {
+			console.log("error!");
+		},
+		success: function(result) {
+			var data = result.data;
+			// console.log(data);
+			var template = Handlebars.compile($('#hotnews-template').html()); //注册模板
+			var html = template(data); //封装模板
+			$('#hot-news').html(html); //插入基础模板中
+		}
+	}) 
+}
+
+/**
+ * 获取资讯列表
+ * @param  {num} _type 0、新闻热点 1、通知公告 2、最新政策
+ * @return {[type]}       [description]
+ */
+function getInfo(type) {
+	var types=['news','notice','policy'];
+	console.log(type);
+	$.ajax({
+		type: "get",
+		url: "../../API/index.php/home/notice/list.html",
+		dataType: "json",
+		data: {
+			type: type
+		},
+		error: function () {
+			console.log("error!");
+		},
+		success: function(result) {
+			var data = result.data;
+			// console.log(data);
+
+			var template = Handlebars.compile($('#' + types[type] +'-template').html()); //注册模板
+			Handlebars.registerHelper("compare1",function(_index, options){
+          	 	if(_index < 5){
+				//满足添加继续执行
+					return options.fn(this);
+				}	
+			});
+			Handlebars.registerHelper("compare2",function(_index, options){
+          	 	if(_index >= 5 && _index < 10){
+				//满足添加继续执行
+					return options.fn(this);
+				}	
+			});
+			var html = template(data); //封装模板
+				$('#' + types[type] +'-box').html(html); //插入基础模板中
+		}
+	}) 
+}
+
 /**
  * 新闻轮播
  */
@@ -82,7 +149,6 @@ function tab() {
 		}
 		oDiv[index].style.display = 'block';
 		addClass(oLi[index],'hover');
-		console.log(oLi[index].children[0]);
 
 	}
 } 
@@ -100,21 +166,21 @@ var cols, minH, index, boxPos,
 projectsBox = [].slice.call(projectsBox);
 
 window.onresize = window.onscroll = function() {
-	var wscrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+	var wscrollTop = document.documentElement.scrollTop||document.body.scrollTop||window.pageYOffset ;
 	(function showProjects() {
-		if(wscrollTop > 780) {
-			addClass(projectsTop, 'down');
-			projectsBox.forEach(function(elem) {
-				addClass(elem, 'down');
-			})
-		}
+		// if(wscrollTop > 780) {
+		// 	addClass(projectsTop, 'down');
+		// 	projectsBox.forEach(function(elem) {
+		// 		addClass(elem, 'down');
+		// 	})
+		// }
 
-		else {
-			removeClass(projectsTop, 'down');
-			projectsBox.forEach(function(elem) {
-				removeClass(elem, 'down');
-			})
-		}
+		// else {
+		// 	removeClass(projectsTop, 'down');
+		// 	projectsBox.forEach(function(elem) {
+		// 		removeClass(elem, 'down');
+		// 	})
+		// }
 		if(wscrollTop > 580) {
 			base.style.opacity='1';
 			
@@ -125,6 +191,65 @@ window.onresize = window.onscroll = function() {
 	})();
 	// waterfall();
 }
+
+/**
+ * 获取基地展示内容
+ * @return {[type]} [description]
+ */
+function getBase() {
+	$.ajax({
+		type: "get",
+		url: "../../API/index.php/home/field/list.html",
+		dataType: "json",
+		error: function () {
+			console.log("error!");
+		},
+		success: function(result) {
+			var data = result.data;
+			// console.log(data);
+
+			var template = Handlebars.compile($('#base-template').html()); //注册模板
+			Handlebars.registerHelper("compare", function(_index, options){
+          	 	if(_index < 3){
+				//满足添加继续执行
+					return options.fn(this);
+				}	
+			});
+			var html = template(data); //封装模板
+			$('#base-box').html(html); //插入基础模板中
+		}
+	}) 
+}
+
+/*/**
+ * 获取项目展示内容
+ * @return {[type]} [description]
+ */
+function getProject() {
+	$.ajax({
+		type: "get",
+		url: "../../API/index.php/home/project/list.html",
+		dataType: "json",
+		error: function () {
+			console.log("error!");
+		},
+		success: function(result) {
+			var data = result.data;
+			console.log(data);
+
+			var template = Handlebars.compile($('#project-template').html()); //注册模板
+			Handlebars.registerHelper("compare",function(_index, options){
+          	 	if(_index < 8){
+				//满足添加继续执行
+					return options.fn(this);
+				}	
+			});
+			var html = template(data); //封装模板
+			$('#project-box').html(html); //插入基础模板中
+		}
+	}) 
+}
+
 
 //项目展示
 function waterfall() {

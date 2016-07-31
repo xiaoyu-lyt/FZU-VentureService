@@ -26,11 +26,12 @@
 				<input type="password" name="password" id="password" placeholder="请输入密码">
 			</div>
 			<div class="login-line3">
-				<span><input id="checkbox" type="checkbox" value="" />
-				<label for="checkbox"></label><span>记住密码</span></span>
 				<a class="pull-right" href="#"><span class="forgot">忘记密码</span></a>
 			</div>
 			<button id='login-btn'>登录</button>
+		</div>
+		<div class="cancel-box">
+			<button id="cancel-btn">确认注销?</button>
 		</div>
 	</div>
 
@@ -50,11 +51,16 @@
 			</ul>
 		</div>
 		<span class="mobile-menu"></span>
-		<div class="usr-wrapper">
-			<span class="login"><a>登录</a></span>
-			<span class="separator"></span>
-			<span class="signup"><a href="signup.html">注册</a></span>
-		</div>
+		<div class="usr-wrapper login-signup">
+				<span class="login"><a>登录</a></span>
+				<span class="separator"></span>
+				<span class="signup"><a href="signup.html">注册</a></span>
+			</div>
+			<div class="usr-wrapper center-cancel">
+				<span class="user-center"><a href="user_student.html">个人中心</a></span>
+				<span class="separator"></span>
+				<span class="user-cancel"><a>注销</a></span>
+			</div>
 	</header>
 	<div class="mobile-bar">
 		<ul>			
@@ -91,7 +97,7 @@
 					<div class="end-time pull-right"><b></b>截止时间：<span id="end-time">2016-7-31</span></div>
 				</div>
 				<div id="game-introduction-box">
-				<!-- 	<div class="game-introduction game-detail">
+					<div class="game-introduction game-detail">
 						<div class="game-introduction-top">
 							<span class="icon-task"></span>
 							<h2>大赛官网</h2>
@@ -156,7 +162,7 @@
 						<p>1、大赛采用校级初赛、省级复赛、全国总决赛三级赛制。校级初赛由各高校负责组织，省级复赛由各省（区、市）负责组织，全国总决赛由各省（区、市）按照大赛组委会确定的配额择优遴选推荐项目。大赛组委会将综合考虑各省（区、市）报名团队数、参赛高校数和创新创业教育工作情况等因素分配名额。每所高校入选全国总决赛团队总数不超过4个</p>
 						<p>2、全国共产生600个项目入围全国总决赛</p>
 						<p>3、通过网上评审，产生120个项目进入全国总决赛现场比赛</p>
-					</div> -->
+					</div>
 				</div>
 					
 				<a class="game-apply-btn" href="javascript:void(0)">立即报名</a>
@@ -178,8 +184,8 @@
 
 
 
-	<script src="js/main.js"></script>
 	<script src="js/jquery-3.1.0.js"></script>
+	<script src="js/main.js"></script>
 	<script src="js/game_list.js"></script>
 </body>
 </html>

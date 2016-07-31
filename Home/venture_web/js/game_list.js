@@ -17,12 +17,17 @@ function getData(n) {
  			console.log("error");
  		},
 		success: function(result) {
+
 			var dataArr = result.data;
 				li = '';
 			// console.log(dataArr);
 			// 渲染左侧列表
+			console.log(dataArr);
 			$('#game-list').empty();
 			$.each(dataArr, function(index, elem) {
+				if(index === 'pages') {
+					return false
+				}
 				li += '<li id=' + elem.cid
 				if(elem.status == 0) { //比赛正在进行
 					li += ' class=past';

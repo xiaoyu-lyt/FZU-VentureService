@@ -50,11 +50,16 @@
 			</ul>
 		</div>
 		<span class="mobile-menu"></span>
-		<div class="usr-wrapper">
-			<span class="login"><a>登录</a></span>
-			<span class="separator"></span>
-			<span class="signup"><a href="signup.html">注册</a></span>
-		</div>
+		<div class="usr-wrapper login-signup">
+				<span class="login"><a>登录</a></span>
+				<span class="separator"></span>
+				<span class="signup"><a href="signup.html">注册</a></span>
+			</div>
+			<div class="usr-wrapper center-cancel">
+				<span class="user-center"><a href="user_student.html">个人中心</a></span>
+				<span class="separator"></span>
+				<span class="user-cancel"><a>注销</a></span>
+			</div>
 	</header>
 	<div class="mobile-bar">
 		<ul>			
@@ -234,8 +239,8 @@
 	</footer>
 	<!-- Footer End -->
 	
-	<script src="js/main.js"></script>
 	<script src="js/jquery-3.1.0.js"></script>
+	<script src="js/main.js"></script>
 	<script src="js/handlebars-v4.0.5.js"></script>
 	<script id="traning-template" type="text/x-handlebars-template">
 		{{#each this}}

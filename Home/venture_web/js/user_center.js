@@ -1,46 +1,75 @@
-var edit = document.querySelector('#head-file');
-edit.onclick = function() {
-	if($('#head-file').val().length > 0) {
-		upload();
-	}
+
+/**
+ * 上传头像
+ * @type {dom}
+ */
+var submit = document.querySelector('.form-submit');
+submit.onclick = function() {
+  if($('#head-file').val().length > 0) {
+    upload();
+  }
 }
 
 function upload() {
 	console.log($('#head-file').val());
-	$.ajaxFileUpload (
-       {
-           url: '/Home/Upload', //用于文件上传的服务器端请求地址
-           secureuri: false, //一般设置为false
-           fileElementId: 'file1', //文件上传空间的id属性  <input type="file" id="file" name="file" />
-           dataType: 'HTML', //返回值类型 一般设置为json
-           success: function (data, status)  //服务器成功响应处理函数
-           {
-               alert(data);
-               $("#img1").attr("src", data);
-               if (typeof (data.error) != 'undefined') {
-                   if (data.error != '') {
-                       alert(data.error);
-                   } else {
-                       alert(data.msg);
-                   }
-               }
-           },
-           error: function (data, status, e)//服务器响应失败处理函数
-           {
-               alert(e);
-           }
-       }
-   )
-   return false;
+	$.ajax({
+    type: "post",
+    url:"",
+    data: $('#head-form').serialize(),
+    suuccess: function(result) {
+      data = result.data
+    }
+  }) 
 }
 
 
+function getCookie(c_name) {
+  if(document.cookie.length > 0) {
+    c_start = document.cookie.indexOf(c_name + '=');
+    if(c_start!=-1) {
+      c_start = c_start + c_name.length + 1;
+      c_end = document.cookie.indexOf(";", c_start);
+      if(c_end == -1) {
+        c_end = document.length;
+      }
+      return document.cookie.substring(c_start, c_end);
+    }
+  }
+  return "";
+}
 
 function findPartner() {
 	var find = document.querySelector('.user-student-projects');
 	var list = document.querySelector('.find-partner-list');
 	find.style.display = 'none';
 	list.style.display = 'block';
-	console.log(list);
-	// console.log("hello");
+  $.ajax({
+    url:"../../API/index.php/home/Partner/search.html"
+  }); 
 }
+
+
+function getInfo() {
+    $.ajax({
+    type: "get",
+    url: "../../API/index.php/home/user/getUserInfo.html",
+    data: {
+      uid: getCookie("uid"),
+      token: getCookie("token")
+    },
+    error: function () {
+      console.log("error!");
+    },
+    success: function(result) {
+      var data = result.data;
+      // console.log(data);
+      $('#user-name').val(data.username);
+      $('#name').val(data.name);
+      $('#email').val(data.email); 
+      $('#tel').val(data.tel);
+    }
+  });
+}
+
+getInfo();
+findPartner();
