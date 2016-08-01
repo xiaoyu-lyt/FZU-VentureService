@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>福州大学-大学生创业服务网</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" >
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+	<div class="login-wrapper">
+		<div class="login-box">
+			<span class="close"></span>
+			<div class="login-top">
+				<img src="images/logo.jpg" alt="">
+				<span>欢迎登录</span>
+			</div>
+			<div class="login-line1 login-line">
+				<img src="images/icon-users.png" alt="">
+				<input type="text" name="username" id="username" placeholder="请输入用户名">
+			</div>
+			<div class="login-line2 login-line">
+				<img src="images/icon-password.png" alt="">
+				<input type="password" name="password" id="password" placeholder="请输入密码">
+			</div>
+			<div class="login-line3">
+				<a class="pull-right" href="#"><span class="forgot">忘记密码</span></a>
+			</div>
+			<button id='login-btn'>登录</button>
+			</div>
+			<div class="cancel-box">
+				<button id="cancel-btn">确认注销?</button>
+			</div>
+	</div>
+
+	<!-- Header Start -->
+	<header>
+		<a href="index.html" id="logo">
+			<!-- <img src="images/logo.jpg" alt=""> -->
+		</a>
+		<div class="main-nav">
+			<ul class='clearfix'>
+				<li class='pull-left'><a href="index.html">首页</a></li>
+				<li class='pull-left'><a href="information.html">新闻资讯</a></li>
+				<li class='pull-left'><a href="base.html">孵化基地</a></li>
+				<li class='pull-left'><a href="projects.html">创业项目</a></li>
+				<li class='pull-left'><a href="game.html">相关比赛</a></li>
+				<li class='pull-left'><a href="#">培训课堂</a></li>
+			</ul>
+		</div>
+		<span class="mobile-menu"></span>
+			<div class="usr-wrapper login-signup">
+				<span class="login"><a>登录</a></span>
+				<span class="separator"></span>
+				<span class="signup"><a href="signup.html">注册</a></span>
+			</div>
+			<div class="usr-wrapper center-cancel">
+				<span class="user-center"><a href="user_student.html">个人中心</a></span>
+				<span class="separator"></span>
+				<span class="user-cancel"><a>注销</a></span>
+			</div>
+	</header>
+	<div class="mobile-bar">
+		<ul>			
+			<li><a href="index.html">首页</a></li>
+			<li><a href="information.html">新闻资讯</a></li>
+			<li><a href="">孵化基地</a></li>
+			<li><a href="projects.html">创业项目</a></li>
+			<li><a href="game.html">相关比赛</a></li>
+			<li><a href="classroom.html">培训课堂</a></li>
+		</ul>
+	</div>
+	<!-- Header End -->
+
+	<!-- Apply-project Start -->
+	<div class="user-wrapper">
+		<div class="container">
+			<div class="user-box-top">
+				<img src="images/apply.png" alt="">
+				<h1>入驻申请</h1>
+			</div>
+			<div class="user-apply-warn">
+				<p>标*为必填信息。</p>
+				<p>您的报名表将作为孵化营初审的主要依据，丰富相关内容有助于评审委员会及投资机构更全面了解您的创业项目。若某条信息内容无法确认或缺失，请填“无”。</p>
+			</div>
+			<div class="user-box step1 block">
+				<form id="apply-base-form" class="form-horizontal">
+					<table class="project-apply-table apply-setp1 apply-steps">
+						<tr>
+							<th colspan="2" class="apply-title"><span class="star">*</span>项目名称</th>
+							<td colspan="7">
+								<div class="form-group">
+									<label class="sr-only" for="inputProjectName">项目名称</label>
+									<input class="form-control" name="project-name" type="text" required>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2" class="apply-title"><span class="star">*</span>项目所属类型</th>
+							<td colspan="7">
+								<div class="form-group">
+									<input id="project-type1" class="project-radio" type="radio" name="optionsTypes" required>
+									<label class="radio-inline" for="project-type1">文化创业类</label>
+									<input id="project-type2" class="project-radio"  type="radio" name="optionsTypes" required> 
+									<label class="radio-inline"  for="project-type2">科技创业类</label>
+									<input id="project-type3" class="project-radio"  type="radio" name="optionsTypes" required>
+									<label class="radio-inline"  for="project-type3"> 互联网+类</label>
+									<input id="project-type4" class="project-radio"  type="radio" name="optionsTypes" required> 
+									<label class="radio-inline"  for="project-type4">创业苗圃</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2"  class="apply-title"><span class="star">*</span>项目是否注册</th>
+							<td colspan="7">
+								<div class="form-group">
+								<input id="registered" class="project-radio" type="radio" name="isRegister" required>
+								<label class="radio-inline" for="registered">是</label>
+								<input id="unregistered" class="project-radio" type="radio" name="isRegister" required>
+								<label class="radio-inline" for="unregistered">否</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2" class="apply-title"><span class="star">*</span>企业形式</th>
+							<td colspan="7">
+								<div class="form-group">
+									<div class="label-group">
+										<input id="LLC" class="project-radio" type="radio" name="enterpriseForm" required>
+										<label class="radio-inline" for="LLC">无限责任公司</label>
+									</div>
+									<div class="label-group">
+										<input id="ULC" class="project-radio" type="radio" name="enterpriseForm" required>
+										<label class="radio-inline" for="ULC">有限责任公司</label>
+									</div>
+									<div class="label-group">
+										<input id="IC" class="project-radio" type="radio" name="enterpriseForm" required>
+										<label class="radio-inline" for="IC">股份有限公司</label>
+										
+									</div>
+									<div class="label-group">
+										<input id="IBE" class="project-radio" type="radio" name="enterpriseForm" required>
+										<label class="radio-inline" for="IBE">个人独资企业</label>
+									</div>
+									<div class="label-group">
+										<input id="PB" class="project-radio" type="radio" name="enterpriseForm" required>
+										<label class="radio-inline" for="PB">合伙企业</label>
+									</div>
+									<div class="label-group">
+										<input id="IE" class="project-radio" type="radio" name="enterpriseForm" required>
+									<label class="radio-inline" for="IE">公司制企业</label>
+									</div>
+									<div class="label-group">
+										<label class="radio-inline">其他</label>
+										<input class="form-control elseform" type="text" placeholder="若为此项请填写">
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" >吸纳员工人数</td>
+							<td colspan="3"><input class="form-control" type="text" name="employees-num"></td>
+							<td>项目面向群体</td>
+							<td colspan="3"><input class="form-control" type="text" name="group-oriented"></td>
+						</tr>
+						<tr>
+							<td colspan="2">主要产品</td>
+							<td colspan="7">
+								<input class="form-control" type="text" name="main-products">
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2" rowspan="3"><span class="star">*</span>法定代表或负责人</th>
+							<td class="member-age">姓名</td>
+							<td colspan="2"><input type="text" required></td>
+							<td>年龄</td>
+							<td><input class="member-info" type="text" required></td>
+							<td>性别</td>
+							<td><input class="member-info" type="text" required></td>
+						</tr>
+						<tr>
+							<td >学院</td>
+							<td colspan="2"><input class="member-info" type="text" required></td>
+							<td>专业</td>
+							<td colspan="3"><input class="member-info" type="text" required></td>
+						</tr>
+						<tr>
+							<td>手机号</td>
+							<td colspan="2"><input class="member-info" type="text" required></td>
+							<td>Email/QQ</td>
+							<td colspan="3"><input class="member-info" type="text required"></td>
+						</tr>
+						
+						<tr>
+							<th class="text-center" colspan="9">主要团队成员信息</th>
+						</tr>
+						<tr>
+							<td colspan="2" class="member-name">姓名</td>
+							<td class="member-age">年龄</td>
+							<td class="member-sex">性别</td>
+							<td class="member-collge">学院</td>
+							<td class="member-tel">手机号</td>
+							<td class="member-qq">QQ</td>
+							<td colspan="2" class="member-email">E-mail</td>
+						</tr>
+						<tr>
+							<td colspan="2"><input id="member1-name" class="member-info"  name="member1-name" type="text"></td>
+							<td><input id="member1-age" class="member-info"  name="member1-age" type="text"></td>
+							<td><input id="member1-sex" class="member-info"  name="member1-sex" type="text"></td>
+							<td><input id="member1-college" class="member-info"  name="member1-college" type="text"></td>
+							<td><input id="member1-tel" class="member-info"  name="member1-tel" type="text"></td>
+							<td><input id="member1-qq" class="member-info"  name="member1-qq" type="text"></td>
+							<td colspan="2"><input id="member1-email" class="member-info"  name="member1-email" type="text"></td>
+						</tr>
+						<tr>
+							<td colspan="2"><input id="member2-name" name="member2-name" class="member-info" type="text"></td>
+							<td><input id="member2-age" name="member2-age" class="member-info" type="text"></td>
+							<td><input id="member2-sex" name="member2-sex" class="member-info" type="text"></td>
+							<td><input id="member2-college" name="member2-college" class="member-info" type="text"></td>
+							<td><input id="member2-tel" name="member2-tel" class="member-info" type="text"></td>
+							<td><input id="member2-qq" name="member2-qq" class="member-info" type="text"></td>
+							<td colspan="2"><input id="member2-email" name="member2-email" class="member-info" type="text"></td>
+						</tr>
+						<tr>
+							<td colspan="2" ><input id="member3-name" name="member3-name" class="member-info" type="text"></td>
+							<td><input id="member3-age" name="member3-age" class="member-info" type="text"></td>
+							<td><input id="member3-sex" name="member3-sex" class="member-info" type="text"></td>
+							<td><input id="member3-college" name="member3-college" class="member-info" type="text"></td>
+							<td><input id="member3-tel" name="member3-tel" class="member-info" type="text"></td>
+							<td><input id="member3-qq" name="member3-qq" class="member-info" type="text"></td>
+							<td colspan="2"><input id="member3-email" name="member3-email" class="member-info" type="text"></td>
+						</tr>
+						<tr>
+							<td colspan="2" ><input id="member4-name" name="member4-name" class="member-info" type="text"></td>
+							<td><input id="member4-age" name="member4-age" class="member-info" type="text"></td>
+							<td><input id="member4-sex" name="member4-sex" class="member-info" type="text"></td>
+							<td><input id="member4-college" name="member4-college" class="member-info" type="text"></td>
+							<td><input id="member4-tel" name="member4-tel" class="member-info" type="text"></td>
+							<td><input id="member4-qq" name="member4-qq" class="member-info" type="text"></td>
+							<td colspan="2"><input id="member4-email" name="member4-email" class="member-info" type="text"></td>
+						</tr>
+						<tr>
+							<th colspan="2" class="apply-title"><span class="star">*</span>项目简介</th>
+							<td colspan="7">
+								<textarea name="introduction" placeholder="内容包括：产品服务、市场营销、运营现状、财务分析等。500字以内"  required></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2" class="apply-title"><span class="star">*</span>相关资料</th>
+							<td colspan="7">
+								<input name="file" type="file" required>
+							</td>
+						</tr>
+					</table>
+						<p class="comment">注：<br>
+						已注册：提交商业计划书、企业章程、法定代表人简历、学生证和身份证复印件、校内注册证明、营业执照证书、组织机构代码、税务登记复印件印件<br>
+						未注册：提交商业计划书、企业章程、法定代表人简历、学生证和身份证复印件、校内注册证明<br>
+						（部分材料以图片形式上传，纸质版提交至***）
+						</p>
+					<div class="project-submit-btn">
+						<input id="apply-submit" class="project-apply-submit step-btn" type="submit" value="提交申请">
+					</div>
+				</form>
+			</div>
+			
+		</div>
+	</div>
+	<!-- Apply-project End -->
+	<script src="js/jquery-3.1.0.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/apply_base.js"></script>
+</body>
+</html>
