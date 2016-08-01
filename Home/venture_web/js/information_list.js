@@ -1,20 +1,20 @@
-var typeState = [".information-news-detail",".information-notice-detail", ".information-policy-detail"]; //存储类别的类名
-var types = {
+var typeClass = [".information-news-detail",".information-notice-detail", ".information-policy-detail"]; //存储类别的类名
+var TypeState = {
 	news: {
-		num: 0,  //类别
-		count: 1,  //当前页码
-		npage: 0 //总页数
+		TYPENUM: 0,  //类别
+		COUNT: 1,  //当前页码
+		PAGES: 0 //总页数
 	},
 	notice: {
-		num: 1,
-		count: 1,
-		npage: 0
+		TYPENUM: 1,
+		COUNT: 1,
+		PAGES: 0
 	},
 
 	policy: {
-		num: 2,
-		count: 1,
-		npage: 0
+		TYPENUM: 2,
+		COUNT: 1,
+		PAGES: 0
 	}
 };
 
@@ -29,7 +29,7 @@ getData(2,1);
  */
 function getData(_type, _page) {
 	var _size = 3, //页大小
-		nowType = typeState[_type],
+		nowType = typeClass[_type],
 		dataSize, pages;
 	$.ajax({
 		type: "get",
@@ -47,7 +47,7 @@ function getData(_type, _page) {
 			var	dataArr = result.data,
 				li = '';
 			pages = dataArr.pages; //总页数
-			types[nowType.split('-')[1]].npage = pages;
+			TypeState[nowType.split('-')[1]].PAGES = pages;
 			$(nowType +' .information-ul').empty();
 			$.each(dataArr, function(index, elem) {
 				if(index === 'pages') {
@@ -71,7 +71,7 @@ function getData(_type, _page) {
 function getPageBar(typeName, pages) {
 	var pageStr = '',
 		pagination,
-		pageNum = types[typeName].count;
+		pageNum = TypeState[typeName].COUNT;
 	// console.log('pageNum ' + pageNum + ' pages ' + pages);
 	if(pageNum == 1) {
 		pageStr += "<li class='disabled'><a href='javascoript:void(0)'>&laquo;</a></li>";
@@ -81,7 +81,7 @@ function getPageBar(typeName, pages) {
 	for(var i=1; i <= pages; i++) {
 		pageStr += "<li><a href='javascoript:void(0)' rel='" + i + "'>" + i + "</a></li>"
 	}
-	if(pageNum == types[typeName].npage) {
+	if(pageNum == TypeState[typeName].PAGES) {
 		pageStr += "<li class='disabled'><a href='javascoript:void(0)'>&raquo;</a></li>";
 	} else {
 		pageStr += "<li><a href='javascoript:void(0)'rel="+ (parseInt(pageNum) + 1) +">&raquo;</a></li>";
@@ -92,30 +92,35 @@ function getPageBar(typeName, pages) {
 	$(oli[pageNum]).addClass('active');
 }
 
-// 资讯类别切换
+/**
+ * 点击侧边导航切换资讯类别
+ */
 $(function() {
 	var sideNav = document.querySelector('.side-nav'),
 		oli = sideNav.querySelectorAll('li');
 	sideNav.addEventListener('click', function(event) {
+		var e = event.target || event.srcElement;
 		$('li.active-li').removeClass('active-li');
-		$(event.target).addClass('active-li');
+		$(e).addClass('active-li');
 		$('.information-detail').each(function() {
 			$(this).css("display", "none");
 		}) 
 		var type = event.target.className.split(' ')[0].slice(-1);
-		$(typeState[type]).css("display", "block");
+		$(typeClass[type]).css("display", "block");
 	})
 });
 
-// 页码切换
+/**
+ * 点击分页导航切换页码
+ */
 $(function() {
 	var paginavs = document.querySelectorAll('.pagination');
 	$(paginavs).each(function(index, elem) {
 		var type = elem.id.split('-')[0];
 		elem.addEventListener('click', function(event) {
-			var curType = types[type].num,
+			var curType = TypeState[type].TYPENUM,
 				pageNum = event.target.rel;
-			types[type].count = pageNum;
+			TypeState[type].COUNT = pageNum;
 			// console.log(pageNum);
 			if(pageNum) {
 				getData(curType, pageNum);

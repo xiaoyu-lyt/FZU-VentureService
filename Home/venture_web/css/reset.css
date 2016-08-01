@@ -38,7 +38,7 @@ ul {
 a, 
 button {
 	text-decoration: none;
-	color: inherit !important;
+	/*color: inherit !important;*/
 }
 
 a:link,

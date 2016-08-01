@@ -1,46 +1,31 @@
-var pageNum=1, pages; //当前页码
+var pageNum = 1;
 getData(pageNum);
 
 /**
  * 渲染项目列表
- * @param  {number} _type 项目类型
  * @param  {number} _page 当前页码
- * @return {[type]}       [description]
  */
 function getData(_page) {
-	var _size = 3, //页大小
-		pages;
+	var _size = 1, pages;
 	$.ajax({
 		type: "get",
 		url: "../../API/index.php/home/project/list.html",
-		dataType: "json",
 		data: {
 			size: _size,
 			page: _page //当前页码
 			// area: 1, //所属领域
 			// type: 1, //产品类别
  		},
- 		error: function(data) {
- 			console.log("error");
- 		},
-		success: function(result) {
-			var dataArr = result.data;
-				box = '';
-			pages = dataArr.pages; //总页数
-			console.log(pages);
-			$('#projects-box').empty();
-			$.each(dataArr, function(index, elem) {
-				if(index === 'pages') {
-					return false
-				}
-				box += '<div class="projects-expo-box clearfix"><div class="projects-img-box pull-left"><img src="images/projects1.png" alt=""></div><div class="projects-detail-box pull-left"><a href="projects_info.html?id= "' + elem.pid + '><h2 class="projects-detail-title">'+ elem.name + '</h2></a><div class="projects-describe-box"><div class="projects-describe-tags"><span>' + elem.type + '</span><span>' + elem.area + '</span><p>' + elem.synopsis + '</p></div></div></div></div>'
-			})
-			$('#projects-box').append(box);
-		},
-		complete: function() {
-			getPageBar(pages);
-		}
-	});
+	}).done(function(result) {
+		var data = result.data;
+		pages = data.pages;
+		// console.log(data);
+		var template = Handlebars.compile($('#project-template').html()); //注册模板
+		var html = template(data); //封装模板
+		$('#projects-box').html(html); //插入基础模板中
+	}).always(function(){
+		getPageBar(pages);
+	})
 }
 
 // 获取分页条

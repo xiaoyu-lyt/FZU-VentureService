@@ -1103,9 +1103,7 @@ footer h4 {
 
 .projects-search-box {
 	margin-right: 30px;
-	/*width: 300px;*/
 	height: auto;
-	/*border: 1px solid #cecece;*/
 }
 
 .projects-search-box input {
@@ -1844,7 +1842,8 @@ footer h4 {
 }
 
 .apply-steps textarea,
-.apply-steps select {
+.apply-steps select,
+.apply-steps input[type="text"] {
 	width: 100%;
 }
 
@@ -1928,6 +1927,36 @@ footer h4 {
 .project-apply-submit {
 	display: block;
 	margin: 15px auto;
+}
+
+#project-brief {
+	height: 250px;
+}
+
+.member-search-box {
+	width: 450px;
+	height: auto;
+	margin-left: 34%;
+	margin-bottom: 25px;
+}
+
+.member-search-box input {
+	height: 35px;
+	width: 370px;
+	text-indent: 1em;
+	font-size: 15px;
+	border: 1px solid #cecece;
+}
+
+.member-add-btn {
+	display: inline-block;
+	margin-left: -5px;
+	padding: 0 10px;
+	height: 35px;
+	line-height: 35px;
+	vertical-align: top;
+	background-color: #61A3E1;
+	color: #fff !important;
 }
 /*入驻申请*/
 
