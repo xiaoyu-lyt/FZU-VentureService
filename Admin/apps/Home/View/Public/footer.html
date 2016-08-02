@@ -15,15 +15,31 @@
 			</div>
 		</div>
 	</div>
+	<!-- Admin End -->
+	
+	<script src="__PUBLIC__/js/admin.js"></script>
+
+
+	<!-- 日期插件 -->
+	<script src="__PUBLIC__/date/bootstrap/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script src="__PUBLIC__/date/bootstrap/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/date/bootstrap/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 	<script type="text/javascript">
 		var refuse = function(e){
 			var tel = e.id;
 			document.getElementById('receiver').value = tel;
 		}
+		$('.form_date').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    	});
+    	$(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
 	</script>
-	<!-- Admin End -->
-	
-	<script src="__PUBLIC__/js/admin.js"></script>
-	
 </body>
 </html>

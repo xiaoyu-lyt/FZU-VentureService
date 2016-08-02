@@ -1,0 +1,42 @@
+<include file="Public:header"/>
+<!-- 发布表格 -->
+<div class="user-box block">
+	<form  class="publish-form form-horizontal" enctype="multipart/form-data" action="__ROOT__/index.php/home/document/modify" method="post">
+		<h2 align="center" style="margin: 0 0 20px 0; color: #61a3e1;">教材发布修改</h2>
+	 	<table class="publish-table">
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>教材名称：</h4></td>
+				<td><input name="name" style="width: 280px; font-size: 16px;" class="title-input form-control" type="text" value="{$doc.name}"></td>
+			</tr>
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>文件类型：</h4></td>
+				<td>
+					<select class="title-input form-control" style="width: 80px; font-size: 16px;" name="type" id="">
+						<option value="0" <if condition="$doc.type eq 1"> selected="selected"</if> >文档</option>
+						<option value="1" <if condition="$doc.type eq 1"> selected="selected"</if> >视频</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>文件：</h4></td>
+				<td>				
+					<input style="width: 200px;" placeholder="请先上传文件" class="title-input form-control" type="text" readonly value="{$doc.file_url}">
+					<input id="upload_input" style="width: 200px;" name="file" class="title-input form-control" type="file">
+				</td>
+			</tr>
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>展示图：</h4></td>
+				<td>
+					<input style="width: 200px;" placeholder="请先上传文件" class="title-input form-control" type="text" readonly value="{$doc.pic_url}">			
+					<input id="upload_input" style="width: 200px;" name="pic" class="title-input form-control" type="file">
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button class="btn btn-publish">发布</button></td>
+			</tr>
+	 	</table>
+	</form>
+</div>
+
+<include file="Public:footer"/>

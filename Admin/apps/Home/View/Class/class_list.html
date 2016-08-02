@@ -1,0 +1,51 @@
+<include file="Public:header"/>
+<include file="class_header"/>
+
+			
+	<div class="admin-classes-table admin-table block">
+		<table>
+			<tr>
+				<th class="admin-th-select">
+					<input class="admin-students-select-btn" type="checkbox"> 全选
+				</th>
+				<th class="admin-th-class-id admin-th-id"><span>ID</span></th>
+				<th class="admin-th-class-theme admin-th-theme"><span>课程名</span></th>
+				<th class="admin-th-class-name admin-th-name"><span>主讲人</span></th>
+				<th class="admin-th-class-stime admin-th-stime"><span>开始时间</span></th>
+				<th class="admin-th-class-etime admin-th-etime"><span>结束时间</span></th>
+				<th class="admin-th-class-status admin-th-etime"><span>是否正在进行</span></th>
+				<th class="admin-th-class-management admin-th-management"><span>管理操作</span></th>
+			</tr>
+			<empty name="list">
+				<tr align="center">
+					<td colspan="6">
+						暂无已发布的培训课堂信息
+					</td>
+				</tr>
+			<else />
+				<volist name="list" id="vo">
+					<tr>
+						<td class="admin-class-select">
+							<input class="admin-classs-select-btn" type="checkbox">
+						</td>
+						<td class="admin-class-id">{$vo.cid}</td>
+						<td class="admin-class-theme">
+							<a href="">{$vo.name}</a>
+						</td>
+						<td class="admin-class-name"><a href="">{$vo.teacher}</a></td>
+						<td class="admin-class-stime"><span>{$vo.start_time}</span></td>
+						<td class="admin-class-etime"><span>{$vo.deadline}</span></td>
+						<td class="admin-class-status" style="padding-left:40px;"><span><if condition="$vo.status eq 1">是<else />否</if></span></td>
+						<td class="admin-class-operation admin-operation">
+							<span class="admin-class-pass admin-pass"><a href="__ROOT__/index.php/home/class/modify/{$vo.cid}">修改</a></span>
+							<span class="admin-class-delete admin-delete"><a href="__ROOT__/index.php/home/class/delete/{$vo.cid}">删除</a></span>
+						</td>
+					</tr>
+				</volist>
+			</empty>
+		</table>
+	</div>
+
+
+<include file="class_footer"/>
+<include file="Public:footer"/>

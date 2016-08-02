@@ -52,7 +52,41 @@
 					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/Admin/index.php/home/competition">比赛管理</a></li>
 				</ul>
 			</div>
-<!-- Aricle-publish Start -->
+<!-- 发布表格 -->
+			<div class="user-box block">
+				<form class="publish-form form-horizontal">
+					<div class="form-group">
+						<h4 class="line-title text-right"><span class="star">*</span>发布类型：</h4>
+						<label class="radio-inline">
+							<input type="radio" name="optionsRadios">新闻资讯
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="optionsRadios">通知公告
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="optionsRadios">最新政策
+					</div>
+					<div class="form-group">
+						<h4 class="line-title text-right">首页显示：</h4>
+							<label class="checkbox-inline">
+								<input type="checkbox"> 热门资讯
+							</label>
+					</div>
+					<div class="form-group">
+						<h4 class="line-title text-right"><span class="star">*</span>标题：</h4>
+						<input class="title-input form-control" type="text">
+					</div>
+					<div class="form-group">
+						<h4 class="line-title text-right"><span class="star">*</span>内容：</h4>
+						<script id="_container" name="content" type="text/plain" style="width: 87%; height:300px; margin-left: 113px"> 
+			    </script>
+					</div>
+					<div class="publish-group">
+						<button class="btn btn-publish">发布</button>
+					</div>
+				</form>
+			</div>
+<!-- Aricle-publish Start
 <div class="article-publish-form">
 	<form action="/demo/jyzd/Admin/index.php/home/notice/publish/do" method="post">
 		<div class="article-publish-box article-publish-column">
@@ -71,14 +105,14 @@
 		<div class="article-publish-box article-publish-abstract">
 
 			<label for=""><span class="star">*</span>内容:</label>
-				<!-- 加载编辑器的容器 -->
+				加载编辑器的容器
 			    <script id="_container" name="content" type="text/plain" style="width: 740px; height:250px; margin-left:190px;"> 
 			    </script>
-			    <!-- 配置文件 -->
+			    配置文件
 			    <script type="text/javascript" src="/demo/jyzd/Admin/Public/ueditor/ueditor.config.js"></script>
-			    <!-- 编辑器源码文件 -->
+			    编辑器源码文件
 			    <script type="text/javascript" src="/demo/jyzd/Admin/Public/ueditor/ueditor.all.js"></script>
-			    <!-- 实例化编辑器 -->
+			    实例化编辑器
 		</div>
 		<div class="article-publish-btn">
 			<button type="submit" name="sub" class="save-close">保存后自动关闭</button>
@@ -86,7 +120,11 @@
 			<button class="publish-close"><a href="javascript :;" onClick="javascript :history.back(-1);">关闭</a></button>
 		</div>
 	</form>
-</div>
+</div> -->
+<script type="text/javascript" src="/demo/jyzd/Admin/Public/ueditor/ueditor.config.js"></script>
+
+<script type="text/javascript" src="/demo/jyzd/Admin/Public/ueditor/ueditor.all.js"></script>
+
 <script type="text/javascript">
 	        var ue = UE.getEditor('_container');
 </script>

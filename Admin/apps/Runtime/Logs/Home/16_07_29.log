@@ -1,0 +1,394 @@
+[ 2016-07-29T17:50:17+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user/detail?uid=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0199s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = '81219f0879dbf7e20ef7eb7aedfece43' LIMIT 1   [ RunTime:0.0191s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0195s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0191s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`gender`,`tel`,`email`,`reg_time`,`log_time`,`groupid`,`tags`,`avatar` FROM `vs_user` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0193s ]
+SQL: SHOW COLUMNS FROM `vs_projects` [ RunTime:0.0205s ]
+SQL: SELECT `pid`,`name` FROM `vs_projects` WHERE `uid` = 12  [ RunTime:0.0234s ]
+SQL: SHOW COLUMNS FROM `vs_teams` [ RunTime:0.0199s ]
+SQL: SELECT * FROM `vs_teams` WHERE `tcharge` = '12'  [ RunTime:0.0188s ]
+NOTIC: [8] Undefined variable: teams D:\wamp\www\demo\jyzd\Admin\apps\Home\Controller\UserController.class.php 第 65 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000247s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013868s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014019s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000599s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000724s ]
+
+[ 2016-07-29T17:50:29+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/notice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000857s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000907s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0205s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = '81219f0879dbf7e20ef7eb7aedfece43' LIMIT 1   [ RunTime:0.0200s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0212s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0206s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0201s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0  [ RunTime:0.0435s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0194s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0195s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0196s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0195s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0192s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0194s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0192s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 1  [ RunTime:0.0196s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 6 LIMIT 1   [ RunTime:0.0194s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 3 LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0196s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0194s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 2  [ RunTime:0.0196s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 4 LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0228s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0193s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000264s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033439s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033585s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000902s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001039s ]
+
+[ 2016-07-29T17:51:28+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0202s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = '81219f0879dbf7e20ef7eb7aedfece43' LIMIT 1   [ RunTime:0.0195s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0197s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0198s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0199s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0198s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0197s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0199s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0228s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000277s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026743s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026887s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000834s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001054s ]
+
+[ 2016-07-29T17:51:54+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php/home/user/pass?uid=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000830s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0193s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = '81219f0879dbf7e20ef7eb7aedfece43' LIMIT 1   [ RunTime:0.0189s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0197s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0190s ]
+SQL: UPDATE `vs_user` SET `status`='1' WHERE `uid` = 9 [ RunTime:0.0189s ]
+SQL: SHOW COLUMNS FROM `vs_logs` [ RunTime:0.0195s ]
+SQL: INSERT INTO `vs_logs` (`uid`,`content`,`date`) VALUES ('2','{\"obj\":\"9\",\"operate\":\"\\u7528\\u6237\\u901a\\u8fc7\\u5ba1\\u6838\"}','1469785914') [ RunTime:0.0189s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007291s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007439s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000692s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000820s ]
+
+[ 2016-07-29T17:51:56+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php?s=/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000955s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0199s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = '81219f0879dbf7e20ef7eb7aedfece43' LIMIT 1   [ RunTime:0.0196s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0211s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0199s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0203s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '1' )  [ RunTime:0.0204s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '2' )  [ RunTime:0.0203s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '0' )  [ RunTime:0.0199s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE ( groupid = '6' )  [ RunTime:0.0209s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000285s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029669s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029822s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000723s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001021s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001211s ]
+
+[ 2016-07-29T17:55:56+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php?s=/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0206s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = '81219f0879dbf7e20ef7eb7aedfece43' LIMIT 1   [ RunTime:0.0193s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0204s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0197s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0208s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 1  [ RunTime:0.0203s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 2  [ RunTime:0.0197s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 0  [ RunTime:0.0202s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 6  [ RunTime:0.0200s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000238s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000496s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032249s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032414s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000665s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001040s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001279s ]
+
+[ 2016-07-29T17:55:57+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php?s=/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000769s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0202s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = '81219f0879dbf7e20ef7eb7aedfece43' LIMIT 1   [ RunTime:0.0196s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0204s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0195s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0208s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 1  [ RunTime:0.0214s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 2  [ RunTime:0.0199s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 0  [ RunTime:0.0200s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 6  [ RunTime:0.0200s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000307s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025586s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025735s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000728s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000859s ]
+
+[ 2016-07-29T17:55:57+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php?s=/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000913s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001124s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0238s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = '81219f0879dbf7e20ef7eb7aedfece43' LIMIT 1   [ RunTime:0.0232s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0238s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0231s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0240s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 1  [ RunTime:0.0281s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 2  [ RunTime:0.0232s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 0  [ RunTime:0.0233s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 6  [ RunTime:0.0235s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000305s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026798s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026946s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000675s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001061s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001305s ]
+
+[ 2016-07-29T18:05:33+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php?s=/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001232s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0244s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = '81219f0879dbf7e20ef7eb7aedfece43' LIMIT 1   [ RunTime:0.0235s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0239s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0235s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0245s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 1  [ RunTime:0.0236s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 2  [ RunTime:0.0234s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 0  [ RunTime:0.0239s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 6  [ RunTime:0.0233s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000283s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028913s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029093s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000679s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000824s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001007s ]
+
+[ 2016-07-29T18:05:34+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php?s=/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001008s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000849s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0242s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = '81219f0879dbf7e20ef7eb7aedfece43' LIMIT 1   [ RunTime:0.0234s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0271s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0233s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0244s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 1  [ RunTime:0.0237s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 2  [ RunTime:0.0236s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 0  [ RunTime:0.0238s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 6  [ RunTime:0.0235s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000283s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026237s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026385s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000973s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001152s ]
+
+[ 2016-07-29T18:05:34+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php?s=/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000939s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001185s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001431s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0237s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = '81219f0879dbf7e20ef7eb7aedfece43' LIMIT 1   [ RunTime:0.0230s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0239s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0234s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0236s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 1  [ RunTime:0.0234s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 2  [ RunTime:0.0230s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 0  [ RunTime:0.0230s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 6  [ RunTime:0.0232s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000241s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000474s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033693s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033842s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000720s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000884s ]
+
+[ 2016-07-29T18:05:34+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php?s=/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000947s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0208s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = '81219f0879dbf7e20ef7eb7aedfece43' LIMIT 1   [ RunTime:0.0201s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0199s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0219s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0200s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 1  [ RunTime:0.0197s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 2  [ RunTime:0.0195s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 0  [ RunTime:0.0205s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 6  [ RunTime:0.0198s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000295s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037750s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037940s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000786s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001179s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001424s ]
+
+[ 2016-07-29T18:05:35+08:00 ] 127.0.0.1 /demo/jyzd/Admin/index.php?s=/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000875s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001064s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001295s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0243s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = '81219f0879dbf7e20ef7eb7aedfece43' LIMIT 1   [ RunTime:0.0257s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0247s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0237s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0246s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 1  [ RunTime:0.0245s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 2  [ RunTime:0.0240s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 0  [ RunTime:0.0242s ]
+SQL: SELECT `uid`,`username`,`name`,`tel`,`email`,`reg_time`,`avatar`,`gender`,`tags`,`groupid`,`status` FROM `vs_user` WHERE `groupid` = 6  [ RunTime:0.0237s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000282s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025892s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026037s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000905s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001101s ]
+

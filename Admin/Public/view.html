@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>管理员-福州大学大学生创业服务网</title>
+	<link rel="stylesheet" href="bootstrap.min.css" >
+	<link rel="stylesheet" href="admin.css">
+	<link rel="stylesheet" href="reset.css">
+</head>
+<body>
+<!-- Modify Start -->
+	<div class="modify-wrapper">
+		<div class="modify-password-box modify-box">
+			<span class="close"></span>
+			<form action="" id="modify-password" class="modify-form">
+				<p class="old-line">	
+					<input type="text" name="old_password" placeholder="旧密码" required>
+				</p>
+				<p class="new-line">
+					<input type="text" name="new_password" placeholder="新密码" required>
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="确认修改">
+				</p>
+			</form>
+		</div>
+	</div>
+	<!-- Modify End -->
+
+	<!-- Admin Start -->
+	<div class="admin-wrapper">
+		<div class="container">
+			<div class="user-box-top">
+				<img src="images/setting.png" alt="">
+				<h1>管理中心</h1>
+				<div class="admin-modify">
+					<p>你好，<span>超级管理员！</span><span class="psbtn">修改密码</span><span class="exit">退出</span></p>
+
+				</div>
+			</div>
+			<div class="user-student-sidenav user-sidenav pull-left">
+				<ul>
+					<li>资讯管理</li>
+					<li class="user-sidnav-li now admin-users">用户管理</li>
+					<li class="user-sidnav-li admin-projects">项目管理</li>
+					<li>入驻申请</li>
+					<li>培训管理</li>
+					<li>教材管理</li>
+					<li>比赛管理</li>
+				</ul>
+			</div>
+
+			<!-- 发布表格 -->
+			<div class="user-box block">
+				 	<table class="view-table table-bordered">
+				 		<tr><td class="line-title text-center" colspan="6">项目基本信息</td></tr>
+						<tr>
+							<th><h4 class="line-title text-left">项目名称</h4></th>
+							<td colspan="5"><p>这里显示项目名称</p></td>
+						</tr>
+						<tr>
+							<th><h4 class="line-title text-left">项目图片</h4></th>
+							<td colspan="5">
+								<div class="view-pic"><img src="images/74833f6egw1f5lnuq65rsj21kw0w07ir.jpg" alt=""></div>
+							</td>
+						</tr>
+						<tr>
+							<th><h4 class="line-title text-left">项目LOGO</h4></th>
+							<td colspan="5">
+								<div class="view-logo">
+									<img src="images/74833f6egw1f5lnuq65rsj21kw0w07ir.jpg" alt="">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th><h4 class="line-title text-left">项目简介</h4></th>
+							<td colspan="5">
+								<p>显示项目简介</p>
+							</td>
+						</tr>
+						<tr>
+							<th><h4 class="line-title text-left">项目开发进度</h4></th>
+							<td colspan="5"><p>blahblahblah</p></td>
+						</tr>
+						<tr>
+							<th><h4 class="line-title text-left">销售或服务类型</h4></th>
+							<td colspan="2"><p>blahblahblah</p></td>
+							<th><h4 class="line-title text-left">是否已成立公司</h4></th>
+							<td colspan="2"><p>blahblahblah</p></td>
+						</tr>
+						<tr>
+							<th><h4 class="line-title text-left">商业计划书</h4></td>
+							<td colspan="2"><div>放计划书啊</div></td>
+							<th><h4 class="line-title text-left">附件</h4></th>
+							<td colspan="2"><div>放附件啊</div></td>
+						<tr><td class="line-title text-center" colspan="6">负责人信息</td></tr>
+						<tr>
+							<td><p class="line-title">姓名</p></td>
+							<td><p>林渊腾</p></td>
+							<td><p class="line-title">性别</p></td>
+							<td><p>女</p></td>
+							<td><p class="line-title">占股比例</p></td>
+							<td><p>10%</p></td>
+						</tr>
+						<tr>
+							<th><h4 class="line-title text-left">手机</h4></td>
+							<td><div>放手机号啊</div></td>
+							<th><h4 class="line-title text-left">邮箱</h4></th>
+							<td><div>放邮箱啊</div></td>
+							<td><p class="line-title">主要职责</p></td>
+							<td><p>技术</p></td>
+						</tr>
+						<tr>
+							<th><h4 class="line-title text-left">证件类型</h4></td>
+							<td colspan="2"><div>放证件类型啊</div></td>
+							<th><h4 class="line-title text-left">证件号</h4></th>
+							<td colspan="2"><div>放证件号啊</div></td>
+						</tr>
+						<tr>
+							<th><h4 class="line-title text-left">工作履历</h4></td>
+							<td colspan="2"><p>blahblah</p></td>
+							<th><h4 class="line-title text-left">创业履历</h4></td>
+							<td colspan="2"><p>blahblah</p></td>
+
+						</tr>
+						<tr><td class="line-title text-center" colspan="6">融资需求</td></tr>
+						<tr>
+							<th><h4 class="line-title text-left">已融资金额</h4></td>
+							<td colspan="2"><p>多少多少钱啊</p></td>
+							<th><h4 class="line-title text-left">融资方式</h4></td>
+							<td colspan="2"><p>银行贷款</p></td>
+						</tr>
+						<tr>
+							<th><h4 class="line-title text-left">融资时间短</h4></td>
+							<td colspan="2"><p>呐呐呐</p></td>
+							<th><h4 class="line-title text-left">下一融资阶段</h4></td>
+							<td colspan="2"><p>天使轮</p></td>
+						</tr>
+
+				 	</table>
+				 	<div class="view-btn-group">
+				 		<button class="btn btn-view">通过</button>
+				 		<button class="btn btn-view">拒绝</button>
+				 	</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<!-- Admin End -->
+	<script src="js/admin.js"></script>
+</body>
+</html>

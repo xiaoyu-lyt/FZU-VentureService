@@ -7,7 +7,7 @@ class UserController extends AdminController {
 	public function __construct() {
 		parent::__construct();
 		if( !$this->isLogin() )
-			$this->error('请先登录！',U('home/index'));
+			$this->error('未登录',U('home/index'));
 	}
 
 	public function index($page = 1) {

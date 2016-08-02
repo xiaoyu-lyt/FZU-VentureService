@@ -1,0 +1,130 @@
+<include file="Public:header"/>
+<div class="user-box admin-projects-management sub-management pull-right">
+	<!-- 发布表格 -->
+	<div class="block">
+	 	<table class="view-table table-bordered">
+	 		<tr>
+	 			<td class="line-title text-center" colspan="6">项目基本信息</td>
+	 		</tr>
+			<tr>
+				<th><h4 class="line-title text-left">项目名称</h4></th>
+				<td colspan="5">{$detail.name}</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">项目图片</h4></th>
+				<td colspan="5">
+					<if condition="$detail.pic eq '' ">无<else />
+						<div class="view-pic"><img src="{$deatil.pic}" alt=""></div>
+					</if>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">项目LOGO</h4></th>
+				<td colspan="5">
+					<if condition="$detail.logo eq '' ">无<else />
+						<div class="view-pic"><img src="{$detail.logo}" alt=""></div>
+					</if>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">项目简介</h4></th>
+				<td colspan="5">
+					<if condition="$detail.synopsis eq ''">无<else />
+						{$detail.synopsis}
+					</if>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">项目开发进度</h4></th>
+				<td colspan="5">
+					<if condition="$detail.progress eq ''">无<else />
+						{$detail.progress}
+					</if>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">销售或服务类型</h4></th>
+				<td colspan="2">{$detail.service_type}</td>
+				<th><h4 class="line-title text-left">是否已成立公司</h4></th>
+				<td colspan="2">
+					<if condition="$detail.is_company eq 1">是<else />否</if>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">商业计划书</h4></td>
+				<td colspan="2">
+					<a href="{$detail.plan}">计划书</a>
+					<span style="color:#ccc;">(点击文件名可下载)</span>
+				</td>
+				<th><h4 class="line-title text-left">附件</h4></th>
+				<td colspan="2">
+					<a href="{$detail.attachment}">附件</a>
+					<span style="color:#ccc;">(点击文件名可下载)</span>
+				</td>
+			<tr><td class="line-title text-center" colspan="6">负责人信息</td></tr>
+			<tr>
+				<td><p class="line-title">姓名</p></td>
+				<td>{$detail.charge.name}</td>
+				<td><p class="line-title">性别</p></td>
+				<td>{$detail.charge.gender}</td>
+				<td><p class="line-title">占股比例</p></td>
+				<td>
+					<if condition="$detail.charge.share_percentage eq ' '">无<else />
+						{$detail.charge.share_percentage}
+					</if>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">手机</h4></td>
+				<td>{$detail.charge.tel}</td>
+				<th><h4 class="line-title text-left">邮箱</h4></th>
+				<td><div>{$detail.charge.email}</div></td>
+				<td><p class="line-title">主要职责</p></td>
+				<td>
+					<if condition="$detail.charge.duty eq ' '">无<else />
+						{$detail.charge.duty}
+					</if>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">证件类型</h4></td>
+				<td colspan="2"><div>{$detail.charge.id_type}</div></td>
+				<th><h4 class="line-title text-left">证件号</h4></th>
+				<td colspan="2"><div>{$detail.charge.id_number}</div></td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">工作履历</h4></td>
+				<td colspan="2">
+					<if condition="$detail.charge.work_record eq ''">无<else />
+						{$detail.charge.work_record}
+					</if>
+				</td>
+				<th><h4 class="line-title text-left">创业履历</h4></td>
+				<td colspan="2">
+					<if condition="$detail.charge.business_record eq ''">无<else />
+						{$detail.charge.business_record}
+					</if>
+				</td>
+
+			</tr>
+			<tr><td class="line-title text-center" colspan="6">融资需求</td></tr>
+			<tr>
+				<th><h4 class="line-title text-left">已融资金额</h4></td>
+				<td colspan="2">{$detail.finan_amount}</td>
+				<th><h4 class="line-title text-left">融资方式</h4></td>
+				<td colspan="2">{$detail.finan_mode}</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">融资时间段</h4></td>
+				<td colspan="2">{$detail.time}</td>
+				<th><h4 class="line-title text-left">下一融资阶段</h4></td>
+				<td colspan="2">{$detail.next_stage}</td>
+			</tr>
+
+	 	</table>
+	 	<div class="view-btn-group">
+	 		<a class="btn-view" href="javascript:history.back(-1)" >返回上一级</a>
+	 	</div>
+	</div>
+</div>
+<include file="Public:footer"/>

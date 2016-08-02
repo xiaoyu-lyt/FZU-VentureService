@@ -7,7 +7,7 @@ class ProjectController extends AdminController {
 	public function __construct() {
 		parent::__construct();
 		if( !$this->isLogin() )
-			$this->error('请先登录！',U('home/index'));
+			$this->error('未登录',U('home/index'));
 	}
 	
 	public function index($page = 1) {
@@ -86,12 +86,58 @@ class ProjectController extends AdminController {
 	 */
 	public function detail($pid) {
 		$detail = M('Projects')->where(array('pid'=>$pid))->find();
-		$detail['charge'] = M('User')->where(array('uid'=>$detail['uid']))->field('name,tel,email')->find();
+		$detail['partner'] = json_decode($detail['partner'],true);
+
+		$detail['charge'] = (array)$detail['partner'][1];
+
+		$mode = array('银行贷款','股票筹资','债券融资','融资租赁','海外融资','典当融资');
+		$stage = array('未融资','天使轮','A轮','B轮','C轮','D轮','E轮及以后');
+		$duty = array('技术','融资','运营','市场','其他');
+		$idType = array('学生证','身份证','其他');
+
+		$detail['finan_mode'] = $mode[$detail['finan_mode']];
+		$detail['next_stage'] = $stage[$detail['next_stage']];
+		$detail['charge']['duty'] = $duty[$detail['charge']['duty']];
+		$detail['charge']['id_type'] = $idType[$detail['charge']['id_type']];
+		$detail['charge']['gender'] = $detail['charge']['gender'] ? "男" : "女";
+
+
 
 		$this->assign('detail',$detail);
-		$this->ajaxReturn($detail);
-		//$this->display('detail'); 
+
+		/*$data = array(
+			'1' => array(
+					'name' => 'lwb',
+					'gender' => 1,
+					'tel'	=> '15659751525',
+					'email' => '1010548824@qq.com',
+					'id_type'	=> 0,
+					'id_number' => '031402219',
+					'work_record'=> "送过外卖，做过项目",
+					'share_percentage'	=> 'lalal',
+					'duty'	=> 2,
+					'business_record' => "正在创业"
+					),
+			'2' => array(
+					'name' => '卢伟滨',
+					'gender' => 1,
+					'tel'	=> '15659751525',
+					'email' => '1010548824@qq.com',
+					'id_type'	=> 0,
+					'id_number' => '031402219',
+					'work_record'=> "送过外卖，做过项目",
+					'share_percentage'	=> 'hahah',
+					'duty'	=> 1,
+					'business_record' => "正在创业"
+					)
+			);
+		echo json_encode($data);exit;*/
+
+		$this->assign('MODULE',$this->MODULE_NAME);
+		$this->display('project_detail'); 
 	}
+
+
 
 	/**
 	 * 项目删除

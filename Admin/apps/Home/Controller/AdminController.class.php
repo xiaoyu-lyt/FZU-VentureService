@@ -11,8 +11,10 @@ class AdminController extends Controller {
 		$ret = D('UserToken')->getToken($cookie_token);
 		if($ret && $ret['token_expire'] > time()) {
 			$login_manager = M('User')->where(array('uid'=>$ret['uid']))->field('uid,username,nickname,name,groupid')->find();
-			session('login_manager',$login_manager);
-			return true;
+			if( $login_manager['groupid'] == 6 || $login_manager['groupid'] == 7 ) {
+				session('login_manager',$login_manager);
+				return true;
+			}
 		}
 		return false;	
 	}
