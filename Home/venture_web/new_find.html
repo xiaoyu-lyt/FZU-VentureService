@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="findport" content="width=device-width, initial-scale=1">
+	<title>福州大学-大学生创业服务网</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" >
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+	<div class="login-wrapper">
+		<div class="login-box">
+			<span class="close"></span>
+			<div class="login-top">
+				<img src="images/logo.jpg" alt="">
+				<span>欢迎登录</span>
+			</div>
+			<div class="login-line1 login-line">
+				<img src="images/icon-users.png" alt="">
+				<input type="text" name="username" id="username" placeholder="请输入用户名">
+			</div>
+			<div class="login-line2 login-line">
+				<img src="images/icon-password.png" alt="">
+				<input type="password" name="password" id="password" placeholder="请输入密码">
+			</div>
+			<div class="login-line3">
+				<a class="pull-right" href="#"><span class="forgot">忘记密码</span></a>
+			</div>
+			<button id='login-btn'>登录</button>
+			</div>
+	</div>
+
+	<!-- Header Start -->
+	<header>
+		<a href="index.html" id="logo">
+			<!-- <img src="images/logo.jpg" alt=""> -->
+		</a>
+		<div class="main-nav">
+			<ul class='clearfix'>
+				<li class='pull-left'><a href="index.html">首页</a></li>
+				<li class='pull-left'><a href="information.html">新闻资讯</a></li>
+				<li class='pull-left'><a href="base.html">孵化基地</a></li>
+				<li class='pull-left'><a href="projects.html">创业项目</a></li>
+				<li class='pull-left'><a href="game.html">相关比赛</a></li>
+				<li class='pull-left'><a href="classroom.html">培训课堂</a></li>
+			</ul>
+		</div>
+		<span class="mobile-menu"></span>
+			<div class="usr-wrapper login-signup">
+				<span class="login"><a>登录</a></span>
+				<span class="separator"></span>
+				<span class="signup"><a href="signup.html">注册</a></span>
+			</div>
+			<div class="usr-wrapper center-cancel">
+				<span class="user-center"><a href="user_student.html">个人中心</a></span>
+				<span class="separator"></span>
+				<span class="user-cancel"><a>注销</a></span>
+			</div>
+	</header>
+	<div class="mobile-bar">
+		<ul>			
+			<li><a href="index.html">首页</a></li>
+			<li><a href="information.html">新闻资讯</a></li>
+			<li><a href="">孵化基地</a></li>
+			<li><a href="projects.html">创业项目</a></li>
+			<li><a href="game.html">相关比赛</a></li>
+			<li><a href="classroom.html">培训课堂</a></li>
+		</ul>
+	</div>
+	<!-- Header End -->
+
+	<!-- Apply-project Start -->
+	<div class="user-wrapper new-find">
+		<div class="container">
+			<div class="user-box-top">
+				<img src="images/apply.png" alt="">
+				<h1>发布新寻找</h1>
+			</div>
+			<div class="user-apply-warn">
+				<p class="text-center">所有选项均为必填项</p>
+			</div>
+			
+			<div class="find-table-wrapper">
+				<form id="find-form">
+				 	<table class="find-table table-bordered">
+				 		<tr><td class="line-title text-center" colspan="3">寻找团队成员</td></tr>
+				 		<tr>
+				 			<td class="line-title"><div class="star">*</div>个人描述</td>
+				 			<td colspan="2">
+				 				<input id="duty-technology" class="person-duty" type="checkbox" name="person_type[0]" value="0" required>
+								<label class="checkbox-inline" for="duty-technology">技术</label>
+								<input id="duty-financing" class="person-duty" type="checkbox" name="person_type[1]" value="1" required>
+								<label class="checkbox-inline" for="duty-financing">融资
+								</label> 
+								<input id="duty-operation" class="person-duty" type="checkbox" name="person_type[2]" value="2" required>
+								<label class="checkbox-inline" for="duty-operation">运营
+								</label>
+								<input id="duty-market" class="person-duty" type="checkbox" name="person_type[3]" value="3" required>
+								<label class="checkbox-inline" for="duty-market">市场
+								</label>
+								<input id="duty-others" class="person-duty" type="checkbox" name="person_type[4]" value="4" required>
+								<label class="checkbox-inline" for="duty-others">其他
+								</label>
+								<input class="duty-others" name="person_others" type="text" placeholder="选择其他请填写此项">
+				 			</td>
+				 		</tr>
+						<tr>
+							<th><h4 class="line-title text-left"><div class="star">*</div>个人想法描述</h4></th>
+							<td colspan="2">
+								<textarea class="description" name="description" placeholder="不超过300字" required></textarea>
+							</td>
+						</tr>
+						<tr>
+				 			<td class="line-title"><div class="star">*</div>需求类型</td>
+				 			<td colspan="2">
+				 				<input id="duty-technology" class="person-duty" type="checkbox" name="find_type[0]" value="0" required>
+								<label class="checkbox-inline" for="duty-technology">技术</label>
+								<input id="duty-financing" class="person-duty" type="checkbox" name="find_type[1]" value="1" required>
+								<label class="checkbox-inline" for="duty-financing">融资
+								</label> 
+								<input id="duty-operation" class="person-duty" type="checkbox" name="find_type[2]" value="2" required>
+								<label class="checkbox-inline" for="duty-operation">运营
+								</label>
+								<input id="duty-market" class="person-duty" type="checkbox" name="find_type[3]" value="3" required>
+								<label class="checkbox-inline" for="duty-market">市场
+								</label>
+								<input id="duty-others" class="person-duty" type="checkbox" name="find_type[4]" value="4" required>
+								<label class="checkbox-inline" for="duty-others">其他
+								</label>
+								<input class="duty-others" name="find_others" type="text" placeholder="选择其他请填写此项">
+				 			</td>
+				 		</tr>
+				 		<tr>
+							<th><h4 class="line-title text-left"><div class="star">*</div>寻找专业</h4></th>
+							<td colspan="2"><input class="find-input" name="find_major" type="text" required></td>
+						</tr>
+						<tr>
+							<th><h4 class="line-title text-left"><div class="star">*</div>要求有项目经验</h4></th>
+							<td colspan="2">
+								<input  id="experienced" name="has_experience" value="1" type="radio" required>
+								<label class="radio-inline" for="experienced">是</label>
+								<input  id="inexperience" name="has_experience" value="0" type="radio">
+								<label class="radio-inline" for="inexperience" required>否</label>
+
+							</td>
+						</tr>
+						<tr>
+							<th><h4 class="line-title text-left"><div class="star">*</div>职位职责</h4></th>
+							<td colspan="2"><input class="find-input" name="duty" type="text" required></td>
+						</tr>
+						<tr>
+							<th><h4 class="line-title text-left"><div class="star">*</div>特长</h4></th>
+							<td colspan="2"><input class="find-input" name="specialty" type="text" required></td>
+						</tr>
+				 	</table>
+				 	<div class="find-btn-group">
+				 		<input class="btn btn-find"  type="submit" value="发布">
+				 	</div>
+				</form>
+			</div>
+			 	
+		</div>
+	</div>
+	</script>
+	<script src="js/jquery-3.1.0.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/new_find.js"></script>
+</body>
+</html>

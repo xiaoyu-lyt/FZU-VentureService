@@ -30,9 +30,6 @@
 			</div>
 			<button id='login-btn'>登录</button>
 		</div>
-		<div class="cancel-box">
-			<button id="cancel-btn">确认注销?</button>
-		</div>
 	</div>
 	
 	<!-- Modify Start -->
@@ -130,7 +127,7 @@
 	</div>
 	<!-- Header End -->
 	
-	
+	<div id="popup" class="detail-popup" style="display:none"></div>
 
 	<!-- User-student Start -->
 	<div class="user-wrapper">
@@ -139,46 +136,49 @@
 				<img src="images/设置.png" alt="">
 				<h1>用户中心</h1>
 			</div>
-			<div class="user-student-sidenav user-sidenav pull-left">
+			<div id="user-sidenav" class="user-student-sidenav user-sidenav pull-left">
 				<ul>
-					<li class="now">个人信息</li>
-					<li>项目信息</li>
-					<li>入驻信息</li>
+					<li  class="now">个人信息</li>
+					<li >项目信息</li>
+					<li >入驻信息</li>
 				</ul>
 			</div>
 			<div class="user-box block pull-right">
 				<div class="user-head-portrait pull-left">
 					<i class="edit-icon"></i>
-					<img src="images/nopic_192.gif" alt="">
-					<form action="" method="post" enctype="multipart/form-data" name="head-form1" id="head-form"><input type="file" id="head-file" name="head"></form>
+					<img id="head-img" src="images/nopic_192.gif" alt="">
+					<form id="head-form" enctype="multipart/form-data">
+						<input id="head-file" name="head" type="file" >
+					</form>
 				</div>
+				<span id="head-name"></span>
 				<span class="form-submit">开始上传</span>
 				<div class="user-form pull-left">
 					<div class="user-setting" id="user-info-box">
 						<div class="two-field clearfix">
 							<div class="field pull-left">
 								<label>用户名</label>
-								<input id="user-name" type="text" disabled="disabled" value="qerdfdsv">
+								<input id="user-name" type="text" disabled="disabled">
 							</div>
 							<div class="field pull-left">
 								<label>姓名</label>
-								<input id="name" type="text" disabled="disabled" value="林渊腾">
+								<input id="name" type="text" disabled="disabled">
 							</div>
 						</div>
 						<div class="two-field clearfix">
 							<div class="field pull-left">
 								<label>邮箱</label>
-								<input id="email" type="text" value="qerdfdsv@qq.com">
+								<input id="email" type="text" disabled="disabled">
 							</div>
 							<div class="field pull-left">
 								<label>手机号<a class="modify-tel pull-right" href="javascript:void(0)" onclick="modifyInfo(this)">修改手机号</a></label>
-								<input id="tel" type="text" value="15097861789">
+								<input id="tel" type="text">
 							</div>
 						</div>
 						<div class="two-field clearfix">
 							<div class="field pull-left">
 								<label>账号密码<a class="modify-password pull-right" href="javascript:void(0)"  onclick="modifyInfo(this)">修改密码</a></label>
-								<input type="password" disabled="disabled" value="balabalabala" >
+								<input type="password" disabled="disabled" value="balabalabala">
 							</div>
 							<!-- <div class="field pull-left">
 								<label>学号<span class="is-certify">未认证</span><a class="verify-studnet pull-right" href="javascript:void(0)"  onclick="modifyInfo(this)">我要认证</a></label>
@@ -189,39 +189,56 @@
 				</div>
 			</div>
 			<div class="user-box pull-left">
-				<div class="user-student-projects clearfix">
-					<a href="javascript:void(0)" class="user-student-find pull-left" onclick="findPartner()">
+				<div class="user-student-projects block clearfix">
+					<a id="find-list" href="javascript:void(0)" class="user-student-find pull-left">
 						<img class="user-student-icon" src="images/members.png" alt="">
 						<span>寻找合伙人</span>
 					</a>
-					<a class="user-student-apply pull-left" href="apply_project.html" >
-						<img class="user-student-icon" src="images/apply.png" alt=""><span>申请项目</span>
+					<a id="myproject" href="javascript:void(0)" class="user-student-plan pull-left">
+						<img class="user-student-icon" src="images/状态.png" alt=""><span>我的项目</span>
 					</a>
-					<a href="" class="user-student-plan pull-left">
-						<img class="user-student-icon" src="images/状态.png" alt=""><span>申请状态</span>
+					<a  class="user-student-apply pull-left" href="apply_project.html" >
+						<img class="user-student-icon" src="images/apply.png" alt=""><span>申请项目</span>
 					</a>
 				</div>
 				<div class="find-partner-list">
 					<div class="published-find-top">
 						<h3>已发布的寻找</h3>
-						<span class="find-btn">发布寻找</span>
+						<a class="find-btn" href="new_find.html">发布寻找</a>
 					</div>
-					<ul id="find-partner-ul">
-						<li><a href="">寻找balabalabala</a></li>
-						<li><a href="">找呀找呀找朋友</a></li>
-
-					</ul>
-					<ul class="pagination" id="find-partner-pagination">
-						<li><a href="#">&laquo;</a></li>
-					 	<li><a href="#">1</a></li>
-					 	<li><a href="#">2</a></li>
-					 	<li><a href="#">3</a></li>
-					 	<li><a href="#">&raquo;</a></li>
-					</ul>
+					<div>
+						<ul id="find-partner-ul">
+							<li><a class="find-theme" href="">寻找balabalabala</a><span class="cancel-find">待审核</span></li>
+							<li><a class="find-theme" href="">找呀找呀找朋友</a><span class="cancel-find">待审核</span></li>
+						</ul>
+					</div>
 				</div>
+				<div class="myproject-list">
+					<div class="published-find-top">
+						<h3>已申请的项目</h3>
+					</div>
+					<div>
+						<ul id="myproject-ul">
+							<li><a class="project-theme" href="">寻找balabalabala</a><span class="project-status">待审核</span></li>
+							<li><a class="project-theme" href="">找呀找呀找朋友</a><span class="project-status">审核通过</span></li>
+						</ul>
+					</div>
+				</div>
+				<button id="find-return" class="find-return">返回</button>
+
 			</div>
 			<div class="user-box pull-left">
-				暂无信息
+				<div class="enter-base-list">
+					<div class="published-find-top">
+						<h3>已申请的入驻</h3>
+					</div>
+					<div>
+						<ul id="enter-base-ul">
+							<li><a class="base-theme" href="">寻找balabalabala</a><span class="base-status">待审核</span></li>
+							<li><a class="base-theme" href="">找呀找呀找朋友</a><span class="base-status">审核通过</span></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 	</div>
 	<!-- User-student End -->
@@ -230,6 +247,48 @@
 	<script src="js/main.js"></script>
 	<script src="js/jquery.validate.min.js"></script>
 	<script src="js/modify_info.js"></script>
+	<script src="js/handlebars-v4.0.5.js"></script>
+	<script id="popup1-template" type="text/x-handlebars-template">
+	 	<table class="find-table">
+	 		<tr>
+	 			<th><h4 class="line-title text-left">个人描述</h4></th>
+	 			<td colspan="2">
+	 				<p>{{type}}</p>
+	 			</td>
+	 		</tr>
+			<tr>
+				<th><h4 class="line-title text-left">个人想法描述</h4></th>
+				<td colspan="2">
+					<p>{{description}}</p>
+				</td>
+			</tr>
+			<tr>
+	 			<th><h4 class="line-title text-left">需求类型</h4></th>
+	 			<td colspan="2">
+	 				<p>{{type}}</p>
+	 			</td>
+	 		</tr>
+	 		<tr>
+				<th><h4 class="line-title text-left">寻找专业</h4></th>
+				<td colspan="2"><p>{{find_major}}</p></td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">要求有项目经验</h4></th>
+				<td colspan="2">
+					<p>{{has}}</p>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">职位职责</h4></th>
+				<td colspan="2"><p>{{duty}}</p></td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">特长</h4></th>
+				<td colspan="2"><p>{{specialty}}</p></td>
+			</tr>
+	 	</table>
+	</script>
+	<script src="js/layer/layer.js"></script>
 	<script src="js/user_center.js"></script>
 </body>
 </html>

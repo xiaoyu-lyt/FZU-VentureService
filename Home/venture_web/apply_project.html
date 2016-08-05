@@ -30,9 +30,6 @@
 			</div>
 			<button id='login-btn'>登录</button>
 			</div>
-			<div class="cancel-box">
-				<button id="cancel-btn">确认注销?</button>
-			</div>
 	</div>
 
 	<!-- Header Start -->
@@ -47,7 +44,7 @@
 				<li class='pull-left'><a href="base.html">孵化基地</a></li>
 				<li class='pull-left'><a href="projects.html">创业项目</a></li>
 				<li class='pull-left'><a href="game.html">相关比赛</a></li>
-				<li class='pull-left'><a href="#">培训课堂</a></li>
+				<li class='pull-left'><a href="classroom.html">培训课堂</a></li>
 			</ul>
 		</div>
 		<span class="mobile-menu"></span>
@@ -57,7 +54,7 @@
 				<span class="signup"><a href="signup.html">注册</a></span>
 			</div>
 			<div class="usr-wrapper center-cancel">
-				<span class="user-center"><a href="user_student.html">个人中心</a></span>
+				<span id="usre-center" class="user-center"><a href="user_student.html">个人中心</a></span>
 				<span class="separator"></span>
 				<span class="user-cancel"><a>注销</a></span>
 			</div>
@@ -93,59 +90,63 @@
 				<p>您的报名表将作为孵化营初审的主要依据，丰富相关内容有助于评审委员会及投资机构更全面了解您的创业项目。若某条信息内容无法确认或缺失，请填“无”。</p>
 			</div>
 			<div class="user-box step1 block">
-				<form action="" id="step1">
+				<form action="" id="step1" enctype="multipart/form-data">
 					<table class="apply-setp1 apply-steps">
 						<tr>
 							<th class="text-center" colspan="2">项目基本信息</th>
 						</tr>
 						<tr>
 							<td>项目名称<span class="star">*</span></td>
-							<td><input id="project-name" type="text" name="project_name" require></td>
+							<td><input id="project-name" type="text" name="name" require></td>
 						</tr>
 						<tr>
 							<td>项目图片<span class="star">*</span></td>
-							<td><input id="project-pic" type="file" name="project_pic" require></td>
+							<td><input id="project-pic" type="file" name="pic" require></td>
 						</tr>
 						<tr>
 							<td>项目LOGO</td>
-							<td><input id="project-logo" type="file" name="project_logo"></td>
+							<td><input id="project-logo" type="file" name="logo"></td>
 						</tr>
 						<tr>
 							<td>所属领域<span class="star">*</span></td>
 							<td>
-								<select id="project-area" name="project_area"  require>
+								<select id="project-area" name="area"  require>
 									<option></option>
-		                            <option value="电子商务">电子商务</option>  
-		                            <option value="社交网络">社交网络</option>  
-		                            <option value="智能硬件">智能硬件</option>  
-		                            <option value="媒体门户">媒体门户</option>  
-		                            <option value="工具软件">工具软件</option>  
-		                            <option value="消费生活">消费生活</option>  
-		                            <option value="金融">金融</option>  
-		                            <option value="医疗健康">医疗健康</option>  
-		                            <option value="企业服务">企业服务</option>  
-		                            <option value="旅游户外">旅游户外</option>  
-		                            <option value="房产家居">房产家居</option>  
-		                            <option value="数字娱乐">数字娱乐</option>  
-		                            <option value="汽车交通">汽车交通</option>  
-		                            <option value="物流">物流</option>  
-		                            <option value="节能环保">节能环保</option>  
-		                            <option value="自动化">自动化</option>  
-		                            <option value="人力资源服务">人力资源服务</option>  
+		                            <option value="0">文化创业类</option>  
+		                            <option value="1">科技创业类</option>  
+		                            <option value="2">创业苗圃</option>  
+		                            <option value="3">互联网+现代农业</option>  
+		                            <option value="4">互联网+制造业</option>  
+		                            <option value="5">互联网+信息技术服务</option>  
+		                            <option value="6">互联网+商务服务</option>  
+		                            <option value="7">互联网刚+公共服务</option>  
+		                            <option value="8">互联网+公益创业</option>  
 							</select>
 							</td>
 						</tr>
-
+						<tr>
+							<td>产品类别<span class="star">*</span></td>
+							<td>
+								<select id="project-area" name="product_type"  require>
+									<option></option>
+		                            <option value="0">硬件</option>  
+		                            <option value="1">软件</option>  
+		                            <option value="2">APP</option>  
+		                            <option value="3">网站</option>  
+							</select>
+							</td>
+						</tr>
+						
 						<tr>
 							<td>项目简介<span class="star">*</span></td>
 							<td>
-								<textarea id="project-brief" name="project_brief" placeholder="500字以内" require></textarea>
+								<textarea id="project-brief" name="synopsis" placeholder="500字以内" require></textarea>
 							</td>
 						</tr>
 						<tr>
 							<td>项目开发进度<span class="star">*</span></td>
 							<td>
-								<input type="text" name="project_progress">
+								<input type="text" name="progress">
 							</td>
 
 						</tr>
@@ -156,9 +157,9 @@
 						<tr>
 							<td>是否已成立公司<span class="star">*</span></td>
 							<td>
-								<input id="founded" type="radio" name="is_company" require>
+								<input id="founded" type="radio" name="is_company" value="1" require>
 								<label class="radio-inline" for="founded">是</label>
-								<input id="unfounded" type="radio" name="is_company" require>
+								<input id="unfounded" type="radio" name="is_company" value="0" require>
 								<label class="radio-inline" for="unfounded">否</label>
 							</td>
 						</tr>
@@ -166,18 +167,18 @@
 						<tr>
 							<td>商业计划书<span class="star">*</span></td>
 							<td>
-								<input type="file" require>
+								<input type="file" name="plan" require>
 							</td>
 						</tr>
 						<tr>
 							<td>附件</td>
 							<td>
-								<input type="file">
+								<input type="file" name="attachment">
 							</td>
 						</tr>
 					</table>
 					<div class="apply-setps-btn">
-						<input class="btn-next step-btn" type="submit" value="下一步">
+						<input id="step1-btn" class="btn-next step-btn" type="submit" value="下一步">
 					</div>
 				</form>
 			</div>
@@ -190,60 +191,60 @@
 						<tr>
 							<td>姓名<span class="star">*</span></td>
 							<td>
-								<input type="text" name="name" require>
+								<input name="partner[1][name]" type="text"  require>
 							</td>
 							<td>性别<span class="star">*</span></td>
 							<td>
-								<input type="radio" name="sex" require>男
-								<input type="radio" name="sex" require>女
+								<input id="male" name="partner[1][sex]" type="radio"  value="male" require>
+								<label class="radio-inline" for="male">男</label>
+								<input id="female" name="partner[1][sex]" type="radio"  value="female" require>
+								<label class="radio-inline" for="female">女</label>
 							</td>
 							
 						</tr>
 						<tr>
 							<td>专业<span class="star">*</span></td>
-							<td>
-								<input type="text" name="major" require>
-							</td>
+							<td><input name="partner[1][major]" type="text"  require></td>
 							<td>占股比例<span class="star">*</span></td>
-							<td><input type="text" name="share_percentage" require></td>
+							<td><input name="partner[1][share_percentage]" type="text" require></td>
 						</tr>
 						
 						<tr>
 							<td>证件类型<span class="star">*</span></td>
 							<td>
-								<select name="id_type" id="id-type" require>
+								<select name="partner[1][id_type]" id="id-type" require>
 									<option></option>
-		                            <option value="stu-card">学生证</option>  
-		                            <option value="id-card">身份证</option>  
+		                            <option value="stu_card">学生证</option>  
+		                            <option value="id_card">身份证</option>  
 		                            <option value="others">其他</option>
 								</select>
 							</td>
 							<td>证件号<span class="star">*</span></td>
 							<td>
-								<input type="text" name="id_number" require>
+								<input name="partner[1][id_number]" type="text"  require>
 							</td>
 						</tr>
 						<tr>
 							<td>手机<span class="star">*</span></td>
-							<td><input type="text" name="tel" require></td>
+							<td><input name="partner[1][tel]" type="text"  require></td>
 							<td>邮箱<span class="star">*</span></td>
-							<td><input type="text" name="email" require></td>
+							<td><input name="partner[1][email]" type="text"  require></td>
 						</tr>
 						<tr>
 							<td>主要职责<span class="star">*</span></td>
 							<td colspan="3">
-								<input id="duty-technology" type="radio" name="duty" require>
+								<input id="duty-technology" type="radio" name="partner[1][duty]" value="0" require>
 								<label class="radio-inline" for="duty-technology">技术</label>
-								<input id="duty-financing" type="radio" name="duty" require>
+								<input id="duty-financing" type="radio" name="partner[1][duty]" value="1" require>
 								<label class="radio-inline" for="duty-financing">融资
 								</label> 
-								<input id="duty-operation" type="radio" name="duty" require>
+								<input id="duty-operation" type="radio" name="partner[1][duty]" value="2" require>
 								<label class="radio-inline" for="duty-operation">运营
 								</label>
-								<input id="duty-market" type="radio" name="duty" require>
+								<input id="duty-market" type="radio" name="partner[1][duty]" value="3" require>
 								<label class="radio-inline" for="duty-market">市场
 								</label>
-								<input id="duty-others" type="radio" name="duty" require>
+								<input id="duty-others" type="radio" name="partner[1][duty]" value="4" require>
 								<label class="radio-inline" for="duty-others">其他
 								</label>
 								
@@ -251,25 +252,25 @@
 						</tr>
 							<td>工作履历</td>
 							<td colspan="3">
-								<textarea name="member1_work" placeholder="150字以内"></textarea>
+								<textarea name="partner[1][work_record]" placeholder="150字以内"></textarea>
 							</td>
 							
 						</tr>
 						<tr>
 							<td>创业履历</td>
 							<td colspan="3">
-								<textarea name="member1_start" placeholder="150字以内"></textarea>
+								<textarea name="partner[1][business_record]" placeholder="150字以内"></textarea>
 							</td>
 						</tr>
 						
 					</table>
 					<div class="member-search-box">
 						<input type="text">
-						<a id="add-member" class="member-add-btn" href="javascript:void(0)" onClick="addMember()">添加队员</a>
+						<a id="add-member" class="member-add-btn" href="javascript:void(0)">添加队员</a>
 					</div>
 					<div class="apply-setps-btn">
 						<span class="btn-pre step-btn">上一步</span>
-						<input class="btn-next step-btn" type="submit" value="下一步">
+						<input id="step2-btn" class="btn-next step-btn" type="submit" value="下一步">
 					</div>
 				</form>
 			</div>
@@ -282,55 +283,55 @@
 						<tr>
 							<td>已融资金额<span class="star">*</span></td>
 							<td>
-								<input type="text" name="financing_demand_amount" require>
+								<input type="text" name="finan_amount" require>
 							</td>
 						</tr>
 						<tr>
 							<td>融资方式<span class="star">*</span></td>
 							<td>
-								<input id="financing-type1" type="checkbox" name="financing_way" require>
+								<input id="financing-type1" type="checkbox" name="finan_mode" value="0" require>
 								<label class="checkbox-inline" for="financing-type1">银行贷款</label>
-								<input id="financing-type2" type="checkbox" name="financing_way" require>
+								<input id="financing-type2" type="checkbox" name="finan_mode" value="1" require>
 								<label class="checkbox-inline" for="financing-type2">股票筹资</label>
-								<input id="financing-type3" type="checkbox" name="financing_way" require>
+								<input id="financing-type3" type="checkbox" name="finan_mode" value="2" require>
 								<label class="checkbox-inline" for="financing-type3">债券融资</label>
 
-								<input id="financing-type4" type="checkbox" name="financing_way" require>
+								<input id="financing-type4" type="checkbox" name="finan_mode" value="3" require>
 								<label class="checkbox-inline" for="financing-type4">融资租赁</label>
-								<input id="financing-type5" type="checkbox" name="financing_way" require>
+								<input id="financing-type5" type="checkbox" name="finan_mode" value="4" require>
 								<label class="checkbox-inline" for="financing-type5">海外融资</label>
-								<input id="financing-type6" type="checkbox" name="financing_way" require>
+								<input id="financing-type6" type="checkbox" name="finan_mode" value="5" require>
 								<label class="checkbox-inline" for="financing-type6">典当融资</label>
 							</td>
 						</tr>
 						<tr>
 							<td>融资时间段<span class="star">*</span></td>
-							<td colspan="3"><input type="text" name="financing_deadline" require></td>
+							<td colspan="3"><input id="time1" type="text" name="time" required>至<input id="time2" type="text" name="time" required></td>
 						</tr>
 							<tr>
-								<td>下一融资阶段<span class="star">*</span></td>
+								<td>融资阶段<span class="star">*</span></td>
 								<td>
-						          	<input id="financing-stage1" type="radio" name="financing-stage" require />
+									<input id="financing-stage0" type="radio" name="stage" value="0"  require />
+									<label class="radio-inline" for="financing-stage0">未融资</label>
+						          	<input id="financing-stage1" type="radio" name="stage" value="1"  require />
 									<label class="radio-inline" for="financing-stage1">天使轮</label>
-						          	<input id="financing-stage2" type="radio" name="financing-stage" require />
+						          	<input id="financing-stage2" type="radio" name="stage" value="2"  require />
 									<label class="radio-inline" for="financing-stage2">A轮</label>
-									<input id="financing-stage3" type="radio" name="financing-stage" require />
+									<input id="financing-stage3" type="radio" name="stage" value="3"  require />
 									<label class="radio-inline" for="financing-stage3">B轮</label>
-									<input id="financing-stage4" type="radio" name="financing-stage" require />
+									<input id="financing-stage4" type="radio" name="stage" value="4"  require />
 									<label class="radio-inline" for="financing-stage4">C轮</label>
-									<input id="financing-stage5" type="radio" name="financing-stage" require />
+									<input id="financing-stage5" type="radio" name="stage" value="5"  require />
 									<label class="radio-inline" for="financing-stage5">D轮</label>
-									<input id="financing-stage6" type="radio" name="financing-stage" require />
-									<label class="radio-inline" for="financing-stage2">E轮及以后</label>
-									<input id="financing-stage7" type="radio" name="financing-stage" require />
-									<label class="radio-inline" for="financing-stage2">未融资</label>
+									<input id="financing-stage6" type="radio" name="stage" value="6"  require />
+									<label class="radio-inline" for="financing-stage6">E轮及以后</label>
 									
 								</td>
 							</tr>
 					</table>
 					<div class="apply-setps-btn">
 						<span class="btn-pre step-btn">上一步</span>
-						<input id="apply-submit" class="btn-next step-btn" type="submit" value="提交">
+						<input id="step3-btn" class="btn-next step-btn" type="button" value="提交">
 					</div>
 				</form>
 			</div>
@@ -340,8 +341,96 @@
 	<!-- Apply-project End -->
 	<script src="js/jquery-3.1.0.js"></script>
 	<script src="js/main.js"></script>
-	
 	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/handlebars-v4.0.5.js"></script>
+	<script id="member-template" type="text/x-handlebars-template">
+		<tr>
+			<th class="text-center" colspan="4">队员信息</th>
+		</tr>
+		<tr>
+			<td>姓名<span class="star">*</span></td>
+			<td>
+				<input name="partner[{{index}}][name]" type="text"  require>
+			</td>
+			<td>性别<span class="star">*</span></td>
+			<td>
+				<input name="partner[{{index}}][sex]" type="radio"  value="male" require>男
+				<input name="partner[{{index}}][sex]" type="radio"  value="female" require>女
+			</td>
+			
+		</tr>
+		<tr>
+			<td>专业<span class="star">*</span></td>
+			<td>
+				<input name="partner[{{index}}][major]" type="text"  require>
+			</td>
+			<td>占股比例<span class="star">*</span></td>
+			<td><input name="partner[{{index}}][share_percentage]" type="text"  require></td>
+		</tr>
+		
+		<tr>
+			<td>证件类型<span class="star">*</span></td>
+			<td>
+				<select name="partner[{{index}}][id_type]" id="id-type" require>
+					<option></option>
+                    <option value="stu_card">学生证</option>  
+                    <option value="id_card">身份证</option>  
+                    <option value="others">其他</option>
+				</select>
+			</td>
+			<td>证件号<span class="star">*</span></td>
+			<td>
+				<input name="partner[{{index}}][id_number]" type="text"  require>
+			</td>
+		</tr>
+		<tr>
+			<td>手机<span class="star">*</span></td>
+			<td><input name="partner[{{index}}][tel]" type="text"  require></td>
+			<td>邮箱<span class="star">*</span></td>
+			<td><input name="partner[{{index}}][email]" type="text"  require></td>
+		</tr>
+		<tr>
+			<td>主要职责<span class="star">*</span></td>
+			<td colspan="3">
+				<input id="duty-technology" type="radio" name="partner[{{index}}][duty]" require>
+				<label class="radio-inline" for="duty-technology">技术</label>
+				<input id="duty-financing" type="radio" name="partner[{{index}}][duty]" require>
+				<label class="radio-inline" for="duty-financing">融资
+				</label> 
+				<input id="duty-operation" type="radio" name="partner[{{index}}][duty]" require>
+				<label class="radio-inline" for="duty-operation">运营
+				</label>
+				<input id="duty-market" type="radio" name="partner[{{index}}][duty]" require>
+				<label class="radio-inline" for="duty-market">市场
+				</label>
+				<input id="duty-others" type="radio" name="partner[{{index}}][duty]" require>
+				<label class="radio-inline" for="duty-others">其他
+				</label>
+				
+			</td>
+		</tr>
+			<td>工作履历</td>
+			<td colspan="3">
+				<textarea name="partner[{{index}}][work_record]" placeholder="150字以内"></textarea>
+			</td>
+			
+		</tr>
+		<tr>
+			<td>创业履历</td>
+			<td colspan="3">
+				<textarea name="partner[{{index}}][business_record]" placeholder="150字以内"></textarea>
+			</td>
+		</tr>
+	</script>
 	<script src="js/apply_project.js"></script>
+	<script src="js/laydate/laydate.dev.js"></script>
+	<script>
+		laydate({
+            elem: '#time1'
+        });
+        laydate({
+            elem: '#time2'
+        });
+	</script>
 </body>
 </html>

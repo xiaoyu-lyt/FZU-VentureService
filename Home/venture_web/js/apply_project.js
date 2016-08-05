@@ -1,18 +1,5 @@
-var isMember = false;
-$('#now-income').hide();
-var isincome = document.querySelectorAll('.isincome');
-$(isincome).each(function(index, elem){
-	$(elem).click(function(){
-		if($(this).val() == 'yes') {
-			$('#now-income').show();
-		} else {
-			$('#now-income').hide();
-		}
-	});
-});
-
 /**
- * 表单验证
+ * 项目申请表单验证
  */
 $().ready(function() {
 	var	oli = document.querySelector('.user-apply-sidenav').querySelectorAll('li');
@@ -30,7 +17,7 @@ $().ready(function() {
 		}
 	});
 	jQuery.extend(jQuery.validator.messages, {
-	  requiredd: "必填字段",
+	  required: "必填字段",
 	  maxlength: jQuery.validator.format("超出字数")
 	});
 	$('#step1').validate({
@@ -66,10 +53,62 @@ $().ready(function() {
 	$('#step3').validate();
 });
 
+
+/**
+ * 添加成员信息
+ */
 function addMember() {
-	var arr = [];
-	arr += '<tr><th class="text-center" colspan="4">队员信息</th></tr><tr><td>姓名<span class="star">*</span></td><td><input type="text" name="name" required></td><td>性别<span class="star">*</span></td><td><input type="radio" name="sex" required>男<input type="radio" name="sex" required>女</td></tr><tr><td>专业<span class="star">*</span></td><td><input type="text" name="major" required></td><td>占股比例<span class="star">*</span></td><td><input type="text" name="share_percentage" required></td></tr><tr><td>证件类型<span class="star">*</span></td><td><select name="id_type" id="id-type" required><option></option><option value="stu-card">学生证</option>  <option value="id-card">身份证</option><option value="others">其他</option></select></td><td>证件号<span class="star">*</span></td><td><input type="text" name="id_number" required></td></tr><tr><td>手机<span class="star">*</span></td><td><input type="text" name="tel" required></td><td>邮箱<span class="star">*</span></td><td><input type="text" name="email" required></td></tr><tr><td>主要职责<span class="star">*</span></td><td colspan="3"><input id="duty-technology" type="radio" name="duty" required><label class="radio-inline" for="duty-technology">技术</label><input id="duty-financing" type="radio" name="duty" required><label class="radio-inline" for="duty-financing">融资</label> <input id="duty-operation" type="radio" name="duty" required><label class="radio-inline" for="duty-operation">运营</label><input id="duty-market" type="radio" name="duty" required><label class="radio-inline" for="duty-market">市场</label><input id="duty-others" type="radio" name="duty" required><label class="radio-inline" for="duty-others">其他</label></td></tr><td>工作履历</td><td colspan="3"><textarea name="member1_work"></textarea></td></tr><tr><td>创业履历</td><td colspan="3"><textarea name="member1_start"></textarea></td></tr>';
-	$('#member-info').append(arr);
+	var _index = 1;
+	$('#add-member').click(function() {
+		console.log(_index);
+		var template = Handlebars.compile($('#member-template').html()); //注册模板
+		data = [{ index : ++_index }];
+		var html = template(data); //封装模板
+		$('#member-info').append(html);
+	});
 }
 
 
+/**
+ * 提交项目申请
+ */
+function submitForm() {
+	var formStr= '';
+	$('#step1-btn').click(function() {
+		formStr += $('#step1').serialize();
+		
+	});
+	$('#step2-btn').click(function() {
+		formStr += '&' + $('#step2').serialize();
+
+	});
+	$('#step3-btn').click(function() {
+		formStr += '&' + $('#step3').serialize();
+		console.log($('#step3').serialize());
+		$.ajax({
+			url: "../../API/index.php/home/upload/fileUpload.html",
+			type: "post",
+			data: new FormData($('#step1')[0]),
+			processData: false,
+			cache: false,
+			contentType :false
+			}).done(function(result) {
+				console.log(result);
+			});
+		$.ajax({
+			url: "../../API/index.php/home/project/apply.html",
+			type: "post",
+			data: formStr
+			}).done(function(result) {
+				console.log(result);
+			});
+	});
+
+}
+
+function init() {
+	addMember();
+	submitForm();
+}
+
+init();

@@ -30,9 +30,7 @@
 			</div>
 			<button id='login-btn'>登录</button>
 			</div>
-			<div class="cancel-box">
-				<button id="cancel-btn">确认注销?</button>
-			</div>
+			  
 	</div>
 
 	<!-- Header Start -->
@@ -47,7 +45,7 @@
 				<li class='pull-left'><a href="base.html">孵化基地</a></li>
 				<li class='pull-left'><a href="projects.html">创业项目</a></li>
 				<li class='pull-left'><a href="game.html">相关比赛</a></li>
-				<li class='pull-left'><a href="#">培训课堂</a></li>
+				<li class='pull-left'><a href="classroom.html">培训课堂</a></li>
 			</ul>
 		</div>
 		<span class="mobile-menu"></span>
@@ -66,7 +64,7 @@
 		<ul>			
 			<li><a href="index.html">首页</a></li>
 			<li><a href="information.html">新闻资讯</a></li>
-			<li><a href="">孵化基地</a></li>
+			<li><a href="base.html">孵化基地</a></li>
 			<li><a href="projects.html">创业项目</a></li>
 			<li><a href="game.html">相关比赛</a></li>
 			<li><a href="classroom.html">培训课堂</a></li>
@@ -86,14 +84,14 @@
 				<p>您的报名表将作为孵化营初审的主要依据，丰富相关内容有助于评审委员会及投资机构更全面了解您的创业项目。若某条信息内容无法确认或缺失，请填“无”。</p>
 			</div>
 			<div class="user-box step1 block">
-				<form id="apply-base-form" class="form-horizontal">
+				<form id="apply-base-form" class="form-horizontal" enctype="multipart/form-data">
 					<table class="project-apply-table apply-setp1 apply-steps">
 						<tr>
 							<th colspan="2" class="apply-title"><span class="star">*</span>项目名称</th>
 							<td colspan="7">
 								<div class="form-group">
 									<label class="sr-only" for="inputProjectName">项目名称</label>
-									<input class="form-control" name="project-name" type="text" required>
+									<input class="form-control" name="name" type="text" required>
 								</div>
 							</td>
 						</tr>
@@ -101,24 +99,24 @@
 							<th colspan="2" class="apply-title"><span class="star">*</span>项目所属类型</th>
 							<td colspan="7">
 								<div class="form-group">
-									<input id="project-type1" class="project-radio" type="radio" name="optionsTypes" required>
+									<input id="project-type1" class="project-radio" type="radio" name="item_type" value="0" required>
 									<label class="radio-inline" for="project-type1">文化创业类</label>
-									<input id="project-type2" class="project-radio"  type="radio" name="optionsTypes" required> 
+									<input id="project-type2" class="project-radio"  type="radio" name="item_type" value="1" required> 
 									<label class="radio-inline"  for="project-type2">科技创业类</label>
-									<input id="project-type3" class="project-radio"  type="radio" name="optionsTypes" required>
+									<input id="project-type3" class="project-radio"  type="radio" name="item_type" value="2" required>
 									<label class="radio-inline"  for="project-type3"> 互联网+类</label>
-									<input id="project-type4" class="project-radio"  type="radio" name="optionsTypes" required> 
+									<input id="project-type4" class="project-radio"  type="radio" name="item_type" value="3" required> 
 									<label class="radio-inline"  for="project-type4">创业苗圃</label>
 								</div>
 							</td>
 						</tr>
 						<tr>
-							<th colspan="2"  class="apply-title"><span class="star">*</span>项目是否注册</th>
+							<th colspan="2"  class="apply-title"><span class="star">*</span>公司是否注册</th>
 							<td colspan="7">
 								<div class="form-group">
-								<input id="registered" class="project-radio" type="radio" name="isRegister" required>
+								<input id="registered" class="project-radio" type="radio" name="is_company" value="1" required>
 								<label class="radio-inline" for="registered">是</label>
-								<input id="unregistered" class="project-radio" type="radio" name="isRegister" required>
+								<input id="unregistered" class="project-radio" type="radio" name="is_company" value="0" required>
 								<label class="radio-inline" for="unregistered">否</label>
 								</div>
 							</td>
@@ -128,69 +126,104 @@
 							<td colspan="7">
 								<div class="form-group">
 									<div class="label-group">
-										<input id="LLC" class="project-radio" type="radio" name="enterpriseForm" required>
+										<input id="unregistered" class="project-radio" type="radio" name="form_company" value="0" required>
+										<label class="radio-inline" for="unregistered">未注册</label>
+									</div>
+									<div class="label-group">
+										<input id="LLC" class="project-radio" type="radio" name="form_company" value="1" required>
 										<label class="radio-inline" for="LLC">无限责任公司</label>
 									</div>
 									<div class="label-group">
-										<input id="ULC" class="project-radio" type="radio" name="enterpriseForm" required>
+										<input id="ULC" class="project-radio" type="radio" name="form_company" value="2" required>
 										<label class="radio-inline" for="ULC">有限责任公司</label>
 									</div>
 									<div class="label-group">
-										<input id="IC" class="project-radio" type="radio" name="enterpriseForm" required>
+										<input id="IC" class="project-radio" type="radio" name="form_company" value="3" required>
 										<label class="radio-inline" for="IC">股份有限公司</label>
 										
 									</div>
 									<div class="label-group">
-										<input id="IBE" class="project-radio" type="radio" name="enterpriseForm" required>
+										<input id="IBE" class="project-radio" type="radio" name="form_company" value="4" required>
 										<label class="radio-inline" for="IBE">个人独资企业</label>
 									</div>
 									<div class="label-group">
-										<input id="PB" class="project-radio" type="radio" name="enterpriseForm" required>
+										<input id="PB" class="project-radio" type="radio" name="form_company" value="5" required>
 										<label class="radio-inline" for="PB">合伙企业</label>
 									</div>
 									<div class="label-group">
-										<input id="IE" class="project-radio" type="radio" name="enterpriseForm" required>
+										<input id="IE" class="project-radio" type="radio" name="form_company" value="6" required>
 									<label class="radio-inline" for="IE">公司制企业</label>
-									</div>
-									<div class="label-group">
-										<label class="radio-inline">其他</label>
-										<input class="form-control elseform" type="text" placeholder="若为此项请填写">
 									</div>
 								</div>
 							</td>
 						</tr>
 						<tr>
 							<td colspan="2" >吸纳员工人数</td>
-							<td colspan="3"><input class="form-control" type="text" name="employees-num"></td>
+							<td ><input class="form-control" type="text" name="employees"></td>
 							<td>项目面向群体</td>
-							<td colspan="3"><input class="form-control" type="text" name="group-oriented"></td>
+							<td colspan="5">
+								<div class="form-group">
+									<div class="label-group">
+										<input id="incorporated-business" class="project-radio" type="radio" name="group" value="0" required>
+										<label class="radio-inline" for="incorporated-business">公司企业</label>
+									</div>
+									<div class="label-group">
+										<input id="school" class="project-radio" type="radio" name="group" value="1" required>
+										<label class="radio-inline" for="school">学校单位</label>
+									</div>
+									<div class="label-group">
+										<input id="student" class="project-radio" type="radio" name="group" value="2" required>
+										<label class="radio-inline" for="student">学生</label>
+									</div>
+									<div class="label-group">
+										<input id="infant-mom" class="project-radio" type="radio" name="group" value="3" required>
+										<label class="radio-inline" for="infant-mom">母婴</label>
+									</div>
+									<div class="label-group">
+										<input id="aged" class="project-radio" type="radio" name="group" value="4" required>
+										<label class="radio-inline" for="aged">老年人</label>
+									</div>
+									<div class="label-group">
+										<input id="company-employee" class="project-radio" type="radio" name="group" value="5" required>
+										<label class="radio-inline" for="company-employee">公司职员</label>
+									</div>
+									<div class="label-group">
+										<input id="civil-servent" class="project-radio" type="radio" name="group" value="6" required>
+										<label class="radio-inline" for="civil-servent">公职人员</label>
+									</div>
+									<div class="label-group">
+										<input id="socil-elite" class="project-radio" type="radio" name="group" value="6" required>
+										<label class="radio-inline" for="socil-elite">社会人士</label>
+									</div>
+								</div>
+							</td>
 						</tr>
 						<tr>
 							<td colspan="2">主要产品</td>
 							<td colspan="7">
-								<input class="form-control" type="text" name="main-products">
+								<input class="form-control" type="text" name="products">
 							</td>
 						</tr>
 						<tr>
 							<th colspan="2" rowspan="3"><span class="star">*</span>法定代表或负责人</th>
 							<td class="member-age">姓名</td>
-							<td colspan="2"><input type="text" required></td>
+							<td colspan="2"><input name="person_in_charge[name]" type="text" required></td>
 							<td>年龄</td>
-							<td><input class="member-info" type="text" required></td>
+							<td><input name="person_in_charge[age]" class="member-info" type="text" required></td>
 							<td>性别</td>
-							<td><input class="member-info" type="text" required></td>
+							<td><input name="person_in_charge[sex]" class="member-info" type="text" required></td>
 						</tr>
 						<tr>
-							<td >学院</td>
-							<td colspan="2"><input class="member-info" type="text" required></td>
+							<td学院</td>
+							<td colspan="2"><input name="person_in_charge[collge]" class="member-info" type="text" required></td>
 							<td>专业</td>
-							<td colspan="3"><input class="member-info" type="text" required></td>
+							<td colspan="3"><input name="person_in_charge[major]" class="member-info" type="text" required></td>
 						</tr>
 						<tr>
 							<td>手机号</td>
-							<td colspan="2"><input class="member-info" type="text" required></td>
+							<td colspan="2"><input name="person_in_charge[tel]" class="member-info" type="text" required></td>
 							<td>Email/QQ</td>
-							<td colspan="3"><input class="member-info" type="text required"></td>
+							<td colspan="3"><input name="person_in_charge[contact]" class="member-info" type="text required"></td>
 						</tr>
 						
 						<tr>
@@ -206,61 +239,63 @@
 							<td colspan="2" class="member-email">E-mail</td>
 						</tr>
 						<tr>
-							<td colspan="2"><input id="member1-name" class="member-info"  name="member1-name" type="text"></td>
-							<td><input id="member1-age" class="member-info"  name="member1-age" type="text"></td>
-							<td><input id="member1-sex" class="member-info"  name="member1-sex" type="text"></td>
-							<td><input id="member1-college" class="member-info"  name="member1-college" type="text"></td>
-							<td><input id="member1-tel" class="member-info"  name="member1-tel" type="text"></td>
-							<td><input id="member1-qq" class="member-info"  name="member1-qq" type="text"></td>
-							<td colspan="2"><input id="member1-email" class="member-info"  name="member1-email" type="text"></td>
+							<td colspan="2"><input id="member1-name" class="member-info"  name="team[1][name]" type="text"></td>
+							<td><input id="member1-age" class="member-info"  name="team[1][age]" type="text"></td>
+							<td><input id="member1-sex" class="member-info"  name="team[1][sex]" type="text"></td>
+							<td><input id="member1-college" class="member-info"  name="team[1][college]" type="text"></td>
+							<td><input id="member1-tel" class="member-info"  name="team[1][tel]" type="text"></td>
+							<td><input id="member1-qq" class="member-info"  name="team[1][qq]" type="text"></td>
+							<td colspan="2"><input id="member1-email" class="member-info"  name="team[1][email]" type="text"></td>
 						</tr>
 						<tr>
-							<td colspan="2"><input id="member2-name" name="member2-name" class="member-info" type="text"></td>
-							<td><input id="member2-age" name="member2-age" class="member-info" type="text"></td>
-							<td><input id="member2-sex" name="member2-sex" class="member-info" type="text"></td>
-							<td><input id="member2-college" name="member2-college" class="member-info" type="text"></td>
-							<td><input id="member2-tel" name="member2-tel" class="member-info" type="text"></td>
-							<td><input id="member2-qq" name="member2-qq" class="member-info" type="text"></td>
-							<td colspan="2"><input id="member2-email" name="member2-email" class="member-info" type="text"></td>
+							<td colspan="2"><input id="member2-name" name="team[2][name]" class="member-info" type="text"></td>
+							<td><input id="member2-age" name="team[2][age]" class="member-info" type="text"></td>
+							<td><input id="member2-sex" name="team[2][sex]" class="member-info" type="text"></td>
+							<td><input id="member2-college" name="team[2][college]" class="member-info" type="text"></td>
+							<td><input id="member2-tel" name="team[2][tel]" class="member-info" type="text"></td>
+							<td><input id="member2-qq" name="team[2][qq]" class="member-info" type="text"></td>
+							<td colspan="2"><input id="member2-email" name="team[2][email]" class="member-info" type="text"></td>
 						</tr>
 						<tr>
-							<td colspan="2" ><input id="member3-name" name="member3-name" class="member-info" type="text"></td>
-							<td><input id="member3-age" name="member3-age" class="member-info" type="text"></td>
-							<td><input id="member3-sex" name="member3-sex" class="member-info" type="text"></td>
-							<td><input id="member3-college" name="member3-college" class="member-info" type="text"></td>
-							<td><input id="member3-tel" name="member3-tel" class="member-info" type="text"></td>
-							<td><input id="member3-qq" name="member3-qq" class="member-info" type="text"></td>
-							<td colspan="2"><input id="member3-email" name="member3-email" class="member-info" type="text"></td>
+							<td colspan="2" ><input id="member3-name" name="team[3][name]" class="member-info" type="text"></td>
+							<td><input id="member3-age" name="team[3][age]" class="member-info" type="text"></td>
+							<td><input id="member3-sex" name="team[3][sex]" class="member-info" type="text"></td>
+							<td><input id="member3-college" name="team[3][college]" class="member-info" type="text"></td>
+							<td><input id="member3-tel" name="team[3][tel]" class="member-info" type="text"></td>
+							<td><input id="member3-qq" name="team[3][qq]" class="member-info" type="text"></td>
+							<td colspan="2"><input id="member3-email" name="team3[email]" class="member-info" type="text"></td>
 						</tr>
 						<tr>
-							<td colspan="2" ><input id="member4-name" name="member4-name" class="member-info" type="text"></td>
-							<td><input id="member4-age" name="member4-age" class="member-info" type="text"></td>
-							<td><input id="member4-sex" name="member4-sex" class="member-info" type="text"></td>
-							<td><input id="member4-college" name="member4-college" class="member-info" type="text"></td>
-							<td><input id="member4-tel" name="member4-tel" class="member-info" type="text"></td>
-							<td><input id="member4-qq" name="member4-qq" class="member-info" type="text"></td>
-							<td colspan="2"><input id="member4-email" name="member4-email" class="member-info" type="text"></td>
+							<td colspan="2" ><input id="member4-name" name="team[4][name]" class="member-info" type="text"></td>
+							<td><input id="member4-age" name="team[4][age]" class="member-info" type="text"></td>
+							<td><input id="member4-sex" name="team[4][sex]" class="member-info" type="text"></td>
+							<td><input id="member4-college" name="team[4][college]" class="member-info" type="text"></td>
+							<td><input id="member4-tel" name="team[4][tel]" class="member-info" type="text"></td>
+							<td><input id="member4-qq" name="team[4][qq]" class="member-info" type="text"></td>
+							<td colspan="2"><input id="member4-email" name="team[4][email]" class="member-info" type="text"></td>
 						</tr>
 						<tr>
 							<th colspan="2" class="apply-title"><span class="star">*</span>项目简介</th>
 							<td colspan="7">
-								<textarea name="introduction" placeholder="内容包括：产品服务、市场营销、运营现状、财务分析等。500字以内"  required></textarea>
+								<textarea name="synopsis" placeholder="内容包括：产品服务、市场营销、运营现状、财务分析等。500字以内"  required></textarea>
 							</td>
 						</tr>
 						<tr>
 							<th colspan="2" class="apply-title"><span class="star">*</span>相关资料</th>
 							<td colspan="7">
-								<input name="file" type="file" required>
+								<input name="documents" type="file" required>
 							</td>
 						</tr>
 					</table>
 						<p class="comment">注：<br>
+
 						已注册：提交商业计划书、企业章程、法定代表人简历、学生证和身份证复印件、校内注册证明、营业执照证书、组织机构代码、税务登记复印件印件<br>
 						未注册：提交商业计划书、企业章程、法定代表人简历、学生证和身份证复印件、校内注册证明<br>
+						请将所有文件打包后上传<br>
 						（部分材料以图片形式上传，纸质版提交至***）
 						</p>
 					<div class="project-submit-btn">
-						<input id="apply-submit" class="project-apply-submit step-btn" type="submit" value="提交申请">
+						<input id="apply-submit" class="project-apply-submit step-btn" type="button" value="提交申请">
 					</div>
 				</form>
 			</div>

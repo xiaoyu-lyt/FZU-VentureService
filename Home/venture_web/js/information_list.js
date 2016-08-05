@@ -28,39 +28,35 @@ getData(2,1);
  * @param  {number} _page 当前页码
  */
 function getData(_type, _page) {
-	var _size = 3, //页大小
-		nowType = typeClass[_type],
-		dataSize, pages;
+	var _size = 1, //页大小
+		nowType = typeClass[_type], //当前类型
+		dataSize, 
+		pages;
 	$.ajax({
 		type: "get",
 		url: "../../API/index.php/home/notice/list.html",
-		dataType: "json",
 		data: {
 			type: _type,
 			size: _size, //页大小
 			page: _page //当前页码
- 		},
- 		error: function () {
- 			console.log("error!");
- 		},
-		success: function(result) {
-			var	dataArr = result.data,
-				li = '';
-			pages = dataArr.pages; //总页数
-			TypeState[nowType.split('-')[1]].PAGES = pages;
-			$(nowType +' .information-ul').empty();
-			$.each(dataArr, function(index, elem) {
-				if(index === 'pages') {
-					return false
-				}
-				li += "<li><a href='article.html?id="+ elem.nid + "'>" + elem.theme + "</a><span class='information-time pull-right'>" + elem.date +"</span></li>"
-			})
-			$(nowType + ' .information-ul').append(li);
-		},
-		complete: function() {
-			getPageBar(nowType.split('-')[1], pages);
-		}
-	});
+ 		}
+ 	}).done(function(result) {
+ 		var	dataArr = result.data,
+			li = '';
+		pages = dataArr.pages; //总页数
+		// console.log(dataArr);
+		TypeState[nowType.split('-')[1]].PAGES = pages;
+		$(nowType +' .information-ul').empty();
+		$.each(dataArr, function(index, elem) {
+			if(index == 'pages') {
+				return false;
+			}
+			li += "<li><a href='article.html?id="+ elem.nid + "'>" + elem.theme + "</a><span class='information-time pull-right'>" + elem.date +"</span></li>"
+		})
+		$(nowType + ' .information-ul').append(li);
+ 	}).always(function() {
+ 		getPageBar(nowType.split('-')[1], pages);
+ 	});
 }
 
 /**
@@ -70,26 +66,45 @@ function getData(_type, _page) {
  */
 function getPageBar(typeName, pages) {
 	var pageStr = '',
-		pagination,
-		pageNum = TypeState[typeName].COUNT;
-	// console.log('pageNum ' + pageNum + ' pages ' + pages);
-	if(pageNum == 1) {
-		pageStr += "<li class='disabled'><a href='javascoript:void(0)'>&laquo;</a></li>";
-	} else {
-		pageStr += "<li><a href='javascoript:void(0)'rel="+ (parseInt(pageNum) - 1) +">&laquo;</a></li>";
+		pageNum = parseInt(TypeState[typeName].COUNT), //当前页数
+		oNum = 0, //当前li序列号
+		show = 3, //分页条显示页的个数
+		middle = Math.floor(show/2),
+		pagination;
+	if(pages === 1) return;
+	if(pageNum > 1) { //添加首页和前页
+		oNum = pageNum + 1;
+		pageStr += "<li><a href='javascoript:void(0)' rel='1'>首页</a></li><li><a href='javascoript:void(0)'rel=" + (pageNum-1) + ">&laquo;</a></li>";
+	} if(pages < show) {
+		for(var i=1; i <= pages; i++) {
+			pageStr += "<li><a href='javascoript:void(0)' rel='" + i + "'>" + i + "</a></li>";
+		}
+	} else if(pageNum <= middle+1) { //分页头部切换
+		for(var i=1; i <= show; i++) {
+			pageStr += "<li><a href='javascoript:void(0)' rel='" + i + "'>" + i + "</a></li>";
+		}
+	} else if((pageNum > middle+1) && (pageNum <= pages - middle)) { //分页中部切换
+		for(var i=1,j=pageNum-middle; i <= show; i++,j++) {
+			pageStr += "<li><a href='javascoript:void(0)' rel='" + j + "'>" + j + "</a></li>";
+		}
+		oNum = middle+2;
+	} else if(pageNum > pages - middle) { //分页尾部切换
+		for(var i=1,j=pages-show+1; i <= show; i++,j++) {
+			pageStr += "<li><a href='javascoript:void(0)' rel='" + j + "'>" + j + "</a></li>";
+		}
+		console.log(pageNum);
+		oNum = show-(pages-pageNum)+1;
+		console.log('oNum '+oNum);
+	} 
+	if(pageNum != TypeState[typeName].PAGES) { //当前页不为末页，添加后页和末页
+		pageStr += "<li><a href='javascoript:void(0)' rel="+ (pageNum+1) +">&raquo;</a></li>";
+		pageStr += "<li><a href='javascoript:void(0)' rel="+ pages + ">末页</a></li>";
 	}
-	for(var i=1; i <= pages; i++) {
-		pageStr += "<li><a href='javascoript:void(0)' rel='" + i + "'>" + i + "</a></li>"
-	}
-	if(pageNum == TypeState[typeName].PAGES) {
-		pageStr += "<li class='disabled'><a href='javascoript:void(0)'>&raquo;</a></li>";
-	} else {
-		pageStr += "<li><a href='javascoript:void(0)'rel="+ (parseInt(pageNum) + 1) +">&raquo;</a></li>";
-	}
-	var pagination = '#' + typeName + '-pagination';
+	pagination = '#' + typeName + '-pagination'; //获取导航名
 	$(pagination).html(pageStr);
+	// console.log('pageNum ' + pageNum + ' oNum ' + oNum);
 	var oli = document.querySelector(pagination).querySelectorAll('li');
-	$(oli[pageNum]).addClass('active');
+	$(oli[oNum]).addClass('active');
 }
 
 /**
@@ -127,5 +142,5 @@ $(function() {
 			}
 		})
 	})
-})
+});
 

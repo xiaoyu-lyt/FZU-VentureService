@@ -30,9 +30,6 @@
 			</div>
 				<button id='login-btn'>登录</button>
 			</div>
-			<div class="cancel-box">
-				<button id="cancel-btn">确认注销?</button>
-			</div>
 	</div>
 
 	<!-- Header Start -->
@@ -47,7 +44,7 @@
 				<li class='pull-left'><a href="base.html">孵化基地</a></li>
 				<li class='pull-left'><a href="projects.html">创业项目</a></li>
 				<li class='pull-left'><a href="game.html">相关比赛</a></li>
-				<li class='pull-left'><a href="#">培训课堂</a></li>
+				<li class='pull-left'><a href="classroom.html">培训课堂</a></li>
 			</ul>
 		</div>
 		<span class="mobile-menu"></span>
@@ -62,17 +59,19 @@
 				<span class="user-cancel"><a>注销</a></span>
 			</div>
 	</header>
+
 	<div class="mobile-bar">
 		<ul>			
 			<li><a href="index.html">首页</a></li>
 			<li><a href="information.html">新闻资讯</a></li>
-			<li><a href="">孵化基地</a></li>
+			<li><a href="base.html">孵化基地</a></li>
 			<li><a href="projects.html">创业项目</a></li>
 			<li><a href="game.html">相关比赛</a></li>
 			<li><a href="classroom.html">培训课堂</a></li>
 		</ul>
 	</div>
 	<!-- Header End -->
+	<div id="popup" class="detail-popup" style="display:none"></div>
 
 	<!-- Find-partner Start -->
 	<div class="user-wrapper">
@@ -90,35 +89,57 @@
 			</div>
 			
 			<div class="user-box box1 block pull-right">
-				<button class="projects-find-btn pull-right">发布新寻找</button>
+				<a class="projects-find-btn pull-right" href="new_find.html">发布新寻找</a>
 				<div class="projects-search-box pull-right">
 					<input id="condition-search" type="text">
 					<button id="condition-search-btn" class="projects-search-btn"><img src="images/Search.png" alt=""></button>
 				</div>
 				<div class="find-partner-projects">
 					<div class="user-projects-title"><span class='icon-user-projects'></span><h2>创业合作项目</h2></div>	
-					<div id="user-projects-box">
+					<div id="user-partner-box">
 						<div class="user-projects-box">
 							<div class="user-projects-top">
-								<div class="user-projects-img"><img src="images/user-projects1.png" alt=""></div>
 								<div class="user-projects-info">
-									<a href="projects_info.html"><h4>互联网技术威客兼职预约平台</h4></a>
-									<p class="user-projects-slogan">解决创业团队找不到技术人才的问题</p>
-									<span class="user-projects-tag">电子商务</span>
-									<span class="user-projects-tag">企业服务</span>
+									<h4 class="person-description"><a href="javascript:void(0)">想法描述想法描述想法描述想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描</a></h4>
+									<div class="find-type">
+										<span class="find-type-title">需求类型：</span>
+										<span class="user-projects-tag">电子商务</span>
+										<span class="user-projects-tag">企业服务</span>
+									</div>
 								</div>
 							</div>
 							<div class="projects-publisher-box">
 								<span class="projects-publisher-name">
-									发布者：<a href="">林渊腾</a>
+									发布者：<a href="user_student.htmluid=?">林渊腾</a>
 								</span>
-								<span class="projects-publisher-team">
-									项目团队：<a href="">lalala</a>
+								<span class="projects-publisher-time">
+									发布时间：<span>2016-05-23</span>
 								</span>
 							</div>
 						</div>
+						<div class="user-projects-box">
+							<div class="user-projects-top">
+								<div class="user-projects-info">
+									<h4 class="person-description"><a href="javascript:void(0)">想法描述想法描述想法描述</a></h4>
+									<div class="find-type">
+										<span class="find-type-title">需求类型：</span>
+										<span class="user-projects-tag">电子商务</span>
+										<span class="user-projects-tag">企业服务</span>
+									</div>
+								</div>
+							</div>
+							<div class="projects-publisher-box">
+								<span class="projects-publisher-name">
+									发布者：<a href="user_student.htmluid=?">林渊腾</a>
+								</span>
+								<span class="projects-publisher-time">
+									发布时间：<span>2016-05-23</span>
+								</span>
+							</div>
+						</div>
+						
 					</div>
-					<ul class="pagination" id="partners-pagination">
+					<ul class="pagination" id="partner-pagination">
 						<li><a href="#">&laquo;</a></li>
 						<li><a href="#">1</a></li>
 						<li><a href="#">2</a></li>
@@ -140,7 +161,7 @@
 					</a>
 				
 				</div>
-				<ul class="pagination" id="teachers-pagination">
+				<ul class="pagination" id="teacher-pagination">
 					<li><a href="#">&laquo;</a></li>
 					<li><a href="#">1</a></li>
 					<li><a href="#">2</a></li>
@@ -177,42 +198,41 @@
 							<p class="teachers-info">创业魔法学院创始CEO</p>
 						</div>
 					</a>
-				
-				</div>
-				<ul class="pagination" id="investors-pagination">
-					<li><a href="#">&laquo;</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">&raquo;</a></li>
-				</ul>
+					</div>
+					<ul class="pagination" id="investor-pagination">
+						<li><a href="#">&laquo;</a></li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">&raquo;</a></li>
+					</ul>
 			</div>
 
 		</div>
 	</div>
 	<!-- Find-partner End -->
+	<script src="js/jquery-3.1.0.js"></script>
 	<script src="js/tabswift.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/jquery-3.1.0.js"></script>
 	<script src="js/handlebars-v4.0.5.js"></script>
-	<script id="projects-template" type="text/x-handlebars-template">
+	<script id="partner-template" type="text/x-handlebars-template">
 		{{#each this}}
-			{{#if name}}
+			{{#if description}}
 			<div class="user-projects-box">
 				<div class="user-projects-top">
-					<div class="user-projects-img"><img src="images/user-projects1.png" alt=""></div>
 					<div class="user-projects-info">
-						<a href="projects_info.html"><h4>{{name}}</h4></a>
-						<p class="user-projects-slogan">{{synopsis}}</p>
-						<!-- <span class="user-projects-tag">电子商务</span> -->
-						<!-- <span class="user-projects-tag">企业服务</span> -->
+						<h4 class="person-description"><a class="description-link" href="javascript:void(0)" rel="{{sid}}">{{description}}</a></h4>
+						<div class="find-type">
+							<span class="find-type-title">需求类型：</span>
+							<span class="user-projects-tag">{{type}}</span>
+						</div>
 					</div>
 				</div>
 				<div class="projects-publisher-box">
 					<span class="projects-publisher-name">
-						发布者：<a href="personal_information.html?uid={{uid}}"> {{teams.tcharge}} </a> 
+						发布者：<a href="personal_information.html?uid={{uid}}">{{name.name}}</a>
 					</span>
-					<span class="projects-publisher-team">
-						项目团队：<a href="">{{teams.tname}}</a>
+					<span class="projects-publisher-time">
+						发布时间：<span>{{issue_time}}</span>
 					</span>
 				</div>
 			</div>
@@ -221,32 +241,93 @@
 	</script>
 	<script id="teachers-template" type="text/x-handlebars-template">
 		{{#each this}}
-			<a class="find-partner-teachers col-md-3 col-sm-4" href="personal_information.html?tid={{tid}}">
-				<div class="find-teachers-box">
-					<div class="teachers-img">
-						<img src="images/teachers1.jpg" alt="">
+			{{#if name}}
+				<div class="find-partner-teachers col-md-3 col-sm-4">
+					<div class="find-teachers-box">
+						<a class="teachers-img" href="javascript:void(0)" rel={{tid}}>
+							<img src="images/teachers1.jpg" alt="">
+						</a>
+						<p class="teachers-name">{{name}}</p>
+						<p class="teachers-info">{{job}}</p>
 					</div>
-					<p class="teachers-name">{{title}}</p>
-					<p class="teachers-info">{{job}}</p>
 				</div>
-			</a>
+			{{/if}}
 		{{/each}}
 	</script>
 	<script id="investors-template" type="text/x-handlebars-template">
 		{{#each this}}
-			<a class="find-partner-investors col-md-3 col-sm-4" href="personal_information.html?cid={{charge_id}}">
-				<div class="find-investors-box">
-					<div class="investors-img">
+			{{#if name}}
+				<div class="find-investors-box col-md-3 col-sm-4">
+					<a class="investors-img" href="javascript:void(0)" rel={{id}}>
 						<img src="images/teachers6.jpg" alt="">
-					</div>
+					</a>
 					<p class="investors-name">{{name}}</p>
 					<p class="investors-info">{{company}}</p>
 				</div>
-			</a>
+			{{/if}}
 		{{/each}}
 	</script>
-	<script src="js/jquery-3.1.0.js"></script>
-	<script src="js/main.js"></script>
+	<script id="popup1-template" type="text/x-handlebars-template">
+	 	<table class="find-table">
+	 		<tr>
+	 			<th><h4 class="line-title text-left">个人描述</h4></th>
+	 			<td colspan="2">
+	 				<p>{{type}}</p>
+	 			</td>
+	 		</tr>
+			<tr>
+				<th><h4 class="line-title text-left">个人想法描述</h4></th>
+				<td colspan="2">
+					<p>{{description}}</p>
+				</td>
+			</tr>
+			<tr>
+	 			<th><h4 class="line-title text-left">需求类型</h4></th>
+	 			<td colspan="2">
+	 				<p>{{type}}</p>
+	 			</td>
+	 		</tr>
+	 		<tr>
+				<th><h4 class="line-title text-left">寻找专业</h4></th>
+				<td colspan="2"><p>{{find_major}}</p></td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">要求有项目经验</h4></th>
+				<td colspan="2">
+					<p>{{has}}</p>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">职位职责</h4></th>
+				<td colspan="2"><p>{{duty}}</p></td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">特长</h4></th>
+				<td colspan="2"><p>{{specialty}}</p></td>
+			</tr>
+	 	</table>
+	</script>
+	<script id="popup2-template" type="text/x-handlebars-template">
+		<table class="find-table">
+	 		<tr>
+	 			<th><h4 class="line-title text-left">导师简介</h4></th>
+	 			<td colspan="2">
+	 				<p>{{introduction}}</p>
+	 			</td>
+	 		</tr>
+	 	</table>
+	</script>
+	<script id="popup3-template" type="text/x-handlebars-template">
+		<table class="find-table">
+	 		<tr>
+	 			<th><h4 class="line-title text-left">投资人简介</h4></th>
+	 			<td colspan="2">
+	 				<p>{{introduction}}</p>
+	 			</td>
+	 		</tr>
+	 	</table>
+	</script>
+	<script src="js/layer/layer.js"></script>
 	<script src="js/find_partner.js"></script>
 </body>
 </html>

@@ -1,20 +1,24 @@
-var pageNum = 1;
-getData(pageNum);
+var _area ,_form, _stage, _group, _type;
+
+getData(1); //初始化项目列表
 
 /**
  * 渲染项目列表
  * @param  {number} _page 当前页码
  */
-function getData(_page) {
+function getData(_page, _area, _form, _stage, _group) {
 	var _size = 1, pages;
 	$.ajax({
 		type: "get",
 		url: "../../API/index.php/home/project/list.html",
 		data: {
 			size: _size,
-			page: _page //当前页码
-			// area: 1, //所属领域
-			// type: 1, //产品类别
+			page: _page, //当前页码
+			area: _area, //所属领域
+			form_company: _form, //公司形式
+			stage: _stage, //融资阶段
+			product_type: _type, //产品类别
+			group: _group //面向群体
  		},
 	}).done(function(result) {
 		var data = result.data;
@@ -24,41 +28,90 @@ function getData(_page) {
 		var html = template(data); //封装模板
 		$('#projects-box').html(html); //插入基础模板中
 	}).always(function(){
-		getPageBar(pages);
+		getPageBar(_page, pages);
 	})
 }
 
-// 获取分页条
-function getPageBar(pages) {
-	var pageStr = '';
-	// console.log('pageNum ' + pageNum + ' pages ' + pages);
-	if(pageNum == 1) {
-		pageStr += "<li class='disabled'><a href='javascoript:void(0)'>&laquo;</a></li>";
-	} else {
-		pageStr += "<li><a href='javascoript:void(0)'rel="+ (parseInt(pageNum) - 1) +">&laquo;</a></li>";
+/**
+ * 获取分页条
+ * @param  {string} typeName 类别名称：news/notice/policy
+ * @param  {string} pages    当前类别总页数
+ */
+function getPageBar(pageNum,pages) {
+	var pageStr = '',
+		oNum = 0, //当前li序列号
+		show = 3, //分页条显示页的个数
+		middle = Math.floor(show/2),
+		pagination;
+	if(pages === 1) return;
+	if(pageNum > 1) { //添加首页和前页
+		oNum = pageNum + 1;
+		pageStr += "<li><a href='javascoript:void(0)' rel='1'>首页</a></li><li><a href='javascoript:void(0)'rel=" + (pageNum-1) + ">&laquo;</a></li>";
+	} if(pages < show) {
+		for(var i=1; i <= pages; i++) {
+			pageStr += "<li><a href='javascoript:void(0)' rel='" + i + "'>" + i + "</a></li>";
+		}
+	} else if(pageNum <= middle+1) { //分页头部切换
+		for(var i=1; i <= show; i++) {
+			pageStr += "<li><a href='javascoript:void(0)' rel='" + i + "'>" + i + "</a></li>";
+		}
+	} else if((pageNum > middle+1) && (pageNum <= pages - middle)) { //分页中部切换
+		for(var i=1,j=pageNum-middle; i <= show; i++,j++) {
+			pageStr += "<li><a href='javascoript:void(0)' rel='" + j + "'>" + j + "</a></li>";
+		}
+		oNum = middle+2;
+	} else if(pageNum > pages - middle) { //分页尾部切换
+		for(var i=1,j=pages-show+1; i <= show; i++,j++) {
+			pageStr += "<li><a href='javascoript:void(0)' rel='" + j + "'>" + j + "</a></li>";
+		}
+		console.log(pageNum);
+		oNum = show-(pages-pageNum)+1;
+	} 
+	if(pageNum != pages) { //当前页不为末页，添加后页和末页
+		pageStr += "<li><a href='javascoript:void(0)' rel="+ (pageNum+1) +">&raquo;</a></li>";
+		pageStr += "<li><a href='javascoript:void(0)' rel="+ pages + ">末页</a></li>";
 	}
-	for(var i=1; i <= pages; i++) {
-		pageStr += "<li><a href='javascoript:void(0)' rel='" + i + "'>" + i + "</a></li>"
-	}
-	if(pageNum == pages) {
-		pageStr += "<li class='disabled'><a href='javascoript:void(0)'>&raquo;</a></li>";
-	} else {
-		pageStr += "<li><a href='javascoript:void(0)'rel="+ (parseInt(pageNum) + 1) +">&raquo;</a></li>";
-	}
+		// console.log('pageNum ' + pageNum +  ' oNum ' + oNum);
 	$('#project-pagination').html(pageStr);
 	var oli = document.querySelector('#project-pagination').querySelectorAll('li');
-	$(oli[pageNum]).addClass('active');
+	$(oli[oNum]).addClass('active');
 }
-
 
 // 页码切换
 $(function() {
-		var pagination = document.querySelector('#project-pagination');
-		pagination.addEventListener('click', function(event) {
-			pageNum = event.target.rel;
-			if(pageNum) {
-				getData(pageNum);
-			}
-		})
+	var pagination = document.querySelector('#project-pagination');
+	pagination.addEventListener('click', function(event) {
+		pageNum = parseInt(event.target.rel);
+		if(pageNum) {
+			getData(pageNum);
+		}
+	})
 });
 
+function SelectProject() {
+	var box = document.querySelector('.projects-selec-top');
+	box.addEventListener('click',function(event) {
+
+		var e = event.target || event.srcElement;
+		if(e.nodeName.toUpperCase()==='LI'){
+			$(e).parent().find('.now').removeClass('now');
+			$(e).addClass('now');
+			var name = e.id.slice(0,-1);
+			var num = e.id.slice(-1);
+			switch(name) {
+				case "area":
+					getData(1, num, _form, _stage, _group);
+					break;
+				case "form":
+					getData(1, _area, num, _stage, _group);
+					break;
+				case "stage":
+					getData(1, _area, _form, num, _group);
+				case "group":
+					getData(1, _area, _form, _stage, num);
+			}
+		}
+	});
+}
+
+SelectProject();

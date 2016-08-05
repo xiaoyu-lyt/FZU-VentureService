@@ -1,3 +1,6 @@
+/**
+ * 注册表单验证
+ */
 $().ready(function() {
 	jQuery.validator.addMethod("isMobile", function(value, element) {
 		var length = value.length;
@@ -14,6 +17,8 @@ $().ready(function() {
 	});
 
 	$('#signup-form').validate({
+		submitHandler:function(form) {
+		},
 		rules: {
 			username: {
 				required: true,	
@@ -63,13 +68,14 @@ $().ready(function() {
 	})
 });
 
+/**
+ * 切换注册角色
+ */
 var st = document.querySelectorAll('.st'),
 	role = document.querySelectorAll('.role');
-
 st = [].slice.call(st);
 $.each(st, function(index, element) {
 	element.index = index;
-
 	element.onclick = function() {
 		$.each(role, function(index, element) {
 			$(element).removeClass('now');
@@ -79,6 +85,9 @@ $.each(st, function(index, element) {
 })
 
 
+/**
+ * 重新获取验证码
+ */
 var sendBtn = document.querySelector('.send-code');
 sendBtn.onclick = function () {
 	var timer = '';
@@ -102,12 +111,13 @@ sendBtn.onclick = function () {
 
 var _groupid = 0;
 var select = document.querySelector('.signup-role-select');
-
 select.addEventListener('click', function(event) {
 	_groupid = event.target.id.slice(-1);
-
 })
 
+/**
+ * 点击注册按钮提示信息
+ */
 $('#submit').click(function() {
 	var _username = $('#username').val(),
 		_name = $('#name').val(),
@@ -127,13 +137,9 @@ $('#submit').click(function() {
 			tel: _tel,
 			v_code: v_code,
 			groupid: _groupid
-		},
-		error: function(){
-			alert('error!');
-		},
-		success: function(result) {
-			alert(result.msg);
-			window.location.href='../venture_web/index.html';
 		}
-	})
+	}).done(function(result) {
+		alert(result.msg);
+			window.location.href='../venture_web/index.html';
+	});
 })

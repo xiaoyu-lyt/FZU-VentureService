@@ -790,7 +790,8 @@ footer h4 {
 }
 
 
-.information-page .pagination {
+.information-page .pagination,
+.information-page .M-box {
 	position: absolute;
 	bottom: 0;
 	right: 25px;
@@ -842,7 +843,7 @@ footer h4 {
 	margin: 0 auto 20px;
 }
 .article-publisher,
-.article-pageview,
+.article-pagefind,
 .article-publish-time {
 	display: inline-block;
 	text-align: center;
@@ -857,16 +858,18 @@ footer h4 {
 
 /*登录弹窗*/
 .login-wrapper,
-.modify-wrapper {
+.modify-wrapper,
+.mask {
+	display: none;
 	width: 100%;
 	height: 100%;
 	position: fixed;
-	display: none;
 	z-index: 3999;
 	background-color: rgba(49, 57, 68, .95);
 }
 
-.modify-wrapper {
+.modify-wrapper,
+.mask {
 	background-color: rgba(0, 0, 0, .5);
 }
 
@@ -909,10 +912,6 @@ footer h4 {
 	font-size: 20px;
 	color: #293352;
 	margin-bottom: 20px;
-}
-
-.login-box {
-	display: none;
 }
 
 .login-line {
@@ -963,15 +962,29 @@ footer h4 {
 	text-decoration: underline;
 }
 
-.cancel-box {
+
+.apply-box {
 	position: fixed;
 	left: 50%;
 	top: 50%;
-	margin-top: -75px;
-	margin-left: -150px;
-	padding: 20px;
-	width: 300px;
-	height: 150px;
+	margin-top: -100px;
+	margin-left: -200px;
+	padding: 30px;
+	width: 400px;
+	height: 200px;
+	background-color: #fff;
+}
+
+.apply-box .snum{
+	display: block;
+	width: 200px;
+	height: 35px;
+	margin: 25px auto;
+	border-radius: 5px;
+	border: 1px solid #cecece;
+}
+
+.apply-box .training-apply-btn {
 	background-color: #fff;
 }
 
@@ -1143,6 +1156,11 @@ footer h4 {
 	border: none;
 }
 
+#projects-box {
+	position: relatve;
+	height: 800px;
+}
+
 .projects-expo-box {
 	border: 1px solid #cecece;
 	padding: 5px;
@@ -1159,6 +1177,11 @@ footer h4 {
 	width: 100%;
 }
 
+.projects-pic-box .projects-pic {
+	height: 250px;
+	margin: 10px;
+}
+
 .projects-detail-box {
 	display: inline-block;
 	width: 75%;
@@ -1172,6 +1195,7 @@ footer h4 {
 .projects-detail-title:hover {
 	color: #eb4f38;
 }
+
 .projects-describe-tags span{
 	display: inline-block;
 	padding: 2px 5px;
@@ -1536,6 +1560,7 @@ footer h4 {
 
 .user-box {
 	display: none;
+	width: 80%;
 	padding: 15px;
 	margin: 0 auto;
 }
@@ -1662,10 +1687,17 @@ footer h4 {
 	margin: 50px;
 }
 
-.find-partner-list {
+.find-partner-list,
+.myproject-list {
 	position: relative;
-	height: 280px;
+	height: 380px;
 	display: none;
+	padding: 50px 30px;
+}
+
+.enter-base-list {
+	position: relative;
+	height: 380px;
 	padding: 50px 30px;
 }
 
@@ -1676,13 +1708,12 @@ footer h4 {
 .published-find-top h3{
 	font-size: 19px;
 	color: #61a3e1;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
-.find-btn {
+.find-btn,
+.find-return {
 	position: absolute;
-	right: 50px;
-	top: 0;
 	padding: 5px 10px;
 	background-color: #fff;
 	border: 1px solid #61a3e1;
@@ -1690,24 +1721,54 @@ footer h4 {
 	cursor: pointer;
 }
 
-#find-partner-ul {
+.find-btn {
+	right: 50px;
+	top: 0;
+}
+
+.find-return {
+	bottom: 0;
+	left: 50%;
+	width: 70px;
+	margin-left: -35px;
+}
+
+#find-partner-ul,
+#myproject-ul,
+#enter-base-ul {
 	margin-left: 20px;
 }
-#find-partner-ul a {
-	line-height: 40px;
+
+#find-partner-ul li,
+#myproject-ul li,
+#enter-base-ul li {
+	display: inline-block;
+	width: 100%;
+	line-height: 30px;
 	color: #666!important;
 }
 
-#find-partner-ul a:hover {
+#find-partner-ul a:hover,
+#myproject-ul a:hover,
+#enter-base-ul a:hover {
 	color: #61a3e1 !important;
 }
 
-#find-partner-pagination {
-	position: absolute;
-	right: 50px;
-	bottom: 0;
+.find-theme,
+.base-theme,
+.project-theme {
+	display: inline-block;
+	width: 80%;
+	overflow: hidden;
+	vertical-align: middle;
 }
-
+.cancel-find,
+.project-status,
+.base-status {
+	display: inline-block;
+	/*line-height: 30px;*/
+	color: #61a3e1;
+}
 .user-student-icon {
 	width: 100%;
 	padding: 10px;
@@ -1729,7 +1790,7 @@ footer h4 {
 	right: 50px;
 }
 
-#user-projects-box,
+#user-partner-box,
 #teachers-box,
 #investors-box {
 	position: relative;
@@ -1847,13 +1908,27 @@ footer h4 {
 	width: 100%;
 }
 
+#time1,
+#time2 {
+	border: 1px solid #cecece;
+	width: 35%;
+	padding: 5px;
+}
+#time1 {
+	margin-right: 10px;
+}
+#time2 {
+	margin-left: 10px;
+}
 .apply-steps textarea {
 	height: 6.5em;
 	border: none;
 }
 
 .apply-setps-btn {
-	margin-left: 50%;
+	/*position: absolute;*/
+	/*bottom: 0;*/
+	margin-left: 43%;
 }
 
 .step-btn {
@@ -1901,7 +1976,8 @@ footer h4 {
 }
 
 
-.apply-steps label.error {
+.apply-steps label.error,
+.find-table label.error {
 	display: block;
 	background-color: #61aee1;
 	position: absolute;
@@ -1909,10 +1985,11 @@ footer h4 {
 	top: -10px;
 	padding: 2px 5px;
 	color: #fff;
+	font-weight: normal;
 	z-index: 299;
-	box-shadow: 0 0 1px 1px #cecece;
 }
 
+.find-table label.error:after,
 .apply-steps label.error:after {
 	content: '';
 	display: block;
@@ -1936,7 +2013,7 @@ footer h4 {
 .member-search-box {
 	width: 450px;
 	height: auto;
-	margin-left: 34%;
+	margin-left: 25%;
 	margin-bottom: 25px;
 }
 
@@ -1961,7 +2038,7 @@ footer h4 {
 /*入驻申请*/
 
 .project-apply-table {
-	width: 80%;
+	width: 100%;
 	table-layout: fixed;
 }
 
@@ -2020,7 +2097,16 @@ footer h4 {
 	line-height: 22px;
 }
 /*寻找合伙人*/
+.detail-popup {
+	padding: 20px;
+}
+.detail-popup .find-table {
+	width: 100%;
+}
 
+.detail-popup th {
+	width: 25% !important;
+}
 .icon-user-projects {
 	display: inline-block;
 	width: 32px;
@@ -2050,34 +2136,22 @@ footer h4 {
 	border: 1px solid #cecece;
 }
 
-.user-projects-top h4 {
+.person-description{
 	font-size: 16px;
 	font-weight: 600;
-}
-
-.user-projects-img {
-	display: inline-block;
-	width: 80px;
-	height: 80px;
+	line-height: 1.5em;
+	max-height: 3em;
 	overflow: hidden;
-	border-radius: 8px;
-	vertical-align: top;
 }
 
-.user-projects-img img {
-	height: 100%;
-}
 
 .user-projects-info {
 	margin: 5px 10px;
 	display: inline-block;
 }
 
-.user-projects-slogan {
-	display: inline-block;
-	width: 100%;
-	margin: 8px 0;
-	color: #61A3E1;
+.person-description {
+	margin-bottom: 10px;
 }
 
 .user-projects-tag {
@@ -2086,9 +2160,11 @@ footer h4 {
 	font-size: 12px;
 	padding: 3px 5px;
 }
+
 .find-partner-box {
 	display: block;
 }
+
 .projects-find-btn {
 	padding: 8px 15px;
 	border:1px solid #61a3e1;
@@ -2100,7 +2176,7 @@ footer h4 {
 	margin: 10px 5px 0;
 }
 
-.projects-publisher-team {
+.projects-publisher-time {
 	margin-left: 20px;
 }
 
@@ -2111,6 +2187,10 @@ footer h4 {
 .projects-publisher-box .projects-publisher-name a,
 .projects-publisher-box .projects-publisher-team a {
 	color: #eb4f38 !important;
+}
+.find-partner-teachers,
+.find-partner-investors {
+	display: inline-block;
 }
 
 .find-teachers-box,
@@ -2125,6 +2205,7 @@ footer h4 {
 
 .teachers-img,
 .investors-img {
+	display: block;
 	width: 130px;
 	height: 130px;
 	margin: 0 auto;
@@ -2143,6 +2224,7 @@ footer h4 {
 	overflow: hidden;
 }
 
+
 /*项目详情页*/
 .projects-info-wrapper .container {
 	margin-top: 60px;
@@ -2154,6 +2236,7 @@ footer h4 {
 	border: 1px solid #cecece;
 	margin-bottom: 20px;
 }
+
 
 .projects-info-img {
 	width: 200px;
@@ -2194,7 +2277,10 @@ footer h4 {
 
 .projects-info-detail p {
 	font-size: 1.2em;
+	line-height: 1.5em;
 	padding-left: 2.5em;
+	padding-right: 2.5em;
+	/*text-indent: 2em;*/
 }
 
 .icon-info-detail {
@@ -2237,7 +2323,7 @@ footer h4 {
 	z-index: 99;
 	display: none;
 	overflow: hidden;
-
+	cursor: pointer;
 }
 
 .classroom-box-mask p{
@@ -2375,7 +2461,7 @@ footer h4 {
 	width: 5%;
 }
 
-.admin-info-table .admin-th-pageview {
+.admin-info-table .admin-th-pagefind {
 	width: 7.5%;
 }
 
@@ -2635,3 +2721,66 @@ footer h4 {
 .join-project-detail a{
 	color: #61a3e1 !important;
 }
+
+/**
+ *寻找合伙人
+ */
+.find-form {
+	width: 90%;
+	margin: 30px 10px;
+	padding: 35px;
+	border: 1px solid #B3D1ED;
+	box-shadow: 0 0 1px 1px #B3D1ED;
+	border-radius: 15px;
+}
+
+.find-table {
+	width: 70%;
+	margin: 0 auto;
+	/*table-layout:fixed;*/
+}
+
+.find-table th {
+	width: 20%;
+}
+
+.find-table .line-title {
+	padding: 10px;
+	font-size: 16px;
+	color: #61a3e1;
+}
+
+.find-table td {
+	position: relative;
+	width: auto;
+	padding: 15px;
+}
+
+.find-table .find-input,
+.find-table .description {
+	width: 100%;
+	border: 0;
+}
+
+.find-table .description {
+	height: 150px;
+}
+.btn-find {
+	display: block;
+	margin: 30px auto;
+	padding: 10px 30px;
+	background-color: #61a3e1 !important;
+	color: #fff !important;
+	outline: 0;
+}
+
+.duty-others {
+	padding: 2px;
+	border: 1px solid #cecece;
+}
+
+.person-duty {
+	vertical-align: middle;
+	margin-top: 0 !important;
+}
+

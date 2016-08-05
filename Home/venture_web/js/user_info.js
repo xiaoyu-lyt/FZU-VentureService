@@ -7,7 +7,6 @@ var type = href.split('')[1];
  * @param  {[type]} result) {				var     data [description]
  * @return {[type]}         [description]
  */
-
 if(type==='t') {
 	$.ajax({
 	type: "get",
