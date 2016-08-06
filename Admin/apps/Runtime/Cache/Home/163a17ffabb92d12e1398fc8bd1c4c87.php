@@ -55,65 +55,74 @@
 					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition">比赛管理</a></li>
 				</ul>
 			</div>
-<!-- 教材管理 -->
-<div class="user-box admin-textbook-management pull-right">
-	<div class="admin-top">
-			<a class="admin-publish-textbook" href="/demo/jyzd/01/Admin/index.php/home/document/publish">发布教材</a>
+<!-- 基地管理 -->
+<div class="user-box admin-projects-management sub-management pull-right">
+	<div class="admin-top admin-projects-management">
+		<ul class="admin-management-ul clearfix" id="admin-projects">
+			<li class="pull-left <?php if($now == 'index' ) echo 'now-li';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field/index">入驻审核</a></li>
+			<li class="pull-left <?php if($now == 'field_list' ) echo 'now-li';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field/field_list">基地信息</a></li>
+		</ul>
+		<a class="admin-publish-article" href="/demo/jyzd/01/Admin/index.php/home/field/publish">添加基地</a>
 	</div>
-	<div class="admin-textbook-table admin-table block">
+
+
+
+		<!-- 在下面的div改 -->
+	<div class="admin-bases-table admin-check-bases-table admin-table block" id="bases-check-table">
 		<table>
 			<tr>
 				<th class="admin-th-select">
-					<input class="admin-textbook-select-btn" type="checkbox"> 全选
+					<input class="admin-base-select-btn" type="checkbox"> 全选
 				</th>
-				<th class="admin-th-textbook-id admin-th-id"><span>ID</span></th>
-				<th class="admin-th-textbook-name admin-th-username"><span>教材名</span></th>
-				<th class="admin-th-textbook-name admin-th-username"><span>发布时间</span></th>
-				<th class="admin-th-textbook-management admin-th-management"><span>管理操作</span></th>
+				<th class="admin-th-base-id admin-th-id"><span>ID</span></th>
+				<th class="admin-th-base-name admin-th-name"><span>基地名称</span></th>
+				<th class="admin-th-base-username admin-th-username"><span>法定代表人</span></th>
+				<th class="admin-th-base-unit admin-th-unit"><span>产权单位</span></th>
+				<th class="admin-th-base-time admin-th-time"><span>开办时间</span></th>
+				<th class="admin-th-base-management admin-th-management"><span>管理操作</span></th>
 			</tr>
-			<?php if(empty($documents)): ?><tr align="center">
-					<td colspan="6">
-						暂无教材信息
+			<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+					<td class="admin-base-select">
+						<input class="admin-base-select-btn" type="checkbox">
 					</td>
-				</tr>
-			<?php else: ?>
-				<?php if(is_array($documents)): $i = 0; $__LIST__ = $documents;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-						<td class="admin-textbook-select">
-							<input class="admin-textbook-select-btn" type="checkbox">
-						</td>
-						<td class="admin-textbook-id"><?php echo ($vo["id"]); ?></td>
-						<td class="admin-textbook-name">
-							<a href=""><?php echo ($vo["name"]); ?></a>
-						</td>
-						<td><?php echo ($vo["issue_time"]); ?></td>
-						<td class="admin-textbook-operation admin-operation">
-							<span class="admin-article-modify"><a href="/demo/jyzd/01/Admin/index.php/home/document/modify/<?php echo ($vo["id"]); ?>">修改</a></span>
-							<span class="admin-article-delete"><a href="/demo/jyzd/01/Admin/index.php/home/document/delete/<?php echo ($vo["id"]); ?>">删除</a></span>
-						</td>
-					</tr><?php endforeach; endif; else: echo "" ;endif; endif; ?>
+					<td class="admin-base-id"><?php echo ($vo["fid"]); ?></td>
+					<td class="admin-base-name">
+						<a href=""><?php echo ($vo["name"]); ?></a>
+					</td>
+					<td class="admin-base-username"><span><?php echo ($vo["chief"]); ?></span></td>
+					<!-- 这里添加产权单位 -->
+					<td class="admin-base-unit"><span><?php echo ($vo["owner"]); ?></span></td>
+					<td class="admin-base-time"><span><?php echo ($vo["run_time"]); ?></span></td>
+					<td class="admin-base-operation admin-operation">
+						<a href="/demo/jyzd/01/Admin/index.php/home/field/detail/<?php echo ($vo["fid"]); ?>"><span class="admin-view-info">查看信息</span></a>
+					</td>
+				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 		</table>
 	</div>
+
 	<!-- 分页栏 -->
 	<div class="pull-right">
 		<ul class="pagination">
-			<?php if($curPage != 1 ): ?><li><a href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/1" >首页</a></li>
-				<li><a href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($curPage-1); ?>">上一页</a></li><?php endif; ?>
+			<?php if($curPage != 1 ): ?><li><a href="/demo/jyzd/01/Admin/index.php/home/field/<?php echo ($now); ?>/1" >首页</a></li>
+				<li><a href="/demo/jyzd/01/Admin/index.php/home/field/<?php echo ($now); ?>/<?php echo ($curPage-1); ?>">上一页</a></li><?php endif; ?>
 
-			<?php if(($curPage > 3) AND ($curPage < $totalPage-2)): $__FOR_START_6483__=$curPage-2;$__FOR_END_6483__=$curPage+3;for($i=$__FOR_START_6483__;$i < $__FOR_END_6483__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
+			<?php if(($curPage > 3) AND ($curPage < $totalPage-2)): $__FOR_START_12885__=$curPage-2;$__FOR_END_12885__=$curPage+3;for($i=$__FOR_START_12885__;$i < $__FOR_END_12885__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/field/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
 			<?php elseif(($curPage > $totalPage-3) AND ($totalPage > 5)): ?>
-				<?php $__FOR_START_17040__=$totalPage-5;$__FOR_END_17040__=$totalPage;for($i=$__FOR_START_17040__;$i < $__FOR_END_17040__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
+				<?php $__FOR_START_1130__=$totalPage-5;$__FOR_END_1130__=$totalPage;for($i=$__FOR_START_1130__;$i < $__FOR_END_1130__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/field/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
 			<?php elseif($totalPage > 5): ?>
-				<?php $__FOR_START_26505__=1;$__FOR_END_26505__=6;for($i=$__FOR_START_26505__;$i < $__FOR_END_26505__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
+				<?php $__FOR_START_23899__=1;$__FOR_END_23899__=6;for($i=$__FOR_START_23899__;$i < $__FOR_END_23899__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/field/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
 			<?php else: ?>
-				<?php $__FOR_START_910__=1;$__FOR_END_910__=$totalPage;for($i=$__FOR_START_910__;$i < $__FOR_END_910__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } endif; ?>
+				<?php $__FOR_START_10744__=1;$__FOR_END_10744__=$totalPage;for($i=$__FOR_START_10744__;$i < $__FOR_END_10744__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/field/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } endif; ?>
 
-			<?php if($curPage < $totalPage-1): ?><li><a href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($curPage+1); ?>">下一页</a></li>
-				<li><a href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($totalPage-1); ?>">末页</a></li><?php endif; ?>
+			<?php if($curPage < $totalPage-1): ?><li><a href="/demo/jyzd/01/Admin/index.php/home/field/<?php echo ($now); ?>/<?php echo ($curPage+1); ?>">下一页</a></li>
+				<li><a href="/demo/jyzd/01/Admin/index.php/home/field/<?php echo ($now); ?>/<?php echo ($totalPage-1); ?>">末页</a></li><?php endif; ?>
 
 			<li><a href="javascript:void(0);">共 <?php echo ($total); ?> 条记录</a></li>
 		</ul>
 	</div>
 </div>
+
+
 			<div class="admin-popup">
 				<div class="popup-refuse">
 					<form action="/demo/jyzd/01/Admin/index.php/home/admin/refuse" method="post">

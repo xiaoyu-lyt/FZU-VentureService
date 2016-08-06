@@ -686,3 +686,15 @@
 	color: #61a3e1 !important;
 	outline: 0;
 }
+/*添加管理员*/
+.admin-add.view-table {
+	width: 80%;
+	margin-left: auto;
+    margin-top: 100px;
+}
+.admin-name,
+.admin-password {
+	display: inline-block;
+	border: 1px solid #cecece;
+	padding: 6px;
+}

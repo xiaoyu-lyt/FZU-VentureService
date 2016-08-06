@@ -55,63 +55,71 @@
 					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition">比赛管理</a></li>
 				</ul>
 			</div>
-<!-- 教材管理 -->
-<div class="user-box admin-textbook-management pull-right">
-	<div class="admin-top">
-			<a class="admin-publish-textbook" href="/demo/jyzd/01/Admin/index.php/home/document/publish">发布教材</a>
-	</div>
-	<div class="admin-textbook-table admin-table block">
-		<table>
+<div class="user-box admin-projects-management sub-management pull-right">
+	<!-- 基地信息 -->
+	<div class="block">
+ 	 	<table class="view-table table-bordered">
+ 	 		<tr><td class="line-title text-center" colspan="3">基地基本信息</td></tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">基地名称</h4></th>
+ 				<td colspan="2"><p><?php echo ($detail["name"]); ?></p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">法定代表人（负责人）</h4></th>
+ 				<td colspan="2"><p><?php echo ($detail["chief"]); ?></p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">基地地址</h4></th>
+ 				<td colspan="2"><p><?php echo ($detail["addr"]); ?></p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">开办时间</h4></th>
+ 				<td colspan="2"><p><?php echo ($detail["run_time"]); ?></p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">基地面积</h4></th>
+ 				<td colspan="2"><p><?php echo ($detail["area"]); ?></p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">自有/合办</h4></th>
+ 				<td colspan="2"><p><?php echo ($detail["own_or_co"]); ?></p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">产权单位</h4></th>
+ 				<td colspan="2"><p><?php echo ($detail["owner"]); ?></p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">基地投入（万元）</h4></th>
+ 				<td colspan="2"><p><?php echo ($detail["investment_field"]); ?></p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">学校投入（万元）</h4></th>
+ 				<td colspan="2"><p><?php echo ($detail["investment_class"]); ?></p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">其他投入（万元）</h4></th>
+ 				<td colspan="2"><p><?php echo ($detail["investment_other"]); ?></p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">基地简介</h4></th>
+ 				<td colspan="2">
+ 					<?php echo ($detail["synopsis"]); ?>
+ 				</td>
+ 			</tr>
 			<tr>
-				<th class="admin-th-select">
-					<input class="admin-textbook-select-btn" type="checkbox"> 全选
-				</th>
-				<th class="admin-th-textbook-id admin-th-id"><span>ID</span></th>
-				<th class="admin-th-textbook-name admin-th-username"><span>教材名</span></th>
-				<th class="admin-th-textbook-name admin-th-username"><span>发布时间</span></th>
-				<th class="admin-th-textbook-management admin-th-management"><span>管理操作</span></th>
-			</tr>
-			<?php if(empty($documents)): ?><tr align="center">
-					<td colspan="6">
-						暂无教材信息
-					</td>
-				</tr>
-			<?php else: ?>
-				<?php if(is_array($documents)): $i = 0; $__LIST__ = $documents;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-						<td class="admin-textbook-select">
-							<input class="admin-textbook-select-btn" type="checkbox">
-						</td>
-						<td class="admin-textbook-id"><?php echo ($vo["id"]); ?></td>
-						<td class="admin-textbook-name">
-							<a href=""><?php echo ($vo["name"]); ?></a>
-						</td>
-						<td><?php echo ($vo["issue_time"]); ?></td>
-						<td class="admin-textbook-operation admin-operation">
-							<span class="admin-article-modify"><a href="/demo/jyzd/01/Admin/index.php/home/document/modify/<?php echo ($vo["id"]); ?>">修改</a></span>
-							<span class="admin-article-delete"><a href="/demo/jyzd/01/Admin/index.php/home/document/delete/<?php echo ($vo["id"]); ?>">删除</a></span>
-						</td>
-					</tr><?php endforeach; endif; else: echo "" ;endif; endif; ?>
-		</table>
-	</div>
-	<!-- 分页栏 -->
-	<div class="pull-right">
-		<ul class="pagination">
-			<?php if($curPage != 1 ): ?><li><a href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/1" >首页</a></li>
-				<li><a href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($curPage-1); ?>">上一页</a></li><?php endif; ?>
-
-			<?php if(($curPage > 3) AND ($curPage < $totalPage-2)): $__FOR_START_6483__=$curPage-2;$__FOR_END_6483__=$curPage+3;for($i=$__FOR_START_6483__;$i < $__FOR_END_6483__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
-			<?php elseif(($curPage > $totalPage-3) AND ($totalPage > 5)): ?>
-				<?php $__FOR_START_17040__=$totalPage-5;$__FOR_END_17040__=$totalPage;for($i=$__FOR_START_17040__;$i < $__FOR_END_17040__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
-			<?php elseif($totalPage > 5): ?>
-				<?php $__FOR_START_26505__=1;$__FOR_END_26505__=6;for($i=$__FOR_START_26505__;$i < $__FOR_END_26505__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
-			<?php else: ?>
-				<?php $__FOR_START_910__=1;$__FOR_END_910__=$totalPage;for($i=$__FOR_START_910__;$i < $__FOR_END_910__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } endif; ?>
-
-			<?php if($curPage < $totalPage-1): ?><li><a href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($curPage+1); ?>">下一页</a></li>
-				<li><a href="/demo/jyzd/01/Admin/index.php/home/document/<?php echo ($now); ?>/<?php echo ($totalPage-1); ?>">末页</a></li><?php endif; ?>
-
-			<li><a href="javascript:void(0);">共 <?php echo ($total); ?> 条记录</a></li>
-		</ul>
+ 				<th><h4 class="line-title text-left">基地详情</h4></th>
+ 				<td colspan="2"><p><?php echo ($detail["detail"]); ?></p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">基地照片</h4></th>
+ 				<td colspan="2">
+ 					<img width="600" height="300" src="<?php echo ($detail["pic"]); ?>" alt="">
+ 				</td>
+ 			</tr>
+ 		</table>
+	 	<div class="view-btn-group">
+	 		<a class="btn-view" href="javascript:history.back(-1)" >返回上一级</a>
+	 	</div>
 	</div>
 </div>
 			<div class="admin-popup">

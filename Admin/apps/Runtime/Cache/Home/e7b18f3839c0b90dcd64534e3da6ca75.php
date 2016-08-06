@@ -71,69 +71,27 @@
 			<li class="pull-left <?php if($now == 'admin_add' ) echo 'now-li';?>"><a href="/demo/jyzd/01/Admin/index.php/home/user/admin_add">添加管理员</a></li> -->
 		</ul>
 	</div>
-	<!-- 教师审核 -->
-	<div class="admin-teachers-table admin-users-table admin-table block" id="teachers-check-table">
-		<table>
+	<form action="/demo/jyzd/01/Admin/index.php/home/user/admin_add/do" method="post">
+	 	<table class="view-table admin-add">
 			<tr>
-				<th class="admin-th-select">
-					<input class="admin-teacher-select-btn" type="checkbox"> 全选
-				</th>
-				<th class="admin-th-teacher-id admin-th-id"><span>ID</span></th>
-				<th class="admin-th-teacher-username admin-th-username"><span>用户名</span></th>
-				<th class="admin-th-teacher-name admin-th-name"><span>姓名</span></th>
-				<th class="admin-th-teacher-phone admin-th-phone"><span>手机号</span></th>
-				<th class="admin-th-teacher-email admin-th-email"><span>邮箱</span></th>
-				<th class="admin-th-teacher-management admin-th-management"><span>管理操作</span></th>
+				<th><h4 class="line-title text-left">管理员账号:</h4></th>
+				<td>
+					<input class="admin-name" type="text" name="username" required>
+				</td>
 			</tr>
-			<?php if(empty($teachers)): ?><tr align="center">
-					<td colspan="6">
-						暂无待审核的教师信息
-					</td>
-				</tr>
-			<?php else: ?>
-				<?php if(is_array($teachers)): $i = 0; $__LIST__ = $teachers;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-						<td class="admin-teacher-select">
-							<input class="admin-teacher-select-btn" type="checkbox">
-						</td>
-						<td class="admin-teacher-id"><?php echo ($i); ?></td>
-						<td class="admin-teacher-username">
-							<a href=""><?php echo ($vo["username"]); ?></a>
-						</td>
-						<td class="admin-teacher-name"><a href=""><?php echo ($vo["name"]); ?></a></td>
-						<td class="admin-teacher-phone"><span><?php echo ($vo["tel"]); ?></span></td>
-						<td class="admin-teacher-email"><span><?php echo ($vo["email"]); ?></span></td>
-						<td class="admin-teacher-operation admin-operation">
-							<span class="admin-teacher-pass admin-pass"><a href="/demo/jyzd/01/Admin/index.php/home/user/pass?uid=<?php echo ($vo["uid"]); ?>">通过</a></span>
-							<span class="admin-teacher-refuse admin-refuse" id="<?php echo ($vo["tel"]); ?>" onclick="refuse(this)">拒绝</span>
-						</td>
-					</tr><?php endforeach; endif; else: echo "" ;endif; endif; ?>
-		</table>
-	</div>
-
-	
-	<!-- 分页栏 -->
-	<div class="pull-right">
-		<ul class="pagination">
-			<?php if($curPage != 1 ): ?><li><a href="/demo/jyzd/01/Admin/index.php/home/user/<?php echo ($now); ?>/1" >首页</a></li>
-				<li><a href="/demo/jyzd/01/Admin/index.php/home/user/<?php echo ($now); ?>/<?php echo ($curPage-1); ?>">上一页</a></li><?php endif; ?>
-
-			<?php if(($curPage > 3) AND ($curPage < $totalPage-2)): $__FOR_START_675__=$curPage-2;$__FOR_END_675__=$curPage+3;for($i=$__FOR_START_675__;$i < $__FOR_END_675__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/user/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
-			<?php elseif(($curPage > $totalPage-3) AND ($totalPage > 5)): ?>
-				<?php $__FOR_START_31136__=$totalPage-5;$__FOR_END_31136__=$totalPage;for($i=$__FOR_START_31136__;$i < $__FOR_END_31136__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/user/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
-			<?php elseif($totalPage > 5): ?>
-				<?php $__FOR_START_14681__=1;$__FOR_END_14681__=6;for($i=$__FOR_START_14681__;$i < $__FOR_END_14681__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/user/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
-			<?php else: ?>
-				<?php $__FOR_START_14622__=1;$__FOR_END_14622__=$totalPage;for($i=$__FOR_START_14622__;$i < $__FOR_END_14622__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/user/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } endif; ?>
-
-			<?php if($curPage < $totalPage-1): ?><li><a href="/demo/jyzd/01/Admin/index.php/home/user/<?php echo ($now); ?>/<?php echo ($curPage+1); ?>">下一页</a></li>
-				<li><a href="/demo/jyzd/01/Admin/index.php/home/user/<?php echo ($now); ?>/<?php echo ($totalPage-1); ?>">末页</a></li><?php endif; ?>
-
-			<li><a href="javascript:void(0);">共 <?php echo ($total); ?> 条记录</a></li>
-		</ul>
-	</div>
+			<tr>
+				<th><h4 class="line-title text-left">管理员密码：</h4></th>
+				<td>
+					<input class="admin-password" type="password" name="password" required>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button type="submit" class="btn btn-publish">添加</button></td>
+			</tr>	
+	 	</table>
+	</form>	
 </div>
-
-
 			<div class="admin-popup">
 				<div class="popup-refuse">
 					<form action="/demo/jyzd/01/Admin/index.php/home/admin/refuse" method="post">

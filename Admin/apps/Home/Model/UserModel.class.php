@@ -15,4 +15,24 @@ class UserModel extends Model {
 		}
 		return $data;
 	}
+	public function register( $data ) {
+		$data['userKey'] = $this->getRandChar();//随机字符串
+		$data['password'] = md5(md5($data['password']).$data['userKey']);
+		$data['groupid'] = 6;
+		$data['reg_time'] = time();
+
+		return $this->add($data);
+	}
+	/**
+	 * 随机字符串
+	 * @return string 
+	 */
+	public function getRandChar() {
+		$randChar = "";
+		$str = "zxcvbnmasdfghjklqwertyuiop";
+		for( $i = 1; $i <= 8; $i++ ) {
+			$randChar .= $str[rand(0,strlen($str))];
+		}
+		return $randChar;
+	}
 }

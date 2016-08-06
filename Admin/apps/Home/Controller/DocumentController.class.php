@@ -45,10 +45,10 @@ class DocumentController extends AdminController {
 		    // 上传文件 
 		    $info   =   $upload->upload();
 		    $data = I('post.');
-		    if($info) {// 上传错误提示错误信息
+		    if($info) {// 上传成功
 		       $data['file_url'] = $info['file']['savepath'].$info['file']['savename'];
 		       $data['pic_url'] = $info['pic']['savepath'].$info['pic']['savename'];
-		    }else{// 上传成功
+		    }else{//上传错误提示错误信息
 		        $this->error($upload->getError());
 		    }
 		    $data['issue_time'] = time();

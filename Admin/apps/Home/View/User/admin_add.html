@@ -1,0 +1,24 @@
+<include file="Public:header"/>
+<include file="user_header"/>
+	<form action="__ROOT__/index.php/home/user/admin_add/do" method="post">
+	 	<table class="view-table admin-add">
+			<tr>
+				<th><h4 class="line-title text-left">管理员账号:</h4></th>
+				<td>
+					<input class="admin-name" type="text" name="username" required>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">管理员密码：</h4></th>
+				<td>
+					<input class="admin-password" type="password" name="password" required>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button type="submit" class="btn btn-publish">添加</button></td>
+			</tr>	
+	 	</table>
+	</form>	
+</div>
+<include file="Public:footer"/>

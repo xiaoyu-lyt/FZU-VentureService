@@ -1,0 +1,69 @@
+<include file="Public:header"/>
+<div class="user-box admin-projects-management sub-management pull-right">
+	<!-- 基地信息 -->
+	<div class="block">
+ 	 	<table class="view-table table-bordered">
+ 	 		<tr><td class="line-title text-center" colspan="3">基地基本信息</td></tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">基地名称</h4></th>
+ 				<td colspan="2"><p>{$detail.name}</p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">法定代表人（负责人）</h4></th>
+ 				<td colspan="2"><p>{$detail.chief}</p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">基地地址</h4></th>
+ 				<td colspan="2"><p>{$detail.addr}</p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">开办时间</h4></th>
+ 				<td colspan="2"><p>{$detail.run_time}</p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">基地面积</h4></th>
+ 				<td colspan="2"><p>{$detail.area}</p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">自有/合办</h4></th>
+ 				<td colspan="2"><p>{$detail.own_or_co}</p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">产权单位</h4></th>
+ 				<td colspan="2"><p>{$detail.owner}</p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">基地投入（万元）</h4></th>
+ 				<td colspan="2"><p>{$detail.investment_field}</p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">学校投入（万元）</h4></th>
+ 				<td colspan="2"><p>{$detail.investment_class}</p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">其他投入（万元）</h4></th>
+ 				<td colspan="2"><p>{$detail.investment_other}</p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">基地简介</h4></th>
+ 				<td colspan="2">
+ 					{$detail.synopsis}
+ 				</td>
+ 			</tr>
+			<tr>
+ 				<th><h4 class="line-title text-left">基地详情</h4></th>
+ 				<td colspan="2"><p>{$detail.detail}</p></td>
+ 			</tr>
+ 			<tr>
+ 				<th><h4 class="line-title text-left">基地照片</h4></th>
+ 				<td colspan="2">
+ 					<img width="600" height="300" src="{$detail.pic}" alt="">
+ 				</td>
+ 			</tr>
+ 		</table>
+	 	<div class="view-btn-group">
+	 		<a class="btn-view" href="javascript:history.back(-1)" >返回上一级</a>
+	 	</div>
+	</div>
+</div>
+<include file="Public:footer"/>

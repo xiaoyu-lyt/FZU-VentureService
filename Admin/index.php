@@ -19,7 +19,7 @@ define('APP_DEBUG',True);
 
 define('BASE_URL',dirname(__FILE__));
 
-
+define('SITE_URL','HTTP://127.0.0.1/demo/jyzd/01/admin');
 // 定义应用目录
 define('APP_PATH','./apps/');
 

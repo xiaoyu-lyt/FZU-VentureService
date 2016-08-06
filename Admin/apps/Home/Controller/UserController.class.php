@@ -4,10 +4,16 @@ use Home\Controller\AdminController;
 class UserController extends AdminController {
 	public $MODULE_NAME = "User";
 	public $pageSize = 8;
+	protected $_list = "";
 	public function __construct() {
 		parent::__construct();
-		if( !$this->isLogin() )
+		if( !$this->isLogin() ) {
 			$this->error('未登录',U('home/index'));
+		} else {
+			$login_manager = session('login_manager');
+			$this->_list = M('Powerlevels')->where(array("level{$login_manager['groupid']}"=>'1'))->select();
+			$this->assign('list',$this->_list);
+		}
 	}
 
 	public function index($page = 1) {
@@ -26,7 +32,7 @@ class UserController extends AdminController {
 
 		$this->assign('teachers',$teachers);
 		
-		$this->assign('now','index');
+		$this->assign('now',"index");
 		$this->assign('MODULE',$this->MODULE_NAME);	
 		$this->display('teacher_audit');
 	}
@@ -138,6 +144,21 @@ class UserController extends AdminController {
 		$this->display('admin');
 	}
 
+
+	public function admin_add($action = '') {
+		if($action == "do") {
+			$data = I('post.');
+			if(D('User')->register($data)) {
+				$this->success("成功添加管理员",U('admin'));
+			} else {
+				$this->error("添加失败，请重新添加",U('admin_add'));
+			}
+		} else {
+			$this->assign('now','admin_add');
+			$this->assign('MODULE',$this->MODULE_NAME);	
+			$this->display('admin_add');
+		}
+	}
 
 	/**
 	 * 用户审核

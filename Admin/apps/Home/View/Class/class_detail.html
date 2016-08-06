@@ -1,0 +1,55 @@
+<include file="Public:header"/>
+<div class="user-box admin-projects-management sub-management pull-right">
+	<!-- 课程信息 -->
+	<div class="block">
+ 	 	<table class="view-table table-bordered">
+	 		<tr><td class="line-title text-center" colspan="2">课程信息</td></tr>
+			<tr>
+				<th><h4 class="line-title text-left">课程名称</h4></th>
+				<td><p>{$detail.name}</p></td>
+			</tr>
+		
+			<tr>
+				<th><h4 class="line-title text-left">课程简介</h4></th>
+				<td>
+					<p>{$detail.content}</p>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">主讲人</h4></th>
+				<td>
+					<p>{$detail.teacher}</p>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">主办方</h4></th>
+				<td>
+					<p>{$detail.sponsor}</p>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">培训时间</h4></th>
+				<td>
+					<p>{$detail.start_time}</p>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">培训结束时间</h4></th>
+				<td>
+					<p>{$detail.deadline}</p>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left">人数</h4></th>
+				<td>
+					<p>{$detail.students}/{$detail.limit}　<span style="color: #ccc;">(已报名人数 / 限制人数)</span></p>
+				</td>
+			</tr>
+			
+	 	</table>
+	 	<div class="view-btn-group">
+	 		<a class="btn-view" href="javascript:history.back(-1)" >返回上一级</a>
+	 	</div>
+	</div>
+</div>
+<include file="Public:footer"/>

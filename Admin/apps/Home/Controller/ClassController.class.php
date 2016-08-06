@@ -119,6 +119,17 @@ class ClassController extends AdminController {
 		}
 	}
 
+	public function detail($cid) {
+		$detail = M('Classes')->where(array('cid'=>$cid))->find();
+		$detail['content'] = htmlspecialchars_decode($detail['content']);
+		$detail['start_time'] = date('Y-m-d',$detail['start_time']);
+		$detail['deadline'] = date('Y-m-d',$detail['deadline']);
+
+		$this->assign('detail',$detail);
+		$this->assign('MODULE',$this->MODULE_NAME);
+		$this->display('class_detail');
+	}
+
 	/**
 	 * 培训管理审核通过
 	 */

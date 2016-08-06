@@ -1,6 +1,6 @@
 <include file="Public:header"/>
 <include file="field_header" />
-
+		<!-- 在下面的div改 -->
 	<div class="admin-bases-table admin-check-bases-table admin-table block" id="bases-check-table">
 		<table>
 			<tr>
@@ -9,24 +9,26 @@
 				</th>
 				<th class="admin-th-base-id admin-th-id"><span>ID</span></th>
 				<th class="admin-th-base-name admin-th-name"><span>基地名称</span></th>
-				<th class="admin-th-base-username admin-th-username"><span>负责人</span></th>
-				<th class="admin-th-base-time admin-th-time"><span>申请时间</span></th>
+				<th class="admin-th-base-username admin-th-username"><span>法定代表人</span></th>
+				<th class="admin-th-base-unit admin-th-unit"><span>产权单位</span></th>
+				<th class="admin-th-base-time admin-th-time"><span>开办时间</span></th>
 				<th class="admin-th-base-management admin-th-management"><span>管理操作</span></th>
 			</tr>
-			<volist name="records" id="vo">
+			<volist name="list" id="vo">
 				<tr>
 					<td class="admin-base-select">
 						<input class="admin-base-select-btn" type="checkbox">
 					</td>
-					<td class="admin-base-id">{$vo.id}</td>
+					<td class="admin-base-id">{$vo.fid}</td>
 					<td class="admin-base-name">
-						<a href="">{$vo.field.name}</a>
+						<a href="">{$vo.name}</a>
 					</td>
-					<td class="admin-base-username"><span>{$vo.applicant.name}</span></td>
-					<td class="admin-base-time"><span>{$vo.apply_time}</span></td>
+					<td class="admin-base-username"><span>{$vo.chief}</span></td>
+					<!-- 这里添加产权单位 -->
+					<td class="admin-base-unit"><span>{$vo.owner}</span></td>
+					<td class="admin-base-time"><span>{$vo.run_time}</span></td>
 					<td class="admin-base-operation admin-operation">
-						<span class="admin-base-pass admin-pass"><a href="__ROOT__/index.php/home/field/pass?id={$vo.id}">通过</a></span>
-						<span class="admin-base-refuse admin-refuse" id="{$vo.applicant.tel}" onclick="refuse(this)">拒绝</span>
+						<a href="__ROOT__/index.php/home/field/detail/{$vo.fid}"><span class="admin-view-info">查看信息</span></a>
 					</td>
 				</tr>
 			</volist>
