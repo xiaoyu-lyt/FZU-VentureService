@@ -17,7 +17,6 @@ function getTraningList() {
 		var link = document.querySelectorAll('.classroom-box-mask');
 		$.each(link,function(index, elem) {
 			$(elem).click(function() {
-				console.log(elem.id);
 				getTraningInfo(elem.id);			
 			});
 		});
@@ -35,8 +34,6 @@ function getTraningInfo(_cid) {
 		data: { cid: _cid }
 	}).done(function(result) {
 		var data = result.data;
-		console.log(data);
-
 		// Handlebars
 		var template = Handlebars.compile($('#popup-template').html()); //注册模板
 		var html = template(data); //封装模板
@@ -69,9 +66,30 @@ function getLessonsList() {
 	});
 }
 
-function applyTraining() {
+
+/**
+ * 我要报名
+ * @return {[type]} [description]
+ */
+function applyTraining(rel) {
 	var mask = document.querySelector('.mask');
 	$(mask).show();
+	$('#snum').val('');
+	$('#training-apply').click(function () {
+		console.log($('#snum').val());
+		if($('#snum').val()=='') {
+			alert('请输入学号');
+		} else {
+				$.ajax({
+				url: "../../API/index.php/home/class/enlist.html",
+				type: "post",
+				data: { uid: getCookie('uid'), cid:rel }
+			}).done(function(result) {
+				alert(result.msg);
+			});
+		}
+	
+	});
 	mask.addEventListener('click',function(e) {
 		var dom = e.srcElement || e.target;
 		if((dom.className === 'mask')||(dom.className === 'close')) {

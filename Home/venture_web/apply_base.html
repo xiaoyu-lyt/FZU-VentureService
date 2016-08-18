@@ -28,9 +28,26 @@
 			<div class="login-line3">
 				<a class="pull-right" href="#"><span class="forgot">忘记密码</span></a>
 			</div>
-			<button id='login-btn'>登录</button>
-			</div>
-			  
+				<button id='login-btn'>登录</button>
+		</div>
+		<div class="modify-password-box modify-box">
+			<span class="close"></span>
+			<form action="" id="modify-password" class="modify-form">
+				<p class="tel-line">
+					<input type="text" name="tel" placeholder="手机号">
+					</p>
+				<p class="code-line">	
+					<input type="text" name="v_code" placeholder="短信验证码">
+					<input class="send-btn" type="button"  value="发送验证码">
+				</p>
+				<p class="password-line">
+					<input type="text" name="new_password" placeholder="设置新密码">
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="确认修改">
+				</p>
+			</form>
+		</div>
 	</div>
 
 	<!-- Header Start -->
@@ -86,6 +103,15 @@
 			<div class="user-box step1 block">
 				<form id="apply-base-form" class="form-horizontal" enctype="multipart/form-data">
 					<table class="project-apply-table apply-setp1 apply-steps">
+					<tr>
+						<th colspan="2" class="apply-title"><span class="star">*</span>基地名称</th>
+						<td colspan="7">
+							<div class="form-group">
+								<label class="sr-only" for="inputProjectName">基地名称</label>
+								<input class="form-control" name="name" type="text" required>
+							</div>
+						</td>
+					</tr>
 						<tr>
 							<th colspan="2" class="apply-title"><span class="star">*</span>项目名称</th>
 							<td colspan="7">
@@ -126,8 +152,8 @@
 							<td colspan="7">
 								<div class="form-group">
 									<div class="label-group">
-										<input id="unregistered" class="project-radio" type="radio" name="form_company" value="0" required>
-										<label class="radio-inline" for="unregistered">未注册</label>
+										<input id="uncompony" class="project-radio" type="radio" name="form_company" value="0" required>
+										<label class="radio-inline" for="uncompony">未注册</label>
 									</div>
 									<div class="label-group">
 										<input id="LLC" class="project-radio" type="radio" name="form_company" value="1" required>
@@ -283,7 +309,7 @@
 						<tr>
 							<th colspan="2" class="apply-title"><span class="star">*</span>相关资料</th>
 							<td colspan="7">
-								<input name="documents" type="file" required>
+								<input id="documents" name="documents" type="file" required>
 							</td>
 						</tr>
 					</table>
@@ -295,7 +321,7 @@
 						（部分材料以图片形式上传，纸质版提交至***）
 						</p>
 					<div class="project-submit-btn">
-						<input id="apply-submit" class="project-apply-submit step-btn" type="button" value="提交申请">
+						<input id="apply-submit" class="project-apply-submit step-btn" type="submit" value="提交申请">
 					</div>
 				</form>
 			</div>

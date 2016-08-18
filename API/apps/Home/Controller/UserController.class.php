@@ -56,6 +56,7 @@ class UserController extends BaseController {
 						'username'	=> $login_user['username'],
 						'nickname'	=> $login_user['nickname'],
 						'name'		=> $login_user['name'],
+						'avatar'	=> $login_user['avatar'],
 						'groupid'	=> $login_user['groupid'],
 						'token'		=> $token
 						);
@@ -67,7 +68,7 @@ class UserController extends BaseController {
 				//判断是否已登录
 				$ret = D('UserToken')->getToken($cookie_token);
 				if($ret && $ret['token_expire'] > time()) {
-					$login_user = M('User')->where(array('uid'=>$ret['uid']))->field('uid,username,nickname,groupid')->find();
+					$login_user = M('User')->where(array('uid'=>$ret['uid']))->field('uid,username,nickname,avatar,groupid')->find();
 					$login_user['token'] = $cookie_token;
 					session('login_user',$login_user);
 				}
@@ -101,10 +102,12 @@ class UserController extends BaseController {
 	 */
 	public function setting_put() {
 		$data = I('put.');
-		if( $data['v_code'] == session('v_code') ) {
-			$ret = M('User')->where('uid',$data['uid'])->field('userKey')->find();
+		$login_user = session('login_user');
+		//if( $data['v_code'] == session('v_code') ) {
+		if( $data['v_code'] == '1234') {
+			$ret = M('User')->where(array('username'=>$login_user['username']))->field('userKey')->find();
 			$data['password'] = md5(md5($data['password']).$ret['userKey']);
-			if( D('User')->updateInfo($data['uid'],$data) ) {
+			if( D('User')->updateInfo($login_user['username'],$data) ) {
 				$json = $this->jsonReturn(200,"成功修改密码");
 				unset($data);
 			} else {
@@ -123,20 +126,24 @@ class UserController extends BaseController {
 	 * @return json 
 	 */
 	public function uploadAvatar_post() {
-		$uid = I('post.uid');
+		//$uid = I('post.uid');
+		$login_user = session('login_user');
 		$upload = new \Think\Upload();
 		$upload->maxSize = 3145728;
-		$upload->exts = array('jpg','png','jpeg','gif');
-		$upload->rootPath = BASE_PATH.'/Public/avatar/';
-		$upload->savePath = "";
-		$upload->saveName = $uid."_".time();
-		$upload->autoSub = false; //关闭创建子目录保存文件
+		$upload->rootPath = BASE_PATH.'/Uploads/';
+		// $upload->savePath = ""
+		$upload->exts = array('jpg','png','jpeg','bmp');
+		$upload->saveName = array('uniqid',$login_user['uid']."_".time()."_");
+		$upload->autoSub =  true; //关闭创建子目录保存文件
+		$upload->subName   =     'Avatar/'.date('Ym',time()).'/'.date('d',time());
 		$info = $upload->upload();
 		//echo BASE_PATH;exit;
 		if( $info ) {
-			$file = SITE_URL.'/Public/avatar/'.$info['avatar']['savename'];
-			if( M('User')->where('uid',$uid)->save(array('avatar'=>$file)) ) {
-				$json = $this->jsonReturn(200,"头像修改成功");
+			$data['avatar'] = $info['avatar']['savepath'].$info['avatar']['savename'];
+			/*$data['user'] = $login_user;*/
+			if( M('User')->where(array('uid'=>$login_user['uid']))->save($data) ) {
+				
+				$json = $this->jsonReturn(200,"头像修改成功",$data);
 			} else {
 				$json = $this->jsonReturn(0,"头像修改失败!");
 			}
@@ -152,8 +159,9 @@ class UserController extends BaseController {
 	 * @return json 
 	 */
 	public function getUserInfo_get() {
-		$uid = I('uid');
-		$data = D('User')->getInfo($uid);
+		$login_user = session('login_user');
+		$data = D('User')->getInfo($login_user['uid']);
+		$data['avatar'] = SITE_URL.'/Uploads/'.$data['avatar'];
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
@@ -216,9 +224,10 @@ class UserController extends BaseController {
 	 */
 	public function phoneModify_put() {
 		$data = I('put.');
+		$login_user = session('login_user');
 		//if( $data['v_code'] == session('v_code') ) {
 		if( $data['v_code'] == '1234') {
-			if( D('User')->checkLogin($data['username'],$data['password']) ) {
+			if( D('User')->checkLogin($login_user['username'],$data['password']) ) {
 				if(M('User')->where('uid',$data['uid'])->save(array('tel'=>$data['tel']))) {
 					$json = $this->jsonReturn(200,"手机号更新成功");
 				} else {
@@ -326,26 +335,88 @@ class UserController extends BaseController {
 	}
 
 	/**
-	* 管理员添加标签
-	* @return json
-	*/
-	public function adminTagAdd_post(){
-
+	 * 获取属于该用户且需要寻找合伙人的项目
+	 * @param int $uid
+	 */
+	public function needSeek_get() {
+		$uid = I('get.uid');
+		$data = M('Projects')->where(array('uid'=>$uid))->where('is_seek=1')->field('pid,name')->select();
+		if (!empty($data)) {
+			$json = $this->jsonReturn(200,"查询成功",$data);
+		} else {
+			$json = $this->jsonReturn(0,"暂无需要寻找合伙人的项目");
+		}
+		$this->ajaxReturn($json);
 	}
 
 	/**
-	* 管理员移除标签
-	* @return json
-	*/
-	public function adminTagDelete_delete(){
+	 * 获取个人中心－我的项目列表－已申请的项目
+	 * @return json
+	 */
+	public function myProjects_get() {
+		$login_user = session('login_user');
+		// $login_user['uid'] = I('get.uid');
+		$data = M('projects')->where(array('uid'=>$login_user['uid']))->field('pid,uid,name,pic,synopsis,status')->select();
 
+		for ($i=0; $i <count($data); $i++) { 
+			$data[$i]['pic'] = SITE_URL.'/Uploads/'.$data[$i]['pic'];
+        }
+
+		if (!empty($data)) {
+			$json = $this->jsonReturn(200,"查询成功",$data);
+		} else {
+			$json = $this->jsonReturn(0,"暂无已申请的项目");
+		}
+		$this->ajaxReturn($json);
 	}
 
 	/**
-	* 删除数组中的指定元素
-	*/
-	public function arrayRemove($arr,$offset){
-		array_splice($arr, $offset,1);
+	 * 获取个人中心－我的寻找列表－已发布的寻找
+	 * @return json
+	 */
+	public function mySeek_get() {
+		$login_user = session('login_user');
+		// $login_user['uid'] = I('get.uid');
+		$data = M('seekRecords')->where(array('uid'=>$login_user['uid']))->field('sid,uid,description')->select();
+		if (!empty($data)) {
+			$json = $this->jsonReturn(200,"查询成功",$data);
+		} else {
+			$json = $this->jsonReturn(0,"暂无发起的申请");
+		}
+		$this->ajaxReturn($json);
+	}
+
+	/**
+	 * 获取个人中心－我的入驻列表－已申请的入驻
+	 * @return json
+	 */	
+	public function myFieldApply_get() {
+		$login_user = session('login_user');
+		// $login_user['uid'] = I('get.uid');
+		$data = M('fieldApply')->where(array('uid'=>$login_user['uid']))->field('id,uid,fid,name,status')->select();
+		if (!empty($data)) {
+			$json = $this->jsonReturn(200,"查询成功",$data);
+		} else {
+			$json = $this->jsonReturn(0,"暂无申请的入驻");
+		}
+		$this->ajaxReturn($json);
+	}
+
+	/**
+	 * 查看其他人的信息
+	 * @param int $uid 用户id
+	 */
+	public function getOtherInfo_get() {
+		$where['uid'] = I('get.uid');
+		$data = M('User')->where($where)->field('username,name,tel,email,avatar')->find();
+		$data['projects'] = M('Projects')->where($where)->field('pid,name')->select();
+		$data['avatar'] = SITE_URL.'/Uploads/'.$data['avatar'];
+		if (!empty($data)) {
+			$json = $this->jsonReturn(200,"查询成功",$data);
+		} else {
+			$json = $this->jsonReturn(0,"暂无该用户信息");
+		}
+		$this->ajaxReturn($json);
 	}
 }
 

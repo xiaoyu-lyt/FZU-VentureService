@@ -1,3 +1,37 @@
+$().ready(function() {
+	jQuery.validator.addMethod("isMobile", function(value, element) {
+		var length = value.length;
+		var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
+		return this.optional(element) || (length == 11 && mobile.test(value));
+	});
+	$('#forgot-password').validate({
+		submitHandler: function(form) {
+		},
+		rules: {
+			new_password: {
+				required: true,
+				minlength: 6
+			},
+			v_code: "required",	
+			tel: {
+				required: true,
+				isMobile: true
+			}
+		},
+		messages: {
+			new_password: {
+				required: "请输入密码",
+				minlength: "密码不得少于{0}位"
+			},
+			v_code: "请输入短信验证码",
+			tel: {
+				required: "请输入手机号",
+				isMobile: "手机号不正确"
+			}
+		}
+	})
+});
+
 var loginbtn = document.querySelector('.login'), //登录按钮
 	cancelbtn = document.querySelector('.user-cancel'), //注销按钮
 	loginWrapper = document.querySelector('.login-wrapper'), //遮罩层
@@ -16,9 +50,28 @@ var loginbtn = document.querySelector('.login'), //登录按钮
 })();
 
 /**
+ * 判断是否登录
+ * @return {[type]} [description]
+ */
+function judgeStatus() {
+	if(getCookie('uid')) {
+		window.location.href='../venture_web/apply_project.html';
+	} else {
+		loginPopup();
+	}
+}
+/**
  * 登录
  */
 loginbtn.onclick = function() {
+	loginPopup();
+}
+
+/**
+ * 登录弹窗
+ * @return {[type]} [description]
+ */
+function loginPopup() {
 	var _username = '',
 		_password = '';
 	$(loginWrapper).show();
@@ -42,9 +95,9 @@ loginbtn.onclick = function() {
 				password: _password
 			}
 		}).done(function(result) {
+				alert(result.msg);
 			if(result.data) {
 				var data = result.data;
-				// console.log(data);
 				$(loginShow).hide();
 				$(logoutShow).show();
 				$(loginBox).hide();
@@ -57,10 +110,18 @@ loginbtn.onclick = function() {
 			}
 		});
 	});
+	$('.forgot').click(function() {
+		$(loginBox).hide();
+		$('.modify-password-box').show();
+		sendCode('password');
+
+	})
 	loginWrapper.addEventListener('click',function(e) {
 		var dom = e.srcElement || e.target;
 		if((dom.className === 'login-wrapper')||(dom.className === 'close')) {
 			loginWrapper.style.display ='none';
+			$(loginBox).show();
+			$('.modify-password-box').hide();
 		}
 	});
 }
@@ -129,3 +190,52 @@ function getCookie(c_name) {
 		}
 	}
 })();
+
+/**
+ * 重新获取验证码
+ */
+function sendCode(target) {
+	var sendBtn = document.querySelector('.send-'+ target +'-btn');
+	sendBtn.onclick = function () {
+	  if($('.tel').val() =='') {
+	    alert("请输入手机号");
+	    return;
+	  }
+	  var timer = '';
+	  var num = 3;
+	  this.disabled = true;
+	  timer = setInterval(clock, 1000);
+	  var that = this;
+	  function clock() {
+	    num--;
+	    if(num > 0) {
+	      // btn.disabled = false;
+	      that.value = num + 's后重新获取';
+	    } else {
+	      that.disabled = false;
+	      that.value = '发送验证码';
+	      num = 3;
+	      clearInterval(timer);
+	    }
+	  }
+	}
+}
+
+function resetPassword(argument) {
+		$('#forgot-password').submit(function () {
+	  	if($('#forgot-password').valid()){
+	  			var code = $('.code').val(),
+		  				tel = $('.tel').val(),
+		  				password = $('psw').val();
+	  		$.ajax({
+	  				 url: _url,
+	  				 type: "put",
+	  				 data: { tel: tel, v_code: code, password: password }
+	  			}).done(function (result) {
+	  				alert(result.msg);
+	  			}).fail(function () {
+	  				console.log('error')
+	  			});
+	  	}
+		});
+}

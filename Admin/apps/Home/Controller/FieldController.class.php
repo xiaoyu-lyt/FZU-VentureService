@@ -13,8 +13,8 @@ class FieldController extends AdminController {
 		$total = count(M('FieldApply')->where(array('status'=>0))->select());//总记录数
 		$totalPage = ceil($total/$this->pageSize);//
 
-		$records = M('FieldApply')->where(array('status'=>0))->select();
-		for($i=0; $i < count($records); $i++) { 
+		$records = M('FieldApply')->where(array('status'=>0))->page($page,$this->pageSize)->select();
+		for($i=0; $i < count($records); $i++) {
 			$records[$i]['field'] = M('Fields')->where(array('fid'=>$records[$i]['fid']))->field('name')->find();
 			$records[$i]['applicant'] = M('User')->where(array('uid'=>$records[$i]['uid']))->field('name,tel,email')->find();
 			$records[$i]['apply_time'] = date('Y-m-d',$records[$i]['apply_time']);
@@ -38,8 +38,8 @@ class FieldController extends AdminController {
 	public function field_list($page = 1) {
 		$total = count(M('Fields')->select());//总记录数
 		$totalPage = ceil($total/$this->pageSize);//
-		$list = M('Fields')->select();
-		for ($i=0; $i < count($list); $i++) { 
+		$list = M('Fields')->page($page,$this->pageSize)->select();
+		for ($i=0; $i < count($list); $i++) {
 			$list[$i]['run_time'] = date('Y-m-d',$list[$i]['run_time']);
 		}
 		$pageBar = array(
@@ -52,7 +52,7 @@ class FieldController extends AdminController {
 		$this->assign('list',$list);
 		$this->assign('now','field_list');
 		$this->assign('MODULE',$this->MODULE_NAME);
-		$this->display('field_list');		
+		$this->display('field_list');
 	}
 
 	public function publish($action = '') {
@@ -60,12 +60,13 @@ class FieldController extends AdminController {
 		if($action == 'do') {
 			$upload = new \Think\Upload();// 实例化上传类
 		    $upload->maxSize   =     314572800 ;// 设置附件上传大小
+		    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
 		    $upload->rootPath  =     BASE_URL.'/Uploads/'; // 设置附件上传根目录
-		    $upload->saveName  =     $login_manager['uid']."_".time();
-		    $upload->savePath  =     ''; // 设置附件上传（子）目录
+		    $upload->saveName  =      array('uniqid',$login_manager['uid']."_".time()."_");
+		    // $upload->savePath  =     ''; // 设置附件上传（子）目录
 		    $upload->autoSub   = 	 true;
-		    $upload->subName   =     array('date','Ymd');
-		    // 上传文件 
+		    $upload->subName   =     date('Ym',time()).'/'.date('d',time());
+		    // 上传文件
 		    $info   =   $upload->upload();
 		    $data = I('post.');
 		    if($info) {// 上传成功
@@ -83,7 +84,7 @@ class FieldController extends AdminController {
 
 		} else {
 			$this->assign('MODULE',$this->MODULE_NAME);
-			$this->display('publish');	
+			$this->display('publish');
 		}
 
 	}
@@ -96,7 +97,7 @@ class FieldController extends AdminController {
 		$detail['own_or_co'] = $own[$detail['own_or_co']];
 		$detail['detail'] = htmlspecialchars_decode($detail['detail']);
 		$detail['run_time'] = date($detail['run_time']);
-		$detail['pic'] = SITE_URL."/Uploads/".$detail['pic'];
+		$detail['pic'] = SITE_URL.$detail['pic'];
 
 
 
@@ -118,5 +119,13 @@ class FieldController extends AdminController {
 		}
 	}
 
-	
+	//删除单条
+	public function deleteOne($fid) {
+		if(M('Fields')->where(array('fid'=>$fid))->delete()) {
+			$this->success("删除成功",U('field_list'));
+		} else {
+			$this->error("删除失败",U('field_list'));
+		}
+	}
+
 }

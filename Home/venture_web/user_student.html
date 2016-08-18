@@ -28,7 +28,25 @@
 			<div class="login-line3">
 				<a class="pull-right" href="#"><span class="forgot">忘记密码</span></a>
 			</div>
-			<button id='login-btn'>登录</button>
+				<button id='login-btn'>登录</button>
+		</div>
+		<div class="modify-password-box modify-box">
+			<span class="close"></span>
+			<form class="modify-form">
+				<p class="tel-line">
+					<input type="text" name="tel" placeholder="手机号">
+					</p>
+				<p class="code-line">	
+					<input type="text" name="v_code" placeholder="短信验证码">
+					<input class="send-btn" type="button" name="send_code" value="发送验证码">
+				</p>
+				<p class="password-line">
+					<input type="password" name="new_password" placeholder="设置新密码">
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="确认修改">
+				</p>
+			</form>
 		</div>
 	</div>
 	
@@ -36,16 +54,16 @@
 	<div class="modify-wrapper">
 		<div class="modify-tel-box modify-box">
 			<span class="close"></span>
-			<form action="" id="modify-tel" class="modify-form">
+			<form id="modify-tel" class="modify-form">
 				<p class="password-line">
-					<input type="text" name="password" placeholder="密码">
+					<input type="password" class="psw" name="password" placeholder="密码" required>
 				</p>
 				<p class="tel-line">
-					<input type="text" name="tel" placeholder="设置新手机号">
+					<input type="text" class="tel" name="tel" placeholder="设置新手机号" required>
 				</p>
 				<p class="code-line">	
-					<input type="text" name="v_code" placeholder="短信验证码">
-					<input class="send-btn" type="button"  value="发送验证码">
+					<input type="text" class="code" name="v_code" placeholder="短信验证码" required>
+					<input class="send-btn send-tel-btn" type="button" name="send_code" value="发送验证码">
 				</p>
 				<p class="submit-line">
 					<input class="submit" type="submit" value="确认修改">
@@ -54,16 +72,16 @@
 		</div>
 		<div class="modify-password-box modify-box">
 			<span class="close"></span>
-			<form action="" id="modify-password" class="modify-form">
+			<form id="modify-password" class="modify-form">
 				<p class="tel-line">
-					<input type="text" name="tel" placeholder="手机号">
+					<input type="text" class="tel" name="tel" placeholder="手机号"  required>
 					</p>
 				<p class="code-line">	
-					<input type="text" name="v_code" placeholder="短信验证码">
-					<input class="send-btn" type="button"  value="发送验证码">
+					<input type="text" class="code"  name="v_code" placeholder="短信验证码"  required>
+					<input class="send-btn send-password-btn" type="button"  value="发送验证码">
 				</p>
 				<p class="password-line">
-					<input type="text" name="new_password" placeholder="设置新密码">
+					<input type="text" name="new_password" placeholder="设置新密码"  required> 
 				</p>
 				<p class="submit-line">
 					<input class="submit" type="submit" value="确认修改">
@@ -74,10 +92,10 @@
 			<span class="close"></span>
 			<form action="" id="verify-studnet" class="modify-form">
 				<p class="snum-line">
-					<input type="text" name="snum" placeholder="学号">
+					<input type="text" name="snum" placeholder="学号" required>
 					</p>
 				<p class="spassword-line">
-					<input type="text" name="spassword" placeholder="密码">
+					<input type="text" name="spassword" placeholder="密码" required>
 				</p>
 				<p class="submit-line">
 					<input class="submit" type="submit" value="开始认证">
@@ -144,15 +162,17 @@
 				</ul>
 			</div>
 			<div class="user-box block pull-right">
-				<div class="user-head-portrait pull-left">
-					<i class="edit-icon"></i>
-					<img id="head-img" src="images/nopic_192.gif" alt="">
-					<form id="head-form" enctype="multipart/form-data">
-						<input id="head-file" name="head" type="file" >
+				<div class="user-head-box pull-left">
+					<div class="user-head-portrait">
+						<i class="edit-icon"></i>
+						<!-- <img id="head-img" src="images/nopic_192.gif" alt=""> -->
+					</div>
+					<form id="head-form" enctype="multipart/form-data" method="post">
+						<input id="head-file" name="avatar" type="file" >
+						<span class="form-submit">开始上传</span>
 					</form>
 				</div>
-				<span id="head-name"></span>
-				<span class="form-submit">开始上传</span>
+				
 				<div class="user-form pull-left">
 					<div class="user-setting" id="user-info-box">
 						<div class="two-field clearfix">
@@ -171,13 +191,13 @@
 								<input id="email" type="text" disabled="disabled">
 							</div>
 							<div class="field pull-left">
-								<label>手机号<a class="modify-tel pull-right" href="javascript:void(0)" onclick="modifyInfo(this)">修改手机号</a></label>
+								<label>手机号<a class="modify-tel pull-right" href="javascript:void(0)">修改手机号</a></label>
 								<input id="tel" type="text">
 							</div>
 						</div>
 						<div class="two-field clearfix">
 							<div class="field pull-left">
-								<label>账号密码<a class="modify-password pull-right" href="javascript:void(0)"  onclick="modifyInfo(this)">修改密码</a></label>
+								<label>账号密码<a class="modify-password pull-right" href="javascript:void(0)">修改密码</a></label>
 								<input type="password" disabled="disabled" value="balabalabala">
 							</div>
 							<!-- <div class="field pull-left">

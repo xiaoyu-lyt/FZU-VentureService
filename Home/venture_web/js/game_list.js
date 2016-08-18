@@ -77,11 +77,13 @@ function getDetail(_cid) {
 		success: function(result) {
 			var data = result.data, 
 				box;
+				console.log(data);
 			$('#game-introduction-box').empty();
 			$('#game-title').text(data.name);
 			$('#release-time').text(data.issue_time);
 			$('#end-time').text(data.deadline);
 			$('#game-introduction-box').html(data.description);
+			console.log($('#game-apply-btn').attr('href',data.url));
 			var times = data.times
 			if(times>1) {
 				$('#past-games').show();

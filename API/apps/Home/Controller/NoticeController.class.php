@@ -4,7 +4,7 @@ use Home\Controller\BaseController;
 //header("Content-Type:text/html;charset=utf-8");
 class NoticeController extends BaseController {
 	/**
-	 * 获取通知列表
+	 * 获取资讯列表
 	 * @return json
 	 */
 	public function list_get() {
@@ -13,12 +13,13 @@ class NoticeController extends BaseController {
 
 		$where['type'] = I('get.type');
 		$where['status'] = 1;
+		$data = M('Notice')->where($where)->page($page,$pageSize)->field('nid,type,theme,date')->order('overhead desc,rank desc,date desc')->select();
 
-		$data = M('Notice')->where($where)->order('overhead desc,rank desc,date desc')->page($page,$pageSize)->field('nid,type,theme,date')->select();
-		for ($i=0; $i < count($data); $i++) { 
-			$data[$i]['date'] = date('Y/m/d',$data[$i]['date']); 
+		for ($i=0; $i <count($data) ; $i++) { 
+			$data[$i]['date'] = date('Y-m-d',$data[$i]['date']);
 		}
-		$count = count(M('Notice')->where($where)->select());
+		
+		$count = count(M('Notice')->where($where)->select());//这两句要放在最后面，我也不知道为什么
 		$data['pages'] = ceil($count/$pageSize);
 
 		if(!empty($data)) {
@@ -32,18 +33,77 @@ class NoticeController extends BaseController {
 
 	/**
 	 * 根据id获取通知详情内容
+	 * @param int $nid 
 	 * @return json
 	 */
 	public function detail_get() {
+		
+		//点击量
 		$where['nid'] = I('get.nid');
-		$data = M('notice')->where($where)->field('nid,theme,type,date,content')->find();
+		session('nowcid',$where['nid']);
+        $ip = get_client_ip();
+        if (session('preid') != session('nowcid')){
+            session('ip',null);
+        } if (session('ip') == null || session('ip') != $ip) {
+            M('Notice')->where($where)->setInc('hits',1);
+        }
+        session('ip',$ip);
+        session('preid',session('nowcid'));
+
+        //详细内容
+		$data = M('notice')->where($where)->find();
+		$data['name'] = M('User')->where(array('uid'=>$data['uid']))->field('name')->find();
+		$data['date'] = date('Y-m-d',$data['date']);
 		$data['content'] = htmlspecialchars_decode($data['content']);
+		$data['pic'] = SITE_URL.'/Uploads/'.$data['pic'];
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
 			$json = $this->jsonReturn(0,"暂无此通知详细内容");
 		}
 		//var_dump($jsonReturn);
+		$this->ajaxReturn($json);
+	}
+
+	/**
+	 * 获取热门资讯列表
+	 * @return json
+	 */
+	public function hotList_get() {
+		$where['overhead'] = 1;
+		$data = M('Notice')->where($where)->field('nid,type,theme,date,overhead,pic,content')->order('date desc')->select();
+
+		for ($i=0; $i <count($data) ; $i++) { 
+			$data[$i]['date'] = date('Y-m-d',$data[$i]['date']);
+			$data[$i]['content'] = htmlspecialchars_decode($data[$i]['content']);
+			$data[$i]['pic'] = SITE_URL.'/Uploads/'.$data[$i]['pic'];
+		}
+
+		if (!empty($data)) {
+			$json = $this->jsonReturn(200,"查询成功",$data);
+		} else {
+			$json = $this->jsonReturn(0,"暂无热门资讯");
+		}
+		$this->ajaxReturn($json);
+	}
+
+	/**
+	 * 获取热门资讯详细内容
+	 * @param int $nid
+	 * @return json
+	 */
+	public function hotDetail_get() {
+		$where['nid'] = I('get.nid');
+		$data = M('Notice')->where($where)->find();
+		$data['content'] = htmlspecialchars_decode($data['content']);
+		$data['date'] = date('Y-m-d',$data['date']);
+		$data['pic'] = SITE_URL.'/Uploads/'.$data['pic'];
+
+		if (!empty($data)) {
+			$json = $this->jsonReturn(200,"查询成功",$data);
+		} else {
+			$json = $this->jsonReturn(0,"暂无相关热门资讯");
+		}
 		$this->ajaxReturn($json);
 	}
 

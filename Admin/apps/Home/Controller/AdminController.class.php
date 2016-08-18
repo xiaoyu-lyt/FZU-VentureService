@@ -16,7 +16,7 @@ class AdminController extends Controller {
 				return true;
 			}
 		}
-		return false;	
+		return false;
 	}
 
 
@@ -105,24 +105,38 @@ class AdminController extends Controller {
 		}
 	}
 
+	public function download($f){
 
-	public function getpage(&$m,$pagesize=10){
-	    $m1=clone $m;//浅复制一个模型
-	    $count = $m->count();//连惯操作后会对join等操作进行重置
-	    $m=$m1;//为保持在为定的连惯操作，浅复制一个模型
-	    $p=new \Think\Page($count,$pagesize);
-	    $p->lastSuffix=false;
-	    $p->setConfig('header','<li class="rows">共<b>%TOTAL_ROW%</b>条记录&nbsp;&nbsp;每页<b>%LIST_ROW%</b>条&nbsp;&nbsp;第<b>%NOW_PAGE%</b>页/共<b>%TOTAL_PAGE%</b>页</li>');
-	    $p->setConfig('prev','上一页');
-	    $p->setConfig('next','下一页');
-	    $p->setConfig('last','末页');
-	    $p->setConfig('first','首页');
-	    $p->setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%');
+		//$filename = str_replace('-','/',$f);
 
-	    $p->parameter=I('get.');
+		$file_path = BASE_URL."/Uploads/".$f;
+		// echo $file_path;exit;
+		// echo basename(dirname($file_path));exit;
 
-	    $m->limit($p->firstRow,$p->listRows);
+		$file = fopen($file_path,"r");
+        //返回的文件类型
+        Header("Content-type: application/octet-stream");
+        //按照字节大小返回
+        Header("Accept-Ranges: bytes");
+        //返回文件的大小
+        Header("Accept-Length: ".filesize($file_path));
+        //这里对客户端的弹出对话框，对应的文件名
+        Header("Content-Disposition: attachment; filename=".basename($f));
+        //修改之前，一次性将数据传输给客户端
+        echo fread($file, filesize($file_path));
+        //修改之后，一次只传输1024个字节的数据给客户端
+        //向客户端回送数据
+        $buffer=1024;//
+        //判断文件是否读完
+        while (!feof($file)) {
+            //将文件读入内存
+            $file_data=fread($file,$buffer);
+            //每次向客户端回送1024个字节的数据
+            echo $file_data;
+        }
 
-	    return $p;
+        fclose($file);
 	}
+
+
 }

@@ -29,7 +29,25 @@
 				<a class="pull-right" href="#"><span class="forgot">忘记密码</span></a>
 			</div>
 				<button id='login-btn'>登录</button>
-			</div>
+		</div>
+		<div class="modify-password-box modify-box">
+			<span class="close"></span>
+			<form action="" id="modify-password" class="modify-form">
+				<p class="tel-line">
+					<input type="text" name="tel" placeholder="手机号">
+					</p>
+				<p class="code-line">	
+					<input type="text" name="v_code" placeholder="短信验证码">
+					<input class="send-btn" type="button"  value="发送验证码">
+				</p>
+				<p class="password-line">
+					<input type="text" name="new_password" placeholder="设置新密码">
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="确认修改">
+				</p>
+			</form>
+		</div>
 	</div>
 
 	<!-- Header Start -->
@@ -97,10 +115,10 @@
 				<div class="find-partner-projects">
 					<div class="user-projects-title"><span class='icon-user-projects'></span><h2>创业合作项目</h2></div>	
 					<div id="user-partner-box">
-						<div class="user-projects-box">
+						<!-- <div class="user-projects-box">
 							<div class="user-projects-top">
 								<div class="user-projects-info">
-									<h4 class="person-description"><a href="javascript:void(0)">想法描述想法描述想法描述想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描想法描述想法描述想法描</a></h4>
+									<h4 class="person-description"><a href="javascript:void(0)"></a></h4>
 									<div class="find-type">
 										<span class="find-type-title">需求类型：</span>
 										<span class="user-projects-tag">电子商务</span>
@@ -136,14 +154,11 @@
 									发布时间：<span>2016-05-23</span>
 								</span>
 							</div>
-						</div>
+						</div> -->
 						
 					</div>
 					<ul class="pagination" id="partner-pagination">
-						<li><a href="#">&laquo;</a></li>
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">&raquo;</a></li>
+					
 					</ul>
 				</div>
 
@@ -162,10 +177,7 @@
 				
 				</div>
 				<ul class="pagination" id="teacher-pagination">
-					<li><a href="#">&laquo;</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">&raquo;</a></li>
+					
 				</ul>
 			</div>
 			<div class="user-box box3 pull-right">
@@ -200,10 +212,7 @@
 					</a>
 					</div>
 					<ul class="pagination" id="investor-pagination">
-						<li><a href="#">&laquo;</a></li>
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">&raquo;</a></li>
+						
 					</ul>
 			</div>
 
@@ -229,7 +238,7 @@
 				</div>
 				<div class="projects-publisher-box">
 					<span class="projects-publisher-name">
-						发布者：<a href="personal_information.html?uid={{uid}}">{{name.name}}</a>
+						发布者：<a  class="principal-link" href="javascript:;" rel="{{uid}}">{{name.name}}</a>
 					</span>
 					<span class="projects-publisher-time">
 						发布时间：<span>{{issue_time}}</span>
@@ -325,6 +334,45 @@
 	 				<p>{{introduction}}</p>
 	 			</td>
 	 		</tr>
+	 	</table>
+	</script>
+	<script id="popup4-template" type="text/x-handlebars-template">
+		<table class="find-table">
+	 		<tr>
+	 			<th><h4 class="line-title text-left">用户名</h4></th>
+	 			<td colspan="2">
+	 				<p>{{username}}</p>
+	 			</td>
+	 		</tr>
+	 		<tr>
+	 			<th><h4 class="line-title text-left">姓名</h4></th>
+	 			<td colspan="2">
+	 				<p>{{name}}</p>
+	 			</td>
+	 		</tr>
+	 		<tr>
+	 			<th><h4 class="line-title text-left">邮箱</h4></th>
+	 			<td colspan="2">
+	 				<p>{{email}}</p>
+	 			</td>
+	 		</tr>
+			<tr>
+	 			<th><h4 class="line-title text-left">联系方式</h4></th>
+	 			<td colspan="2">
+	 				<p>{{tel}}</p>
+	 			</td>
+	 		</tr>
+			<tr>
+	 			<th><h4 class="line-title text-left">参与项目</h4></th>
+	 			<td colspan="2">
+	 				{{#each projects}}
+	 					<div>
+		 					<a href="projects_info.html?pid={{pid}}">{{name}}</a>
+	 					</div>
+	 				{{/each}}
+	 			</td>
+	 		</tr>
+
 	 	</table>
 	</script>
 	<script src="js/layer/layer.js"></script>

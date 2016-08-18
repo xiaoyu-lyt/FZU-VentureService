@@ -19,46 +19,101 @@ class ClassController extends BaseController {
 			$data = M('Classes')->where('status = 1')->order('issue_time desc')->page($page,$pageSize)->select();
 		else
 			$data = M('Classes')->order('issue_time desc')->page($page,$pageSize)->select();
-		
-		for ($i=0; $i < count($data); $i++) { 
-			$data[$i]['issue_time'] = date('Y/m/d H:i',$data[$i]['issue_time']);
-			$data[$i]['start_time'] = date('Y/m/d H:i',$data[$i]['start_time']);
-			$data[$i]['deadline'] = date('Y/m/d H:i',$data[$i]['deadline']);
+
+		for ($i=0; $i <count($data) ; $i++) { 
+			$data[$i]['start_time'] = date('Y-m-d',$data[$i]['start_time']);
+			$data[$i]['deadline'] = date('Y-m-d',$data[$i]['deadline']);
+			$data[$i]['issue_time'] = date('Y-m-d',$data[$i]['issue_time']);
+			$data[$i]['content'] = htmlspecialchars_decode($data[$i]['content']);
+
 		}
-		
-		$count = count(M('Classes')->where($where)->select());
-		$data['pages'] = ceil($count/$pageSize);
-		
+
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(0,"暂无培训信息");
+			$json = $this->jsonReturn(0,"暂无培训课堂信息");
 		}
 		//var_dump($jsonReturn);
 		$this->ajaxReturn($json);
 	}
 
 	/**
+	 * 获取课堂的具体信息
+	 * @param int $cid
+	 * @return json
+	 */
+	public function detail_get() {
+		$where['cid'] = I('get.cid');
+		$data = M('Classes')->where($where)->find();
+
+		$data['start_time'] = date('Y-m-d',$data['start_time']);
+		$data['deadline'] = date('Y-m-d',$data['deadline']);
+		$data['issue_time'] = date('Y-m-d',$data['issue_time']);
+		$data['content'] = strip_tags(htmlspecialchars_decode($data['content']));
+
+		if(!empty($data)) {
+			$json = $this->jsonReturn(200,"查询成功",$data);
+		} else {
+			$json = $this->jsonReturn(0,"暂无培训课堂具体信息");
+		}
+		$this->ajaxReturn($json);
+
+	}
+
+	/**
 	 * 培训课报名
+	 * @param int $uid 报名者id
+	 * @param int $cid 课堂id
+	 * @return json
 	 */
 	public function enlist_post() {
-
+		$data = I('post.');
+		$data['issue_time'] = time();
+		$limit = M('classes')->where(array('cid'=>$data['cid']))->field('limit')->find();
+		$students = M('classes')->where(array('cid'=>$data['cid']))->field('students')->find();
+		if ($students < $limit) {
+			if (M('classEnroll')->add($data)) {
+				$json = $this->jsonReturn(200,"报名成功，请等待审核",$data);
+			}
+			else {
+				$json = $this->jsonReturn(0,"报名失败，请重新报名");
+			}
+		} else {
+			$json = $this->jsonReturn(0,"报名失败，课堂人数已满",$data);
+		}
+		$this->ajaxReturn($json);
 	}
 	/**
 	 * 获取所有可下载的材料
-	 * @param int $type 类型：1 文档类 2视频类
+	 * @param int $type 类型：0 文档类 1视频类
 	 * @return json
 	 */
 	public function downloads_get() {
 		$type = I('get.type');
-		$data = M('Documents')->where('type',$type)->order('issue_time desc')->select();
+		$data = M('Documents')->where(array('type'=>$type))->order('issue_time desc')->select();
+		for ($i=0; $i <count($data) ; $i++) { 
+			$data[$i]['file_url'] = SITE_URL.'/Uploads/'.$data[$i]['file_url'];
+			$data[$i]['pic_url'] = SITE_URL.'/Uploads/'.$data[$i]['pic_url'];
+		}
+
 		if(!empty($data)){
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(0,"查询失败");
+			$json = $this->jsonReturn(0,"暂无可下载的培训材料");
 		}
 		$this->ajaxReturn($json);
 	}
+
+	// function DeleteHtml($str) { 
+	// 	$str = trim($str); //清除字符串两边的空格
+	// 	$str = preg_replace("/\t/","",$str); //使用正则表达式替换内容，如：空格，换行，并将替换为空。
+	// 	$str = preg_replace("/\r\n/","",$str); 
+	// 	$str = preg_replace("/\r/","",$str); 
+	// 	$str = preg_replace("/\n/","",$str); 
+	// 	$str = preg_replace("/ /","",$str);
+	// 	$str = preg_replace("/  /","",$str);  //匹配html中的空格
+	// 	return trim($str); //返回字符串
+	// }
 
 }
 

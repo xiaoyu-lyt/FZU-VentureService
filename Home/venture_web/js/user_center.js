@@ -4,20 +4,17 @@ isPass = ['待审核','审核通过'];
  * @param  {Number} _uid   当前用户id
  * @param  {String} _token 当前用户token值
  */
-function getInfo(_uid, _token) {
+function getInfo() {
     $.ajax({
     type: "get",
     url: "../../API/index.php/home/user/getUserInfo.html",
-    data: {
-      uid: _uid,
-      token: _token
-    },
     error: function () {
       console.log("error!");
     },
     success: function(result) {
       var data = result.data;
-      // console.log(data);
+      console.log(data);
+      $('.user-head-portrait').css({"background":"url('"+ data.avatar + "') no-repeat center", "background-size":"cover"});
       $('#user-name').val(data.username);
       $('#name').val(data.name);
       $('#email').val(data.email); 
@@ -36,42 +33,22 @@ submit.onclick = function() {
     upload();
   }
 }
+
 function upload() {
-  $('#head-name').text($('#head-file').val());
-	console.log($('#head-file').val());
-	$.ajax({
+  $.ajax({
     type: "post",
-    url: "../../API/index.php/home/upload/avatarUpload.html",
+    url: "../../API/index.php/home/user/uploadAvatar.html",
     data: new FormData($('#head-form')[0]),
     processData: false,
     cache: false,
     contentType :false
   }).done(function(result) {
+    console.log(result);
     var data = result.data;
-    $('#head-img').attr('src', data.url);
-    // console.log(data.url);
+    // console.log(data);
+    $('.user-head-portrait').css({"background":"url('"+ data.avatar + "') no-repeat center", "background-size":"cover"});
+    // $('#head-img').attr('src',data.avatar);
   });
-}
-
-
-/**
- * 获取coockie
- * @param  {String} c_name coockie名称
- * @return {String}        cookie的值
- */
-function getCookie(c_name) {
-  if(document.cookie.length > 0) {
-    c_start = document.cookie.indexOf(c_name + '=');
-    if(c_start!=-1) {
-      c_start = c_start + c_name.length + 1;
-      c_end = document.cookie.indexOf(";", c_start);
-      if(c_end == -1) {
-        c_end = document.length;
-      }
-      return document.cookie.substring(c_start, c_end);
-    }
-  }
-  return "";
 }
 
 $('#find-list').click(function() {
@@ -139,11 +116,12 @@ function getBaseList() {
     type: "get",
     url:"../../API/index.php/home/user/myFieldApply.html",
   }).done(function(result) {
+  
     var dataArr = result.data;
-    console.log(dataArr);
+    // console.log(dataArr);
     var li = "";
     if(!dataArr) {
-      $('#enter-base').text("暂无信息");
+      $('#enter-base-ul').text("暂无信息");
       return;
     }
     $.each(dataArr, function(index, elem) {
@@ -154,7 +132,7 @@ function getBaseList() {
 }
 
 /**
- * 渲染我的入驻申请列表
+ * 渲染我的项目列表
  */
 function getProjectList() {
   $.ajax({
@@ -163,6 +141,7 @@ function getProjectList() {
   }).done(function(result) {
     var dataArr = result.data;
     // console.log(dataArr);
+    $('#myproject-ul').empty();
     var li = "";
     if(!dataArr) {
       $('#myproject').text("暂无信息");
@@ -201,15 +180,18 @@ function getPartnerInfo(_sid) {
     });
   })
 }
+
+
+
 function init() {
   $('#find-return').hide();
   var groupid = getCookie("groupid");
   var uid = getCookie("uid");
   var token = getCookie("token");
   // if(groupid != 4) {
-    // $('#user-sidenav').hide();
+  //   $('#user-sidenav').hide();
   // }
-  getInfo(uid, token);
+  getInfo();
   getFindList();
   getProjectList();
   getBaseList();
