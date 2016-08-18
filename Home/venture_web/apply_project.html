@@ -28,8 +28,26 @@
 			<div class="login-line3">
 				<a class="pull-right" href="#"><span class="forgot">忘记密码</span></a>
 			</div>
-			<button id='login-btn'>登录</button>
-			</div>
+				<button id='login-btn'>登录</button>
+		</div>
+		<div class="modify-password-box modify-box">
+			<span class="close"></span>
+			<form action="" id="modify-password" class="modify-form">
+				<p class="tel-line">
+					<input type="text" name="tel" placeholder="手机号">
+					</p>
+				<p class="code-line">	
+					<input type="text" name="v_code" placeholder="短信验证码">
+					<input class="send-btn" type="button"  value="发送验证码">
+				</p>
+				<p class="password-line">
+					<input type="text" name="new_password" placeholder="设置新密码">
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="确认修改">
+				</p>
+			</form>
+		</div>
 	</div>
 
 	<!-- Header Start -->
@@ -90,7 +108,7 @@
 				<p>您的报名表将作为孵化营初审的主要依据，丰富相关内容有助于评审委员会及投资机构更全面了解您的创业项目。若某条信息内容无法确认或缺失，请填“无”。</p>
 			</div>
 			<div class="user-box step1 block">
-				<form action="" id="step1" enctype="multipart/form-data">
+				<form action="" id="step1" enctype="multipart/form-data" method="post">
 					<table class="apply-setp1 apply-steps">
 						<tr>
 							<th class="text-center" colspan="2">项目基本信息</th>
@@ -112,31 +130,33 @@
 							<td>
 								<select id="project-area" name="area"  require>
 									<option></option>
-		                            <option value="0">文化创业类</option>  
-		                            <option value="1">科技创业类</option>  
-		                            <option value="2">创业苗圃</option>  
-		                            <option value="3">互联网+现代农业</option>  
-		                            <option value="4">互联网+制造业</option>  
-		                            <option value="5">互联网+信息技术服务</option>  
-		                            <option value="6">互联网+商务服务</option>  
-		                            <option value="7">互联网刚+公共服务</option>  
-		                            <option value="8">互联网+公益创业</option>  
+                    <option value="0">文化创业类</option>  
+                    <option value="1">科技创业类</option>  
+                    <option value="2">创业苗圃</option>  
+                    <option value="3">互联网+现代农业</option>  
+                    <option value="4">互联网+制造业</option>  
+                    <option value="5">互联网+信息技术服务</option>  
+                    <option value="6">互联网+商务服务</option>  
+                    <option value="7">互联网刚+公共服务</option>  
+                    <option value="8">互联网+公益创业</option>  
 							</select>
 							</td>
 						</tr>
 						<tr>
 							<td>产品类别<span class="star">*</span></td>
 							<td>
-								<select id="project-area" name="product_type"  require>
-									<option></option>
-		                            <option value="0">硬件</option>  
-		                            <option value="1">软件</option>  
-		                            <option value="2">APP</option>  
-		                            <option value="3">网站</option>  
-							</select>
+								<input id="hardware" type="radio" name="product_type" value="0" require>
+								<label class="radio-inline" for="hardware">硬件</label>
+								<input id="software" type="radio" name="product_type" value="1" require>
+								<label class="radio-inline" for="software">软件</label>
+								<input id="app" type="radio" name="product_type" value="2" require>
+								<label class="radio-inline" for="app">APP</label>
+								<input id="website" type="radio" name="product_type" value="3" require>
+								<label class="radio-inline" for="website">网站</label>
+
 							</td>
 						</tr>
-						
+
 						<tr>
 							<td>项目简介<span class="star">*</span></td>
 							<td>
@@ -155,7 +175,7 @@
 							<td><input type="text" name="service_type"></td>
 						</tr>
 						<tr>
-							<td>是否已成立公司<span class="star">*</span></td>
+							<td>公司是否注册<span class="star">*</span></td>
 							<td>
 								<input id="founded" type="radio" name="is_company" value="1" require>
 								<label class="radio-inline" for="founded">是</label>
@@ -163,7 +183,35 @@
 								<label class="radio-inline" for="unfounded">否</label>
 							</td>
 						</tr>
-						
+						<tr>
+							<td>公司形式</td>
+							<td>
+								<select id="compony-form" name="form_company"  require>
+									<option></option>
+		                            <option value="1">无限责任公司</option>  
+		                            <option value="2">有限责任公司</option>  
+		                            <option value="3">股份有限公司</option>  
+		                            <option value="4">个人独资企业</option>  
+		                            <option value="5">合伙企业</option>  
+		                            <option value="6">公司制企业</option>  
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>面向群体<span class="star">*</span></td>
+							<td>
+								<select id="oriented-group" name="group"  require>
+									<option></option>
+		                            <option value="0">公司企业</option>  
+		                            <option value="1">学校单位</option>  
+		                            <option value="2">学生</option>  
+		                            <option value="3">母婴</option>  
+		                            <option value="4">老年人</option>  
+		                            <option value="5">公司职员</option>  
+		                            <option value="6">公职人员</option>  
+								</select>
+							</td>
+						</tr>
 						<tr>
 							<td>商业计划书<span class="star">*</span></td>
 							<td>

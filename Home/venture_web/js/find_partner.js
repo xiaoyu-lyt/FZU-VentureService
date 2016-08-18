@@ -46,7 +46,7 @@ btn.onclick = function() {
  * 渲染寻找队员列表	
  */
 function getPartnerList(_page) {
-	var _size = 1;
+	var _size = 3;
 	$.ajax({
 		
 		type: "get",
@@ -57,7 +57,7 @@ function getPartnerList(_page) {
 		}
 	}).done(function(result) {
 		var data = result.data;
-		// console.log(data);
+		console.log(data);
 		var pages = data.pages;
 		Handlebars.registerHelper('type',function(){ //helpers返回需求类型
 			return typeArr[this.find_type];
@@ -72,6 +72,12 @@ function getPartnerList(_page) {
 		$.each(link,function(index, elem) {
 			$(elem).click(function() {
 				getPartnerInfo(elem.rel);
+			});
+		});
+		var plink = document.querySelectorAll('.principal-link');
+		$.each(plink,function(index, elem) {
+			$(elem).click(function() {
+				getPrincipalInfo(elem.rel);
 			});
 		});
 	});
@@ -110,11 +116,39 @@ function getPartnerInfo(_sid) {
 		});
 	})
 }
+
+/**
+ * 点击发布者弹出对应负责人信息
+ * @param  {Number} uid 导师编号uid
+ */
+function getPrincipalInfo(_uid) {
+	$.ajax({
+		url: "../../API/index.php/home/user/getOtherInfo.html",
+		type: "get",
+		data: { uid: _uid}
+	}).done(function(result) {
+		var data = result.data;
+		console.log(data);
+		// Handlebars
+		var template = Handlebars.compile($('#popup4-template').html()); //注册模板
+		var html = template(data); //封装模板
+		$('#popup').html(html); //插入基础模板中
+
+		//负责人具体信息弹窗
+		layer.open({  
+			title: ['项目负责人','font-size:17px; text-align: center'],
+		 	type: 1, 
+		 	area: '600px',
+		 	content: $('#popup') //这里content是一个普通的String
+		});
+	})
+}
+
 /**
  * 渲染导师列表	
  */
 function getTeacherList(_page) {
-	var _size = 1;
+var _size = 9;
 	$.ajax({
 		type: "get",
 		url: "../../API/index.php/home/Partner/tutorList.html",
@@ -173,7 +207,7 @@ function getTeacherInfo(_tid) {
  * 渲染投资人列表	
  */
 function getInvestorList(_page) {
-	var _size = 1;
+	var _size = 9;
 	$.ajax({
 		type: "get",
 		url: "../../API/index.php/home/Partner/investorList.html",
@@ -240,7 +274,9 @@ function getPageBar(typeName, pageNum, pages) {
 		show = 3, //分页条显示页的个数
 		middle = Math.floor(show/2),
 		pagination;
-	if(pages === 1) return;
+	console.log(pages);
+
+	if(pages == 1) return;
 	if(pageNum > 1) { //添加首页和前页
 		oNum = pageNum + 1;
 		pageStr += "<li><a href='javascoript:void(0)' rel='1'>首页</a></li><li><a href='javascoript:void(0)'rel=" + (pageNum-1) + ">&laquo;</a></li>";

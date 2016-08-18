@@ -7,15 +7,15 @@ class FieldController extends BaseController {
 	 * @return json
 	 */
 	public function list_get() {
-		$page = !empty(I('get.page')) ? I('get.page') : 1;
-		$pageSize = !empty(I('get.size')) ? I('get.size') : 10;
+		// $page = !empty(I('get.page')) ? I('get.page') : 1;
+		// $pageSize = !empty(I('get.size')) ? I('get.size') : 10;
 
-		// $where['type'] = I('get.type');
-		$where['status'] = 1;//是否空闲
-		$data = M('Fields')->where($where)->page($page,$pageSize)->select();
-
-		$count = count(M('Fields')->where($where)->select());
-		$data['pages'] = ceil($count/$pageSize);
+		$where['type'] = I('get.type');
+		$where['status'] = 1;
+		$data = M('fields')->where($where)->order('run_time desc')->field('fid,name,pic,synopsis,run_time')->select();
+		for ($i=0; $i <count($data) ; $i++) { 
+			$data[$i]['pic'] = SITE_URL.'/Uploads/'.$data[$i]['pic'];
+		}
 
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
@@ -33,7 +33,8 @@ class FieldController extends BaseController {
 	public function detail_get() {
 		$where['fid'] = I('get.fid');
 		$data = M('fields')->where($where)->find();
-
+		$data['detail'] = htmlspecialchars_decode($data['detail']);
+		$data['pic'] = SITE_URL.'/Uploads/'.$data['pic'];
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
@@ -43,25 +44,27 @@ class FieldController extends BaseController {
 		//var_dump($jsonReturn);
 		$this->ajaxReturn($json);
 	}
-
-
 	/**
-	 *  入驻申请
+	 * 入驻申请
+	 * @param int $uid 申请人id session('login_user')
+	 * @param int $fid 申请场地id
+	 * @return json
 	 */
-	public function apply_post() {
+	public function fieldApply_post() {
+		$login_user = session('login_user');
 		$data = I('post.');
-		$login_user = D('UserToken')->getToken($data['token']);
-		if( !empty($login_user) ) {
-			if(M('FieldApply')->add($data)) {
-				$json = $this->jsonReturn(200,"提交成功,请等待管理员审核");
-			} else {
-				$json = $this->jsonReturn(0,"提交失败，请重新提交");
-			}
+		$data['uid'] = $login_user['uid'];
+		$data['person_in_charge'] = json_encode($data['person_in_charge']);
+		$data['members_info'] = json_encode($data['members_info']);
+		$data['documents'] = json_encode($data['documents']);
+		if (M('field_apply')->add($data)) {
+			$json = $this->jsonReturn(200,"入驻申请成功，请等待审核",$data);
 		} else {
-			$json = $this->jsonReturn(0,"用户未登录，请先登录");
+			$json = $this->jsonReturn(0,"入驻申请失败，请重新申请入驻");
 		}
 		$this->ajaxReturn($json);
 	}
+
 
 	public function delete_delete() {
 

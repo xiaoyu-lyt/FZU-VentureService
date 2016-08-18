@@ -1,25 +1,25 @@
 <?php
 namespace Home\controller;
-use Home\Controller\AdminController;
-class HomeController extends AdminController {
-	
+use Think\Controller;
+class HomeController extends Controller {
+
 	public $MODULE_NAME = "Home";
 	public function index(){
-		if($this->isLogin()){
+		$cookie_token = cookie('cookie_token');
+		if($cookie_token){
 			$this->redirect('notice/index');
-		} else 
+		} else
 			$this->display('login');
 	}
-	
+
 	public function login() {
 		$username = I('post.username');
 		$password = I('post.password');
 		$login_manager = D('Home')->checkLogin($username,$password);
-
 		if (!empty($login_manager)) {
 			unset($login_manager['password']);
-			unset($login_manager['userKey']);
 			session('login_manager',$login_manager);
+
 			$token = D('UserToken')->createToken($login_manager['uid'],$login_manager['groupid']);
 			cookie('cookie_token',$token,60*60*24);
 

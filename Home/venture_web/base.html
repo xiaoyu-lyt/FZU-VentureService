@@ -26,12 +26,27 @@
 				<input type="password" name="password" id="password" placeholder="请输入密码">
 			</div>
 			<div class="login-line3">
-				<span><input id="checkbox" type="checkbox" value="" />
-				 
 				<a class="pull-right" href="#"><span class="forgot">忘记密码</span></a>
 			</div>
-			<button id='login-btn'>登录</button>
-			
+				<button id='login-btn'>登录</button>
+		</div>
+		<div class="modify-password-box modify-box">
+			<span class="close"></span>
+			<form action="" id="modify-password" class="modify-form">
+				<p class="tel-line">
+					<input type="text" name="tel" placeholder="手机号">
+					</p>
+				<p class="code-line">	
+					<input type="text" name="v_code" placeholder="短信验证码">
+					<input class="send-btn" type="button"  value="发送验证码">
+				</p>
+				<p class="password-line">
+					<input type="text" name="new_password" placeholder="设置新密码">
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="确认修改">
+				</p>
+			</form>
 		</div>
 	</div>
 	
@@ -88,17 +103,16 @@
 					<li><a href="">小基地</a></li>
 				</ul>
 			</div>
-			<div class="bases-content pull-left">
+			<div id="base-box" class="bases-content pull-left">
 
 				<div class="bases-title"><h1 id="base-title">第一基地</h1></div>
-				
 				<div id="bases-introduction-box">
 					<div class="bases-introduction bases-detail">
 						<div class="bases-introduction-top">
 							<span></span>
 							<h2>基地介绍</h2>
 						</div>
-						<p id="base-introduction">第二届中国“互联网+”大学生创新创业大赛旨在深化高等教育综合改革，激发大学生的创造力，培养造就“大众创业、万众创新”的生力军；推动赛事成果转化和产学研用紧密结合，促进“互联网+”新业态形成，服务经济提质增效升级；以创新引领创业、创业带动就业，推动高校毕业生更高质量创业就业，重在把大赛作为深化创新创业教育改革的重要抓手，引导各地各高校主动服务创新驱动发展战略，积极开展教学改革探索，把创新创业教育融入人才培养，切实提高高校学生的创新精神、创业意识和创新创业能力。</p>
+						<p id="base-introduction"></p>
 					</div>
 					<div class="bases-introduction bases-detail">
 						<div class="bases-introduction-top">
@@ -107,31 +121,43 @@
 						</div>
 						<div class="bases-expo-box clearfix">
 							<div class="bases-img-box pull-left">
-								<img src="images/baseoic.jpg" alt="">
-							</div>
-							<div class="bases-img-box pull-left">
-								<img src="images/baseoic.jpg" alt="">
+								<!-- <img id="base-img" src="images/baseoic.jpg" alt=""> -->
 							</div>
 						</div>
-						<div class="bases-expo-box clearfix">
-							<div class="bases-img-box pull-left">
-								<img src="images/baseoic.jpg" alt="">
-							</div>
-							<div class="bases-img-box pull-left">
-								<img src="images/baseoic.jpg" alt="">
-							</div>
-						</div>
+				<div id="base-apply">
+					<!-- <a class="game-apply-btn" href="apply_base.html">申请入驻</a> -->
 				</div>
-				
-
-				</div>
-				<a class="game-apply-btn" href="apply_base.html">申请入驻</a>
 				
 			</div>
 		</div>
 	</div>
 	<script src="js/jquery-3.1.0.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/handlebars-v4.0.5.js"></script>
+	<script id="base-template" type="text/x-handlebars-template">
+			<div class="bases-title"><h1 id="base-title">{{name}}</h1></div>
+			<div id="bases-introduction-box">
+				<div class="bases-introduction bases-detail">
+					<div class="bases-introduction-top">
+						<span></span>
+						<h2>基地介绍</h2>
+					</div>
+					<div id="base-introduction">{{{detail}}}</div>
+				</div>
+				<div class="bases-introduction bases-detail">
+					<div class="bases-introduction-top">
+						<span></span>
+						<h2>基地展示</h2>
+					</div>
+					<div class="bases-expo-box clearfix">
+						<div class="bases-img-box pull-left" style="background:url('{{pic}}') no-repeat center; background-size: cover">
+							<!-- <img id="base-img" src="images/baseoic.jpg" alt=""> -->
+						</div>
+					</div>
+			<div id="base-apply">
+				<!-- <a class="game-apply-btn" href="apply_base.html">申请入驻</a> -->
+			</div>
+	</script>
 	<script src="js/base_list.js"></script>
 	<!-- Porjects-expo End -->
 </body>

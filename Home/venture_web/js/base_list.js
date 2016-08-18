@@ -1,31 +1,30 @@
-var baseList = document.querySelector('#base-list'),
+var _fid = window.location.search,
+	baseList = document.querySelector('#base-list'),
 	oli;
+_fid = _fid.replace(/[^0-9]+/, "");
 
-getData(0);
+getData(_fid);
 /**
  * 初始化基地列表
  * @param  {number} n 列表的第几个
  * @return {[type]}      [description]
  */
-function getData(n) {
-	var _fid;
+function getData(_fid) {
+	var n  = 0;
 	$.ajax({
 		type: "get",
 		url: "../../API/index.php/home/field/list.html",
-		dataType: "json",
- 		error: function() {
- 			console.log("error");
- 		},
 		success: function(result) {
 			var dataArr = result.data;
 				li = '';
-			// console.log(dataArr);
-			// console.log(dataArr);
 			// 渲染左侧列表
 			$('#base-list').empty();
 			$.each(dataArr, function(index, elem) {
 				if(index === 'pages') {
 					return false
+				}
+				if(elem.fid === _fid) {
+					n = index;
 				}
 				li += '<li id=' + elem.fid + '>' + elem.name + '</li>';
 			});
@@ -65,16 +64,15 @@ function getDetail(_fid) {
 		data: {
 			fid: _fid
 		},
- 		error: function() {
- 			console.log("error");
- 		},
 		success: function(result) {
 			var data = result.data, 
 				box;
+
 			console.log(data);
-			$('#bases-introduction-box').empty();
-			$('#base-title').text(data.name);
-			$('#base-introduction').text(data.detail);
+			var template = Handlebars.compile($('#base-template').html()); //注册模板
+			var html = template(data); //封装模板
+			$('#base-box').html(html); //插入基础模板中
+	
 		}
 	});
 }

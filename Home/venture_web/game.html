@@ -28,7 +28,25 @@
 			<div class="login-line3">
 				<a class="pull-right" href="#"><span class="forgot">忘记密码</span></a>
 			</div>
-			<button id='login-btn'>登录</button>
+				<button id='login-btn'>登录</button>
+		</div>
+		<div class="modify-password-box modify-box">
+			<span class="close"></span>
+			<form action="" id="modify-password" class="modify-form">
+				<p class="tel-line">
+					<input type="text" name="tel" placeholder="手机号">
+					</p>
+				<p class="code-line">	
+					<input type="text" name="v_code" placeholder="短信验证码">
+					<input class="send-btn" type="button"  value="发送验证码">
+				</p>
+				<p class="password-line">
+					<input type="text" name="new_password" placeholder="设置新密码">
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="确认修改">
+				</p>
+			</form>
 		</div>
 	</div>
 
@@ -88,13 +106,13 @@
 				</ul>
 			</div>
 			<div class="game-content pull-left">
-				<div class="game-title"><h1 id="game-title">第二届“互联网+”大学生创新创业大赛</h1></div>
+				<div class="game-title"><h1 id="game-title"> </h1></div>
 				<div class="game-time clearfix">
-					<div class="release-time pull-left">发布时间：<span id="release-time">2016-7-20</span></div>
-					<div class="end-time pull-right"><b></b>截止时间：<span id="end-time">2016-7-31</span></div>
+					<div class="release-time pull-left">发布时间：<span id="release-time"> </span></div>
+					<div class="end-time pull-right"><b></b>截止时间：<span id="end-time"> </span></div>
 				</div>
 				<div id="game-introduction-box">
-					<div class="game-introduction game-detail">
+					<!-- <div class="game-introduction game-detail">
 						<div class="game-introduction-top">
 							<span class="icon-task"></span>
 							<h2>大赛官网</h2>
@@ -159,10 +177,10 @@
 						<p>1、大赛采用校级初赛、省级复赛、全国总决赛三级赛制。校级初赛由各高校负责组织，省级复赛由各省（区、市）负责组织，全国总决赛由各省（区、市）按照大赛组委会确定的配额择优遴选推荐项目。大赛组委会将综合考虑各省（区、市）报名团队数、参赛高校数和创新创业教育工作情况等因素分配名额。每所高校入选全国总决赛团队总数不超过4个</p>
 						<p>2、全国共产生600个项目入围全国总决赛</p>
 						<p>3、通过网上评审，产生120个项目进入全国总决赛现场比赛</p>
-					</div>
+					</div> -->
 				</div>
 					
-				<a class="game-apply-btn" href="javascript:void(0)">立即报名</a>
+				<a id="game-apply-btn" class="game-apply-btn" href="javascript:void(0)">立即报名</a>
 				<div class="past-games" id="past-games">
 					<div class="game-introduction game-detail">
 						<div class="game-introduction-top">

@@ -7,7 +7,7 @@ getData(1); //初始化项目列表
  * @param  {number} _page 当前页码
  */
 function getData(_page, _area, _form, _stage, _group) {
-	var _size = 1, pages;
+	var _size = 5, pages;
 	$.ajax({
 		type: "get",
 		url: "../../API/index.php/home/project/list.html",
@@ -23,7 +23,7 @@ function getData(_page, _area, _form, _stage, _group) {
 	}).done(function(result) {
 		var data = result.data;
 		pages = data.pages;
-		// console.log(data);
+		console.log(data);
 		var template = Handlebars.compile($('#project-template').html()); //注册模板
 		var html = template(data); //封装模板
 		$('#projects-box').html(html); //插入基础模板中
@@ -88,10 +88,12 @@ $(function() {
 	})
 });
 
+/**
+ * 搜索项目
+ */
 function SelectProject() {
 	var box = document.querySelector('.projects-selec-top');
 	box.addEventListener('click',function(event) {
-
 		var e = event.target || event.srcElement;
 		if(e.nodeName.toUpperCase()==='LI'){
 			$(e).parent().find('.now').removeClass('now');
@@ -115,3 +117,33 @@ function SelectProject() {
 }
 
 SelectProject();
+
+/**
+ * 关键词搜索
+ * @return {[type]} [description]
+ */
+function searchProject() {
+	var btn = document.querySelector('.projects-search-btn');
+	var pages;
+	$(btn).click(function () {
+		text = $('#search-text').val();
+		if(text!='') {
+			$.ajax({
+					type: "get",
+					url: "../../API/index.php/Home/project/wordSelect",
+					data: {	word: text }
+			}).done(function(result) {
+					var data = result.data,
+							pages = data.pages;
+					console.log(data);
+					var template = Handlebars.compile($('#project-template').html()); //注册模板
+					var html = template(data); //封装模板
+					$('#projects-box').html(html); //插入基础模板中
+			}).always(function(){
+				getPageBar(1, pages);
+				});
+		}
+	});
+}
+
+searchProject();

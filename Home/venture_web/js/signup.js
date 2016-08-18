@@ -12,7 +12,7 @@ $().ready(function() {
 		return this.optional(element) || (uname.test(value));
 	});
 	jQuery.validator.addMethod("isName", function(value, element) {
-		var iname = /^[\u4e00-\u9fa5]+$/;
+		var iname = /^[\u4e00-\u9fa5]{2,7}$/;
 		return this.optional(element) || (iname.test(value));
 	});
 
@@ -28,7 +28,10 @@ $().ready(function() {
 				required: true,
 				isName: true
 			},
-			password: "required",
+			password: {
+				required: true,
+				minlength: 6
+			},
 			confirm_password: {
 				required: true,
 				equalTo: "#password"
@@ -51,7 +54,10 @@ $().ready(function() {
 				required: "请输入姓名",
 				isName: "姓名不合法"
 			},
-			password: "请输入密码",
+			password: {
+				required: "请输入密码",
+				minlength: "密码不能少于6位"
+			},
 			confirm_password: {
 				required: "请输入确认密码",
 				equalTo: "两次输入不一致"
@@ -90,6 +96,10 @@ $.each(st, function(index, element) {
  */
 var sendBtn = document.querySelector('.send-code');
 sendBtn.onclick = function () {
+	if($('#tel').val() =='') {
+		alert("请输入手机号");
+		return;
+	}
 	var timer = '';
 	var num = 3;
 	this.disabled = true;
@@ -125,7 +135,6 @@ $('#submit').click(function() {
 		_email = $('#email').val(),
 		_tel = $('#tel').val(),
 		v_code = $('#v-code').val();
-
 	$.ajax({
 		type: "post",
 		url: "../../API/index.php/home/user/register.html",
@@ -138,8 +147,13 @@ $('#submit').click(function() {
 			v_code: v_code,
 			groupid: _groupid
 		}
-	}).done(function(result) {
-		alert(result.msg);
+	})
+	.done(function(result) {
+		console.log(result);
+		if(result.data) {
 			window.location.href='../venture_web/index.html';
+		} else {
+			alert(result.msg);
+		}
 	});
 })

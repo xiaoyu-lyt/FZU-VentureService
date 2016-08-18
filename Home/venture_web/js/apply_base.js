@@ -1,3 +1,6 @@
+var fid = window.location.search,
+	fid = fid.replace(/[^0-9]+/, "");
+
 /**
  * 入驻申请表单验证
  */
@@ -20,8 +23,12 @@
  * 提交入驻申请
  */
 $('#apply-submit').click(function() {
-	// console.log($('#apply-base-form').serialize());
-	$.ajax({
+	var formStr = "fid=" + fid + '&' + $('#apply-base-form').serialize();
+	var errors = document.querySelectorAll('label.error').length;
+	var file = $('#documents').val();
+	// console.log(file);
+	if(errors == 0 && file) {
+		$.ajax({
 		url: "../../API/index.php/home/upload/fileUpload.html",
 		type: "post",
 		data: new FormData($('#apply-base-form')[0]),
@@ -29,13 +36,15 @@ $('#apply-submit').click(function() {
 		cache: false,
 		contentType :false
 		}).done(function(result) {
-			console.log(result);
+			// console.log(result);
 		});
 	$.ajax({
 		url: "../..//API/index.php/home/field/fieldApply.html",
 		type: "post",
-		data: $('#apply-base-form').serialize()
+		data: formStr
 		}).done(function(result) {
-			// console.log(result);
+			alert(result.msg);
 		});
+	}
+	
 });

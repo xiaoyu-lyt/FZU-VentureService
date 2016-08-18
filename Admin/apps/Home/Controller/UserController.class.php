@@ -31,9 +31,9 @@ class UserController extends AdminController {
 		$this->assign($pageBar);
 
 		$this->assign('teachers',$teachers);
-		
+
 		$this->assign('now',"index");
-		$this->assign('MODULE',$this->MODULE_NAME);	
+		$this->assign('MODULE',$this->MODULE_NAME);
 		$this->display('teacher_audit');
 	}
 
@@ -52,9 +52,9 @@ class UserController extends AdminController {
 		$this->assign($pageBar);
 
 		$this->assign('investors',$investors);
-		
+
 		$this->assign('now','investor_audit');
-		$this->assign('MODULE',$this->MODULE_NAME);	
+		$this->assign('MODULE',$this->MODULE_NAME);
 		$this->display('investor_audit');
 	}
 
@@ -73,9 +73,9 @@ class UserController extends AdminController {
 		$this->assign($pageBar);
 
 		$this->assign('teachers',$teachers);
-		
+
 		$this->assign('now','teacher');
-		$this->assign('MODULE',$this->MODULE_NAME);	
+		$this->assign('MODULE',$this->MODULE_NAME);
 		$this->display('teacher');
 	}
 
@@ -83,7 +83,7 @@ class UserController extends AdminController {
 
 		$total = count(M('User')->where(array('status'=>1,'groupid'=>2))->select());
 		$totalPage = ceil($total/$this->pageSize);//总页数
-		
+
 		$investors = M('User')->where(array('status'=>1,'groupid'=>2))->field('password,userKey',true)->page($page,$this->pageSize)->select();
 
 		$pageBar = array(
@@ -95,9 +95,9 @@ class UserController extends AdminController {
 		$this->assign($pageBar);
 
 		$this->assign('investors',$investors);
-		
+
 		$this->assign('now','investor');
-		$this->assign('MODULE',$this->MODULE_NAME);	
+		$this->assign('MODULE',$this->MODULE_NAME);
 		$this->display('investor');
 	}
 
@@ -138,9 +138,9 @@ class UserController extends AdminController {
 		$this->assign($pageBar);
 
 		$this->assign('admins',$admins);
-		
+
 		$this->assign('now','admin');
-		$this->assign('MODULE',$this->MODULE_NAME);	
+		$this->assign('MODULE',$this->MODULE_NAME);
 		$this->display('admin');
 	}
 
@@ -155,7 +155,7 @@ class UserController extends AdminController {
 			}
 		} else {
 			$this->assign('now','admin_add');
-			$this->assign('MODULE',$this->MODULE_NAME);	
+			$this->assign('MODULE',$this->MODULE_NAME);
 			$this->display('admin_add');
 		}
 	}
@@ -190,6 +190,7 @@ class UserController extends AdminController {
 		$profile = M('User')->where(array('uid'=>$uid))->field('password,userKey,status',true)->find();
 		$profile['reg_time'] = date('Y-m-d',$profile['reg_time']);
 		$profile['log_time'] = date('Y-m-d',$profile['log_time']);
+		$profile['avatar'] = SITE_URL.'/Uploads/'.$profile['avatar'];
 
 		$projects = M('Projects')->where(array('uid'=>$profile['uid']))->field('pid,name')->select();
 		$tems = M('Teams')->where(array('tcharge'=>$profile['uid']))->select();
@@ -198,7 +199,7 @@ class UserController extends AdminController {
 		$this->assign('profile',$profile);
 		$this->assign('projects',$projects);
 
-		$this->assign('MODULE',$this->MODULE_NAME);	
+		$this->assign('MODULE',$this->MODULE_NAME);
 		$this->display('profile');
 	}
 

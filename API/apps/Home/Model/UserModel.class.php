@@ -3,7 +3,6 @@ namespace Home\Model;
 use Home\Model\BaseModel;
 class UserModel extends BaseModel {
 
-
 	/**
 	 * 判断用户是否存在
 	 */
@@ -19,18 +18,21 @@ class UserModel extends BaseModel {
 	public function register( $data ) {
 		$data['userKey'] = $this->getRandChar();//随机字符串
 		$data['password'] = md5(md5($data['password']).$data['userKey']);
-
-		$data['status'] = 0;
+		if($data['groupid'] == 0){
+			$data['status'] = 1;
+		} else {
+			$data['status'] = 0;
+		}
 		$data['reg_time'] = time();
 		return $this->add($data);
 	}
 
 	public function checkLogin($username,$password){
-		$userinfo = $this->where(array('username'=>$username))->field('uid,username,nickname,name,password,userKey,groupid')->find();
+		$userinfo = $this->where(array('username'=>$username))->field('uid,username,nickname,name,password,userKey,avatar,groupid')->find();
         $password = md5(md5($password).$userinfo['userKey']);
         unset($userinfo['userKey']);
     	if($password == $userinfo['password']){
-    		$this->where(array('username'=>$username))->save(array('log_time'=>time()));
+    		$this->where('username',$username)->save(array('log_time'=>time()));
     		return $userinfo;
     	}
         return false;
@@ -51,7 +53,7 @@ class UserModel extends BaseModel {
      */
     public function getInfo($uid) {
     	$where['uid'] = $uid;
-    	return M('User')->where($uid)->field('uid,username,nickname,name,gender,tel,email,groupid')->find();
+    	return M('User')->where($where)->field('uid,username,nickname,name,gender,tel,email,avatar,groupid')->find();
     }
 
     /**

@@ -13,11 +13,11 @@ class ClassController extends AdminController {
 
 		$total = count(M('ClassEnroll')->select());//总记录数
 		$totalPage = ceil($total/$this->pageSize);//总页数
-		
+
 
 
 		$enlist = M('ClassEnroll')->where(array('status'=> 0))->page($page,$this->pageSize)->select();
-		for ($i=0; $i < count($enlist); $i++) { 
+		for ($i=0; $i < count($enlist); $i++) {
 			$enlist[$i]['class'] = M('Classes')->where(array('cid'=>$enlist[$i]['cid']))->find();
 			$enlist[$i]['stu'] = M('User')->where(array('uid'=>$enlist[$i]['uid']))->field('username,name,gender,tel,email,reg_time,avatar')->find();
 			$enlist[$i]['issue_time'] = date("Y-m-d",$enlist[$i]['issue_time']);
@@ -39,18 +39,18 @@ class ClassController extends AdminController {
 		$this->display('class');
 	}
 
-	
+
 	public function class_list($page = 1) {
 
 		$total = count(M('Classes')->where("status != '2'")->select());//总记录数
 		$totalPage = ceil($total/$this->pageSize);//总页数
-		
+
 		$list = M('Classes')->where("status != '2'")->order('deadline asc')->page($page,$this->pageSize)->select();
-		for ($i=0; $i < count($list); $i++) { 
+		for ($i=0; $i < count($list); $i++) {
 			$list[$i]['start_time'] = date('Y-m-d',$list[$i]['start_time']);
 			$list[$i]['deadline'] = date('Y-m-d',$list[$i]['deadline']);
 		}
-		$pageBar = array(	
+		$pageBar = array(
 				'total'	=> $total,
 				'totalPage'	=> $totalPage+1,
 				'pageSize' => $this->pageSize,

@@ -7,20 +7,39 @@ class CptController extends BaseController {
 	 * @return json
 	 */
 	public function list_get() {
+		$page = !empty(I('get.page')) ? I('get.page') : 1;
+		$pageSize = !empty(I('get.size')) ? I('get.size') : 10;
 
-		$number = M('Competitions')->distinct(true)->field('number')->select();
-		//$this->ajaxReturn($number);
-		foreach ($number as $value) {
-			$data[] = M('Competitions')->where($value)->order('times desc')->find();
-		}
-		// $data = M('Competitions')->where("deadline > %d",time())->order('deadline desc')->page($page,$pageSize)->select();
-		$count = count(M('Competitions')->where($where)->select());
-		$data['pages'] = ceil($count/$pageSize);
-		
+		$data = M('Competitions')->where("deadline > %d",time())->order('deadline desc')->page($page,$pageSize)->select();
+
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {
-			$json = $this->jsonReturn(200,"暂无比赛信息");
+			$json = $this->jsonReturn(0,"暂无比赛信息");
+		}
+		//var_dump($jsonReturn);
+		$this->ajaxReturn($json);
+		// echo $json;
+	}
+
+	/**
+	 * 根据id获取比赛详情介绍
+	 * @param int $cid
+	 * @return json
+	 */
+	public function detail_get() {
+
+		$where['cid'] = I('get.cid');
+		$data = M('Competitions')->where($where)->find();
+		$data['description'] = htmlspecialchars_decode($data['description']);
+		$data['issue_time'] = date('Y-m-d',$data['issue_time']);
+		$data['deadline'] = date('Y-m-d',$data['deadline']);
+
+		if(!empty($data)) {
+			$json = $this->jsonReturn(200,"查询成功",$data);
+		} else {
+			$json = $this->jsonReturn(200,"暂无该比赛详细信息");
+
 		}
 		//var_dump($jsonReturn);
 		$this->ajaxReturn($json);
@@ -44,26 +63,7 @@ class CptController extends BaseController {
 		$this->ajaxReturn($json);
 	}
 
-	/**
-	 * 根据id获取比赛详情介绍
-	 * @param int $cid
-	 * @return json
-	 */
-	public function detail_get() {
-
-		$where['cid'] = I('get.cid');
-		$data = M('Competitions')->where($where)->find();
-
-		if(!empty($data)) {
-			$json = $this->jsonReturn(200,"查询成功",$data);
-		} else {
-			$json = $this->jsonReturn(200,"暂无该比赛详细信息");
-
-		}
-		//var_dump($jsonReturn);
-		$this->ajaxReturn($json);
-	}
-
+	
 	/**
 	 * 添加比赛信息
 	 * @return json

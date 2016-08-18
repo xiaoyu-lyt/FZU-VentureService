@@ -28,15 +28,30 @@
 				<input type="password" name="password" id="password" placeholder="请输入密码">
 			</div>
 			<div class="login-line3">
-				<span><input id="checkbox" type="checkbox" value="" />
-				 
 				<a class="pull-right" href="#"><span class="forgot">忘记密码</span></a>
 			</div>
-			<button id='login-btn'>登录</button>
-			
+				<button id='login-btn'>登录</button>
+		</div>
+		<div class="modify-password-box modify-box">
+			<span class="close"></span>
+			<form action="" id="modify-password" class="modify-form">
+				<p class="tel-line">
+					<input type="text" name="tel" placeholder="手机号">
+					</p>
+				<p class="code-line">	
+					<input type="text" name="v_code" placeholder="短信验证码">
+					<input class="send-btn" type="button"  value="发送验证码">
+				</p>
+				<p class="password-line">
+					<input type="text" name="new_password" placeholder="设置新密码">
+				</p>
+				<p class="submit-line">
+					<input class="submit" type="submit" value="确认修改">
+				</p>
+			</form>
 		</div>
 	</div>
-	
+	<div id="popup" class="detail-popup" style="display:none"></div>
 	<!-- Header Start -->
 	<header>
 		<a href="index.html" id="logo">
@@ -82,13 +97,13 @@
 		<div class="container">
 			<div id="projects-info-box" class="projects-info-box">
 				<div class="projects-info-top clearfix">
-					<div class="projects-info-img pull-left"><img src="images/user-projects1.png" alt=""></div>
+					<div class="projects-info-img pull-left"><img src="" alt="logo"></div>
 					<div id="projects-info-top" class="projects-info-list pull-left">
-						<div class="projects-info-name projects-info-line"><span class="projects-info-title">项目名称：</span><span id="project-name">互联网技术威客兼职预约平台</span></div>
-						<div class="projects-info-field projects-info-line"><span class="projects-info-title">项目所属领域：</span><span id="project-area">企业服务&服务业&外保服务</span></div>
-						<div class="projects-info-starttime projects-info-line"><span class="projects-info-title">创建时间：</span><span id="project-time">2016-07-20</span></div>
-						<div class="projects-info-team projects-info-line"><span class="projects-info-title">团队人数：</span><span id="project-members">125</span></div>
-						<div class="projects-info-leader projects-info-line"><span class="projects-info-title">项目负责人：</span><span id="project-principal">林渊腾</span> <a href=""><img class="icon-chat"src="images/chat.png" alt=""></a></div>
+						<div class="projects-info-name projects-info-line"><span class="projects-info-title">项目名称：</span><span id="project-name"></span></div>
+						<div class="projects-info-field projects-info-line"><span class="projects-info-title">项目所属领域：</span><span id="project-area"></span></div>
+						<div class="projects-info-starttime projects-info-line"><span class="projects-info-title">创建时间：</span><span id="project-time"></span></div>
+						<div class="projects-info-team projects-info-line"><span class="projects-info-title">团队人数：</span><span id="project-members"></span></div>
+						<div class="projects-info-leader projects-info-line"><span class="projects-info-title">项目负责人：</span><span id="project-principal"></span> <a href=""><img class="icon-chat"src="images/chat.png" alt=""></a></div>
 					</div>
 				</div>
 				<div id="projects-info-detail" class="projects-info-details">
@@ -96,7 +111,7 @@
 						<img class="icon-info-detail" src="images/icon-info-detail1.png" alt="">
 						<h3>项目简介</h3>
 						<div>
-							<p>预约知名互联网公司的产品、美工、前端、后端等技术人员到创业团队坐班兼职。平台抽取每单的提成，具体可以详细了解预约知名互联网公司的产品、美工、前端、后端等技术人员到创业团队坐班兼职。平台抽取每单的提成，具体可以详细了解预约知名互联网公司的产品、美工、前端、后端等技术人员到创业团队坐班兼职。平台抽取每单的提成，具体可以详细了解预约知名互联网公司的产品、美工、前端、后端等技术人员到创业团队坐班兼职。平台抽取每单的提成，具体可以详细了解预约知名互联网公司的产品、美工、前端、后端等技术人员到创业团队坐班兼职。平台抽取每单的提成，具体可以详细了解</p>
+							<p></p>
 						</div>
 					</div>
 					
@@ -104,7 +119,7 @@
 						<img class="icon-info-detail" src="images/icon-info-detail4.png" alt="">
 						<h3>项目开发进度</h3>
 						<div>
-							<p>产品研发中</p>
+							<p></p>
 						</div>
 					</div>
 					
@@ -154,13 +169,13 @@
 	<script src="js/handlebars-v4.0.5.js"></script>
 	<script id="project-template" type="text/x-handlebars-template">
 		<div class="projects-info-top clearfix">
-			<div class="projects-info-img pull-left"><img src="images/user-projects1.png" alt=""></div>
+			<div class="projects-info-img pull-left"><img src="logo" alt=""></div>
 			<div  class="projects-info-list pull-left">
 				<div class="projects-info-name projects-info-line"><span class="projects-info-title">项目名称：</span><span id="project-name">{{name}}</span></div>
 				<div class="projects-info-field projects-info-line"><span class="projects-info-title">项目所属领域：</span><span id="project-area">{{area}}</span></div>
 				<div class="projects-info-starttime projects-info-line"><span class="projects-info-title">创建时间：</span><span id="project-time">{{issue_time}}</span></div>
 				<div class="projects-info-team projects-info-line"><span class="projects-info-title">团队人数：</span><span id="project-members"></span></div>
-				<div class="projects-info-leader projects-info-line"><span class="projects-info-title">项目负责人：</span><a id="project-principal" href="personal_information.html?uid={{uid}}">{{uidname.name}}</a> </div>
+				<div class="projects-info-leader projects-info-line"><span class="projects-info-title">项目负责人：</span><a id="project-principal" href="javascript:;" rel="{{uid}}">{{uidname.name}}</a> </div>
 			</div>
 		</div>
 		<div class="projects-info-details">
@@ -191,22 +206,62 @@
 				<img class="icon-info-detail" src="images/icon-info-detail4.png" alt="">
 				<h3>下一融资阶段</h3>
 				<div>
-					<p id="next-stage"></p>
+					<p id="next-stage">{{stage}}</p>
 				</div>
 			</div>
 			<div class="projects-info-detail projects-info-bright">
 				<img class="icon-info-detail" src="images/icon-info-detail2.png" alt="">
 				<h3>项目展示</h3>
 				<div class="projects-pic-box owl-carousel">
-					<div class="item"><img class="projects-pic item" src="images/225046.jpg" alt=""></div>
-				    <div class="item"><img class="projects-pic item" src="images/225368.png"></div>
+					<div class="item"><img class="projects-pic item" src="pic" alt=""></div>
+				    <!-- <div class="item"><img class="projects-pic item" src="images/225368.png"></div>
 				    <div class="item"><img class="projects-pic item" src="images/225046.jpg" alt=""></div>
 				    <div class="item"><img class="projects-pic item" src="images/227735.jpg" alt=""></div>
-				    <div class="item"><img class="projects-pic item" src="images/225368.png"></div>
+				    <div class="item"><img class="projects-pic item" src="images/225368.png"></div> -->
 				</div>
 			</div>
 		</div>
 	</script>
+	<script id="popup4-template" type="text/x-handlebars-template">
+		<table class="find-table">
+	 		<tr>
+	 			<th><h4 class="line-title text-left">用户名</h4></th>
+	 			<td colspan="2">
+	 				<p>{{username}}</p>
+	 			</td>
+	 		</tr>
+	 		<tr>
+	 			<th><h4 class="line-title text-left">姓名</h4></th>
+	 			<td colspan="2">
+	 				<p>{{name}}</p>
+	 			</td>
+	 		</tr>
+	 		<tr>
+	 			<th><h4 class="line-title text-left">邮箱</h4></th>
+	 			<td colspan="2">
+	 				<p>{{email}}</p>
+	 			</td>
+	 		</tr>
+			<tr>
+	 			<th><h4 class="line-title text-left">联系方式</h4></th>
+	 			<td colspan="2">
+	 				<p>{{tel}}</p>
+	 			</td>
+	 		</tr>
+			<tr>
+	 			<th><h4 class="line-title text-left">参与项目</h4></th>
+	 			<td colspan="2">
+	 				{{#each projects}}
+	 					<div>
+		 					<a href="projects_info.html?pid={{pid}}">{{name}}</a>
+	 					</div>
+	 				{{/each}}
+	 			</td>
+	 		</tr>
+
+	 	</table>
+	</script>
+	<script src="js/layer/layer.js"></script>
 	<script src="js/project_detail.js"></script>
 	<script src="js/owlcarousel/owl.carousel.js"></script>
 	

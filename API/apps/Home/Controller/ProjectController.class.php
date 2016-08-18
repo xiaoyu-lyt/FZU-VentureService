@@ -14,11 +14,15 @@ class ProjectController extends BaseController {
 
 
 		$page = !empty(I('get.page')) ? I('get.page') : 1;
-		$pageSize = !empty(I('get.size')) ? I('get.size') : 20;
+		$pageSize = !empty(I('get.size')) ? I('get.size') : 10;
 
 		$where['status'] = 1;
 
-		$data = M('Projects')->where($where)->page($page,$pageSize)->select();
+		$data = M('Projects')->where($where)->field('pid,uid,name,pic,synopsis,product_type,time,stage,issue_time')->page($page,$pageSize)->select();
+		for ($i=0; $i <count($data); $i++) { 
+        	$data[$i]['issue_time'] = date('Y-m-d',$data[$i]['issue_time']);
+			$data[$i]['pic'] = SITE_URL.'/Uploads/'.$data[$i]['pic'];
+        }
 
 		$count = count(M('Projects')->where($where)->select());
 		$data['pages'] = ceil($count/$pageSize);
@@ -37,7 +41,14 @@ class ProjectController extends BaseController {
 	 */
 	public function detail_get() {
 		$where['pid'] = I('get.pid');
-		$data = M('projects')->where($where)->field('pid,name,stage,area,shareholding,tags,progress,logo,detail,members,date')->find();
+		$data = M('projects')->where($where)->find();
+		$data['partner'] = json_decode($data['partner']);
+		$data['uidname'] = M('User')->where(array('uid'=>$data['uid']))->field('username,name')->find(); 
+		$data['pic'] = SITE_URL.'/Uploads/'.$data['pic'];
+		$data['logo'] = SITE_URL.'/Uploads/'.$data['logo'];
+		$data['plan'] = SITE_URL.'/Uploads/'.$data['plan'];
+		$data['attachment'] = SITE_URL.'/Uploads/'.$data['attachment'];
+
 
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
@@ -49,17 +60,19 @@ class ProjectController extends BaseController {
 	}
 
 	/**
-	 * 添加项目信息
+	 * 项目申请
 	 * @return json
 	 */
-	public function add_post() {
+	public function apply_post() {
+		$login_user = session('login_user');
 		$data = I('post.');
-		$data['time'] = time();
-
-		if (!M('projects')->add($data)) {
-			$json = $this->jsonReturn(200,"项目添加成功",$data);
+		$data['uid'] = $login_user['uid'];
+		$data['partner'] = json_encode($data['partner']);
+	    $data['issue_time'] = time();
+		if (M('Projects')->add($data)) {
+			$json = $this->jsonReturn(200,"项目申请成功，请等待审核",$data);
 		} else {
-			$json = $this->jsonReturn(0,"项目添加失败，请重试");
+			$json = $this->jsonReturn(0,"项目申请失败，请重新申请");
 		}
 		$this->ajaxReturn($json);
 	}
@@ -73,11 +86,59 @@ class ProjectController extends BaseController {
 		$where['pid'] = I('delete.pid');
 
 		if (!M('projects')->where($where)->delete()) {
-			$josn = $this->jsonReturn(200,"项目删除成功");
+			$json = $this->jsonReturn(200,"项目删除成功");
 		} else {
-			$josn = $this->jsonReturn(0,"项目删除失败");
+			$json = $this->jsonReturn(0,"项目删除失败");
 		}
 		$this->ajaxReturn($json);
 	}
+
+
+	/**
+	 * 根据条件搜索项目
+	 * @param int $area 所属领域
+	 * @param int $form_company 公司形式
+	 * @param int $stage 融资阶段
+	 * @param int $product_type 产品类别
+	 * @param int $group 面向群体
+	 * @return json
+	 */
+	public function projectSelect_get() {
+		$where['area'] = I('get.area');
+		$where['form_company'] = I('get.form_company');
+		$where['stage'] = I('get.stage');
+		$where['product_type'] = I('get.product_type');
+		$where['group'] = I('get.group');
+		
+	}
+
+    /**
+     * 根据关键词搜索项目
+     * @param
+     * @return json
+     */
+    public function  wordSelect_get() {
+    	$page = !empty(I('get.page')) ? I('get.page') : 1;
+		$pageSize = !empty(I('get.size')) ? I('get.size') : 10;
+
+        $word = I('get.word');
+        $where['name'] = array('like','%'.$word.'%');
+        $where['status'] = 1;
+        $data = M('projects')->where($where)->field('pid,uid,name,pic,synopsis,product_type,time,stage,issue_time')->select();
+        for ($i=0; $i <count($data); $i++) { 
+        	$data[$i]['issue_time'] = date('Y-m-d',$data[$i]['issue_time']);
+			$data[$i]['pic'] = SITE_URL.'/Uploads/'.$data[$i]['pic'];
+        }
+
+        $count = count(M('Projects')->where($where)->select());
+		$data['pages'] = ceil($count/$pageSize);
+
+        if (!empty($data)) {
+            $json = $this->jsonReturn(200,"搜索成功",$data);
+        } else {
+            $json = $this->jsonReturn(0, "暂无相关搜索结果");
+        }
+        $this->ajaxReturn($json);
+    }
 	
 }

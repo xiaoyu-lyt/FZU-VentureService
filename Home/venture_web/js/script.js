@@ -1,20 +1,22 @@
+
 /**
  * 获取热门资讯列表
  */
 function getHotNews() {
+	var num;
 	$.ajax({
 		type: "get",
-		url: "../../API/index.php/home/notice/detail.html",
+		url: "../../API/index.php/home/notice/hotList.html",
 		dataType: "json",
-		data: { type: 3 }
 	}).done(function(result) {
 		var data = result.data;
-		// console.log(data);
+		num = data.length;
 		var template = Handlebars.compile($('#hotnews-template').html()); //注册模板
 		var html = template(data); //封装模板
 		$('#hot-news').html(html); //插入基础模板中
-	});
-	showNews();
+	}).always(function () {
+			showNews(num);
+	})	
 }
 
 /**
@@ -54,13 +56,11 @@ function getInfo(type) {
 /**
  * 新闻轮播
  */
-
-(function showNews() {
+function showNews(num) {
 	var newsBox = document.querySelectorAll('.news-box');
 	var newsWrapper = document.querySelector('.news-wrapper');
 	var index = -1;
 	var timer = null;
-
 	startChange();	
 	newsWrapper.onmouseover = function() {
 		clearInterval(timer);
@@ -72,7 +72,7 @@ function getInfo(type) {
 	function startChange() {
 		var shade = null;
 		var alpha = 0;
-		index = ++index %3;
+		index = ++index %num; //newsbox数目
 		for(var i = 0, len = newsBox.length; i < len; i++) {
 			$(newsBox[i]).removeClass('show');
 			startShade(-2,0);
@@ -90,7 +90,7 @@ function getInfo(type) {
 			alpha == target && clearInterval(shade);
 		}
 	}
-})();
+};
 
 /**
  * 新闻选项卡切换
@@ -105,7 +105,7 @@ function tab() {
 	}
 	function display(index) {
 		var oDiv = document.querySelectorAll('.info-detail-box');
-		for(let i = 0, len = oDiv.length; i < len; i++) {
+		for(var i = 0, len = oDiv.length; i < len; i++) {
 			oDiv[i].style.display = 'none';
 			$(oLi[i]).removeClass('hover');
 		}
@@ -126,8 +126,6 @@ function getBase() {
 		dataType: "json",
 	}).done(function(result) {
 		var data = result.data;
-			// console.log(data);
-
 			var template = Handlebars.compile($('#base-template').html()); //注册模板
 			Handlebars.registerHelper("compare", function(_index, options){
           	 	if(_index < 3){
@@ -178,6 +176,7 @@ function showProjects() {
 	var projectsWrap = document.querySelector('.projects-wrap');
 	var boxW = projectsBox[0].offsetWidth;
 	projectsBox = [].slice.call(projectsBox);
+	waterfall();
 	function waterfall() {
 		cols = Math.floor( (document.querySelector('.projects-content').offsetWidth) / boxW);
 		for(var i=0, len=projectsBox.length; i < len; i++) {
@@ -203,9 +202,10 @@ function showProjects() {
  */
 function showBases() {
 	var base = document.querySelector('.base');
+	var wscrollTop = document.documentElement.scrollTop||document.body.scrollTop||window.pageYOffset ;
+	// console.log(wscrollTop);
 	window.onresize = window.onscroll = function() {
-		var wscrollTop = document.documentElement.scrollTop||document.body.scrollTop||window.pageYOffset ;
-		// console.log(wscrollTop);
+		wscrollTop = document.documentElement.scrollTop||document.body.scrollTop||window.pageYOffset ;
 		if(wscrollTop > 580) {
 			base.style.opacity='1';
 		}
@@ -216,12 +216,11 @@ function showBases() {
 }
 
 
-
-
 /**
  * 初始化函数
  */
 function init() {
+	getHotNews();
 	getInfo(0);
 	getInfo(1);
 	getInfo(2);

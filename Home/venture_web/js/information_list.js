@@ -28,7 +28,7 @@ getData(2,1);
  * @param  {number} _page 当前页码
  */
 function getData(_type, _page) {
-	var _size = 1, //页大小
+	var _size = 14, //页大小
 		nowType = typeClass[_type], //当前类型
 		dataSize, 
 		pages;
@@ -74,31 +74,31 @@ function getPageBar(typeName, pages) {
 	if(pages === 1) return;
 	if(pageNum > 1) { //添加首页和前页
 		oNum = pageNum + 1;
-		pageStr += "<li><a href='javascoript:void(0)' rel='1'>首页</a></li><li><a href='javascoript:void(0)'rel=" + (pageNum-1) + ">&laquo;</a></li>";
+		pageStr += "<li><a href='javascript:;' rel='1'>首页</a></li><li><a href='javascript:;'rel=" + (pageNum-1) + ">&laquo;</a></li>";
 	} if(pages < show) {
 		for(var i=1; i <= pages; i++) {
-			pageStr += "<li><a href='javascoript:void(0)' rel='" + i + "'>" + i + "</a></li>";
+			pageStr += "<li><a href='javascript:;' rel='" + i + "'>" + i + "</a></li>";
 		}
 	} else if(pageNum <= middle+1) { //分页头部切换
 		for(var i=1; i <= show; i++) {
-			pageStr += "<li><a href='javascoript:void(0)' rel='" + i + "'>" + i + "</a></li>";
+			pageStr += "<li><a href='javascript:;' rel='" + i + "'>" + i + "</a></li>";
 		}
 	} else if((pageNum > middle+1) && (pageNum <= pages - middle)) { //分页中部切换
 		for(var i=1,j=pageNum-middle; i <= show; i++,j++) {
-			pageStr += "<li><a href='javascoript:void(0)' rel='" + j + "'>" + j + "</a></li>";
+			pageStr += "<li><a href='javascript:;' rel='" + j + "'>" + j + "</a></li>";
 		}
 		oNum = middle+2;
 	} else if(pageNum > pages - middle) { //分页尾部切换
 		for(var i=1,j=pages-show+1; i <= show; i++,j++) {
-			pageStr += "<li><a href='javascoript:void(0)' rel='" + j + "'>" + j + "</a></li>";
+			pageStr += "<li><a href='javascript:;' rel='" + j + "'>" + j + "</a></li>";
 		}
 		console.log(pageNum);
 		oNum = show-(pages-pageNum)+1;
 		console.log('oNum '+oNum);
 	} 
 	if(pageNum != TypeState[typeName].PAGES) { //当前页不为末页，添加后页和末页
-		pageStr += "<li><a href='javascoript:void(0)' rel="+ (pageNum+1) +">&raquo;</a></li>";
-		pageStr += "<li><a href='javascoript:void(0)' rel="+ pages + ">末页</a></li>";
+		pageStr += "<li><a href='javascript:;' rel="+ (pageNum+1) +">&raquo;</a></li>";
+		pageStr += "<li><a href='javascript:;' rel="+ pages + ">末页</a></li>";
 	}
 	pagination = '#' + typeName + '-pagination'; //获取导航名
 	$(pagination).html(pageStr);

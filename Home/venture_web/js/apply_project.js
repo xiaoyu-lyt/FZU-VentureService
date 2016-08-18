@@ -73,7 +73,8 @@ function addMember() {
  * 提交项目申请
  */
 function submitForm() {
-	var formStr= '';
+	var formStr= '',
+			files;
 	$('#step1-btn').click(function() {
 		formStr += $('#step1').serialize();
 		
@@ -84,24 +85,31 @@ function submitForm() {
 	});
 	$('#step3-btn').click(function() {
 		formStr += '&' + $('#step3').serialize();
-		console.log($('#step3').serialize());
+		//上传文件
 		$.ajax({
-			url: "../../API/index.php/home/upload/fileUpload.html",
+			url: "../../API/index.php/home/upload/fileUpload",
+			// url:"../../test.php",
 			type: "post",
 			data: new FormData($('#step1')[0]),
 			processData: false,
 			cache: false,
 			contentType :false
 			}).done(function(result) {
-				console.log(result);
-			});
-		$.ajax({
-			url: "../../API/index.php/home/project/apply.html",
-			type: "post",
-			data: formStr
-			}).done(function(result) {
-				console.log(result);
-			});
+				files = result.data;
+			}).always(function () {
+				//上传表单
+				// console.log(files);
+				formStr += '&pic=' + files.pic + '&logo=' + files.logo + '&plan=' + files.plan + '&attachment=' + files.attachment; 
+				// console.log(formStr);
+				$.ajax({
+					url: "../../API/index.php/home/project/apply",
+					type: "post",
+					data: formStr
+					}).done(function(result) {
+						alert(result.msg);
+					});
+			})
+		
 	});
 
 }
