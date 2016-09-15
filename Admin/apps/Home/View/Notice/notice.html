@@ -13,6 +13,7 @@
 				<th class="admin-th-article-title admin-th-title"><span>标题</span></th>
 				<th class="admin-th-article-pageview admin-th-pageview"><span>点击量</span></th>
 				<th class="admin-th-article-publisher admin-th-publisher"><span>发布人</span></th>
+				<!-- <th class="admin-th-article-hot admin-th-hot"><span>是否热门</span></th> -->
 				<th class="admin-th-article-updatetime admin-th-updatetime"><span>更新时间</span></th>
 				<th class="admin-th-article-operation admin-th-operation"><span>管理操作</span></th>
 			</tr>
@@ -27,7 +28,7 @@
 			<volist name="notice" id="v">
 				<tr>
 					<td class="admin-article-select">
-						<input class="admin-notice-select-btn" type="checkbox">
+						<input id="{$v.nid}" class="admin-notice-select-btn admin-select-btn" type="checkbox">
 					</td>
 					<td class="admin-article-id">{$i}</td>
 					<td class="admin-article-title">
@@ -37,8 +38,8 @@
 					<td class="admin-article-publisher"><span>{$v.name.name}</span></td>
 					<td class="admin-article-updatetime"><span>{$v.date}</span></td>
 					<td class="admin-article-operation admin-operation">
-						<span class="admin-article-modify"><a href="__ROOT__/index.php/home/notice/modify?nid={$v.nid}">修改</a></span>
-						<span class="admin-article-delete"><a href="__ROOT__/index.php/home/notice/deleteOne?nid={$v.nid}">删除</a></span>
+						<span class="admin-article-modify"><a href="__ROOT__/index.php/home/notice/modify/{$type}/{$v.nid}">修改</a></span>
+						<span class="admin-article-delete"><a onclick="javascript: if(confirm('确定删除？')) return true; return false;" href="__ROOT__/index.php/home/notice/deleteOne?nid={$v.nid}">删除</a></span>
 					</td>
 				</tr>
 			</volist>
@@ -58,3 +59,32 @@
 
 <include file="notice_footer"/>
 <include file="Public:footer"/>
+
+<script type="text/javascript">
+	var deleteBtn = document.querySelector('.delete-all');
+	var idArr;
+	deleteBtn.onclick = function() {
+		idArr = [];
+		var select = document.querySelectorAll('.admin-select-btn');
+		select = [].slice.call(select);
+		select.forEach(function (elem) {
+			console.log(elem);
+			console.log(elem.checked);
+			if(elem.checked) {
+				idArr.push(elem.id);
+			}
+		})
+		// console.log(nidArr);
+		$.ajax({
+			url: "./discard",
+			type: 'POST',
+			data: {idArr:idArr},
+			dataType: 'json',
+			async:false,
+			success:function(result) {
+				alert(result.msg);
+				window.location.reload();
+			}
+		})
+	}
+</script>

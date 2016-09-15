@@ -25,6 +25,7 @@ class ClassController extends BaseController {
 			$data[$i]['deadline'] = date('Y-m-d',$data[$i]['deadline']);
 			$data[$i]['issue_time'] = date('Y-m-d',$data[$i]['issue_time']);
 			$data[$i]['content'] = htmlspecialchars_decode($data[$i]['content']);
+
 		}
 
 		if(!empty($data)) {
@@ -38,7 +39,7 @@ class ClassController extends BaseController {
 
 	/**
 	 * 获取课堂的具体信息
-	 * @param int $cid 课堂id
+	 * @param int $cid
 	 * @return json
 	 */
 	public function detail_get() {
@@ -68,17 +69,17 @@ class ClassController extends BaseController {
 	public function enlist_post() {
 		$data = I('post.');
 		$data['issue_time'] = time();
-		$ret = M('classes')->where(array('cid'=>$data['cid']))->field('limit,students')->find();
-		if ($ret['students'] < $ret['limit']) {
+		$limit = M('classes')->where(array('cid'=>$data['cid']))->field('limit')->find();
+		$students = M('classes')->where(array('cid'=>$data['cid']))->field('students')->find();
+		if ($students < $limit) {
 			if (M('classEnroll')->add($data)) {
-				M('Classes')->where(array('cid'=>$data['cid']))->setInc('students',1);
 				$json = $this->jsonReturn(200,"报名成功，请等待审核",$data);
 			}
 			else {
 				$json = $this->jsonReturn(0,"报名失败，请重新报名");
 			}
 		} else {
-			$json = $this->jsonReturn(0,"报名失败，课堂人数已满");
+			$json = $this->jsonReturn(0,"报名失败，课堂人数已满",$data);
 		}
 		$this->ajaxReturn($json);
 	}
@@ -90,9 +91,11 @@ class ClassController extends BaseController {
 	public function downloads_get() {
 		$type = I('get.type');
 		$data = M('Documents')->where(array('type'=>$type))->order('issue_time desc')->select();
-		for ($i=0; $i <count($data); $i++) { 
-			$data[$i]['issue_time'] = date('Y-m-d',$data[$i]['issue_time']);
+		for ($i=0; $i <count($data) ; $i++) { 
+			$data[$i]['file_url'] = SITE_URL.'/Uploads/'.$data[$i]['file_url'];
+			$data[$i]['pic_url'] = SITE_URL.'/Uploads/'.$data[$i]['pic_url'];
 		}
+
 		if(!empty($data)){
 			$json = $this->jsonReturn(200,"查询成功",$data);
 		} else {

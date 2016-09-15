@@ -46,13 +46,13 @@
 			</div>
 			<div class="user-student-sidenav user-sidenav pull-left">
 				<ul>
-					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/notice">资讯管理</a></li>
-					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/user">用户管理</a></li>
-					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/project">项目管理</a></li>
-					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field">基地管理</a></li>
-					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/class">培训管理</a></li>
-					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/document">教材管理</a></li>
-					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition">比赛管理</a></li>
+					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/notice/index">资讯管理</a></li>
+					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/user/index">用户管理</a></li>
+					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/project/index">项目管理</a></li>
+					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field/index">基地管理</a></li>
+					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/class/index">培训管理</a></li>
+					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/document/index">教材管理</a></li>
+					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition/index">比赛管理</a></li>
 				</ul>
 			</div>
 <!-- 比赛管理 -->
@@ -83,34 +83,53 @@
 		<?php else: ?>
 			<?php if(is_array($competition)): $i = 0; $__LIST__ = $competition;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><tr>
 					<td class="admin-article-select">
-						<input class="admin-policy-select-btn" type="checkbox">
+						<input id="<?php echo ($v["cid"]); ?>" class="admin-policy-select-btn admin-select-btn" type="checkbox">
 					</td>
 					<td class="admin-article-id"><?php echo ($i); ?></td>
 					<td class="admin-article-title">
 						<a href="article.html"><?php echo ($v["name"]); ?></a>
 					</td>
-					<td class="admin-article-times"><span><?php echo ($v["times"]); ?></span></td>
+					<td class="admin-article-times"><span>第 <?php echo ($v["times"]); ?> 届</span></td>
 					<td class="admin-article-publishtime"><span><?php echo ($v["issue_time"]); ?></span></td>
 					<td class="admin-article-deadline"><span><?php echo ($v["deadline"]); ?></span></td>
 					<td class="admin-article-operation admin-operation">
-						<span class="admin-article-modify"><a href="/demo/jyzd/01/Admin/index.php/home/competition/modify?nid=<?php echo ($v["cid"]); ?>">修改</a></span>
-						
+						<span class="admin-article-modify"><a href="/demo/jyzd/01/Admin/index.php/home/competition/modify?cid=<?php echo ($v["cid"]); ?>">修改</a></span>
+						<span class="admin-article-delete"><a onclick="javascript: if(confirm('确定删除？')) return true; return false;" href="/demo/jyzd/01/Admin/index.php/home/competition/deleteOne?cid=<?php echo ($v["cid"]); ?>">删除</a></span>
 					</td>
 				</tr><?php endforeach; endif; else: echo "" ;endif; endif; ?>
+
+			<tr>
+				<td colspan="2">
+					<div class="admin-article-operation admin-operation">
+						<span class="admin-article-delete delete-all" style="right: 185px">批量删除</span>
+					</div>
+				</td>
+			</tr>
 
 		</table>
 
 	</div>
-	<div id="list" class="pull_right">
+	<!-- 分页 -->
+	<div class="pull-right">
 		<ul class="pagination">
-			<li><a href="/demo/jyzd/01/Admin/index.php/home/competition/index/1">首页</a></li>
-			<li><a href="/demo/jyzd/01/Admin/index.php/home/competition/index/<?php echo ($curPage-1); ?>">上一页</a></li>
-			<?php $__FOR_START_30639__=1;$__FOR_END_30639__=$totalPage;for($i=$__FOR_START_30639__;$i < $__FOR_END_30639__;$i+=1){ ?><li><a href="/demo/jyzd/01/Admin/index.php/home/competition/index/<?php echo ($i); ?>"><?php echo ($i); ?></a></li><?php } ?>
-			<li><a href="/demo/jyzd/01/Admin/index.php/home/competition/index/<?php echo ($curPage+1); ?>">下一页</a></li>
-			<li><a href="/demo/jyzd/01/Admin/index.php/home/competition/index/<?php echo ($totalPage-1); ?>">末页</a></li>
-			<li><a href="">共<?php echo ($total); ?>项比赛</a></li>
+			<?php if($curPage != 1 ): ?><li><a href="/demo/jyzd/01/Admin/index.php/home/competition/index/1">首页</a></li>
+				<li><a href="/demo/jyzd/01/Admin/index.php/home/competition/index/<?php echo ($curPage-1); ?>">上一页</a></li><?php endif; ?>
+			
+			<?php if(($curPage > 3) AND ($curPage < $totalPage-2)): $__FOR_START_9062__=$curPage-2;$__FOR_END_9062__=$curPage+3;for($i=$__FOR_START_9062__;$i < $__FOR_END_9062__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/competition/index/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
+			<?php elseif(($curPage > $totalPage-3) AND ($totalPage > 5)): ?>
+				<?php $__FOR_START_22183__=$totalPage-5;$__FOR_END_22183__=$totalPage;for($i=$__FOR_START_22183__;$i < $__FOR_END_22183__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/competition/index/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
+			<?php elseif($totalPage > 5): ?>
+				<?php $__FOR_START_30548__=1;$__FOR_END_30548__=6;for($i=$__FOR_START_30548__;$i < $__FOR_END_30548__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/competition/index/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
+			<?php else: ?>
+				<?php $__FOR_START_5885__=1;$__FOR_END_5885__=$totalPage;for($i=$__FOR_START_5885__;$i < $__FOR_END_5885__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/competition/index/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } endif; ?>
+				
+			<?php if($curPage < $totalPage-1): ?><li><a href="/demo/jyzd/01/Admin/index.php/home/competition/index/<?php echo ($curPage+1); ?>">下一页</a></li>
+				<li><a href="/demo/jyzd/01/Admin/index.php/home/competition/index/<?php echo ($totalPage-1); ?>">末页</a></li><?php endif; ?>
+
+			<li><a href="">共 <?php echo ($total); ?> 条记录</a></li>
 		</ul>
 	</div>
+
 </div>
 			<div class="admin-popup">
 				<div class="popup-refuse">
@@ -157,3 +176,32 @@
 	</script>
 </body>
 </html>
+
+<script type="text/javascript">
+	var deleteBtn = document.querySelector('.delete-all');
+	var idArr;
+	deleteBtn.onclick = function() {
+		idArr = [];
+		var select = document.querySelectorAll('.admin-select-btn');
+		select = [].slice.call(select);
+		select.forEach(function (elem) {
+			console.log(elem);
+			console.log(elem.checked);
+			if(elem.checked) {
+				idArr.push(elem.id);
+			}
+		})
+		// console.log(nidArr);
+		$.ajax({
+			url: "./discard",
+			type: 'POST',
+			data: {idArr:idArr},
+			dataType: 'json',
+			async:false,
+			success:function(result) {
+				alert(result.msg);
+				window.location.reload();
+			}
+		})
+	}
+</script>

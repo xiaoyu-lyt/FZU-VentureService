@@ -7,18 +7,27 @@ class ProjectController extends BaseController {
 	 * @return json
 	 */
 	public function list_get() {
-		// $area = !empty(I('get.area')) ? I('get.area') : '';
-		// $type = !empty(I('get.type')) ? I('get.type') : '';
-		// $stage = !empty(I('get.stage')) ? I('get.stage') : '';
-		// $shareholding = !empty(I('get.shareholding')) ? I('get.shareholding') : '';
+		$conditions = I('get.');
 
-
-		$page = !empty(I('get.page')) ? I('get.page') : 1;
-		$pageSize = !empty(I('get.size')) ? I('get.size') : 10;
+		$page = !empty($conditions['page']) ? $conditions['page'] : 1;
+		$pageSize = !empty($conditions['pageSize']) ? $conditions['pageSize'] : 10;
 
 		$where['status'] = 1;
 
-		$data = M('Projects')->where($where)->field('pid,uid,name,pic,synopsis,product_type,time,stage,issue_time')->page($page,$pageSize)->select();
+		if($conditions['area'] != "all" && !empty($conditions['area']))
+			$where['area'] = $conditions['area'];
+		if($conditions['form_company'] != "all" && !empty($conditions['form_company']))
+			$where['form_company'] = $conditions['form_company'];
+		if($conditions['stage'] != "all" && !empty($conditions['stage']))
+			$where['stage'] = $conditions['stage'];
+		if($conditions['product_type'] != "all" && !empty($conditions['product_type']))
+			$where['product_type'] = $conditions['product_type'];
+		if($conditions['group'] != "all" && !empty($conditions['group']))
+			$where['group'] = $conditions['group'];
+		if($conditions['is_show'] && !empty($conditions['is_show']))
+			$where['is_show'] = $conditions['is_show'];
+
+		$data = M('Projects')->where($where)->field('pid,uid,name,pic,synopsis,product_type,time,stage,issue_time,is_show')->page($page,$pageSize)->select();
 		for ($i=0; $i <count($data); $i++) { 
         	$data[$i]['issue_time'] = date('Y-m-d',$data[$i]['issue_time']);
 			$data[$i]['pic'] = SITE_URL.'/Uploads/'.$data[$i]['pic'];

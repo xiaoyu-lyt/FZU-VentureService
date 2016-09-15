@@ -46,13 +46,13 @@
 			</div>
 			<div class="user-student-sidenav user-sidenav pull-left">
 				<ul>
-					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/notice">资讯管理</a></li>
-					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/user">用户管理</a></li>
-					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/project">项目管理</a></li>
-					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field">基地管理</a></li>
-					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/class">培训管理</a></li>
-					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/document">教材管理</a></li>
-					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition">比赛管理</a></li>
+					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/notice/index">资讯管理</a></li>
+					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/user/index">用户管理</a></li>
+					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/project/index">项目管理</a></li>
+					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field/index">基地管理</a></li>
+					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/class/index">培训管理</a></li>
+					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/document/index">教材管理</a></li>
+					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition/index">比赛管理</a></li>
 				</ul>
 			</div>
 <div class="user-box admin-projects-management sub-management pull-right">
@@ -70,7 +70,7 @@
 				<th><h4 class="line-title text-left">项目图片</h4></th>
 				<td colspan="5">
 					<?php if($detail["pic"] == '' ): ?>无<?php else: ?>
-						<div class="view-pic"><img src="<?php echo ($deatil["pic"]); ?>" alt=""></div><?php endif; ?>
+						<div class="view-pic"><img src="<?php echo ($detail["pic"]); ?>" alt=""></div><?php endif; ?>
 				</td>
 			</tr>
 			<tr>
@@ -105,13 +105,12 @@
 			<tr>
 				<th><h4 class="line-title text-left">商业计划书</h4></td>
 				<td colspan="2">
-					<a href="<?php echo ($detail["plan"]); ?>">计划书</a>
-					<span style="color:#ccc;">(点击文件名可下载)</span>
+					<a href="/demo/jyzd/01/Admin/index.php/home/admin/download/?f=<?php echo ($detail["plan"]); ?>">计划书下载</a>
+					
 				</td>
 				<th><h4 class="line-title text-left">附件</h4></th>
 				<td colspan="2">
-					<a href="<?php echo ($detail["attachment"]); ?>">附件</a>
-					<span style="color:#ccc;">(点击文件名可下载)</span>
+					<a href="/demo/jyzd/01/Admin/index.php/home/admin/download/?f=<?php echo ($detail["attachment"]); ?>">附件下载</a>
 				</td>
 			<tr><td class="line-title text-center" colspan="6">负责人信息</td></tr>
 			<tr>

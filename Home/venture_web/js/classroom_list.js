@@ -60,11 +60,13 @@ function getLessonsList() {
 		data: { type: 0 }
 	}).done(function(result) {
 		var data = result.data;
-		// console.log(data);
+		console.log(data);
 		var template = Handlebars.compile($('#lessons-template').html()); //注册模板
 		var html = template(data); //封装模板
 		$('#lessons-box').html(html); //插入基础模板中
-	});
+	}).always(function () {
+		downloadFile();
+		});
 }
 
 
@@ -106,6 +108,25 @@ function applyTraining() {
 		})
 	})
 }
+
+/**
+ * 下载培训教材
+ * @return {[type]} [description]
+ */
+function downloadFile() {
+	$('.download-btn').each(function (index, elem) {
+		$(elem).click(function () { //下载教材
+			var link = $(this).attr('rel');
+			console.log(link);
+				$.ajax({
+					url: '../../Admin/index.php/home/admin/download.html',
+					type: 'get',
+					data: { f: link },
+				})
+		})
+	})
+}
+
 function init() {
 	getTraningList();
 	getLessonsList();
@@ -113,3 +134,4 @@ function init() {
 }
 
 init();
+

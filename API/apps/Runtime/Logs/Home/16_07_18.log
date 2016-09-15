@@ -1,0 +1,617 @@
+[ 2016-07-18T09:16:43+08:00 ] 127.0.0.1 /demo/jyzd/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.091262s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.103274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.103405s ]
+ERR: 无法加载控制器:
+
+[ 2016-07-18T10:49:34+08:00 ] 127.0.0.1 /demo/jyzd/index.php/home/user/test.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002238s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008057s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008204s ]
+
+[ 2016-07-18T17:29:35+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002457s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002716s ]
+
+[ 2016-07-18T17:31:03+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001625s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = ''  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+SQL: SELECT * FROM `eg_user` WHERE ( username='' and password='74be16979710d4c4e7c6647856088456' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001166s ]
+
+[ 2016-07-18T17:31:52+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001065s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001263s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = ''  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+SQL: SELECT * FROM `eg_user` WHERE ( username='' and password='74be16979710d4c4e7c6647856088456' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000907s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001078s ]
+
+[ 2016-07-18T17:31:57+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000717s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000862s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = ''  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+SQL: SELECT * FROM `eg_user` WHERE ( username='' and password='74be16979710d4c4e7c6647856088456' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000871s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001007s ]
+
+[ 2016-07-18T17:32:00+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000889s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = ''  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+SQL: SELECT * FROM `eg_user` WHERE ( username='' and password='74be16979710d4c4e7c6647856088456' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001453s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001680s ]
+
+[ 2016-07-18T17:32:29+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001562s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin'  [ RunTime:0.0003s ]
+SQL: INSERT INTO `eg_user` (`username`,`password`,`sex`,`tel`,`email`,`graduation_year`,`nickname`,`userKey`,`status`,`regTime`) VALUES ('weibin','b249257ae1fbd2fe1c98f9bb06ea4b97','男','15659751525','1010@qq.com','2014','学院教务员','jateemwr','0','1468834349') [ RunTime:0.0268s ]
+NOTIC: [8] Undefined index: groupid D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 32 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000917s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001066s ]
+
+[ 2016-07-18T17:32:38+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000684s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = ''  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+SQL: SELECT * FROM `eg_user` WHERE ( username='' and password='74be16979710d4c4e7c6647856088456' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001143s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001289s ]
+
+[ 2016-07-18T17:33:31+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001984s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = ''  [ RunTime:0.0003s ]
+NOTIC: [8] Array to string conversion D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+
+[ 2016-07-18T17:33:50+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000954s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = ''  [ RunTime:0.0003s ]
+
+[ 2016-07-18T17:36:20+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000569s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000981s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = ''  [ RunTime:0.0005s ]
+
+[ 2016-07-18T17:36:41+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000667s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000880s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001018s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin'  [ RunTime:0.0004s ]
+
+[ 2016-07-18T17:37:08+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001044s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+SQL: SELECT * FROM `eg_user` WHERE ( username='weibin' and password='d9b1d7db4cd6e70935368a1efb10e377' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001003s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001134s ]
+
+[ 2016-07-18T17:38:00+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001181s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+SQL: SELECT * FROM `eg_user` WHERE ( username='weibin' and password='d9b1d7db4cd6e70935368a1efb10e377' )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001352s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001541s ]
+
+[ 2016-07-18T17:38:11+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001026s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin'  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+SQL: SELECT * FROM `eg_user` WHERE ( username='weibin' and password='14e1b600b1fd579f47433b88e8d85291' )  [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001163s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001309s ]
+
+[ 2016-07-18T17:38:15+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000866s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001006s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+SQL: SELECT * FROM `eg_user` WHERE ( username='weibin' and password='d9b1d7db4cd6e70935368a1efb10e377' )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001142s ]
+
+[ 2016-07-18T17:39:30+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000856s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000994s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin'  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin' AND `password` = 'd9b1d7db4cd6e70935368a1efb10e377'  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001074s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001220s ]
+
+[ 2016-07-18T17:39:58+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000752s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000926s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001082s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin' AND `password` = 'd9b1d7db4cd6e70935368a1efb10e377'  [ RunTime:0.0003s ]
+
+[ 2016-07-18T17:42:25+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000855s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001252s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+
+[ 2016-07-18T17:43:11+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000903s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001055s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+NOTIC: [8] Undefined index: password D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 31 行.
+
+[ 2016-07-18T17:43:37+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001283s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+
+[ 2016-07-18T17:45:34+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001918s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002282s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'weibin'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+
+[ 2016-07-18T17:45:59+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002239s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0339s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin'  [ RunTime:0.0005s ]
+SQL: INSERT INTO `eg_user` (`username`,`password`,`sex`,`tel`,`email`,`graduation_year`,`nickname`,`userKey`,`status`,`regTime`) VALUES ('loobin','ccedc9cb44b529e91057eeb70d7ab2a9','男','15659751525','1010@qq.com','2014','学院教务员','eggzrmym','0','1468835159') [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: groupid D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 32 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001159s ]
+
+[ 2016-07-18T17:46:08+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001440s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+
+[ 2016-07-18T17:49:18+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002519s ]
+
+[ 2016-07-18T17:52:15+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000968s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001148s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+
+[ 2016-07-18T17:53:13+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000898s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 31 行.
+
+[ 2016-07-18T17:53:51+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000794s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000942s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 32 行.
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 33 行.
+
+[ 2016-07-18T17:54:56+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000836s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001005s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: userkey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 32 行.
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 33 行.
+
+[ 2016-07-18T17:55:46+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000891s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0385s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin'  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: userkey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+NOTIC: [8] Undefined index: userkey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 31 行.
+
+[ 2016-07-18T17:56:56+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000718s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000927s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 31 行.
+
+[ 2016-07-18T17:57:10+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000185s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000905s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 31 行.
+
+[ 2016-07-18T17:57:38+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000723s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000975s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001369s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin' LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 30 行.
+NOTIC: [8] Undefined index: userKey D:\wamp\www\demo\jyzd\apps\Home\Model\UserModel.class.php 第 31 行.
+
+[ 2016-07-18T17:58:01+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-07-18T17:58:14+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000574s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000892s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0039s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wamp\www\demo\jyzd\ThinkPHP\Library\Think\Model.class.php 第 746 行.
+NOTIC: [2] Cannot use a scalar value as an array D:\wamp\www\demo\jyzd\ThinkPHP\Library\Think\Model.class.php 第 633 行.
+NOTIC: [2] Cannot use a scalar value as an array D:\wamp\www\demo\jyzd\ThinkPHP\Library\Think\Model.class.php 第 645 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\wamp\www\demo\jyzd\ThinkPHP\Library\Think\Db\Driver.class.php 第 480 行.
+ERR: 1064:Erreur de syntaxe près de '' à la ligne 1
+ [ SQL语句 ] : SELECT * FROM  
+ERR: 1064:Erreur de syntaxe près de '' à la ligne 1
+ [ SQL语句 ] : SELECT * FROM  
+
+[ 2016-07-18T17:59:07+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000927s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001070s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0039s ]
+NOTIC: [2] Cannot use a scalar value as an array D:\wamp\www\demo\jyzd\ThinkPHP\Library\Think\Model.class.php 第 746 行.
+NOTIC: [2] Cannot use a scalar value as an array D:\wamp\www\demo\jyzd\ThinkPHP\Library\Think\Model.class.php 第 633 行.
+NOTIC: [2] Cannot use a scalar value as an array D:\wamp\www\demo\jyzd\ThinkPHP\Library\Think\Model.class.php 第 645 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\wamp\www\demo\jyzd\ThinkPHP\Library\Think\Db\Driver.class.php 第 480 行.
+ERR: 1064:Erreur de syntaxe près de '' à la ligne 1
+ [ SQL语句 ] : SELECT * FROM  
+ERR: 1064:Erreur de syntaxe près de '' à la ligne 1
+ [ SQL语句 ] : SELECT * FROM  
+
+[ 2016-07-18T17:59:22+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000568s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000898s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001184s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2016-07-18T18:01:45+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000809s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000993s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-07-18T18:02:11+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000938s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001151s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin' LIMIT 1   [ RunTime:0.0005s ]
+ERR: 1146:La table 'jyzd.eg_user_token' n'existe pas
+ [ SQL语句 ] : SHOW COLUMNS FROM `eg_user_token`
+ERR: 1146:La table 'jyzd.eg_user_token' n'existe pas
+ [ SQL语句 ] : SHOW COLUMNS FROM `eg_user_token`
+
+[ 2016-07-18T18:04:17+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000677s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000908s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001068s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin' LIMIT 1   [ RunTime:0.0005s ]
+ERR: 1146:La table 'jyzd.eg_user_token' n'existe pas
+ [ SQL语句 ] : SHOW COLUMNS FROM `eg_user_token`
+ERR: 1146:La table 'jyzd.eg_user_token' n'existe pas
+ [ SQL语句 ] : SHOW COLUMNS FROM `eg_user_token`
+
+[ 2016-07-18T18:05:54+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000869s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001014s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `eg_user_token` [ RunTime:0.0034s ]
+
+[ 2016-07-18T18:06:57+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000920s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001074s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eg_user_token` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `eg_user_token` [ RunTime:0.0043s ]
+SQL: INSERT INTO `eg_user_token` (`uid`,`token`,`token_expire`,`addtime`) VALUES ('13','259f4fc4314f5b7666ab06a71baa187a','1476612417','1468836417') [ RunTime:0.0009s ]
+SQL: DELETE FROM `eg_user_token` WHERE ( token_expire < 1468836417 ) [ RunTime:0.0003s ]
+NOTIC: [4096] Object of class Think\Model could not be converted to string D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 66 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001198s ]
+
+[ 2016-07-18T18:07:46+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000670s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002724s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `eg_user_token` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `eg_user_token` [ RunTime:0.0039s ]
+SQL: INSERT INTO `eg_user_token` (`uid`,`token`,`token_expire`,`addtime`) VALUES ('13','07df2326b4a381b6a6f2f92870a4f580','1476612466','1468836466') [ RunTime:0.0007s ]
+SQL: DELETE FROM `eg_user_token` WHERE ( token_expire < 1468836466 ) [ RunTime:0.0003s ]
+NOTIC: [4096] Object of class Think\Model could not be converted to string D:\wamp\www\demo\jyzd\apps\Home\Controller\UserController.class.php 第 66 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000936s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001078s ]
+
+[ 2016-07-18T18:08:47+08:00 ] 127.0.0.1 /demo/jyzd/index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000980s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `eg_user` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `eg_user` WHERE `username` = 'loobin' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `eg_user_token` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `eg_user_token` [ RunTime:0.0038s ]
+SQL: INSERT INTO `eg_user_token` (`uid`,`token`,`token_expire`,`addtime`) VALUES ('13','4ddbf8232b5e4993bec9783bc29913f2','1476612527','1468836527') [ RunTime:0.0004s ]
+SQL: DELETE FROM `eg_user_token` WHERE ( token_expire < 1468836527 ) [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000884s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001018s ]
+

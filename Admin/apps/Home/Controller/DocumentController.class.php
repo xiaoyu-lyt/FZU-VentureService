@@ -14,7 +14,7 @@ class DocumentController extends AdminController {
 		$totalPage = ceil($total/$this->pageSize);//总页数
 
 		$documents = M('Documents')->order('issue_time desc')->page($page,$pageSize)->select();
-		for ($i=0; $i < count($documents); $i++) {
+		for ($i=0; $i < count($documents); $i++) { 
 			$documents[$i]['issue_time'] = date('Y-m-d',$documents[$i]['issue_time']);
 		}
 		$pageBar = array(
@@ -38,12 +38,12 @@ class DocumentController extends AdminController {
 			$upload = new \Think\Upload();// 实例化上传类
 		    $upload->maxSize   =     314572800 ;// 设置附件上传大小
 		    $upload->rootPath  =     BASE_URL.'/Uploads/'; // 设置附件上传根目录
-		    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg', 'txt', 'doc', 'docx');// 设置附件上传类型
 		    $upload->saveName  =      array('uniqid',$login_manager['uid']."_".time()."_");
+		    $upload->thumb     =     true;
 		    // $upload->savePath  =     ''; // 设置附件上传（子）目录
 		    $upload->autoSub   = 	 true;
 		    $upload->subName   =     date('Ym',time()).'/'.date('d',time());
-		    // 上传文件
+		    // 上传文件 
 		    $info   =   $upload->upload();
 		    $data = I('post.');
 		    if($info) {// 上传成功
@@ -67,34 +67,37 @@ class DocumentController extends AdminController {
 	}
 
 	public function modify($id ,$action = '') {
+		$login_manager = session('login_manager');
+		
 		if($action == 'do' ) {
 
 			$upload = new \Think\Upload();// 实例化上传类
 		    $upload->maxSize   =     314572800 ;// 设置附件上传大小
 		    $upload->rootPath  =     BASE_URL.'/Uploads/'; // 设置附件上传根目录
-		    $upload->saveName  =     $login_manager['uid']."_".time();
-		    $upload->savePath  =     ''; // 设置附件上传（子）目录
+		    $upload->saveName  =      array('uniqid',$login_manager['uid']."_".time()."_");
+		    // $upload->savePath  =     ''; // 设置附件上传（子）目录
 		    $upload->autoSub   = 	 true;
-		    $upload->subName   =     array('date','Ymd');
-		    // 上传文件
+		    $upload->subName   =     date('Ym',time()).'/'.date('d',time());
+		    // 上传文件 
 		    $info   =   $upload->upload();
 		    $data = I('post.');
-		    if($info) {// 上传错误提示错误信息
-		       $data['file_url'] = $info['file']['savepath'].$info['file']['savename'];
-		       $data['pic_url'] = $info['pic']['savepath'].$info['pic']['savename'];
-		    }else{// 上传成功
-		        $this->error($upload->getError());
+		    if($info) {
+		    	if($info['file'])
+		       		$data['file_url'] = $info['file']['savepath'].$info['file']['savename'];
+		       	if($info['pic'])
+		       		$data['pic_url'] = $info['pic']['savepath'].$info['pic']['savename'];
 		    }
 		    $data['issue_time'] = time();
 
 		    if(M('Documents')->where(array('id'=>$id))->save($data)) {
 		    	$this->success('修改成功',U('index'));
 		    } else {
-		    	$this->error('修改失败，请重新发布！',U('index'));
-		    }
+		    	$this->error('操作失败，请重试！',U('index'));
+		    }	
 
 		} else {
 			$doc = M('Documents')->where(array('id'=>$id))->find();
+			$doc['pic_url'] = SITE_URL.$doc['pic_url'];
 			$this->assign('doc',$doc);
 
 			$this->assign('MODULE',$this->MODULE_NAME);
@@ -102,15 +105,6 @@ class DocumentController extends AdminController {
 		}
 	}
 
-	public function detail($id) {
-		$detail = M('Documents')->where(array('id'=>$id))->find();
-		$detail['pic_url'] = SITE_URL.'/Uploads/'.$detail['pic_url'];
-		$detail['issue_time'] = date('Y-m-d',$detail['issue_time']);
-
-		$this->assign('detail',$detail);
-		$this->assign('MODULE',$this->MODULE_NAME);
-		$this->display('detail');
-	}
 	public function delete($id){
 		if(M('Documents')->where(array('id'=>$id))->delete()) {
 			$this->success('删除成功！',U('index'));

@@ -126,9 +126,10 @@ function getBase() {
 		dataType: "json",
 	}).done(function(result) {
 		var data = result.data;
+		console.log(data);
 			var template = Handlebars.compile($('#base-template').html()); //注册模板
 			Handlebars.registerHelper("compare", function(_index, options){
-          	 	if(_index < 3){
+    	 	if(_index < 3){
 				//满足添加继续执行
 					return options.fn(this);
 				}	

@@ -38,7 +38,7 @@
 						<td class="admin-class-status" style="padding-left:40px;"><span><if condition="$vo.status eq 1">是<else />否</if></span></td>
 						<td class="admin-class-operation admin-operation">
 							<span class="admin-class-pass admin-pass"><a href="__ROOT__/index.php/home/class/modify/{$vo.cid}">修改</a></span>
-							<span class="admin-class-delete admin-delete"><a href="__ROOT__/index.php/home/class/delete/{$vo.cid}">删除</a></span>
+							<span class="admin-class-delete admin-delete"><a onclick="javascript: if(confirm('确定删除？')) return true; return false;" href="__ROOT__/index.php/home/class/delete/{$vo.cid}">删除</a></span>
 						</td>
 					</tr>
 				</volist>

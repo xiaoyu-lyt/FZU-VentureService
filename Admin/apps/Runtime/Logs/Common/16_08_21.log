@@ -1,0 +1,90 @@
+[ 2016-08-21T14:21:10+08:00 ] ::1 /FZU-VentureService/Admin/apps/Home/View/Home/__PUBLIC__/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001034s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-08-21T14:21:10+08:00 ] ::1 /FZU-VentureService/Admin/apps/Home/View/Home/__PUBLIC__/images/logo.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001031s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-08-21T14:21:10+08:00 ] ::1 /FZU-VentureService/Admin/apps/Home/View/Home/__PUBLIC__/js/tabswift.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001031s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-08-21T14:21:52+08:00 ] ::1 /FZU-VentureService/Admin/apps/Home/View/Home/__PUBLIC__/images/logo.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-08-21T14:21:52+08:00 ] ::1 /FZU-VentureService/Admin/apps/Home/View/Home/__PUBLIC__/js/tabswift.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-08-21T14:21:52+08:00 ] ::1 /FZU-VentureService/Admin/apps/Home/View/Home/__PUBLIC__/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-08-21T14:22:05+08:00 ] 127.0.0.1 /FZU-VentureService/Admin/apps/Home/View/Home/__PUBLIC__/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-08-21T14:22:05+08:00 ] 127.0.0.1 /FZU-VentureService/Admin/apps/Home/View/Home/__PUBLIC__/images/logo.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000664s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-08-21T14:22:05+08:00 ] 127.0.0.1 /FZU-VentureService/Admin/apps/Home/View/Home/__PUBLIC__/js/tabswift.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-08-21T14:22:05+08:00 ] 127.0.0.1 /FZU-VentureService/Admin/apps/Home/View/Home/__PUBLIC__/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-08-21T14:22:30+08:00 ] 127.0.0.1 /FZU-VentureService/Admin/Public/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+ERR: 无法加载模块:Public
+
+[ 2016-08-21T14:30:15+08:00 ] ::1 /FZU-VentureService/Admin/apps/Home/View/Home/__PUBLIC__/images/logo.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-08-21T14:30:15+08:00 ] ::1 /FZU-VentureService/Admin/apps/Home/View/Home/__PUBLIC__/js/tabswift.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-08-21T14:30:15+08:00 ] ::1 /FZU-VentureService/Admin/apps/Home/View/Home/__PUBLIC__/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000679s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-08-21T14:30:19+08:00 ] ::1 /FZU-VentureService/Admin/Public/js/verify.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+ERR: 无法加载模块:Public
+

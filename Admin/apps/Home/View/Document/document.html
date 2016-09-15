@@ -34,7 +34,7 @@
 						<td>{$vo.issue_time}</td>
 						<td class="admin-textbook-operation admin-operation">
 							<span class="admin-article-modify"><a href="__ROOT__/index.php/home/document/modify/{$vo.id}">修改</a></span>
-							<span class="admin-article-delete"><a href="__ROOT__/index.php/home/document/delete/{$vo.id}">删除</a></span>
+							<span class="admin-article-delete"><a onclick="javascript: if(confirm('确定删除？')) return true; return false;" href="__ROOT__/index.php/home/document/delete/{$vo.id}">删除</a></span>
 						</td>
 					</tr>
 				</volist>

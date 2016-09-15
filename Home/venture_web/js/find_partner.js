@@ -15,40 +15,63 @@ $(input).keyup(function(event) {
 	} 
 });
 
-btn.onclick = function() {
-	var condition = $(input).val();
-	console.log(condition);
-	if(condition) {
+/**
+ * 关键词搜索
+ * @return {[type]} [description]
+ */
+function searchProject() {
+	var btn = document.querySelector('.projects-search-btn');
+	var pages;
+	$(btn).click(function () {
+		text = $('#search-text').val();
+		if(text!='') {
+			$.ajax({
+					type: "get",
+					url: "../../API/index.php/Home/project/wordSelect",
+					data: {	word: text }
+			}).done(function(result) {
+					var data = result.data,
+							pages = data.pages;
+					console.log(data);
+					var template = Handlebars.compile($('#project-template').html()); //注册模板
+					var html = template(data); //封装模板
+					$('#projects-box').html(html); //插入基础模板中
+			}).always(function(){
+				getPageBar(1, pages);
+				});
+		}
+	});
+}
+
+$(btn).click(function() {
+	var text = $(input).val();
+	if(text!='') {
 		$.ajax({
 			type: "get",
 			url: "../../API/index.php/home/Partner/search.html",
-			dataType: "json",
-			data: {
-				condition: condition
-			},
-			error: function (){
-				console.log("error!");
-			},
-			success: function(result) {
-				var data = result.data;
-				// console.log(data);
-				
-				var template = Handlebars.compile($('#projects-template').html()); //注册模板
+			data: { condition: text },
+		}).done(function (result) {
+				var data = result.data,
+						pages = data.pages;
+				console.log(data);
+				Handlebars.registerHelper('type',function(){ //helpers返回需求类型
+				return typeArr[this.find_type];
+				});
+				var template = Handlebars.compile($('#partner-template').html()); //注册模板
 				var html = template(data); //封装模板
-				$('#user-projects-box').html(html); //插入基础模板中
-				// getPageBar();
-			}
-		});
+				$('#user-partner-box').html(html); //插入基础模板中
+		}).always(function () {
+			addPartnerPopup();
+		})
 	}
-}
+});
 
 /**
  * 渲染寻找队员列表	
  */
 function getPartnerList(_page) {
-	var _size = 3;
+	var _size = 5;
 	$.ajax({
-		
 		type: "get",
 		url: "../../API/index.php/home/Partner/seekList.html",
 		data: {
@@ -68,18 +91,7 @@ function getPartnerList(_page) {
 		
 		getPageBar('partner',_page, pages); //获取分页条
 	}).always(function() {
-		var link = document.querySelectorAll('.description-link');
-		$.each(link,function(index, elem) {
-			$(elem).click(function() {
-				getPartnerInfo(elem.rel);
-			});
-		});
-		var plink = document.querySelectorAll('.principal-link');
-		$.each(plink,function(index, elem) {
-			$(elem).click(function() {
-				getPrincipalInfo(elem.rel);
-			});
-		});
+		addPartnerPopup();
 	});
 }
 
@@ -274,8 +286,6 @@ function getPageBar(typeName, pageNum, pages) {
 		show = 3, //分页条显示页的个数
 		middle = Math.floor(show/2),
 		pagination;
-	console.log(pages);
-
 	if(pages == 1) return;
 	if(pageNum > 1) { //添加首页和前页
 		oNum = pageNum + 1;
@@ -339,3 +349,21 @@ function init() {
 }
 
 init();
+
+/**
+ * 添加弹窗链接
+ */
+function addPartnerPopup() {
+	var link = document.querySelectorAll('.description-link');
+	$.each(link,function(index, elem) {
+		$(elem).click(function() {
+			getPartnerInfo(elem.rel);
+		});
+	});
+	var plink = document.querySelectorAll('.principal-link');
+	$.each(plink,function(index, elem) {
+		$(elem).click(function() {
+			getPrincipalInfo(elem.rel);
+		});
+	});
+}

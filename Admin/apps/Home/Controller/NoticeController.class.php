@@ -9,7 +9,7 @@ class NoticeController extends AdminController {
 		if( !$this->isLogin() )
 			$this->error('请先登录！',U('home/index'));
 	}
-
+	
 	//新闻资讯
 	public function index($page = 1) {
 
@@ -81,25 +81,24 @@ class NoticeController extends AdminController {
 
 	//发布文章
 	public function publish($type,$action = '',$nid = '') {
-		$login_manager = session('login_manager');
-		$this->assign('type',$type);
+		$login_manager = session('login_manager');	
+		$this->assign('type',$type);	
 
 		if($action == 'do') {
 			$upload = new \Think\Upload();// 实例化上传类
 		    $upload->maxSize   =     314572800 ;// 设置附件上传大小
-		    $upload->rootPath  =     BASE_URL.'/Uploads/'; // 设置附件上传根目录
+			$upload->rootPath  =     BASE_URL.'/Uploads/'; // 设置附件上传根目录
 		    $upload->saveName  =      array('uniqid',$login_manager['uid']."_".time()."_");
+		    $upload->thumb     =     true;
 		    // $upload->savePath  =     ''; // 设置附件上传（子）目录
 		    $upload->autoSub   = 	 true;
 		    $upload->subName   =     date('Ym',time()).'/'.date('d',time());
-		    // 上传文件
+		    // 上传文件 
 		    $info   =   $upload->upload();
 		    $data = I('post.');
 		    if ($data['overhead'] == 1) {
 			    if($info) {// 上传成功
 			       $data['pic'] = $info['photo']['savepath'].$info['photo']['savename'];
-			    }else{//上传错误提示错误信息
-			        $this->error($upload->getError());
 			    }
 			 }
 			 if (isset($data['type'])&&isset($data['theme'])&&isset($data['content'])) {
@@ -119,7 +118,7 @@ class NoticeController extends AdminController {
 				} else {
 					if(M('Notice')->add($data)) {
 							$this->success("发布成功",U($type));
-
+						
 					} else {
 						$this->error("发布失败",U('publish'));
 					}
@@ -129,24 +128,35 @@ class NoticeController extends AdminController {
 			 }
 
 		} elseif ($action == 'domodify') {
-			$data = I('post.');
+			$upload = new \Think\Upload();// 实例化上传类
+		    $upload->maxSize   =     314572800 ;// 设置附件上传大小
+		    $upload->rootPath  =     BASE_URL.'/Uploads/'; // 设置附件上传根目录
+		    $upload->saveName  =      array('uniqid',$login_manager['uid']."_".time()."_");
+		    $upload->thumb     =     true;
+		    // $upload->savePath  =     ''; // 设置附件上传（子）目录
+		    $upload->autoSub   = 	 true;
+		    $upload->subName   =     date('Ym',time()).'/'.date('d',time());
+		    // 上传文件 
+		    $data = I('post.');
+		    // if ($_FILES) {
+			   //  $info   =   $upload->upload();
+		    // }
+
+			if ($data['overhead'] == 1) {
+				if ($_FILES) {
+					$info   =   $upload->upload();
+				    if($info) {// 上传成功
+				       $data['pic'] = $info['photo']['savepath'].$info['photo']['savename'];
+				    }
+				}
+			}
+
 			$data['date'] = time();
 			$data['uid'] = $login_manager['uid'];
-			$ori_data = M('Notice')->where(array('nid'=>$nid))->find();
-			if ($data['type'] != $ori_data['type']) {
-				if (M('Notice')->where(array('nid'=>$nid))->delete()) {
-					if (M('Notice')->add($data)) {
-						$this->success("修改成功",U($type));
-					} else {
-						$this->error("修改失败",U('publish'));
-					}
-				} else {
-					$this->error("修改失败",U('publish'));
-				}
+			if(M('Notice')->where(array('nid'=>$nid))->save($data)){
+				$this->success('修改成功',U($type));
 			} else {
-				M('Notice')->where(array('nid'=>$nid))->delete();
-				M('Notice')->add($data); //问一下伟滨
-				$this->success("修改成功",U($type));
+				$this->error("操作失败，请重试！",U($type));
 			}
 
 		} else {
@@ -158,7 +168,8 @@ class NoticeController extends AdminController {
 	//修改文章
 	public function modify($type,$nid) {
 		$article = M('Notice')->where(array('nid'=>$nid))->find();
-		$this->assign('type',$type);
+		$article['pic'] = SITE_URL.$article['pic'];
+		$this->assign('type',$type);	
 		$this->assign('article',$article);
 		$this->assign('MODULE',$this->MODULE_NAME);
 		$this->display('modify');
@@ -177,9 +188,9 @@ class NoticeController extends AdminController {
 			$this->ajaxReturn(array('msg'=>"删除成功"));
 		} else {
 			$this->ajaxReturn(array('msg'=>"删除失败"));
-
+			
 		}
-
+		
 	}
 
 	//删除单条
@@ -187,19 +198,19 @@ class NoticeController extends AdminController {
 		$type = M('Notice')->where(array('nid'=>$nid))->find();
 		if(M('Notice')->where(array('nid'=>$nid))->delete()) {
 			if ($type['type'] == 0) {
-				$this->success("修改成功",U('index'));
+				$this->success("删除成功",U('index'));
 			} elseif ($type['type'] == 1) {
-				$this->success("修改成功",U('notice'));
+				$this->success("删除成功",U('notice'));
 			} elseif ($type['type'] == 2) {
-				$this->success("修改成功",U('policy'));
+				$this->success("删除成功",U('policy'));
 			}
 		} else {
 			if ($type['type'] == 0) {
-				$this->success("修改失败",U('index'));
+				$this->success("删除失败",U('index'));
 			} elseif ($type['type'] == 1) {
-				$this->success("修改失败",U('notice'));
+				$this->success("删除失败",U('notice'));
 			} elseif ($type['type'] == 2) {
-				$this->success("修改失败",U('policy'));
+				$this->success("删除失败",U('policy'));
 			}
 		}
 	}

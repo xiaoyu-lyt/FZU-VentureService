@@ -14,7 +14,7 @@
 				<th><h4 class="line-title text-left">项目图片</h4></th>
 				<td colspan="5">
 					<if condition="$detail.pic eq '' ">无<else />
-						<div class="view-pic"><img src="{$deatil.pic}" alt=""></div>
+						<div class="view-pic"><img src="{$detail.pic}" alt=""></div>
 					</if>
 				</td>
 			</tr>
@@ -53,13 +53,12 @@
 			<tr>
 				<th><h4 class="line-title text-left">商业计划书</h4></td>
 				<td colspan="2">
-					<a href="{$detail.plan}">计划书</a>
-					<span style="color:#ccc;">(点击文件名可下载)</span>
+					<a href="__ROOT__/index.php/home/admin/download/?f={$detail.plan}">计划书下载</a>
+					
 				</td>
 				<th><h4 class="line-title text-left">附件</h4></th>
 				<td colspan="2">
-					<a href="{$detail.attachment}">附件</a>
-					<span style="color:#ccc;">(点击文件名可下载)</span>
+					<a href="__ROOT__/index.php/home/admin/download/?f={$detail.attachment}">附件下载</a>
 				</td>
 			<tr><td class="line-title text-center" colspan="6">负责人信息</td></tr>
 			<tr>
