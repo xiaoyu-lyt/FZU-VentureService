@@ -18,7 +18,7 @@ if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 define('APP_DEBUG',True);
 
 define('BASE_URL',dirname(dirname(__FILE__)));
-define('SITE_URL','http://127.0.0.1/demo/jyzd/01/Uploads/');
+define('SITE_URL','http://59.77.233.75/FZU-VentureService/Uploads/');
 
 
 
