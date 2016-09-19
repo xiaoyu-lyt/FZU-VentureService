@@ -57,7 +57,7 @@ class ProjectController extends BaseController {
 		$data['logo'] = SITE_URL.'/Uploads/'.$data['logo'];
 		$data['plan'] = SITE_URL.'/Uploads/'.$data['plan'];
 		$data['attachment'] = SITE_URL.'/Uploads/'.$data['attachment'];
-
+		$data['patent'] = json_decode($data['patent'],true);
 
 		if(!empty($data)) {
 			$json = $this->jsonReturn(200,"查询成功",$data);
@@ -78,6 +78,8 @@ class ProjectController extends BaseController {
 		$data['uid'] = $login_user['uid'];
 		$data['partner'] = json_encode($data['partner']);
 	    $data['issue_time'] = time();
+	    $data['patent'] = json_encode($data['patent']);
+
 		if (M('Projects')->add($data)) {
 			$json = $this->jsonReturn(200,"项目申请成功，请等待审核",$data);
 		} else {
