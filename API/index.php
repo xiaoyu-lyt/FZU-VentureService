@@ -19,7 +19,7 @@ define('APP_DEBUG',True);
 //定义根目录
 define('BASE_PATH', dirname(dirname(__FILE__)));
 
-define('SITE_URL', 'http://59.77.233.75/FZU-VentureService/');
+define('SITE_URL', 'http://59.77.233.75/FZU-VentureService');
 // 定义应用目录
 define('APP_PATH','./apps/');
 
