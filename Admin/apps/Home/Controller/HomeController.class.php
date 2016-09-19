@@ -1,17 +1,14 @@
 <?php
-namespace Home\controller;
-use Think\Controller;
-class HomeController extends Controller {
-
+namespace Home\Controller;
+use Home\Controller\AdminController;
+class HomeController extends AdminController {
+	
 	public $MODULE_NAME = "Home";
+	
 	public function index(){
-		$cookie_token = cookie('cookie_token');
-		if($cookie_token){
-			$this->redirect('notice/index');
-		} else
 			$this->display('login');
 	}
-
+	
 	public function login() {
 		$username = I('post.username');
 		$password = I('post.password');

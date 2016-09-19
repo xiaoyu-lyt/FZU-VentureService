@@ -1,7 +1,7 @@
 <include file="Public:header"/>
 <!-- 发布表格 -->
 <div class="user-box block">
-	<form  class="publish-form form-horizontal" enctype="multipart/form-data" action="__ROOT__/index.php/home/document/modify" method="post">
+	<form  class="publish-form form-horizontal" enctype="multipart/form-data" action="__ROOT__/index.php/home/document/modify/{$doc.id}/do" method="post">
 		<h2 align="center" style="margin: 0 0 20px 0; color: #61a3e1;">教材发布修改</h2>
 	 	<table class="publish-table">
 			<tr>
@@ -27,6 +27,7 @@
 			<tr>
 				<td><h4 class="line-title text-right"><span class="star">*</span>展示图：</h4></td>
 				<td>
+					<img width="500" height="300" src="{$doc.pic_url}" alt=""><br><br>
 					<input style="width: 200px;" placeholder="请先上传文件" class="title-input form-control" type="text" readonly value="{$doc.pic_url}">			
 					<input id="upload_input" style="width: 200px;" name="pic" class="title-input form-control" type="file">
 				</td>
@@ -37,6 +38,9 @@
 			</tr>
 	 	</table>
 	</form>
+	<div class="view-btn-group">
+ 		<a class="btn-view" href="javascript:history.back(-1)" >返回上一级</a>
+ 	</div>
 </div>
 
 <include file="Public:footer"/>

@@ -1,0 +1,56 @@
+[ 2016-08-27T12:24:05+08:00 ] ::1 /FZU-VentureService/API/index.php/home/field/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.027645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.029588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.029774s ]
+SQL: SHOW COLUMNS FROM `vs_fields` [ RunTime:0.0632s ]
+SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`run_time` FROM `vs_fields` WHERE `status` = 1 ORDER BY run_time desc  [ RunTime:0.0236s ]
+
+[ 2016-08-27T12:24:05+08:00 ] ::1 /FZU-VentureService/API/index.php/home/notice/list.html?type=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.026652s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.030800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.030995s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0709s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 0 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,15   [ RunTime:0.0214s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0 AND `status` = 1  [ RunTime:0.0315s ]
+
+[ 2016-08-27T12:24:05+08:00 ] ::1 /FZU-VentureService/API/index.php/home/notice/hotList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.026319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.029010s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.029198s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0198s ]
+SQL: SELECT `nid`,`type`,`theme`,`date`,`overhead`,`pic`,`content` FROM `vs_notice` WHERE `overhead` = 1 ORDER BY date desc  [ RunTime:0.0300s ]
+
+   [ RunTime:0.0220s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 2 AND `status` = 1  [ RunTime:0.0316s ]
+
+[ 2016-08-27T12:24:05+08:00 ] ::1 /FZU-VentureService/API/index.php/home/project/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.026666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.032097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.032292s ]
+SQL: SHOW COLUMNS FROM `vs_projects` [ RunTime:0.0213s ]
+SQL: SELECT `pid`,`uid`,`name`,`pic`,`synopsis`,`product_type`,`time`,`stage`,`issue_time` FROM `vs_projects` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.0345s ]
+SQL: SELECT * FROM `vs_projects` WHERE `status` = 1  [ RunTime:0.0287s ]
+
+[ 2016-08-27T12:24:05+08:00 ] ::1 /FZU-VentureService/API/index.php/home/notice/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.027072s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.031490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.031708s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0359s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,15   [ RunTime:0.0284s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 1 AND `status` = 1  [ RunTime:0.0279s ]
+

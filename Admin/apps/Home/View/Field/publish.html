@@ -72,7 +72,7 @@
 
 				<tr>
 					<td><h4 class="line-title text-right"><span class="star">*</span>基地照片：</h4></td>
-					<td><input name="photo" type="file" ></td>
+					<td><input name="pic" type="file" ></td>
 				</tr>
 				<tr>
 					<td><h4 class="line-title text-right"><span class="star">*</span>开办时间：</h4></td>
@@ -99,11 +99,31 @@
 
 					</td>
 				</tr>
-				<tr>
-					<td></td>
-					<td><button class="btn btn-publish">发布</button></td>
-				</tr>
+				<!-- <tr>
+					<td colspan="2"><h2 align="center" style="margin: 0 0 20px 0; color: #61a3e1;">公共场地详情</h2></td>
+					
+				</tr> -->
+				<!-- <tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>公告场地名称：</h4></td>
+					<td><input name="public_name" style="width: 280px;" class="title-input form-control" type="text"></td>
+				</tr> -->
+				<!-- <tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>公告场地说明：</h4></td>
+					<td>
+						<textarea class="form-control" style="width: 280px; height: 100px;" name="public_synopsis" id="" cols="30" rows="10"></textarea>
+						<input name="synopsis" style="width:280px;" class="title-input form-control" type="text">
+					</td>
+				</tr> -->
+				<!-- <tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>基地照片：</h4></td>
+					<td><input name="public_pic" type="file" ></td>
+				</tr> -->
+	
+					
 		 	</table>
+		 		
+		 		<span id="add-public-base" class="add-public-base text-center">添加公共场地</span>
+				<button class="btn btn-publish">发布</button>
 		</form>
 		<div class="view-btn-group">
 	 		<a class="btn-view" href="javascript:history.back(-1)" >返回上一级</a>
@@ -116,4 +136,15 @@
 <script type="text/javascript">
 	        var ue = UE.getEditor('_container');
 </script>
+	<script>
+		var index = 1;
+		$('#add-public-base').click(function () {
+			var line = '<tr><td><h4 class="line-title text-right"><span class="star">*</span>公共场地名称：</h4></td><td><input name="public['+ index +'][name]" style="width: 280px;" class="title-input form-control" type="text"></td></tr>';
+			line += '<tr><td><h4 class="line-title text-right"><span class="star">*</span>公共场地说明：</h4></td><td><textarea class="form-control" style="width: 280px; height: 100px;" name="public['+ index +'][synopsis]" id="" cols="30" rows="10"></textarea></tr>';
+			line += '<tr><td><h4 class="line-title text-right"><span class="star">*</span>公共场地照片：</h4></td><td><input name="pic_'+index+'" type="file" ></td></tr>'
+			console.log(index);
+			$('.publish-table').append(line);
+			index++;
+		})
+	</script>
 <include file="Public:footer"/>

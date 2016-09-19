@@ -1,0 +1,344 @@
+[ 2016-09-12T20:29:34+08:00 ] ::1 /FZU-VentureService/Admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008967s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002010s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002148s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.006354s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.006534s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.097675s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.098018s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006541s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006649s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001815s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001933s ]
+
+[ 2016-09-12T20:29:39+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/home/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001191s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001638s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0202s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0203s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0193s ]
+SQL: UPDATE `vs_user` SET `log_time`='1473683378' WHERE `username` = 'admin' [ RunTime:0.0185s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0200s ]
+SQL: INSERT INTO `vs_user_token` (`uid`,`groupid`,`token`,`token_expire`,`addtime`) VALUES ('2','7','e693f2a1c1ea2862064da696fb887b31','1481459378','1473683378') [ RunTime:0.0182s ]
+SQL: DELETE FROM `vs_user_token` WHERE ( token_expire < 1473683379 ) [ RunTime:0.0180s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000220s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000529s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054327s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054681s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002166s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003050s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003289s ]
+
+[ 2016-09-12T20:29:43+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/Notice/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002062s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002279s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0208s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'e693f2a1c1ea2862064da696fb887b31' LIMIT 1   [ RunTime:0.0207s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0214s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0198s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0212s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0  [ RunTime:0.0221s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0208s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0 LIMIT 0,8   [ RunTime:0.0214s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0193s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0195s ]
+NOTIC: [8] Undefined variable: pageSize D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\NoticeController.class.php 第 24 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000205s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000391s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.231884s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.232154s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000963s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001060s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001791s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001961s ]
+
+[ 2016-09-12T20:29:48+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/user/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'e693f2a1c1ea2862064da696fb887b31' LIMIT 1   [ RunTime:0.0195s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0210s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0190s ]
+SQL: SHOW COLUMNS FROM `vs_powerlevels` [ RunTime:0.0204s ]
+SQL: SELECT * FROM `vs_powerlevels` WHERE `level7` = 1  [ RunTime:0.0210s ]
+SQL: SELECT * FROM `vs_user` WHERE `status` = 0 AND `groupid` = 1  [ RunTime:0.0203s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`gender`,`tel`,`email`,`status`,`reg_time`,`log_time`,`groupid`,`tags`,`avatar` FROM `vs_user` WHERE `status` = 0 AND `groupid` = 1 ORDER BY reg_time desc LIMIT 0,8   [ RunTime:0.0204s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000225s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000428s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.248665s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.249000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000658s ]
+
+[ 2016-09-12T20:29:50+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/project/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000598s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'e693f2a1c1ea2862064da696fb887b31' LIMIT 1   [ RunTime:0.0198s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0209s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0190s ]
+SQL: SHOW COLUMNS FROM `vs_projects` [ RunTime:0.0212s ]
+SQL: SELECT * FROM `vs_projects` WHERE `status` = 0  [ RunTime:0.0215s ]
+SQL: SELECT `pid`,`name`,`uid`,`issue_time`,`status` FROM `vs_projects` WHERE `status` = 0 LIMIT 0,8   [ RunTime:0.0190s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000264s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000513s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.193051s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.193328s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000918s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001071s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000809s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000950s ]
+
+[ 2016-09-12T20:29:54+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/project/info_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'e693f2a1c1ea2862064da696fb887b31' LIMIT 1   [ RunTime:0.0197s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0210s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0189s ]
+SQL: SHOW COLUMNS FROM `vs_projects` [ RunTime:0.0212s ]
+SQL: SELECT * FROM `vs_projects` WHERE `status` = 1  [ RunTime:0.0223s ]
+SQL: SELECT `pid`,`name`,`uid`,`issue_time`,`status`,`is_show` FROM `vs_projects` WHERE `status` = 1 LIMIT 0,8   [ RunTime:0.0195s ]
+SQL: SELECT `name`,`tel`,`email` FROM `vs_user` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0189s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000441s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000859s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.195964s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.196230s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000839s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000974s ]
+
+[ 2016-09-12T20:29:59+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/project/detail?pid=84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0205s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'e693f2a1c1ea2862064da696fb887b31' LIMIT 1   [ RunTime:0.0197s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0213s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0194s ]
+SQL: SHOW COLUMNS FROM `vs_projects` [ RunTime:0.0216s ]
+SQL: SELECT * FROM `vs_projects` WHERE `pid` = 84 LIMIT 1   [ RunTime:0.0223s ]
+NOTIC: [8] Undefined index: next_stage D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 99 行.
+NOTIC: [8] Undefined index:  D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 99 行.
+NOTIC: [8] Undefined index: duty D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 100 行.
+NOTIC: [8] Undefined index:  D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 100 行.
+NOTIC: [8] Undefined index: id_type D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 101 行.
+NOTIC: [8] Undefined index:  D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 101 行.
+NOTIC: [8] Undefined index: gender D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 102 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000394s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000793s ]
+NOTIC: [8] Undefined index: name D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 118 行.
+NOTIC: [8] Use of undefined constant charge - assumed 'charge' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 123 行.
+NOTIC: [8] Array to string conversion D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 123 行.
+NOTIC: [8] Use of undefined constant share_percentage - assumed 'share_percentage' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 123 行.
+NOTIC: [8] Undefined index: share_percentage D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 124 行.
+NOTIC: [8] Undefined index: tel D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 129 行.
+NOTIC: [8] Undefined index: email D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 131 行.
+NOTIC: [8] Use of undefined constant charge - assumed 'charge' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 134 行.
+NOTIC: [8] Array to string conversion D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 134 行.
+NOTIC: [8] Use of undefined constant duty - assumed 'duty' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 134 行.
+NOTIC: [8] Undefined index: id_number D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 142 行.
+NOTIC: [8] Use of undefined constant charge - assumed 'charge' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 147 行.
+NOTIC: [8] Array to string conversion D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 147 行.
+NOTIC: [8] Use of undefined constant work_record - assumed 'work_record' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 147 行.
+NOTIC: [8] Undefined index: work_record D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 148 行.
+NOTIC: [8] Use of undefined constant charge - assumed 'charge' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 152 行.
+NOTIC: [8] Array to string conversion D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 152 行.
+NOTIC: [8] Use of undefined constant business_record - assumed 'business_record' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 152 行.
+NOTIC: [8] Undefined index: business_record D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 153 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.178608s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.178861s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000841s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001030s ]
+
+[ 2016-09-12T20:45:31+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/project/detail?pid=84
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0241s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'e693f2a1c1ea2862064da696fb887b31' LIMIT 1   [ RunTime:0.0233s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0247s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0231s ]
+SQL: SHOW COLUMNS FROM `vs_projects` [ RunTime:0.0251s ]
+SQL: SELECT * FROM `vs_projects` WHERE `pid` = 84 LIMIT 1   [ RunTime:0.0262s ]
+NOTIC: [8] Undefined index: next_stage D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 99 行.
+NOTIC: [8] Undefined index:  D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 99 行.
+NOTIC: [8] Undefined index: duty D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 100 行.
+NOTIC: [8] Undefined index:  D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 100 行.
+NOTIC: [8] Undefined index: id_type D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 101 行.
+NOTIC: [8] Undefined index:  D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 101 行.
+NOTIC: [8] Undefined index: gender D:\wamp\www\FZU-VentureService\Admin\apps\Home\Controller\ProjectController.class.php 第 102 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000305s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000637s ]
+NOTIC: [8] Undefined index: name D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 118 行.
+NOTIC: [8] Use of undefined constant charge - assumed 'charge' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 123 行.
+NOTIC: [8] Array to string conversion D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 123 行.
+NOTIC: [8] Use of undefined constant share_percentage - assumed 'share_percentage' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 123 行.
+NOTIC: [8] Undefined index: share_percentage D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 124 行.
+NOTIC: [8] Undefined index: tel D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 129 行.
+NOTIC: [8] Undefined index: email D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 131 行.
+NOTIC: [8] Use of undefined constant charge - assumed 'charge' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 134 行.
+NOTIC: [8] Array to string conversion D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 134 行.
+NOTIC: [8] Use of undefined constant duty - assumed 'duty' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 134 行.
+NOTIC: [8] Undefined index: id_number D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 142 行.
+NOTIC: [8] Use of undefined constant charge - assumed 'charge' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 147 行.
+NOTIC: [8] Array to string conversion D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 147 行.
+NOTIC: [8] Use of undefined constant work_record - assumed 'work_record' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 147 行.
+NOTIC: [8] Undefined index: work_record D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 148 行.
+NOTIC: [8] Use of undefined constant charge - assumed 'charge' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 152 行.
+NOTIC: [8] Array to string conversion D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 152 行.
+NOTIC: [8] Use of undefined constant business_record - assumed 'business_record' D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 152 行.
+NOTIC: [8] Undefined index: business_record D:\wamp\www\FZU-VentureService\Admin\apps\Runtime\Cache\Home\6609923cc10c15dbf9a5a691801170f8.php 第 153 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.142378s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.142723s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000790s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001972s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002243s ]
+
+[ 2016-09-12T20:50:00+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/field/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000591s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0204s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'e693f2a1c1ea2862064da696fb887b31' LIMIT 1   [ RunTime:0.0198s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0208s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0192s ]
+SQL: SHOW COLUMNS FROM `vs_field_apply` [ RunTime:0.0214s ]
+SQL: SELECT * FROM `vs_field_apply` WHERE `status` = 0  [ RunTime:0.0220s ]
+SQL: SELECT * FROM `vs_field_apply` WHERE `status` = 0 LIMIT 0,8   [ RunTime:0.0217s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000354s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000703s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.180536s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.180871s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000687s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000782s ]
+
+[ 2016-09-12T20:50:00+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/field/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000569s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001785s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0204s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'e693f2a1c1ea2862064da696fb887b31' LIMIT 1   [ RunTime:0.0198s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0210s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0190s ]
+SQL: SHOW COLUMNS FROM `vs_field_apply` [ RunTime:0.0211s ]
+SQL: SELECT * FROM `vs_field_apply` WHERE `status` = 0  [ RunTime:0.0219s ]
+SQL: SELECT * FROM `vs_field_apply` WHERE `status` = 0 LIMIT 0,8   [ RunTime:0.0218s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000238s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000443s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.232510s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.232775s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000712s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000809s ]
+
+[ 2016-09-12T20:50:02+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/field/publish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'e693f2a1c1ea2862064da696fb887b31' LIMIT 1   [ RunTime:0.0194s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0208s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0191s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000296s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000590s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.126474s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.126761s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000812s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000958s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001405s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001631s ]
+

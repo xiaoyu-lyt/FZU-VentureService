@@ -1,0 +1,494 @@
+[ 2016-07-31T22:37:13+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/notice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000942s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000946s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001023s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0238s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = null LIMIT 1   [ RunTime:0.0235s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000188s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013769s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013899s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000658s ]
+
+[ 2016-07-31T22:37:15+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/Home/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000627s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0235s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0234s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '' LIMIT 1   [ RunTime:0.0239s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008492s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008594s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000144s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000224s ]
+
+[ 2016-07-31T22:37:16+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/Home/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001170s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001297s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0235s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0235s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '' LIMIT 1   [ RunTime:0.0229s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007791s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007878s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000151s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000205s ]
+
+[ 2016-07-31T22:37:16+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/home/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000544s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011559s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011620s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000164s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001146s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001238s ]
+
+[ 2016-07-31T22:37:18+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/Home/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0277s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0270s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = '' LIMIT 1   [ RunTime:0.0267s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008522s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008651s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000137s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000196s ]
+
+[ 2016-07-31T22:37:20+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/home/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000710s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007134s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007194s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000154s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000561s ]
+
+[ 2016-07-31T22:37:21+08:00 ] ::1 /FZU-VentureService/Admin/index.php?s=/Home/Home/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007701s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007780s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000863s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000979s ]
+
+[ 2016-07-31T22:37:27+08:00 ] ::1 /FZU-VentureService/Admin/index.php/Home/home/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000929s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0282s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0273s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`password`,`userKey`,`groupid` FROM `vs_user` WHERE `username` = 'liam' LIMIT 1   [ RunTime:0.0267s ]
+SQL: UPDATE `vs_user` SET `log_time`='1469975846' WHERE `username` = 'liam' [ RunTime:0.0269s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0278s ]
+SQL: INSERT INTO `vs_user_token` (`uid`,`groupid`,`token`,`token_expire`,`addtime`) VALUES ('16','6','ce9eeba730f03dd4fe7eba6d9d4a54e1','1477751846','1469975846') [ RunTime:0.0265s ]
+SQL: DELETE FROM `vs_user_token` WHERE ( token_expire < 1469975846 ) [ RunTime:0.0265s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010727s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010840s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000622s ]
+
+[ 2016-07-31T22:37:28+08:00 ] ::1 /FZU-VentureService/Admin/index.php?s=/Home/Notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0270s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'ce9eeba730f03dd4fe7eba6d9d4a54e1' LIMIT 1   [ RunTime:0.0272s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0275s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0263s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0267s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0  [ RunTime:0.0534s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0272s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0 LIMIT 0,8   [ RunTime:0.0279s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0264s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0263s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0266s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0266s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0261s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0262s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0262s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0266s ]
+NOTIC: [8] Undefined variable: pageSize /Applications/MAMP/htdocs/FZU-VentureService/Admin/apps/Home/Controller/NoticeController.class.php 第 24 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000320s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000449s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022810s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022900s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000156s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000823s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000938s ]
+
+[ 2016-07-31T22:37:30+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000822s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0247s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'ce9eeba730f03dd4fe7eba6d9d4a54e1' LIMIT 1   [ RunTime:0.0235s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0246s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0236s ]
+SQL: SELECT * FROM `vs_user` WHERE `status` = 0 AND `groupid` = 1  [ RunTime:0.0244s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`gender`,`tel`,`email`,`status`,`reg_time`,`log_time`,`groupid`,`tags`,`avatar` FROM `vs_user` WHERE `status` = 0 AND `groupid` = 1 LIMIT 0,8   [ RunTime:0.0235s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021264s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021354s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000512s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000570s ]
+
+[ 2016-07-31T22:37:33+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/notice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0236s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'ce9eeba730f03dd4fe7eba6d9d4a54e1' LIMIT 1   [ RunTime:0.0232s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0238s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0231s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0236s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0  [ RunTime:0.0463s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0235s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0 LIMIT 0,8   [ RunTime:0.0247s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0233s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0228s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0226s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0226s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0235s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0227s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0229s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0229s ]
+NOTIC: [8] Undefined variable: pageSize /Applications/MAMP/htdocs/FZU-VentureService/Admin/apps/Home/Controller/NoticeController.class.php 第 24 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018967s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019066s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000179s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000731s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000862s ]
+
+[ 2016-07-31T22:38:42+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/notice/index/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0235s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'ce9eeba730f03dd4fe7eba6d9d4a54e1' LIMIT 1   [ RunTime:0.0235s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0239s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0230s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0238s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0  [ RunTime:0.0459s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0238s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0 LIMIT 8,8   [ RunTime:0.0230s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0224s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0225s ]
+NOTIC: [8] Undefined variable: pageSize /Applications/MAMP/htdocs/FZU-VentureService/Admin/apps/Home/Controller/NoticeController.class.php 第 24 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000265s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021281s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021389s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000179s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000242s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000874s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000965s ]
+
+[ 2016-07-31T22:38:43+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/notice/publish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0276s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'ce9eeba730f03dd4fe7eba6d9d4a54e1' LIMIT 1   [ RunTime:0.0270s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0271s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0263s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012493s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012585s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000168s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000570s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000632s ]
+
+[ 2016-07-31T22:38:49+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/notice/publish/do
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0237s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'ce9eeba730f03dd4fe7eba6d9d4a54e1' LIMIT 1   [ RunTime:0.0234s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0247s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0230s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0236s ]
+SQL: INSERT INTO `vs_notice` (`type`,`theme`,`content`,`date`,`uid`) VALUES ('0','liam','&lt;embed id=&quot;xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd&quot; type=&quot;application/thunder_download_plugin&quot; height=&quot;0&quot; width=&quot;0&quot;/&gt;liam','1469975929','16') [ RunTime:0.0236s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009321s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009421s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000204s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000526s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000583s ]
+
+[ 2016-07-31T22:38:51+08:00 ] ::1 /FZU-VentureService/Admin/index.php?s=/Home/Notice/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0235s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'ce9eeba730f03dd4fe7eba6d9d4a54e1' LIMIT 1   [ RunTime:0.0229s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0235s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0226s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0230s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0  [ RunTime:0.0459s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0235s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0 LIMIT 0,8   [ RunTime:0.0244s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0222s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0225s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0227s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0223s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0224s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0228s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0222s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0223s ]
+NOTIC: [8] Undefined variable: pageSize /Applications/MAMP/htdocs/FZU-VentureService/Admin/apps/Home/Controller/NoticeController.class.php 第 24 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000239s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025550s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025672s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000968s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001106s ]
+
+[ 2016-07-31T22:38:53+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/notice/index/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000579s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0233s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'ce9eeba730f03dd4fe7eba6d9d4a54e1' LIMIT 1   [ RunTime:0.0226s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0233s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0241s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0233s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0  [ RunTime:0.0463s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0233s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 0 LIMIT 8,8   [ RunTime:0.0232s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0224s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0228s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0231s ]
+NOTIC: [8] Undefined variable: pageSize /Applications/MAMP/htdocs/FZU-VentureService/Admin/apps/Home/Controller/NoticeController.class.php 第 24 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028329s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028482s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001223s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001369s ]
+
+[ 2016-07-31T22:41:40+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/notice/publish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0279s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'ce9eeba730f03dd4fe7eba6d9d4a54e1' LIMIT 1   [ RunTime:0.0264s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0272s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0274s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011629s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011737s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000166s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000596s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000656s ]
+
+[ 2016-07-31T22:41:48+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/competition
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0240s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'ce9eeba730f03dd4fe7eba6d9d4a54e1' LIMIT 1   [ RunTime:0.0231s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0237s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0228s ]
+SQL: SHOW COLUMNS FROM `vs_competitions` [ RunTime:0.0236s ]
+SQL: SELECT * FROM `vs_competitions`  [ RunTime:0.0234s ]
+SQL: SELECT * FROM `vs_competitions` LIMIT 0,8   [ RunTime:0.0234s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017163s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017273s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000148s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000772s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000854s ]
+
+[ 2016-07-31T22:42:50+08:00 ] ::1 /FZU-VentureService/Admin/index.php/home/competition
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `vs_user_token` [ RunTime:0.0240s ]
+SQL: SELECT * FROM `vs_user_token` WHERE `token` = 'ce9eeba730f03dd4fe7eba6d9d4a54e1' LIMIT 1   [ RunTime:0.0233s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0243s ]
+SQL: SELECT `uid`,`username`,`nickname`,`name`,`groupid` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0233s ]
+SQL: SHOW COLUMNS FROM `vs_competitions` [ RunTime:0.0241s ]
+SQL: SELECT * FROM `vs_competitions`  [ RunTime:0.0235s ]
+SQL: SELECT * FROM `vs_competitions` LIMIT 0,8   [ RunTime:0.0231s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000173s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014168s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014239s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000167s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000934s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001052s ]
+

@@ -109,21 +109,7 @@
 					</div>
 					<div id="traning-box" class="clearfix">
 						<div class="col-md-3 col-sm-4">
-							<div class="classroom-box">
-								<div class="classroom-box-mask">
-								<p class="traning-content">主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容</p>
-								</div>
-								<a class="classroom-img" href=""><img src="images/classrom1.jpg" alt=""></a>
-								<div class="classroom-info">
-									<h2><a href="">SYB培训模式</a></h2>
-									<a class="clasroom-training-detail clearfix">
-										<span class="pull-left">主讲人：林渊腾</span>
-										<span class="pull-right">人数：30/60</span>
-										<span class="pull-left">培训时间：2016/07/22-2016/08/01</span>
-									</a>
-								</div>
-								<a class="training-apply-btn" href="">我要报名</a>
-								</div>
+							
 						</div>
 					</div>
 					
@@ -131,10 +117,10 @@
 			<div class="classroom-lessons clearfix">
 					<div class="classroom-title">
 					<img src="images/课堂要点.png" alt="">
-						<h2>创业课堂</h2>
+						<h2>培训教材</h2>
 					</div>
 					<div id="lessons-box">
-						<div class="col-md-3 col-sm-4">
+						<!-- <div class="col-md-3 col-sm-4">
 							<div class="classroom-box">
 								<a class="classroom-img" href="http://ow365.cn/?i=10263&furl=http://123.207.58.12/FZU-VentureService/Upload/Courses/Word/test.docx" target="_blank"><img src="images/classrom2.jpg" alt=""></a>
 								<div class="classroom-info">
@@ -142,7 +128,7 @@
 									<a class="download-btn" href="http://123.207.58.12/FZU-VentureService/Upload/Courses/Word/test.docx">下载</a>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						
 					</div>
 			</div>
@@ -200,7 +186,7 @@
 								<span class="pull-left">培训时间：<br>{{start_time}}至{{deadline}}</span>
 							</a>
 						</div>
-						<a class="training-apply-btn" href="javascript:void(0)" onClick="applyTraining(this.rel)" rel={{cid}}>我要报名</a>
+						<a class="training-apply-btn apply" href="javascript:void(0)" rel={{cid}}>我要报名</a>
 					</div>
 				</div>
 			{{/if}}
@@ -210,10 +196,10 @@
 		{{#each this}}
 			<div class="col-md-3 col-sm-4">
 				<div class="classroom-box">
-					<a class="classroom-img" href="http://ow365.cn/?i=10263&furl=http://123.207.58.12/FZU-VentureService/Upload/Courses/Word/test.docx" target="_blank"><img src="images/classrom1.jpg" alt=""></a>
+					<a class="classroom-img" href="" target="_blank"><img src="{{pic_url}}" alt=""></a>
 					<div class="classroom-info">
-						<h2><a href="http://ow365.cn/?i=10263&furl=http://123.207.58.12/FZU-VentureService/Upload/Courses/Word/test.docx" target="_blank">{{name}}</a></h2>
-						<a class="download-btn" href="http://123.207.58.12/FZU-VentureService/Upload/Courses/Word/test.docx">下载</a>
+						<h2><a href="" target="_blank">{{name}}</a></h2>
+						<a class="download-btn" href="#" rel={{file_url}}>下载</a>
 					</div>
 				</div>
 			</div>

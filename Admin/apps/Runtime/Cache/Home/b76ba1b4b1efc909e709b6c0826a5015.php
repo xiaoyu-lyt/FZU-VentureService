@@ -46,13 +46,13 @@
 			</div>
 			<div class="user-student-sidenav user-sidenav pull-left">
 				<ul>
-					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/notice">资讯管理</a></li>
-					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/user">用户管理</a></li>
-					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/project">项目管理</a></li>
-					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field">基地管理</a></li>
-					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/class">培训管理</a></li>
-					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/document">教材管理</a></li>
-					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition">比赛管理</a></li>
+					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/notice/index">资讯管理</a></li>
+					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/user/index">用户管理</a></li>
+					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/project/index">项目管理</a></li>
+					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field/index">基地管理</a></li>
+					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/class/index">培训管理</a></li>
+					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/document/index">教材管理</a></li>
+					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition/index">比赛管理</a></li>
 				</ul>
 			</div>
 <!-- 发布表格 -->
@@ -74,9 +74,10 @@
 			</tr>
 			<tr>
 				<td><h4 class="line-title text-right"><span class="star">*</span>内容：</h4></td>
-				<td><script id="_container" name="content" type="text/plain" style="width: 100%; height:300px;">
+				<td><!-- <script id="_container" name="content" type="text/plain" style="width: 100%; height:300px;">
 					（这里填写课堂内容或者课堂介绍）
-				</script>
+				</script> -->
+					<textarea name="content" rows="20" cols="70">(这里填写课堂内容或者课堂介绍)</textarea>
 				</td>
 			</tr>
 			<tr>
@@ -117,11 +118,11 @@
 	</form>
 </div>
 
-<script type="text/javascript" src="/demo/jyzd/01/Admin/Public/ueditor/ueditor.config.js"></script>
+<!-- <script type="text/javascript" src="/demo/jyzd/01/Admin/Public/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" src="/demo/jyzd/01/Admin/Public/ueditor/ueditor.all.js"></script>
 <script type="text/javascript">
 	        var ue = UE.getEditor('_container');
-</script>
+</script> -->
 			<div class="admin-popup">
 				<div class="popup-refuse">
 					<form action="/demo/jyzd/01/Admin/index.php/home/admin/refuse" method="post">

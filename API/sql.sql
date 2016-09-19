@@ -111,44 +111,48 @@ CREATE TABLE IF NOT EXISTS `vs_investors` (
 CREATE TABLE IF NOT EXISTS `vs_projects` (
   `pid` mediumint(8) NOT NULL AUTO_INCREMENT,
   `uid` mediumint(8) NOT NULL COMMENT '项目创建人id',
-  `synopsis` varchar(500) NOT NULL COMMENT '项目简介',
+  `tid` mediumint(8) NOT NULL COMMENT '项目团队id',
   `name` varchar(50) NOT NULL COMMENT '项目名称',
+  `pic` varchar(200) NOT NULL COMMENT '项目图片',
+  `logo` varchar(200) NOT NULL COMMENT '项目logo',
   `area` tinyint(1) NOT NULL COMMENT '项目所属技术领域',
-  `addr_postcode` varchar(30) NOT NULL COMMENT '联系地址及邮编',
-  `group_size` int NOT NULL COMMENT '团队人数',
-  `start_time` varchar(50) NOT NULL COMMENT '项目启动时间',
+  `synopsis` varchar(500) NOT NULL COMMENT '项目简介',
+  `progress` varchar(50) NOT NULL COMMENT '项目开发进度',
+  `service_type` tinyint(1) NOT NULL COMMENT '销售或服务类别',
+  `is_company` tinyint(1) NOT NULL COMMENT '是否已成立公司',
+  `plan` varchar(200) NOT NULL COMMENT '商业计划书url',
+  `attachment` varchar(200) NOT NULL COMMENT '附件url',
+  `partner` mediumtext NOT NULL COMMENT '队员信息（json字符串）',
+  `finan_amount` varchar(50) NOT NULL COMMENT '已融资金额',
+  `finan_mode` tinyint(1) NOT NULL COMMENT '融资方式(1:银行贷款 2:股票筹资 3:债券融资 4:融资租赁 5:海外融资 6:典当融资)',
+  `time` varchar(50) NOT NULL COMMENT '融资时间段',
   `next_stage` tinyint(1) NOT NULL COMMENT '下一融资阶段',
-  `is_college` tinyint(1) NOT NULL COMMENT '是否大学生创业(0:否 1:是)',
-  `plan` varchar(50) NOT NULL COMMENT '商业计划书url',
-  `attachment` varchar(100) NOT NULL COMMENT '附件url',
-  `partner` mediumtext NOT NULL COMMENT '合伙人信息（json字符串）',
-  `product` varchar(50) NOT NULL COMMENT '产品（服务）名称',
-  `process` varchar(50) NOT NULL COMMENT '销售流程或服务过程',
-  `level` varchar(50) NOT NULL COMMENT '目前执行的水平',
-  `price_descr` varchar(200) NOT NULL COMMENT '产品定价描述',
-  `cost` varchar(100) NOT NULL COMMENT '成本构成',
-  `pricing_policy` varchar(200) NOT NULL COMMENT '定价策略',
-  `product_attach` varchar(100) NOT NULL COMMENT '相关附件',
-  `market_channel` tinyint(1) NOT NULL COMMENT '市场渠道(1:直销渠道为主 2:间接渠道为主 3:混合渠道(两者兼有) 4:其他)',
-  `channel_descr` varchar(200) NOT NULL COMMENT '市场渠道描述',
-  `mstc` varchar(100) NOT NULL COMMENT '市场细分/目标客户',
-  `estimate` varchar(200) NOT NULL COMMENT '市场份额估计',
-  `sads` varchar(200) NOT NULL COMMENT '供求状况',
-  `is_income`tinyint(1) NOT NULL COMMENT '当前是否有收入(0:否 1:是)',
-  `expected_this_year` varchar(50) NOT NULL COMMENT '今年预计收入',
-  `net_this_year` varchar(50) NOT NULL COMMENT '今年净收入',
-  `expected_next_year` varchar(50) NOT NULL COMMENT '明年预计收入',
-  `net_next_year` varchar(50) NOT NULL COMMENT '明年净收入',
-  `finan_amount` varchar(50) NOT NULL COMMENT '融资金额',
-  `finan_mode` tinyint(1) NOT NULL COMMENT '融资方式(1: 股权 2：债权)',
-  `deadline` varchar(50) NOT NULL COMMENT '项目截止时间',
-  `turn` varchar(50) NOT NULL COMMENT '融资投向',
-
-  `type` tinyint(1) NOT NULL COMMENT '项目类别',
-  `logo` varchar(100) NOT NULL COMMENT '项目logo',
-  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否发布',
-  `issue_time` int(11) DEFAULT NULL COMMENT '发布时间戳',
+  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否审核 0否 1是',
+  `issue_time` int(11) DEFAULT NULL COMMENT '申请时间戳',
   PRIMARY KEY (`pid`)
+  -- `addr_postcode` varchar(30) NOT NULL COMMENT '联系地址及邮编',
+  -- `start_time` varchar(50) NOT NULL COMMENT '项目启动时间',
+  -- `is_college` tinyint(1) NOT NULL COMMENT '是否大学生创业(0:否 1:是)',
+  -- `product` varchar(50) NOT NULL COMMENT '产品（服务）名称',
+  -- `process` varchar(50) NOT NULL COMMENT '销售流程或服务过程',
+  -- `price_descr` varchar(200) NOT NULL COMMENT '产品定价描述',
+  -- `cost` varchar(100) NOT NULL COMMENT '成本构成',
+  -- `pricing_policy` varchar(200) NOT NULL COMMENT '定价策略',
+  -- `product_attach` varchar(100) NOT NULL COMMENT '相关附件',
+  -- `market_channel` tinyint(1) NOT NULL COMMENT '市场渠道(1:直销渠道为主 2:间接渠道为主 3:混合渠道(两者兼有) 4:其他)',
+  -- `channel_descr` varchar(200) NOT NULL COMMENT '市场渠道描述',
+  -- `mstc` varchar(100) NOT NULL COMMENT '市场细分/目标客户',
+  -- `estimate` varchar(200) NOT NULL COMMENT '市场份额估计',
+  -- `sads` varchar(200) NOT NULL COMMENT '供求状况',
+  -- `is_income`tinyint(1) NOT NULL COMMENT '当前是否有收入(0:否 1:是)',
+  -- `expected_this_year` varchar(50) NOT NULL COMMENT '今年预计收入',
+  -- `net_this_year` varchar(50) NOT NULL COMMENT '今年净收入',
+  -- `expected_next_year` varchar(50) NOT NULL COMMENT '明年预计收入',
+  -- `net_next_year` varchar(50) NOT NULL COMMENT '明年净收入',
+  -- `turn` varchar(50) NOT NULL COMMENT '融资投向',
+
+  -- `is_seek` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否寻找合伙人 0否 1是',
+
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 
@@ -166,18 +170,7 @@ CREATE TABLE IF NOT EXISTS `vs_fields` (
   `investment_field` int(11) NOT NULL COMMENT '基地投入',
   `investment_class` int(11) NOT NULL COMMENT '其中学校投入',
   `investment_other` int(11) NOT NULL COMMENT '其他投入',
-  `b_or_p_name` varchar(50) NOT NULL COMMENT '企业或项目名称',
-  `item_type` tinyint(1) NOT NULL COMMENT '项目类型(1:服务 2:科技)',
-  `item_class` tinyint(1) NOT NULL COMMENT '项目类别(1:企业 2:项目 3:个人)',
-  `reg_capital` int(11) NOT NULL COMMENT '注册资本（万元）',
-  `products` varchar(100) NOT NULL COMMENT '主要产品',
-  `employees` int NOT NULL COMMENT '吸纳员工人数',
-  `group` varchar(30) NULL COMMENT '项目面向群体',
-  `duration` varchar(50) NOT NULL COMMENT '立项时长',
-  `financing` varchar(30) NOT NULL COMMENT '融资情况',
-  `budgey` int(11) NULL COMMENT '投资预算',
-  `person_in_charge` varchar(10) COMMENT '法定代表或负责人姓名',
-  `office_tel` varchar(30) NOT NULL COMMENT '办公电话/移动电话',
+
   `pic` varchar(100) NOT NULL COMMENT '场地照片',
   `synopsis` varchar(500) NOT NULL COMMENT '场地简介',
   `detail` mediumtext NOT NULL COMMENT '场地详情介绍',
@@ -187,8 +180,26 @@ CREATE TABLE IF NOT EXISTS `vs_fields` (
 
 CREATE TABLE IF NOT EXISTS `vs_field_apply` (
   `id` mediumint(8) NOT NULL AUTO_INCREMENT,
-  `fid` mediumint(8) NOT NULL COMMENT '申请表id',
   `uid` mediumint(8) NOT NULL COMMENT '申请人id',
+  `fid` mediumint(8) NOT NULL COMMENT '申请的场地id',
+  `name` varchar(50) NOT NULL COMMENT '企业或项目名称',
+  `item_type` tinyint(1) NOT NULL COMMENT '项目所属类型(1、文化创业类 2、科技创业类 3、互联网+类 4、创业苗圃)',
+  `is_company` tinyint(1) NOT NULL COMMENT '公司是否注册(0否 1是)',
+  `form_company` tinyint(1) NOT NULL COMMENT '公司形式(1无限责任公司 2有限责任公司 3股份有限公司 4个人独资企业 5合伙企业 6公司制企业 7其他(请填写))',
+  `form_bak` varchar(30) DEFAULT NULL COMMENT '公司形式（其他备注）',
+  `employees` int NOT NULL COMMENT '吸纳员工人数',
+  `group` varchar(30) NULL COMMENT '项目面向群体',
+  `products` varchar(100) NOT NULL COMMENT '主要产品',
+  `person_in_charge` varchar(10) COMMENT '法定代表或负责人',
+  `members_info` varchar(200) NOT NULL COMMENT '主要团队成员信息',
+  `synopsis` varchar(500) NOT NULL COMMENT '项目简介(内容包括：产品服务、市场营销、运营现状、财务分析等。500字以内)',
+  `documents` varchar(300) DEFAULT NULL COMMENT '相关资料文件url(json)',
+  
+  -- `reg_capital` int(11) NOT NULL COMMENT '注册资本（万元）',
+  -- `duration` varchar(50) NOT NULL COMMENT '立项时长',
+  -- `financing` varchar(30) NOT NULL COMMENT '融资情况',
+  -- `budgey` int(11) NULL COMMENT '投资预算',
+  -- `office_tel` varchar(30) NOT NULL COMMENT '办公电话/移动电话',
   `apply_time` int(11) NOT NULL COMMENT '申请时间戳',
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '申请审核状态 0:未通过 1:通过',
   PRIMARY KEY (`id`)
@@ -205,6 +216,7 @@ CREATE TABLE IF NOT EXISTS `vs_competitions` (
   `deadline` int NOT NULL COMMENT '截止时间戳',
   `description` mediumtext NOT NULL COMMENT '比赛介绍',
   `url` varchar(100) NOT NULL COMMENT '报名链接',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否正在进行 0结束 1正在进行',
   PRIMARY KEY (`cid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -269,18 +281,40 @@ CREATE TABLE IF NOT EXISTS `vs_user_token` (
 CREATE TABLE IF NOT EXISTS `vs_classes` (
   `cid` mediumint(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL COMMENT '课堂名称',
-  `theme` mediumtext NOT NULL COMMENT '课堂主要内容',
+  `content` mediumtext NOT NULL COMMENT '课堂主要内容',
   `teacher` varchar(30) NOT NULL COMMENT '主讲人',
   `limit` int NOT NULL COMMENT '课堂限定人数',
   `students` int NOT NULL COMMENT '报名学生数目',
+  `start_time` int NOT NULL COMMENT '开始时间戳',
+  `deadline` int NOT NULL COMMENT '结束时间戳',
   `issue_time` int NOT NULL COMMENT '发布时间戳',
   PRIMARY KEY (`cid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
+CREATE TABLE IF NOT EXISTS `vs_class_enroll` (
+  `id` mediumint(8) NOT NULL AUTO_INCREMENT,
+  `cid` mediumint(8) NOT NULL COMMENT '课堂id',
+  `uid` mediumint(8) NOT NULL COMMENT '报名者id',
+  `status` tinyint(1) NOT NULL COMMENT '报名审核 0：未审核 1：通过 2：拒绝',
+  `issue_time` int(11) NOT NULL COMMENT '申请时间戳',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+
+
 CREATE TABLE IF NOT EXISTS `vs_documents` (
   `id` mediumint(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL COMMENT '文件名',
+  `type` tinyint(1) NOT NULL COMMENT '文件类型 1：文档 2：视频',
   `url` varchar(100) NOT NULL COMMENT '文件存放路径',
   `issue_time` int NOT NULL COMMENT '上传时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS `vs_logs` (
+  `id` mediumint(8) NOT NULL AUTO_INCREMENT,
+  `uid` varchar(100) NOT NULL COMMENT '管理员id',
+  `content` varchar(200) NOT NULL COMMENT '日志内容',
+  `date` int NOT NULL COMMENT '操作时间戳',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

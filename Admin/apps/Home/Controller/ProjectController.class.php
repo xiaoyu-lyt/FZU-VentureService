@@ -9,14 +9,14 @@ class ProjectController extends AdminController {
 		if( !$this->isLogin() )
 			$this->error('未登录',U('home/index'));
 	}
-
+	
 	public function index($page = 1) {
 
 		$total = count(M('Projects')->where(array('status'=>0))->select());//总记录数
 		$totalPage = ceil($total/$this->pageSize);//总页数
 
 		$projects = M('Projects')->where(array('status'=>0))->field('pid,name,uid,issue_time,status')->page($page,$this->pageSize)->select();
-		for ($i=0; $i < count($projects); $i++) {
+		for ($i=0; $i < count($projects); $i++) { 
 			$projects[$i]['issue_time'] = date('Y-m-d',$projects[$i]['issue_time']);
 			$projects[$i]['charge'] = M('User')->where(array('uid'=>$projects[$i]['uid']))->field('name,tel,email')->find();
 		}
@@ -41,8 +41,8 @@ class ProjectController extends AdminController {
 		$total = count(M('Projects')->where(array('status'=>1))->select());//总记录数
 		$totalPage = ceil($total/$this->pageSize);//总页数
 
-		$projects = M('Projects')->where(array('status'=>1))->field('pid,name,uid,issue_time,status')->page($page,$this->pageSize)->select();
-		for ($i=0; $i < count($projects); $i++) {
+		$projects = M('Projects')->where(array('status'=>1))->field('pid,name,uid,issue_time,status,is_show')->page($page,$this->pageSize)->select();
+		for ($i=0; $i < count($projects); $i++) { 
 			$projects[$i]['issue_time'] = date('Y-m-d',$projects[$i]['issue_time']);
 			$projects[$i]['charge'] = M('User')->where(array('uid'=>$projects[$i]['uid']))->field('name,tel,email')->find();
 		}
@@ -59,7 +59,7 @@ class ProjectController extends AdminController {
 		$this->assign('MODULE',$this->MODULE_NAME);
 		$this->display('project_list');
 	}
-
+	
 	/**
 	 * 项目审核
 	 * @param int $uid 用户id
@@ -67,7 +67,7 @@ class ProjectController extends AdminController {
 	public function pass($pid) {
 		$ret = M('Projects')->where(array('pid'=>$pid))->setField('status',1);
 		if($ret) {
-
+			
 			$login_manager = session('login_manager');
 			$log = array(
 				'obj'	=> $uid,
@@ -100,10 +100,10 @@ class ProjectController extends AdminController {
 		$detail['charge']['duty'] = $duty[$detail['charge']['duty']];
 		$detail['charge']['id_type'] = $idType[$detail['charge']['id_type']];
 		$detail['charge']['gender'] = $detail['charge']['gender'] ? "男" : "女";
-		$detail['pic'] = SITE_URL.'/Uploads/'.$detail['pic'];
-		$detail['logo'] = SITE_URL.'/Uploads/'.$detail['logo'];
-		/*$detail['plan'] = basename(dirname($detail['plan']))."-".basename($detail['plan']);
-		$detail['attachment'] = basename(dirname($detail['attachment']))."-".basename($detail['attachment']);*/
+		$detail['plan'] = $detail['plan'];
+		$detail['attachment'] = $detail['attachment'];
+		$detail['pic'] = SITE_URL.$detail['pic'];
+		$detail['logo'] = SITE_URL.$detail['logo'];
 
 
 		$this->assign('detail',$detail);
@@ -137,14 +137,30 @@ class ProjectController extends AdminController {
 		echo json_encode($data);exit;*/
 
 		$this->assign('MODULE',$this->MODULE_NAME);
-		$this->display('project_detail');
+		$this->display('project_detail'); 
+	}
+
+	public function isShow( $pid ,$action = '' ) {
+		if($action == "yes") {
+			if( M('Projects')->where(array('pid'=>$pid))->setField(array('is_show'=>1)) ) {
+				$this->success("操作成功",U('info_list'));
+			}else {
+				$this->success("操作失败",U('info_list'));
+			}
+		} elseif( $action == "no" ) {
+			if(M('Projects')->where(array('pid'=>$pid))->setField(array('is_show'=>0))) {
+				$this->success("操作成功",U('info_list'));
+			}else {
+				$this->success("操作失败",U('info_list'));
+			}
+		}
 	}
 
 
 
 	/**
 	 * 项目删除
-	 * @param int $pid 项目id
+	 * @param int $pid 项目id 
 	 */
 	public function delete($pid) {
 		$ret = M('Projects')->where(array('pid'=>$pid))->setField('status',3);

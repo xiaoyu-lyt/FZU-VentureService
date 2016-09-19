@@ -16,6 +16,9 @@ class UserModel extends Model {
 		return $data;
 	}
 	public function register( $data ) {
+		if(M("User")->where(array('username'=>trim($data['username'])))->find()) {
+			return false;
+		}
 		$data['userKey'] = $this->getRandChar();//随机字符串
 		$data['password'] = md5(md5($data['password']).$data['userKey']);
 		$data['groupid'] = 6;

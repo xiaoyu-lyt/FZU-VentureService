@@ -46,13 +46,13 @@
 			</div>
 			<div class="user-student-sidenav user-sidenav pull-left">
 				<ul>
-					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/notice">资讯管理</a></li>
-					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/user">用户管理</a></li>
-					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/project">项目管理</a></li>
-					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field">基地管理</a></li>
-					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/class">培训管理</a></li>
-					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/document">教材管理</a></li>
-					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition">比赛管理</a></li>
+					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/notice/index">资讯管理</a></li>
+					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/user/index">用户管理</a></li>
+					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/project/index">项目管理</a></li>
+					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field/index">基地管理</a></li>
+					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/class/index">培训管理</a></li>
+					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/document/index">教材管理</a></li>
+					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition/index">比赛管理</a></li>
 				</ul>
 			</div>
 <!-- 项目管理 -->
@@ -106,13 +106,13 @@
 			<?php if($curPage != 1 ): ?><li><a href="/demo/jyzd/01/Admin/index.php/home/project/<?php echo ($now); ?>/1" >首页</a></li>
 				<li><a href="/demo/jyzd/01/Admin/index.php/home/project/<?php echo ($now); ?>/<?php echo ($curPage-1); ?>">上一页</a></li><?php endif; ?>
 
-			<?php if(($curPage > 3) AND ($curPage < $totalPage-2)): $__FOR_START_19969__=$curPage-2;$__FOR_END_19969__=$curPage+3;for($i=$__FOR_START_19969__;$i < $__FOR_END_19969__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/project/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
+			<?php if(($curPage > 3) AND ($curPage < $totalPage-2)): $__FOR_START_4674__=$curPage-2;$__FOR_END_4674__=$curPage+3;for($i=$__FOR_START_4674__;$i < $__FOR_END_4674__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/project/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
 			<?php elseif(($curPage > $totalPage-3) AND ($totalPage > 5)): ?>
-				<?php $__FOR_START_13478__=$totalPage-5;$__FOR_END_13478__=$totalPage;for($i=$__FOR_START_13478__;$i < $__FOR_END_13478__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/project/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
+				<?php $__FOR_START_4691__=$totalPage-5;$__FOR_END_4691__=$totalPage;for($i=$__FOR_START_4691__;$i < $__FOR_END_4691__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/project/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
 			<?php elseif($totalPage > 5): ?>
-				<?php $__FOR_START_12007__=1;$__FOR_END_12007__=6;for($i=$__FOR_START_12007__;$i < $__FOR_END_12007__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/project/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
+				<?php $__FOR_START_18320__=1;$__FOR_END_18320__=6;for($i=$__FOR_START_18320__;$i < $__FOR_END_18320__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/project/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } ?>
 			<?php else: ?>
-				<?php $__FOR_START_2708__=1;$__FOR_END_2708__=$totalPage;for($i=$__FOR_START_2708__;$i < $__FOR_END_2708__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/project/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } endif; ?>
+				<?php $__FOR_START_2185__=1;$__FOR_END_2185__=$totalPage;for($i=$__FOR_START_2185__;$i < $__FOR_END_2185__;$i+=1){ ?><li><a <?php if($i==$curPage) echo "class='now'"; ?> href="/demo/jyzd/01/Admin/index.php/home/project/<?php echo ($now); ?>/<?php echo ($i); ?>" ><?php echo ($i); ?></a></li><?php } endif; ?>
 
 			<?php if($curPage < $totalPage-1): ?><li><a href="/demo/jyzd/01/Admin/index.php/home/project/<?php echo ($now); ?>/<?php echo ($curPage+1); ?>">下一页</a></li>
 				<li><a href="/demo/jyzd/01/Admin/index.php/home/project/<?php echo ($now); ?>/<?php echo ($totalPage-1); ?>">末页</a></li><?php endif; ?>

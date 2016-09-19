@@ -1246,7 +1246,7 @@ footer h4 {
 .signup-wrapper {
 	width: 100%;
 	/*height: 100%;*/
-	background: url('../images/74833f6egw1f5lnuq65rsj21kw0w07ir.jpg') center;
+	background: url('../images/signup.jpg') center;
 	background-size: cover;
 }
 
@@ -1378,6 +1378,8 @@ footer h4 {
 	margin-left: 25px;
 	padding: none;
 	width: 120px !important;
+	background-color: #61A3E1;
+	color: #fff !important;
 }
 
 .submit {

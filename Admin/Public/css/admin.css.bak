@@ -17,11 +17,6 @@
 	padding: 20px;
 }
 
-.game-title h1{
-	font-size: 25px;
-	text-align: center;
-	padding-bottom: 10px;
-}
 
 .user-box-top {
 	width: 300px;
@@ -41,6 +36,31 @@
 	color:  #61A3E1;
 }
 
+.admin-modify {
+	position: absolute;
+	right: 0;
+	color: #888;
+}
+
+.admin-modify .psbtn,
+.return-btn{
+	padding: 5px 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	color: #61a3e1 !important;
+	border:1px solid #61a3e1;
+	cursor: pointer;
+}
+
+.return-btn {
+	position: absolute;
+	/*margin: 50px 0;*/
+	bottom: -19px;
+    left: 6%;
+}
+.admin-modify .exit {
+	cursor: pointer;
+}
 .user-sidenav {
 	width: 15%;
 	text-align: center;
@@ -59,9 +79,8 @@
 	/*display: none;*/
 	position: absolute;
 	right: 0;
-	top: 160px;
+	top: 150px;
 	width: 80%;
-	/*margin: 0 20px;*/
 
 }
 
@@ -84,21 +103,33 @@
 .admin-wrapper .container,{
 	position: relative;
 }
+
 .admin-top {
+	position: relative;
 	margin-top: 20px;
+	height: 46px;
 }
 
 .admin-publish-article,
 .admin-publish-classes,
 .admin-publish-textbook,
 .admin-publish-game {
+	position: absolute;
+	right: 50px;
+	top: 10px;
 	padding: 6px 8px;
 	border: 1px solid #61a3e1;
 	color: #61a3e1 !important;
+	margin-right: 20px;
+
+}
+.admin-table {
+	height: 400px;
 }
 
 .admin-table table {
 	width: 100%;
+	/*height: 940px;*/
 	margin-top: 20px;
 	table-layout:fixed;
 }
@@ -163,12 +194,20 @@
 	cursor: pointer;
 }
 
+.delete-all {
+	position: absolute;
+	right: 170px;
+	top: 27px;
+	color: #61a3e1 !important;
+
+}
 .admin-article-operation a:hover {
 	text-decoration: underline !important;
 }
 
 .admin-users-table,
-.admin-projects-table {
+.admin-projects-table,
+.admin-info-table {
 	display: none;
 
 }
@@ -189,7 +228,6 @@
 	width: 280px;
 	height: 160px;
 	margin-left: -140px;
-	
 }
 .popup-refuse  {
 	width: 350px;
@@ -263,8 +301,7 @@
 
 /*发布文章表单*/
 .article-publish-form {
-	padding: 50px 100px;
-	background-color: #D5E8F9;
+	padding: 30px 0;
 	color: #666;
 }
 
@@ -281,13 +318,13 @@
 .article-publish-form input {
 	height: 2em;
 	width: 82%;
+	border: 1px solid #cecece;
 }
 
 .article-publish-form input,
 .article-publish-form textarea {
 	padding-left: .5em;
 	outline: none;
-	border: none;
 }
 
 .article-publish-title input {
@@ -405,3 +442,273 @@
 	border-radius: 6px;
 }
 
+.modify-wrapper {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 3999;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.modify-wrapper .modify-box {
+	position: fixed;
+	width: 500px;
+	height: 320px;
+	left: 50%;
+	top: 50%;
+	padding: 35px;
+	margin: -200px 0 0 -250px ; 
+	background-color: #fff;
+	z-index:1000;
+}
+
+.modify-form p{
+	width: 330px;
+	margin: 28px auto;
+}
+
+.modify-form input{
+	height: 40px;
+	border: 1px solid #cecece;
+	display: block;
+	padding: 10px;
+}
+
+.modify-form .old-line input,
+.modify-form .new-line input{
+	width: 100%;
+}
+
+/*查看个人信息*/
+.personal-head-portrait {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.personal-info-wrapper,
+.personal-info-box {
+	padding: 30px;
+}
+
+.personal-head-portrait img {
+	width: 100%;
+	height: 100%
+}
+
+
+.personal-username {
+	font-size: 24px;
+	font-weight: normal;
+	margin: 20px 0;
+}
+
+.aligned.center {
+	text-align: center;
+}
+
+.personal-name {
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+.personal-email,
+.personal-tel {
+	padding: 8px 0;
+}
+
+.personal-info-box {
+	margin: 20px;
+	border: 1px solid #cecece;
+	border-radius: 5px;
+}
+
+.personal-info-title {
+	font-size: 17px;
+}
+
+.join-project-detail,
+.team-detail {
+	margin: 20px 0;
+}
+
+.join-project-detail a{
+	color: #61a3e1 !important;
+}
+
+.projects-name {
+	display: block;
+	line-height: 30px;
+}
+
+.pagination .active{
+	color: #fff !important; 
+}
+.pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover {
+	background-color: #61a3e1;
+	border-color: #61a3e1;
+}
+
+
+/*发布页面*/
+
+
+.publish-form {
+	width: 90%;
+	margin: 30px 10px;
+	padding: 35px;
+	border: 1px solid #B3D1ED;
+	box-shadow: 0 0 1px 1px #B3D1ED;
+	border-radius: 15px;
+}
+
+.publish-table {
+	width: 100%;
+	/*table-layout:fixed;*/
+}
+
+.publish-table td {
+	padding: 8px;
+}
+
+.publish-table td:nth-child(1) {
+	width: 120px;
+}
+.radio-inline,
+.checkbox-inline {
+	padding-top: 0!important;
+}
+
+.form-group {
+	margin: 0 !important;
+}
+
+.publish-table .line-title {
+	display: inline-block;
+	width: 130px;
+	margin-right: 10px;
+	font-size: 16px;
+	color: #61a3e1;
+}
+
+.form-group {
+	padding: 8px 0;
+}
+
+.title-input {
+	display: inline-block !important;
+	margin-top: -10px;
+}
+
+.btn-publish {
+	display: block;
+	margin: 0 auto;
+	background-color: #61a3e1 !important;
+	color: #fff !important;
+	outline: 0;
+}
+
+.admin-th-class-theme {
+	width: 25%;
+}
+
+.admin-th-class-status {
+	width: 11%;
+}
+
+/**
+ *查看详情页
+ */
+.view-form {
+	width: 90%;
+	margin: 30px 10px;
+	padding: 35px;
+	border: 1px solid #B3D1ED;
+	box-shadow: 0 0 1px 1px #B3D1ED;
+	border-radius: 15px;
+}
+
+.view-table {
+	width: 100%;
+	font-size: 16px;
+	/*table-layout:fixed;*/
+}
+.view-table th {
+	width: 18%;
+}
+.view-table .line-title {
+	padding: 10px;
+	font-size: 16px;
+	color: #61a3e1;
+}
+
+.view-table td {
+	width: auto;
+	padding: 5px;
+}
+
+.view-table td:nth-child(1) {
+	width: 120px;
+}
+
+.view-pic {
+	width: 200px;
+	height: 100px;
+	overflow: hidden;
+}
+
+.view-logo {
+	width: 60px;	
+	height: 60px;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.view-pic img,
+.view-logo img {
+	width: 100%;
+}
+
+.view-btn-group {
+	width: 150px;
+	margin: 35px auto;
+}
+
+.btn-view {
+	margin: 30px 10px;
+	padding: 5px;
+	border: 1px solid #61a3e1;
+	color: #61a3e1 !important;
+	outline: 0;
+}
+/*添加管理员*/
+.admin-add.view-table {
+	width: 80%;
+	margin-left: auto;
+    margin-top: 100px;
+}
+.admin-name,
+.admin-password {
+	display: inline-block;
+	border: 1px solid #cecece;
+	padding: 6px;
+}
+
+.base-img {
+	height: 500px;
+	overflow: hidden;
+}
+
+.article-img {
+	height: 280px;
+}
+
+
+.hot-pic {
+	display: inline-block !important;
+}

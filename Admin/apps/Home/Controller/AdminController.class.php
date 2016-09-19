@@ -16,7 +16,7 @@ class AdminController extends Controller {
 				return true;
 			}
 		}
-		return false;
+		return false;	
 	}
 
 
@@ -106,13 +106,13 @@ class AdminController extends Controller {
 	}
 
 	public function download($f){
+		
+		$filename = str_replace('-','/',$f);
 
-		//$filename = str_replace('-','/',$f);
-
-		$file_path = BASE_URL."/Uploads/".$f;
+		$file_path = BASE_URL."/Uploads/".$filename;
 		// echo $file_path;exit;
 		// echo basename(dirname($file_path));exit;
-
+		
 		$file = fopen($file_path,"r");
         //返回的文件类型
         Header("Content-type: application/octet-stream");
@@ -121,7 +121,7 @@ class AdminController extends Controller {
         //返回文件的大小
         Header("Accept-Length: ".filesize($file_path));
         //这里对客户端的弹出对话框，对应的文件名
-        Header("Content-Disposition: attachment; filename=".basename($f));
+        Header("Content-Disposition: attachment; filename=".time().".jpg");
         //修改之前，一次性将数据传输给客户端
         echo fread($file, filesize($file_path));
         //修改之后，一次只传输1024个字节的数据给客户端
@@ -134,9 +134,9 @@ class AdminController extends Controller {
             //每次向客户端回送1024个字节的数据
             echo $file_data;
         }
-
+        
         fclose($file);
 	}
 
-
+	
 }

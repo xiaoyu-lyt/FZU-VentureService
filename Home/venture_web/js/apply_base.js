@@ -46,5 +46,4 @@ $('#apply-submit').click(function() {
 			alert(result.msg);
 		});
 	}
-	
 });

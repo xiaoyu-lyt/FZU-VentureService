@@ -39,7 +39,7 @@ var loginbtn = document.querySelector('.login'), //登录按钮
 	logoutShow = document.querySelector('.center-cancel'); //右侧显示
 
 (function(){
-	var uid = getCookie("uid");
+	var uid = getCookie('uid');
 	if(uid) {
 		$(logoutShow).show();
 		$(loginShow).hide();
@@ -239,3 +239,4 @@ function resetPassword(argument) {
 	  	}
 		});
 }
+
