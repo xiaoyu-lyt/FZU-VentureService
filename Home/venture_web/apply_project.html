@@ -90,7 +90,7 @@
 	<!-- Header End -->
 
 	<!-- Apply-project Start -->
-	<div class="user-wrapper">
+	<div class="user-wrapper apply-project-wrapper">
 		<div class="container">
 			<div class="user-box-top">
 				<img src="images/apply.png" alt="">
@@ -109,25 +109,25 @@
 			</div>
 			<div class="user-box step1 block">
 				<form action="" id="step1" enctype="multipart/form-data" method="post">
-					<table class="apply-setp1 apply-steps">
+					<table id="apply-step1-table" class="apply-step1 apply-steps">
 						<tr>
-							<th class="text-center" colspan="2">项目基本信息</th>
+							<th class="text-center" colspan="5">项目基本信息</th>
 						</tr>
 						<tr>
 							<td>项目名称<span class="star">*</span></td>
-							<td><input id="project-name" type="text" name="name" require></td>
+							<td colspan="4"><input id="project-name" type="text" name="name" require></td>
 						</tr>
 						<tr>
-							<td>项目图片<span class="star">*</span></td>
-							<td><input id="project-pic" type="file" name="pic" require></td>
+							<td>项目图片<span class="star">*</span><br><span class="upload-hint">(大小不超过2M)</span></td>
+							<td colspan="4"><input id="project-pic" type="file" name="pic" placeholder="图片大小不得超过2M" require></td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td>项目LOGO</td>
 							<td><input id="project-logo" type="file" name="logo"></td>
-						</tr>
+						</tr> -->
 						<tr>
 							<td>所属领域<span class="star">*</span></td>
-							<td>
+							<td colspan="4">
 								<select id="project-area" name="area"  require>
 									<option></option>
                     <option value="0">文化创业类</option>  
@@ -144,7 +144,7 @@
 						</tr>
 						<tr>
 							<td>产品类别<span class="star">*</span></td>
-							<td>
+							<td colspan="4">
 								<input id="hardware" type="radio" name="product_type" value="0" require>
 								<label class="radio-inline" for="hardware">硬件</label>
 								<input id="software" type="radio" name="product_type" value="1" require>
@@ -159,24 +159,24 @@
 
 						<tr>
 							<td>项目简介<span class="star">*</span></td>
-							<td>
+							<td colspan="4">
 								<textarea id="project-brief" name="synopsis" placeholder="500字以内" require></textarea>
 							</td>
 						</tr>
 						<tr>
 							<td>项目开发进度<span class="star">*</span></td>
-							<td>
-								<input type="text" name="progress">
+							<td colspan="4">
+								<input type="text" name="progress" require>
 							</td>
 
 						</tr>
 						<tr>
 							<td>销售或服务类型</td>
-							<td><input type="text" name="service_type"></td>
+							<td colspan="4"><input type="text" name="service_type"></td>
 						</tr>
 						<tr>
 							<td>公司是否注册<span class="star">*</span></td>
-							<td>
+							<td colspan="4">
 								<input id="founded" type="radio" name="is_company" value="1" require>
 								<label class="radio-inline" for="founded">是</label>
 								<input id="unfounded" type="radio" name="is_company" value="0" require>
@@ -185,44 +185,57 @@
 						</tr>
 						<tr>
 							<td>公司形式</td>
-							<td>
+							<td colspan="4">
 								<select id="compony-form" name="form_company"  require>
 									<option></option>
-		                            <option value="1">无限责任公司</option>  
-		                            <option value="2">有限责任公司</option>  
-		                            <option value="3">股份有限公司</option>  
-		                            <option value="4">个人独资企业</option>  
-		                            <option value="5">合伙企业</option>  
-		                            <option value="6">公司制企业</option>  
+                    <option value="1">无限责任公司</option>  
+                    <option value="2">有限责任公司</option>  
+                    <option value="3">股份有限公司</option>  
+                    <option value="4">个人独资企业</option>  
+                    <option value="5">合伙企业</option>  
+                    <option value="6">公司制企业</option>  
 								</select>
 							</td>
 						</tr>
 						<tr>
 							<td>面向群体<span class="star">*</span></td>
-							<td>
+							<td colspan="4">
 								<select id="oriented-group" name="group"  require>
 									<option></option>
-		                            <option value="0">公司企业</option>  
-		                            <option value="1">学校单位</option>  
-		                            <option value="2">学生</option>  
-		                            <option value="3">母婴</option>  
-		                            <option value="4">老年人</option>  
-		                            <option value="5">公司职员</option>  
-		                            <option value="6">公职人员</option>  
+                  <option value="0">公司企业</option>  
+                  <option value="1">学校单位</option>  
+                  <option value="2">学生</option>  
+                  <option value="3">母婴</option>  
+                  <option value="4">老年人</option>  
+                  <option value="5">公司职员</option>  
+                  <option value="6">公职人员</option>  
 								</select>
 							</td>
 						</tr>
 						<tr>
 							<td>商业计划书<span class="star">*</span></td>
-							<td>
+							<td colspan="4">
 								<input type="file" name="plan" require>
 							</td>
 						</tr>
 						<tr>
 							<td>附件</td>
-							<td>
+							<td colspan="4">
 								<input type="file" name="attachment">
 							</td>
+						</tr>
+						<tr>
+							<td id="patent-info" rowspan="2">专利情况<span class="add-patent">添加</span></td>
+							<td>申请号</td>
+							<td><input name="patent[1][application_num]" type="text"></td>
+							<td>申请日期</td>
+							<td><input class="application-date" name="patent[1][application_date]" type="text"></td>
+						</tr>
+						<tr>
+							<td>公告号</td>
+							<td><input name="patent[1][notification_num]" type="text"></td>
+							<td>授权日期</td>
+							<td><input class="authorized-date" name="patent[1][authorized_date]" type="text"></td>
 						</tr>
 					</table>
 					<div class="apply-setps-btn">
@@ -232,7 +245,7 @@
 			</div>
 			<div class="user-box step2">
 				<form action="" id="step2">
-					<table id="member-info" class="apply-setp2 apply-steps">
+					<table id="member-info" class="apply-step2 apply-steps">
 						<tr>
 							<th class="text-center" colspan="4">队员信息</th>
 						</tr>
@@ -262,9 +275,9 @@
 							<td>
 								<select name="partner[1][id_type]" id="id-type" require>
 									<option></option>
-		                            <option value="stu_card">学生证</option>  
-		                            <option value="id_card">身份证</option>  
-		                            <option value="others">其他</option>
+                  <option value="stu_card">学生证</option>  
+                  <option value="id_card">身份证</option>  
+                  <option value="others">其他</option>
 								</select>
 							</td>
 							<td>证件号<span class="star">*</span></td>
@@ -324,7 +337,7 @@
 			</div>
 			<div class="user-box step3">
 				<form action="" id="step3">
-					<table class="apply-setp3 apply-steps">
+					<table class="apply-step3 apply-steps">
 						<tr>
 							<th class="text-center" colspan="4">融资需求</th>
 						</tr>
@@ -470,15 +483,8 @@
 			</td>
 		</tr>
 	</script>
-	<script src="js/apply_project.js"></script>
 	<script src="js/laydate/laydate.dev.js"></script>
-	<script>
-		laydate({
-            elem: '#time1'
-        });
-        laydate({
-            elem: '#time2'
-        });
-	</script>
+	<script src="js/apply.js"></script>
+	<script src="js/apply_project.js"></script>
 </body>
 </html>

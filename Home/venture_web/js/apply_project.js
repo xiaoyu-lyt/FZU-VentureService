@@ -1,57 +1,3 @@
-/**
- * 项目申请表单验证
- */
-$().ready(function() {
-	var	oli = document.querySelector('.user-apply-sidenav').querySelectorAll('li');
-	var userBox = document.querySelectorAll('.user-box');
-	$('.btn-pre').each(function(index, elem) {
-		elem.index = index;
-		elem.onclick = function() {
-			$('.user-box').each(function(i, e){
-				e.style.display = 'none';
-				$(oli[i]).removeClass('now');
-			})
-			$('oli.now').removeClass('now');
-			userBox[this.index].style.display = 'block';
-			$(oli[this.index]).addClass('now')
-		}
-	});
-	jQuery.extend(jQuery.validator.messages, {
-	  required: "必填字段",
-	  maxlength: jQuery.validator.format("超出字数")
-	});
-	$('#step1').validate({
-		rules: {
-			project_brief: {
-				maxlength: 500
-			}
-		},
-		submitHandler:function(form){
-           $('.step1').hide();  
-           $('.step2').show();
-           $(oli[0]).removeClass('now');
-           $(oli[1]).addClass('now');
-           isMember = true;
-       }    
-	})
-	$('#step2').validate({
-		rules: {
-			member_work: {
-				maxlength : 150
-			},
-			member_start: {
-				maxlength: 150
-			}
-		},
-		submitHandler:function(form) {
-			$('.step2').hide();
-			$('.step3').show();
-			$(oli[1]).removeClass('now');
-			$(oli[2]).addClass('now');
-		}
-	})
-	$('#step3').validate();
-});
 
 
 /**
@@ -68,16 +14,49 @@ function addMember() {
 	});
 }
 
+function validateForm() {
+	$('#step1').validate({
+	  rules: {
+	    project_brief: {
+	      maxlength: 500
+	    }
+	  },
+	  submitHandler:function(form){
+	   $('.step1').hide();  
+	   $('.step2').show();
+	   $(oli[0]).removeClass('now');
+	   $(oli[1]).addClass('now');
+	   isMember = true;
+	   }    
+	})
+	$('#step2').validate({
+	  rules: {
+	    member_work: {
+	      maxlength : 150
+	    },
+	    member_start: {
+	      maxlength: 150
+	    }
+	  },
+	  submitHandler:function(form) {
+	    $('.step2').hide();
+	    $('.step3').show();
+	    $(oli[1]).removeClass('now');
+	    $(oli[2]).addClass('now');
+	  }
+	})
+	$('#step3').validate();
+}
 
 /**
  * 提交项目申请
  */
-function submitForm() {
+function submitApplyProject() {
+	validateForm();
 	var formStr= '',
 			files;
 	$('#step1-btn').click(function() {
 		formStr += $('#step1').serialize();
-		
 	});
 	$('#step2-btn').click(function() {
 		formStr += '&' + $('#step2').serialize();
@@ -98,9 +77,7 @@ function submitForm() {
 				files = result.data;
 			}).always(function () {
 				//上传表单
-				// console.log(files);
 				formStr += '&pic=' + files.pic + '&logo=' + files.logo + '&plan=' + files.plan + '&attachment=' + files.attachment; 
-				// console.log(formStr);
 				$.ajax({
 					url: "../../API/index.php/home/project/apply",
 					type: "post",
@@ -109,14 +86,23 @@ function submitForm() {
 						alert(result.msg);
 					});
 			})
-		
 	});
-
 }
+
+/**
+ * laydate日期插件
+ * @type {String}
+ */
+laydate({
+    elem: '#time1'
+});
+laydate({
+    elem: '#time2'
+});
 
 function init() {
 	addMember();
-	submitForm();
+	submitApplyProject();
 }
 
 init();

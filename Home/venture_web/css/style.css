@@ -838,7 +838,6 @@ footer h4 {
 	margin: 0 auto;
 	width: 70% !important;
 	height: auto !important;
-
 }
 .article-wrapper #article-title{
 	text-align: center;
@@ -1141,6 +1140,14 @@ footer h4 {
 	border-bottom: 1px dashed #cecece;	
 }
 
+.create-project-btn {
+	display: block;
+	padding: 0 15px;
+	background-color: transparent;
+	border: 1px solid #61a3e1;
+	color: #61a3e1 !important;
+}
+
 .projects-search-box {
 	margin-right: 30px;
 	height: auto;
@@ -1246,7 +1253,7 @@ footer h4 {
 .signup-wrapper {
 	width: 100%;
 	/*height: 100%;*/
-	background: url('../images/signup.jpg') center;
+	background: url('../images/74833f6egw1f5lnuq65rsj21kw0w07ir.jpg') center;
 	background-size: cover;
 }
 
@@ -1281,7 +1288,6 @@ footer h4 {
 	border-top: 12px solid #61A3E1;
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
-
 }
 
 .signup-role-select {
@@ -1945,7 +1951,24 @@ footer h4 {
 	border: 1px solid #cecece;
 }
 
+.apply-step1 td:nth-child(1),
+.apply-step3 td:nth-child(1) {
+	width: 130px;
+}
+/*.apply-step1 td:nth-child(2),*/
+.apply-base-wrapper .apply-step2 td:nth-child(2),
+.apply-project-wrapper .apply-step3 td:nth-child(2) {
+	width: 600px;
+}
 
+.apply-step2 td:nth-child(1),
+.apply-step2 td:nth-child(3) {
+	width: 100px;
+}
+.apply-step2 td:nth-child(2),
+.apply-step2 td:nth-child(4) {
+	width: 250px;
+}
 .apply-steps input[type=radio] {
 	margin: 0 2px;
 }
@@ -1956,6 +1979,14 @@ footer h4 {
 	width: 100%;
 }
 
+.add-patent {
+	margin-left: 10px;
+	padding: 3px 5px;
+	border: 1px solid #61a3e1;
+	color: #61a3e1;
+	font-size: .8em;
+	cursor: pointer;
+}
 #time1,
 #time2 {
 	border: 1px solid #cecece;
@@ -1974,8 +2005,6 @@ footer h4 {
 }
 
 .apply-setps-btn {
-	/*position: absolute;*/
-	/*bottom: 0;*/
 	margin-left: 43%;
 }
 
@@ -2045,8 +2074,6 @@ footer h4 {
 	border-left: 8px solid transparent;
 	border-right: 8px solid transparent;
 	border-top: 8px solid #61aee1;
-	/*box-shadow: 0 0 1px 1px #cecece;*/
-	/*border-left: 10px solid #000;*/
 }
 
 .project-apply-submit {
@@ -2346,6 +2373,7 @@ footer h4 {
 	color: #61a3e1 !important;
 	padding: 10px 15px;
 	margin-bottom: 20px;
+	cursor: pointer;
 }
 
 /*创业基地*/
@@ -2832,3 +2860,7 @@ footer h4 {
 	margin-top: 0 !important;
 }
 
+.upload-hint {
+	color: #888;
+	font-size: .8em;
+}
