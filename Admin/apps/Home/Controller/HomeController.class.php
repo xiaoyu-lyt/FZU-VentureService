@@ -5,11 +5,7 @@ class HomeController extends Controller {
 	
 	public $MODULE_NAME = "Home";
 	public function index(){
-		$cookie_token = cookie('cookie_token');
-		if($cookie_token){
-			$this->redirect('notice/index');
-		} else 
-			$this->display('login');
+		$this->display('login');
 	}
 	
 	public function login() {
