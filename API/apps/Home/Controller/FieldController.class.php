@@ -89,8 +89,11 @@ class FieldController extends BaseController {
 		$data = I('post.');
 		$data['uid'] = $login_user['uid'];
 		$data['person_in_charge'] = json_encode($data['person_in_charge']);
-		$data['members_info'] = json_encode($data['members_info']);
-		$data['documents'] = json_encode($data['documents']);
+		$data['team'] = json_encode($data['team']);
+		$data['demand_plan'] = json_encode($data['demand_plan']);
+		$data['apply_time'] = time();
+
+		
 		if (M('field_apply')->add($data)) {
 			$json = $this->jsonReturn(200,"入驻申请成功，请等待审核",$data);
 		} else {
