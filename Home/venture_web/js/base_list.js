@@ -2,8 +2,8 @@ var _fid = window.location.search,
 	baseList = document.querySelector('#base-list'),
 	oli;
 _fid = _fid.replace(/[^0-9]+/, "");
-
 getData(_fid);
+
 /**
  * 初始化基地列表
  * @param  {number} n 列表的第几个
@@ -13,7 +13,7 @@ function getData(_fid) {
 	var n  = 0;
 	$.ajax({
 		type: "get",
-		url: "../../API/index.php/home/field/list.html",
+		url:  baseUrl + "field/list.html",
 		success: function(result) {
 			var dataArr = result.data;
 				li = '';
@@ -59,20 +59,29 @@ $(function(){
 function getDetail(_fid) {
 	$.ajax({
 		type: "get",
-		url: "../../API/index.php/home/field/detail.html",
+		url:  baseUrl + "field/detail.html",
 		dataType: "json",
 		data: {
 			fid: _fid
-		},
-		success: function(result) {
+		}
+	}).done(function (result) {
 			var data = result.data, 
 				box;
-
-			console.log(data);
+				console.log(data)
 			var template = Handlebars.compile($('#base-template').html()); //注册模板
 			var html = template(data); //封装模板
 			$('#base-box').html(html); //插入基础模板中
-	
-		}
-	});
+	}).always(function () {
+		$('#base-apply').click(function () {
+			if(getCookie('uid')) {
+				var link = 'apply_base.html?fid=' + _fid;
+				$('#base-apply').attr("href", link);
+			} else {
+				loginPopup();
+			}
+		})
+		
+	})
 }
+
+

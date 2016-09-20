@@ -10,7 +10,7 @@ var stageArr = ['未融资','天使轮','A轮','B轮','C轮','E轮及以后']; /
 function getDetail() {
 	$.ajax({
 		type: "get",
-		url: "../../API/index.php/home/project/detail.html",
+		url:  baseUrl + "project/detail.html",
 		dataType: "json",
 		data: {
 			pid: _pid
@@ -52,7 +52,7 @@ function getDetail() {
  */
 function getPrincipalInfo(_uid) {
 	$.ajax({
-		url: "../../API/index.php/home/user/getOtherInfo.html",
+		url:  baseUrl + "user/getOtherInfo.html",
 		type: "get",
 		data: { uid: _uid}
 	}).done(function(result) {

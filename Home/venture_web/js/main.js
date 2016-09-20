@@ -1,3 +1,5 @@
+var baseUrl = '../../API/index.php/home/';
+
 $().ready(function() {
 	jQuery.validator.addMethod("isMobile", function(value, element) {
 		var length = value.length;
@@ -39,7 +41,7 @@ var loginbtn = document.querySelector('.login'), //登录按钮
 	logoutShow = document.querySelector('.center-cancel'); //右侧显示
 
 (function(){
-	var uid = getCookie("uid");
+	var uid = getCookie('uid');
 	if(uid) {
 		$(logoutShow).show();
 		$(loginShow).hide();
@@ -89,7 +91,7 @@ function loginPopup() {
 			_password = $('#password').val(),
 		$.ajax({
 			type: 'post',
-			url: "../../API/index.php/home/user/login.html",
+			url:  baseUrl + "user/login.html",
 			data: {
 				username: _username,
 				password: _password
@@ -132,7 +134,7 @@ function loginPopup() {
 cancelbtn.onclick = function() {
 	$.ajax({
 		type: 'post',
-		url: "../../API/index.php/home/user/logout.html"
+		url:  baseUrl + "user/logout.html"
 	}).done(function(result) {
 		console.log(result);
 		$(loginShow).show();
@@ -239,3 +241,4 @@ function resetPassword(argument) {
 	  	}
 		});
 }
+

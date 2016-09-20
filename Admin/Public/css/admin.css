@@ -569,7 +569,7 @@
 
 .publish-table {
 	width: 100%;
-	table-layout:fixed;
+	/*table-layout:fixed;*/
 }
 
 .publish-table td {
@@ -590,7 +590,7 @@
 
 .publish-table .line-title {
 	display: inline-block;
-	width: 100px;
+	width: 130px;
 	margin-right: 10px;
 	font-size: 16px;
 	color: #61a3e1;
@@ -606,7 +606,7 @@
 }
 
 .btn-publish {
-	display: block;
+	display: block !important;
 	margin: 0 auto;
 	background-color: #61a3e1 !important;
 	color: #fff !important;
@@ -697,4 +697,30 @@
 	display: inline-block;
 	border: 1px solid #cecece;
 	padding: 6px;
+}
+
+.base-img {
+	height: 500px;
+	overflow: hidden;
+}
+
+.article-img {
+	height: 280px;
+}
+
+
+.hot-pic {
+	display: inline-block !important;
+}
+
+.add-public-base {
+	box-sizing: border-box;
+	display: block;
+	width: 150px;
+	margin: 10px auto;
+	color: #61a3e1;
+	border: 1px solid #61a3e1;
+	padding: 5px 20px;
+	font-size: 1.2em;
+	cursor: pointer;
 }

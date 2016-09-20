@@ -1,0 +1,78 @@
+[ 2016-08-22T10:19:48+08:00 ] ::1 /FZU-VentureService/API/index.php/home/notice/list.html?type=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011656s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011074s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011213s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0292s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 2 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,15   [ RunTime:0.0347s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 2 AND `status` = 1  [ RunTime:0.0335s ]
+
+[ 2016-08-22T10:19:48+08:00 ] ::1 /FZU-VentureService/API/index.php/home/field/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009529s ]
+SQL: SHOW COLUMNS FROM `vs_fields` [ RunTime:0.0271s ]
+SQL: SELECT `fid`,`name`,`pic`,`synopsis`,`run_time` FROM `vs_fields` WHERE `status` = 1 ORDER BY run_time desc  [ RunTime:0.0236s ]
+
+[ 2016-08-22T10:19:48+08:00 ] ::1 /FZU-VentureService/API/index.php/home/notice/list.html?type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010258s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008117s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008298s ]
+SQL: SHOW COLUMNS FROM `vs_notice` [ RunTime:0.0279s ]
+SQL: SELECT `nid`,`type`,`theme`,`date` FROM `vs_notice` WHERE `type` = 1 AND `status` = 1 ORDER BY overhead desc,rank desc,date desc LIMIT 0,15   [ RunTime:0.0557s ]
+SQL: SELECT * FROM `vs_notice` WHERE `type` = 1 AND `status` = 1  [ RunTime:0.0326s ]
+
+[ 2016-08-22T10:19:48+08:00 ] ::1 /FZU-VentureService/API/index.php/home/project/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007507s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007897s ]
+SQL: SHOW COLUMNS FROM `vs_projects` [ RunTime:0.0271s ]
+SQL: SELECT `pid`,`uid`,`name`,`pic`,`synopsis`,`product_type`,`time`,`stage`,`issue_time` FROM `vs_projects` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.0270s ]
+SQL: SELECT * FROM `vs_projects` WHERE `status` = 1  [ RunTime:0.0335s ]
+
+[ 2016-08-22T10:19:49+08:00 ] ::1 /FZU-VentureService/API/index.php/home/project/list.html?size=5&page=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000831s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000989s ]
+SQL: SHOW COLUMNS FROM `vs_projects` [ RunTime:0.0298s ]
+SQL: SELECT `pid`,`uid`,`name`,`pic`,`synopsis`,`product_type`,`time`,`stage`,`issue_time` FROM `vs_projects` WHERE `status` = 1 LIMIT 0,5   [ RunTime:0.0286s ]
+SQL: SELECT * FROM `vs_projects` WHERE `status` = 1  [ RunTime:0.0345s ]
+
+[ 2016-08-22T10:19:51+08:00 ] ::1 /FZU-VentureService/API/index.php/home/project/detail.html?pid=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000866s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000903s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+SQL: SHOW COLUMNS FROM `vs_projects` [ RunTime:0.0261s ]
+SQL: SELECT * FROM `vs_projects` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0269s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0261s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0233s ]
+
+[ 2016-08-22T13:51:46+08:00 ] ::1 /FZU-VentureService/API/index.php/home/project/detail.html?pid=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.027511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010626s ]
+SQL: SHOW COLUMNS FROM `vs_projects` [ RunTime:0.0393s ]
+SQL: SELECT * FROM `vs_projects` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0305s ]
+SQL: SHOW COLUMNS FROM `vs_user` [ RunTime:0.0298s ]
+SQL: SELECT `username`,`name` FROM `vs_user` WHERE `uid` = 16 LIMIT 1   [ RunTime:0.0273s ]
+

@@ -1,38 +1,68 @@
 <include file="Public:header"/>
-<!-- Aricle-publish Start -->
-<div class="article-publish-form">
-	<form action="__ROOT__/index.php/home/competition/publish/do" method="post">
-
-		<div class="article-publish-box article-publish-title">
-			<label for=""><span class="star">*</span>标题:</label>
-			<input type="text" name="name" value="{$competition.name}">
-			<button class="duplicate-detection">检测重复</button>
-		</div>
-
-		<div class="article-publish-box article-publish-title">
-			<label for=""><span class="star">*</span>届数:</label>
-			<input type="text" name="times" value="{$competition.times}">
-		</div>
-
-		<div class="article-publish-box article-publish-abstract">
-
-			<label for=""><span class="star">*</span>内容:</label>
-				<!-- 加载编辑器的容器 -->
-			    <script id="_container" name="description" type="text/plain" style="width: 740px; height:250px; margin-left:190px;"> <?php echo htmlspecialchars_decode($competition['description']); ?>
-			    </script>
-			    <!-- 配置文件 -->
-			    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
-			    <!-- 编辑器源码文件 -->
-			    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.js"></script>
-			    <!-- 实例化编辑器 -->
-		</div>
-		<div class="article-publish-btn">
-			<button type="submit" name="sub" class="save-close">保存后自动关闭</button>
-			<button class="save-publish">保存并继续发表</button>
-			<button class="publish-close"><a href="javascript :;" onClick="javascript :history.back(-1);">关闭</a></button>
-		</div>
+<!-- 发布表格 -->
+<div class="user-box block">
+	<form action="__ROOT__/index.php/home/competition/publish/domodify/{$competition.cid}" method="post" class="publish-form form-horizontal">
+		<h2 align="center" style="margin: 0 0 20px 0; color: #61a3e1;">比赛通知发布</h2>
+	 	<table class="publish-table">
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>标题：</h4>
+				<td><input class="title-input form-control" name="name" type="text" value="{$competition.name}"></td>
+			</tr>
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>报名链接：</h4></td>
+				<td><input class="title-input form-control" name="url" type="text" value="{$competition.url}"></td>
+			</tr>
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>内容：</h4></td>
+				<td><script id="_container" name="description" type="text/plain" style="width: 100%; height:300px; margin-left: －10px"><?php echo htmlspecialchars_decode($competition['description']); ?>
+				</script>
+				</td>
+			</tr>
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>届数：</h4></td>
+				<td><input class="title-input form-control" name="times" type="text" value="{$competition.times}" style="width:50px"></td>
+			</tr>
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>截止时间：</h4></td>
+				<td><input id="deadline" name="deadline" value="{$competition.deadline}" type="date" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button class="btn btn-publish">修改并发布</button></td>
+			</tr>
+	 	</table>
 	</form>
 </div>
+<!-- <div class="user-box block">
+	<form action="__ROOT__/index.php/home/competition/publish/domodify/{$competition.cid}" method="post" class="publish-form form-horizontal">
+		
+		<div class="form-group">
+			<h4 class="line-title text-right"><span class="star">*</span>标题：</h4>
+			<input class="title-input form-control" name="name" type="text" value="{$competition.name}">
+		</div>
+		<div class="form-group">
+			<h4 class="line-title text-right"><span class="star">*</span>届数：</h4>
+			<input class="title-input form-control" name="times" type="text" style="width:50px" value="{$competition.times}">&nbsp;
+			<h4 class="line-title text-right"><span class="deadline">*</span>截止时间：</h4>
+			<input id="deadline" name="deadline" type="date" value="{$competition.deadline}" />
+		</div>
+		<div class="form-group">
+			<h4 class="line-title text-right"><span class="star">*</span>报名链接：</h4>
+			<input class="title-input form-control" name="url" type="text" value="{$competition.url}">
+		</div>
+		<div class="form-group">
+			<h4 class="line-title text-right"><span class="star">*</span>内容：</h4>
+			<script id="_container" name="description" type="text/plain" style="width: 87%; height:300px; margin-left: 113px"><?php echo htmlspecialchars_decode($competition['description']); ?>
+			</script>
+		</div>
+		<div class="publish-group">
+			<button class="btn btn-publish">发布</button>
+		</div>
+	</form>
+</div> -->
+
+<script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.js"></script>
 <script type="text/javascript">
 	        var ue = UE.getEditor('_container');
 </script>

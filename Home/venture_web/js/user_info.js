@@ -10,7 +10,7 @@ var type = href.split('')[1];
 if(type==='t') {
 	$.ajax({
 	type: "get",
-	url: "../../API/index.php/home/Partner/tutorDetail.html",
+	url:  baseUrl + "Partner/tutorDetail.html",
 	dataType: "json",
 	data: id,
 	success: function(result) {

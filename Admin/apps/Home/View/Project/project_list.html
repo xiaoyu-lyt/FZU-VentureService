@@ -33,7 +33,13 @@
 							<td class="admin-project-username"><span>{$v.charge.name}</span></td>
 							<td class="admin-project-time"><span>{$v.issue_time}</span></td>
 							<td class="admin-project-operation admin-operation">
-								<a href="__ROOT__/index.php/home/project/detail?pid={$v.pid}"><span class="admin-view-info">查看信息</span></a>	
+								<a href="__ROOT__/index.php/home/project/detail?pid={$v.pid}"><span class="admin-view-info">查看信息</span></a> | 
+								
+								<if condition="$v.is_show eq 0">			
+									<a href="__ROOT__/index.php/home/project/isShow?pid={$v.pid}&action=yes"><span class="admin-view-info">首页显示</span></a>
+								<else />
+									<a href="__ROOT__/index.php/home/project/isShow?pid={$v.pid}&action=no"><span class="admin-view-info">取消首页显示</span></a>
+								</if>
 							</td>
 						</tr>
 					</if>

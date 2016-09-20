@@ -46,13 +46,13 @@
 			</div>
 			<div class="user-student-sidenav user-sidenav pull-left">
 				<ul>
-					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/notice">资讯管理</a></li>
-					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/user">用户管理</a></li>
-					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/project">项目管理</a></li>
-					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field">基地管理</a></li>
-					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/class">培训管理</a></li>
-					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/document">教材管理</a></li>
-					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition">比赛管理</a></li>
+					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/notice/index">资讯管理</a></li>
+					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/user/index">用户管理</a></li>
+					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/project/index">项目管理</a></li>
+					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field/index">基地管理</a></li>
+					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/class/index">培训管理</a></li>
+					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/document/index">教材管理</a></li>
+					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition/index">比赛管理</a></li>
 				</ul>
 			</div>
 <!-- 用户管理 -->
@@ -74,15 +74,33 @@
 	<form action="/demo/jyzd/01/Admin/index.php/home/user/admin_add/do" method="post">
 	 	<table class="view-table admin-add">
 			<tr>
-				<th><h4 class="line-title text-left">管理员账号:</h4></th>
+				<th><h4 class="line-title text-left"><span class="star">*</span>管理员账号:</h4></th>
 				<td>
 					<input class="admin-name" type="text" name="username" required>
 				</td>
 			</tr>
 			<tr>
-				<th><h4 class="line-title text-left">管理员密码：</h4></th>
+				<th><h4 class="line-title text-left"><span class="star">*</span>管理员密码：</h4></th>
 				<td>
 					<input class="admin-password" type="password" name="password" required>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left"><span class="star">*</span>姓名：</h4></th>
+				<td>
+					<input class="admin-password" type="text" name="name" required>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left"><span class="star">*</span>手机号：</h4></th>
+				<td>
+					<input class="admin-password" type="text" name="tel" required>
+				</td>
+			</tr>
+			<tr>
+				<th><h4 class="line-title text-left"><span class="star">*</span>邮箱：</h4></th>
+				<td>
+					<input class="admin-password" type="email" name="email" required>
 				</td>
 			</tr>
 			<tr>

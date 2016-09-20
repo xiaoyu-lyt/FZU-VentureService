@@ -97,36 +97,9 @@
 		<div class="container">
 			<div class="bases-sidenav pull-left">
 				<ul id="base-list">
-					<li class="now"><a href="">第一基地</a></li>
-					<li><a href="">第二基地</a></li>
-					<li><a href="">大基地</a></li>
-					<li><a href="">小基地</a></li>
 				</ul>
 			</div>
 			<div id="base-box" class="bases-content pull-left">
-
-				<div class="bases-title"><h1 id="base-title">第一基地</h1></div>
-				<div id="bases-introduction-box">
-					<div class="bases-introduction bases-detail">
-						<div class="bases-introduction-top">
-							<span></span>
-							<h2>基地介绍</h2>
-						</div>
-						<p id="base-introduction"></p>
-					</div>
-					<div class="bases-introduction bases-detail">
-						<div class="bases-introduction-top">
-							<span></span>
-							<h2>基地展示</h2>
-						</div>
-						<div class="bases-expo-box clearfix">
-							<div class="bases-img-box pull-left">
-								<!-- <img id="base-img" src="images/baseoic.jpg" alt=""> -->
-							</div>
-						</div>
-				<div id="base-apply">
-					<!-- <a class="game-apply-btn" href="apply_base.html">申请入驻</a> -->
-				</div>
 				
 			</div>
 		</div>
@@ -137,26 +110,40 @@
 	<script id="base-template" type="text/x-handlebars-template">
 			<div class="bases-title"><h1 id="base-title">{{name}}</h1></div>
 			<div id="bases-introduction-box">
-				<div class="bases-introduction bases-detail">
-					<div class="bases-introduction-top">
-						<span></span>
-						<h2>基地介绍</h2>
-					</div>
-					<div id="base-introduction">{{{detail}}}</div>
-				</div>
-				<div class="bases-introduction bases-detail">
-					<div class="bases-introduction-top">
-						<span></span>
-						<h2>基地展示</h2>
-					</div>
-					<div class="bases-expo-box clearfix">
-						<div class="bases-img-box pull-left" style="background:url('{{pic}}') no-repeat center; background-size: cover">
-							<!-- <img id="base-img" src="images/baseoic.jpg" alt=""> -->
+					<div class="bases-introduction bases-detail">
+						<div class="bases-introduction-top">
+							<h2>基地简介</h2>
+						</div>
+						<div id="base-synopsis">
+							{{{synopsis}}}
 						</div>
 					</div>
-			<div id="base-apply">
-				<!-- <a class="game-apply-btn" href="apply_base.html">申请入驻</a> -->
-			</div>
+					<div class="bases-introduction bases-detail">
+						<div class="bases-introduction-top">
+							<h2>基地详情</h2>
+						</div>
+						<div id="base-detail">
+							{{{detail}}}
+						</div>
+					</div>
+					<div class="bases-introduction bases-detail">
+						<div class="bases-introduction-top">
+							<h2>公共场地</h2>
+						</div>
+						<div id="public-base">
+							{{#each public}}
+								<div class="public-base-detail">{{name}}:{{synopsis}}</div>
+								<div class="public-base-img">
+									<img src="{{pic}}" alt="">
+								</div>
+							{{/each}}
+						</div>
+					</div>
+
+					<div>
+						<a id="base-apply" class="game-apply-btn" href="javascript:;">申请入驻</a>
+					</div>
+				</div>
 	</script>
 	<script src="js/base_list.js"></script>
 	<!-- Porjects-expo End -->

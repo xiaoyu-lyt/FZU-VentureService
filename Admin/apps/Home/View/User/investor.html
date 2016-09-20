@@ -34,7 +34,8 @@
 						<td class="admin-teacher-phone"><span>{$v.tel}</span></td>
 						<td class="admin-teacher-email"><span>{$v.email}</span></td>
 						<td class="admin-teacher-operation admin-operation">
-							<a href="__ROOT__/index.php/home/user/detail?uid={$v.uid}"><span class="admin-view-info">查看信息</span></a>
+							<a href="__ROOT__/index.php/home/user/detail?uid={$v.uid}"><span class="admin-view-info">查看信息</span></a> | 
+							<a onclick="javascript: if(confirm('确定删除？')) return true; return false;" href="__ROOT__/index.php/home/user/delete?uid={$v.uid}&module=investor"><span class="admin-view-info">删除</span></a>
 						</td>
 					</tr>
 				</volist>

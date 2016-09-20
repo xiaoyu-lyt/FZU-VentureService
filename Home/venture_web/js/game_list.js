@@ -11,7 +11,7 @@ function getData(n) {
 	var _cid;
 	$.ajax({
 		type: "get",
-		url: "../../API/index.php/home/cpt/list.html",
+		url:  baseUrl + "cpt/list.html",
 		dataType: "json",
  		error: function() {
  			console.log("error");
@@ -66,7 +66,7 @@ $(function(){
 function getDetail(_cid) {
 	$.ajax({
 		type: "get",
-		url: "../../API/index.php/home/cpt/detail.html",
+		url:  baseUrl + "cpt/detail.html",
 		dataType: "json",
 		data: {
 			cid: _cid
@@ -105,7 +105,7 @@ function getDetail(_cid) {
 function getPastlist(_number, _times) {
 	$.ajax({
 		type: "get",
-		url: "../../API/index.php/home/cpt//previous.html",
+		url:  baseUrl + "cpt//previous.html",
 		dataType: "json",
 		data: {
 			number: _number,

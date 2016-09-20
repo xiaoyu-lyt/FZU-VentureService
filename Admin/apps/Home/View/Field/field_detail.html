@@ -46,9 +46,7 @@
  			</tr>
  			<tr>
  				<th><h4 class="line-title text-left">基地简介</h4></th>
- 				<td colspan="2">
- 					{$detail.synopsis}
- 				</td>
+ 				<td colspan="2">{$detail.synopsis}</td>
  			</tr>
 			<tr>
  				<th><h4 class="line-title text-left">基地详情</h4></th>
@@ -57,9 +55,30 @@
  			<tr>
  				<th><h4 class="line-title text-left">基地照片</h4></th>
  				<td colspan="2">
- 					<img width="600" height="300" src="{$detail.pic}" alt="">
+ 					
+ 						<img width="500" height="300" src="{$detail.pic}" alt="">
+ 					
  				</td>
  			</tr>
+ 			<tr><td class="line-title text-center" colspan="3">公共场地信息</td></tr>
+ 			<volist name="detail.public" id="vo" >
+	 			<tr>
+	 				<th><h4 class="line-title text-left">公共场地名称</h4></th>
+	 				<td colspan="2"><p>{$vo.name}</p></td>
+	 			</tr>
+	 			<tr>
+	 				<th><h4 class="line-title text-left">公告场地说明</h4></th>
+	 				<td colspan="2">{$vo.synopsis}</td>
+	 			</tr>
+				<tr>
+	 				<th><h4 class="line-title text-left">场地照片</h4></th>
+	 				<td colspan="2">
+	 					
+	 						<img width="250" height="150" src="{$vo.pic}" alt="">
+	 					
+	 				</td>
+	 			</tr>
+			</volist>
  		</table>
 	 	<div class="view-btn-group">
 	 		<a class="btn-view" href="javascript:history.back(-1)" >返回上一级</a>

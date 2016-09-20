@@ -15,11 +15,11 @@ class CompetitionController extends AdminController {
 		$totalPage = ceil($total/$pageSize);
 
 		$competition = M('Competitions')->page($page,$pageSize)->select();
-		for ($i=0; $i < count($competition); $i++) {
+		for ($i=0; $i < count($competition); $i++) { 
 			$competition[$i]['issue_time'] = date('Y-m-d',$competition[$i]['issue_time']);
 			$competition[$i]['deadline'] = date('Y-m-d',$competition[$i]['deadline']);
 		}
-
+		
 		$pageBar = array(
 			'total'     => $total,
 			'totalPage' => $totalPage+1,
@@ -40,7 +40,7 @@ class CompetitionController extends AdminController {
 			$data['issue_time'] = time();
 			$data['number'] = $this->getRandNum();
 			$data['deadline'] = strtotime($data['deadline']);
-			if ($data['name'] != NULL && $data['url'] != NULL && $data['description'] != NULL && $data['times'] != NULL && $data['deadline'] != NULL) {
+			if ($data['name'] != NULL&&$data['url'] != NULL&&$data['description'] != NULL && $data['times'] != NULL && $data['deadline'] != NULL) {
 				if(M('Competitions')->add($data)) {
 					$this->success("发布成功",U('Competition/index'));
 				} else {
@@ -83,9 +83,9 @@ class CompetitionController extends AdminController {
 			$this->ajaxReturn(array('msg'=>"删除成功"));
 		} else {
 			$this->ajaxReturn(array('msg'=>"删除失败"));
-
+			
 		}
-
+		
 	}
 
 	//删除单条
@@ -99,7 +99,7 @@ class CompetitionController extends AdminController {
 
 	/**
 	 * 随机字符串
-	 * @return string
+	 * @return string 
 	 */
 	public function getRandNum() {
 		$randNum = "";

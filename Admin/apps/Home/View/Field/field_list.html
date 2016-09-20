@@ -9,10 +9,10 @@
 				</th>
 				<th class="admin-th-base-id admin-th-id"><span>ID</span></th>
 				<th class="admin-th-base-name admin-th-name"><span>基地名称</span></th>
-				<th class="admin-th-base-username admin-th-username"><span>法定代表人</span></th>
+				<th style="width: 100px;" class="admin-th-base-username admin-th-username"><span>法定代表人</span></th>
 				<th class="admin-th-base-unit admin-th-unit"><span>产权单位</span></th>
-				<th class="admin-th-base-time admin-th-time"><span>开办时间</span></th>
-				<th class="admin-th-base-management admin-th-management"><span>管理操作</span></th>
+				<th style="width: 100px;" class="admin-th-base-time admin-th-time"><span>开办时间</span></th>
+				<th style="width: 250px;" class="admin-th-base-management admin-th-management"><span>管理操作</span></th>
 			</tr>
 			<volist name="list" id="vo">
 				<tr>
@@ -28,10 +28,24 @@
 					<td class="admin-base-unit"><span>{$vo.owner}</span></td>
 					<td class="admin-base-time"><span>{$vo.run_time}</span></td>
 					<td class="admin-base-operation admin-operation">
-						<a href="__ROOT__/index.php/home/field/detail/{$vo.fid}"><span class="admin-view-info">查看信息</span></a>
+						<a href="__ROOT__/index.php/home/field/detail/{$vo.fid}"><span class="admin-view-info">查看信息</span></a> | 
+						<a href="__ROOT__/index.php/home/field/modify/{$vo.fid}"><span class="admin-view-info">修改</span></a> | 
+						<span class="admin-article-delete"><a onclick="javascript: if(confirm('确定删除？')) return true; return false;" href="__ROOT__/index.php/home/field/deleteOne?cid={$vo.fid}">删除</a></span> | 
+						<if condition="$vo.is_show eq 0">			
+							<a href="__ROOT__/index.php/home/field/isShow?fid={$vo.fid}&action=yes"><span class="admin-view-info">首页显示</span></a>
+						<else />
+							<a href="__ROOT__/index.php/home/field/isShow?fid={$vo.fid}}&action=no"><span class="admin-view-info">取消首页显示</span></a>
+						</if>
 					</td>
 				</tr>
 			</volist>
+			<!-- <tr>
+				<td colspan="2">
+					<div class="admin-article-operation admin-operation">
+						<span class="admin-article-delete delete-all">批量删除</span>
+					</div>
+				</td>
+			</tr> -->
 		</table>
 	</div>
 

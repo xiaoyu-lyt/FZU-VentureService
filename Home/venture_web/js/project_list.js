@@ -1,4 +1,21 @@
-var _area ,_form, _stage, _group, _type;
+var _area, _form , _stage, _group, _type;
+var selectKeys = {
+	area: {
+		num: 0
+	},
+	form: {
+		num: 0
+	},
+	stage: {
+		num: 0
+	},
+	group: {
+		num: 0
+	},
+	type: {
+		num: 0
+	}
+};
 
 getData(1); //初始化项目列表
 
@@ -10,7 +27,7 @@ function getData(_page, _area, _form, _stage, _group) {
 	var _size = 5, pages;
 	$.ajax({
 		type: "get",
-		url: "../../API/index.php/home/project/list.html",
+		url:  baseUrl + "project/list.html",
 		data: {
 			size: _size,
 			page: _page, //当前页码
@@ -23,7 +40,7 @@ function getData(_page, _area, _form, _stage, _group) {
 	}).done(function(result) {
 		var data = result.data;
 		pages = data.pages;
-		console.log(data);
+		console.log(data)
 		var template = Handlebars.compile($('#project-template').html()); //注册模板
 		var html = template(data); //封装模板
 		$('#projects-box').html(html); //插入基础模板中
@@ -98,20 +115,15 @@ function SelectProject() {
 		if(e.nodeName.toUpperCase()==='LI'){
 			$(e).parent().find('.now').removeClass('now');
 			$(e).addClass('now');
-			var name = e.id.slice(0,-1);
-			var num = e.id.slice(-1);
-			switch(name) {
-				case "area":
-					getData(1, num, _form, _stage, _group);
-					break;
-				case "form":
-					getData(1, _area, num, _stage, _group);
-					break;
-				case "stage":
-					getData(1, _area, _form, num, _group);
-				case "group":
-					getData(1, _area, _form, _stage, num);
+			var name = e.id.slice(0,-1); // 所属领域、公司形式、融资阶段、产品类别、面向群体
+			var num = e.id.slice(-1); 
+			num -= 1;
+			if(num == -1) {
+				num = ''
 			}
+			console.log(num)
+			selectKeys[name].num = num;
+			getData(1, selectKeys.area.num, selectKeys.form.num, selectKeys.stage.num,selectKeys.group.num)
 		}
 	});
 }
@@ -130,7 +142,7 @@ function searchProject() {
 		if(text!='') {
 			$.ajax({
 					type: "get",
-					url: "../../API/index.php/Home/project/wordSelect",
+					url:  baseUrl + "project/wordSelect",
 					data: {	word: text }
 			}).done(function(result) {
 					var data = result.data,

@@ -137,7 +137,7 @@ $('#submit').click(function() {
 		v_code = $('#v-code').val();
 	$.ajax({
 		type: "post",
-		url: "../../API/index.php/home/user/register.html",
+		url:  baseUrl + "user/register.html",
 		data: {
 			username: _username,
 			name: _name,

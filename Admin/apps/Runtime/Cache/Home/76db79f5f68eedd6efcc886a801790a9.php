@@ -7,12 +7,13 @@
 	<title>注册-福州大学创业服务网</title>
 	<link rel="stylesheet" type="text/css" href="/demo/jyzd/01/Admin/Public/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="/demo/jyzd/01/Admin/Public/css/admin.css" />
-	<link rel="stylesheet" type="text/css" href="/demo/jyzd/01/Admin/Public/css/reset.css" />	<!-- <link rel="stylesheet" href="<?php echo BASE_URL; ?>/Public/css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="/demo/jyzd/01/Admin/Public/css/reset.css" />
+	<!-- <link rel="stylesheet" href="<?php echo BASE_URL; ?>/Public/css/bootstrap.min.css" >
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>/Public/css/admin.css">
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>/Public/css/reset.css"> -->
 </head>
 <body>
-	<div class="signup-wrapper">b
+	<div class="signup-wrapper">
 		<div class="container">
 			<div class="signup-content">
 				<div class="signup-logo">

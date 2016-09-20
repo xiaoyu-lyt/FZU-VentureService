@@ -109,21 +109,7 @@
 					</div>
 					<div id="traning-box" class="clearfix">
 						<div class="col-md-3 col-sm-4">
-							<div class="classroom-box">
-								<div class="classroom-box-mask">
-								<p class="traning-content">主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容主要内容</p>
-								</div>
-								<a class="classroom-img" href=""><img src="images/classrom1.jpg" alt=""></a>
-								<div class="classroom-info">
-									<h2><a href="">SYB培训模式</a></h2>
-									<a class="clasroom-training-detail clearfix">
-										<span class="pull-left">主讲人：林渊腾</span>
-										<span class="pull-right">人数：30/60</span>
-										<span class="pull-left">培训时间：2016/07/22-2016/08/01</span>
-									</a>
-								</div>
-								<a class="training-apply-btn" href="">我要报名</a>
-								</div>
+							
 						</div>
 					</div>
 					
@@ -131,10 +117,10 @@
 			<div class="classroom-lessons clearfix">
 					<div class="classroom-title">
 					<img src="images/课堂要点.png" alt="">
-						<h2>创业课堂</h2>
+						<h2>培训教材</h2>
 					</div>
 					<div id="lessons-box">
-						<div class="col-md-3 col-sm-4">
+						<!-- <div class="col-md-3 col-sm-4">
 							<div class="classroom-box">
 								<a class="classroom-img" href="http://ow365.cn/?i=10263&furl=http://123.207.58.12/FZU-VentureService/Upload/Courses/Word/test.docx" target="_blank"><img src="images/classrom2.jpg" alt=""></a>
 								<div class="classroom-info">
@@ -142,7 +128,7 @@
 									<a class="download-btn" href="http://123.207.58.12/FZU-VentureService/Upload/Courses/Word/test.docx">下载</a>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						
 					</div>
 			</div>
@@ -153,29 +139,60 @@
 	<!-- Footer Start -->
 	<footer>
 		<div class="footer-wrapper">
-			<div class="footer-box contact">
+			<div class="footer-box">
 				<h4>联系方式</h4>
 				<p>
-					就业管理（素拓202）：0591-22866661<br>
-					
+					邮编：350116
 				</p>
-
-			</div>
-			<div class="footer-box procedure">
-				<h4>手续办理</h4>
 				<p>
-					上午：8:30-12:00 <br>
-					下午：14:00-17:00 <br>
+					地址：福州市大学城学院路2号福州大学大学生素质拓展楼
 				</p>
+				
 			</div>
-			<div class="footer-box consult">
-				<h4>指导咨询</h4>
+			<div class="footer-box">
+				<h4>用人单位服务</h4>
 				<p>
-					上午：8:30-12:00 <br>
-					下午：14:00-17:00 <br>
-					指导咨询室：素拓204 <br>
+					电话：0591-22866663
+				</p>
+				<p>
+					传真：0591-22866660
+				</p>
+				<p>
+					地点：素拓203
 				</p>
 			</div>
+			<div class="footer-box">
+				<h4>学生就业管理</h4>
+				<p>
+					电话：0591-22866661	
+				</p>
+				<p>
+					地点：素拓202
+				</p>
+			</div>
+			<div class="footer-box">
+				<h4>创业咨询</h4>
+				<p>
+					电话：0591-22866523
+				</p>
+				<p>
+					地点：素拓406
+				</p>
+			</div>
+			<div class="footer-box no-border">
+				<h4>职业生涯咨询预约</h4>
+				<p>
+					电话：0591-22874055
+				</p>
+				<p>
+					地点：素拓204
+				</p>
+			</div>
+		</div>
+		<div class="footer-logo">
+			<img src="images/fzu-logo.png" alt="">
+			<span class="footer-line">福州大学大学生创业服务网</span>
+			<span class="copyright">版权所有2016</span>
 		</div>
 	</footer>
 	<!-- Footer End -->
@@ -200,7 +217,7 @@
 								<span class="pull-left">培训时间：<br>{{start_time}}至{{deadline}}</span>
 							</a>
 						</div>
-						<a class="training-apply-btn" href="javascript:void(0)" onClick="applyTraining(this.rel)" rel={{cid}}>我要报名</a>
+						<a class="training-apply-btn apply" href="javascript:void(0)" rel={{cid}}>我要报名</a>
 					</div>
 				</div>
 			{{/if}}
@@ -210,10 +227,10 @@
 		{{#each this}}
 			<div class="col-md-3 col-sm-4">
 				<div class="classroom-box">
-					<a class="classroom-img" href="http://ow365.cn/?i=10263&furl=http://123.207.58.12/FZU-VentureService/Upload/Courses/Word/test.docx" target="_blank"><img src="images/classrom1.jpg" alt=""></a>
+					<a class="classroom-img" href="" target="_blank"><img src="{{pic_url}}" alt=""></a>
 					<div class="classroom-info">
-						<h2><a href="http://ow365.cn/?i=10263&furl=http://123.207.58.12/FZU-VentureService/Upload/Courses/Word/test.docx" target="_blank">{{name}}</a></h2>
-						<a class="download-btn" href="http://123.207.58.12/FZU-VentureService/Upload/Courses/Word/test.docx">下载</a>
+						<h2><a href="" target="_blank">{{name}}</a></h2>
+						<a class="download-btn" href="#" rel={{file_url}}>下载</a>
 					</div>
 				</div>
 			</div>

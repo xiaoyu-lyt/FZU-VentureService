@@ -9,7 +9,7 @@ var _nid = window.location.search,
 
 $.ajax({
 	type: "get",
-	url: "../../API/index.php/home/notice/detail.html",
+	url:  baseUrl + "notice/detail.html",
 	data: { nid: _nid }
 }).done(function(result) {
 	var data = result.data;

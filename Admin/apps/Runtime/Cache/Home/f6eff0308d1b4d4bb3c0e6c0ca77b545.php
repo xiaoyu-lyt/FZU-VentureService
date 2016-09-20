@@ -41,54 +41,67 @@
 				<img src="/demo/jyzd/01/Admin/Public/images/setting.png" alt="">
 				<h1>管理中心</h1>
 				<div class="admin-modify">
-					<p>你好，<span><?php $user = session('login_manager'); echo $user['name']; ?>！</span><span class="psbtn">修改密码</span><span class="exit"><a href="/demo/jyzd/01/Admin/index.php/home/home/logout">注销登录</a></span></p>
+					<p>你好，<span><?php $user = session('login_manager'); echo $user['name'] != '' ? $user['name'] : "管理员"; ?>！</span><span class="psbtn">修改密码</span><span class="exit"><a href="/demo/jyzd/01/Admin/index.php/home/home/logout">注销登录</a></span></p>
 				</div>
 			</div>
 			<div class="user-student-sidenav user-sidenav pull-left">
 				<ul>
-					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/notice">资讯管理</a></li>
-					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/user">用户管理</a></li>
-					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/project">项目管理</a></li>
-					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field">入驻申请</a></li>
-					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/class">培训管理</a></li>
-					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/document">教材管理</a></li>
-					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition">比赛管理</a></li>
+					<li class="<?php if( $MODULE == 'Notice') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/notice/index">资讯管理</a></li>
+					<li class="user-sidnav-li admin-users <?php if( $MODULE == 'User') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/user/index">用户管理</a></li>
+					<li class="user-sidnav-li admin-projects <?php if( $MODULE == 'Project') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/project/index">项目管理</a></li>
+					<li class="<?php if( $MODULE == 'Field') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/field/index">基地管理</a></li>
+					<li class="<?php if( $MODULE == 'Class') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/class/index">培训管理</a></li>
+					<li class="<?php if( $MODULE == 'Document') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/document/index">教材管理</a></li>
+					<li class="<?php if( $MODULE == 'Competition') echo 'now';?>"><a href="/demo/jyzd/01/Admin/index.php/home/competition/index">比赛管理</a></li>
 				</ul>
 			</div>
-<!-- Aricle-publish Start -->
-<div class="article-publish-form">
-	<form action="/demo/jyzd/01/Admin/index.php/home/competition/publish/do" method="post">
-
-		<div class="article-publish-box article-publish-title">
-			<label for=""><span class="star">*</span>标题:</label>
-			<input type="text" name="name" value="">
-			<button class="duplicate-detection">检测重复</button>
-		</div>
-
-		<div class="article-publish-box article-publish-title">
-			<label for=""><span class="star">*</span>届数:</label>
-			<input type="text" name="times" value="">
-		</div>
-
-		<div class="article-publish-box article-publish-abstract">
-
-			<label for=""><span class="star">*</span>内容:</label>
-				<!-- 加载编辑器的容器 -->
-			    <script id="_container" name="description" type="text/plain" style="width: 740px; height:250px; margin-left:190px;"> 
-			    </script>
-			    <!-- 配置文件 -->
-			    <script type="text/javascript" src="/demo/jyzd/01/Admin/Public/ueditor/ueditor.config.js"></script>
-			    <!-- 编辑器源码文件 -->
-			    <script type="text/javascript" src="/demo/jyzd/01/Admin/Public/ueditor/ueditor.all.js"></script>
-			    <!-- 实例化编辑器 -->
-		</div>
-		<div class="article-publish-btn">
-			<button type="submit" name="sub" class="save-close">保存后自动关闭</button>
-			<button class="save-publish">保存并继续发表</button>
-			<button class="publish-close"><a href="javascript :;" onClick="javascript :history.back(-1);">关闭</a></button>
-		</div>
+<!-- 发布表格 -->
+<div class="user-box block">
+	<form action="/demo/jyzd/01/Admin/index.php/home/competition/publish/do" method="post" class="publish-form form-horizontal">
+		<h2 align="center" style="margin: 0 0 20px 0; color: #61a3e1;">比赛通知发布</h2>
+	 	<table class="publish-table">
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>标题：</h4>
+				<td><input class="title-input form-control" name="name" type="text"></td>
+			</tr>
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>报名链接：</h4></td>
+				<td><input class="title-input form-control" name="url" type="text"></td>
+			</tr>
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>内容：</h4></td>
+				<td><script id="_container" name="description" type="text/plain" style="width: 100%; height:300px; margin-left: －10px">
+					（这里填写比赛通知内容）
+				</script>
+				</td>
+			</tr>
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>届数：</h4></td>
+				<td><input class="title-input form-control" name="times" type="text" style="width:50px"></td>
+			</tr>
+			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>截止时间：</h4></td>
+				<td>
+					<!-- 日期插件 -->
+					<div class="input-group date form_date col-md-4" data-date="" data-date-format="yyyy-mm-dd" data-link-field="deadline" data-link-format="yyyy-mm-dd">
+	                    <input  class="form-control" size="16" type="text" placeholder="点击选择日期" value="" readonly>
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+	                </div>
+	                <input type="hidden" id="deadline" name="deadline" value="" ><br/>
+	                <!-- 日期插件结束 -->
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button class="btn btn-publish">发布</button></td>
+			</tr>
+	 	</table>
 	</form>
 </div>
+
+<script type="text/javascript" src="/demo/jyzd/01/Admin/Public/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/demo/jyzd/01/Admin/Public/ueditor/ueditor.all.js"></script>
 <script type="text/javascript">
 	        var ue = UE.getEditor('_container');
 </script>

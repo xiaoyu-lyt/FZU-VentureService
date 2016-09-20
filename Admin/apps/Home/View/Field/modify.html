@@ -1,0 +1,157 @@
+<include file="Public:header"/>
+
+
+
+
+
+		<!-- 在下面的div添加 -->
+	<div class="user-box block">
+		<form class="publish-form base-publish form-horizontal" enctype="multipart/form-data" action="__ROOT__/index.php/home/field/modify/{$detail.fid}/do" method="post">
+			<h2 align="center" style="margin: 0 0 20px 0; color: #61a3e1;">创业基地发布</h2>
+		 	<table class="publish-table">
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>基地名称：</h4></td>
+					<td><input name="name" style="width: 280px;" class="title-input form-control" type="text" value="{$detail.name}"></td>
+				</tr>
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>法定代表人：</h4></td>
+					<td><input name="chief" style="width:280px;" class="title-input form-control" type="text" value="{$detail.chief}"></td>
+				</tr>
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>基地地址：</h4></td>
+					<td><input name="addr" style="width:280px;" class="title-input form-control" type="text" value="{$detail.addr}"></td>
+				</tr>
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>基地面积：</h4></td>
+					<td><input name="area" style="width:280px;" class="title-input form-control" type="text" value="{$detail.area}">
+					</td>
+				</tr>
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>产权单位：</h4></td>
+					<td><input name="owner" style="width:280px;" class="title-input form-control" type="text" value="{$detail.owner}"></td>
+				</tr>
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>自有/合办：</h4></td>
+					<td>
+						<label for="own" class="radio-inline">
+						<input id="own" name="own_or_co"  type="radio" value="1" <if condition="$detail.own_or_co eq 1">checked </if> >自有
+						</label>
+						<label for="co" class="radio-inline">
+						<input id="co" name="own_or_co"  type="radio" value="2" <if condition="$detail.own_or_co eq 2">checked </if> >合办
+						</label>
+
+					</td>
+				</tr>
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>基地投入：</h4></td>
+					<td><input name="investment_field" style="width:280px;" class="title-input form-control" type="text" value="{$detail.investment_field}"></td>
+				</tr>
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>其中学校投入：</h4></td>
+					<td><input name="investment_class" style="width:280px;" class="title-input form-control" type="text" value="{$detail.investment_class}"></td>
+				</tr>
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>其他投入：</h4></td>
+					<td><input name="investment_other" style="width:280px;" class="title-input form-control" type="text" value="{$detail.investment_other}"></td>
+				</tr>
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>基地简介：</h4></td>
+					<td>
+						<textarea class="form-control" style="width: 280px; height: 100px;" name="synopsis" id="" cols="30" rows="10">{$detail.synopsis}</textarea>
+						<!-- <input name="synopsis" style="width:280px;" class="title-input form-control" type="text"> -->
+					</td>
+				</tr>
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>基地详情：</h4></td>
+					<!-- 下面插入富文本 -->
+					<td><script id="_container" name="detail" type="text/plain" style="width: 100%; height:300px;">{$detail.detail}</script>
+					</td>
+				</tr>
+
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>基地照片：</h4></td>
+					<td>
+						<img width="300" height="200" src="{$detail.pic}" /><br><br>
+
+						<input name="pic" type="file" >
+					</td>
+				</tr>
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>开办时间：</h4></td>
+					<td>
+						<!-- 日期插件 -->
+						<div class="input-group date form_date col-md-4" data-date="" data-date-format="yyyy-mm-dd" data-link-field="run_time" data-link-format="yyyy-mm-dd">
+		                    <input  class="form-control" size="16" type="text" placeholder="点击选择日期" value="{$detail.run_time}" readonly>
+		                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+							<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+		                </div>
+		                <input type="hidden" id="run_time" name="run_time" value="{$detail.run_time}" ><br/>
+		                <!-- 日期插件结束 -->
+					</td>
+				</tr>
+				<tr>
+					<td><h4 class="line-title text-right"><span class="star">*</span>是否空闲：</h4></td>
+					<td>
+						<label for="leisure" class="radio-inline">
+						<input id="leisure" name="status"  type="radio" value="1" <if condition="$detail.status eq 1">checked </if> >是
+						</label>
+						<label for="occupies" class="radio-inline">
+						<input id="occupies" name="status"  type="radio" value="0" <if condition="$detail.status eq 0">checked </if> >否
+						</label>
+
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><h2 align="center" style="margin: 0 0 20px 0; color: #61a3e1;">公共场地详情</h2></td>
+					
+				</tr>
+				<volist name="detail.public" id="vo" key="i" >
+					<tr>
+						<td><h4 class="line-title text-right"><span class="star">*</span>公告场地名称：</h4></td>
+						<td><input name="public[{$i}][name]" style="width: 280px;" class="title-input form-control" type="text" value="{$vo.name}"></td>
+					</tr>
+					<tr>
+						<td><h4 class="line-title text-right"><span class="star">*</span>公告场地说明：</h4></td>
+						<td>
+							<textarea class="form-control" style="width: 280px; height: 100px;" name="public[{$i}][synopsis]" id="" cols="30" rows="10">{$vo.synopsis}</textarea>
+							<!-- <input name="synopsis" style="width:280px;" class="title-input form-control" type="text"> -->
+						</td>
+					</tr>
+					<tr>
+						<td><h4 class="line-title text-right"><span class="star">*</span>基地照片：</h4></td>
+						<td>
+							<img width="300" height="200" src="{$vo.pic}" /><br><br>
+							<input type="hidden" name="public[{$i}][pic_pre]" value="{$vo.pic_name}"></intpu>
+							<input name="pic_{$i}" type="file" >
+						</td>
+					</tr>
+				</volist>
+
+		 	</table>
+		 		<span id="add-public-base" class="add-public-base text-center">添加公共场地</span>
+				<button class="btn btn-publish">发布</button>
+		</form>
+		<div class="view-btn-group">
+	 		<a class="btn-view" href="javascript:history.back(-1)" >返回上一级</a>
+	 	</div>
+	</div>
+
+
+<script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.js"></script>
+<script type="text/javascript">
+	        var ue = UE.getEditor('_container');
+</script>
+</script>
+	<script>
+		var index = {$next};
+		$('#add-public-base').click(function () {
+			var line = '<tr><td><h4 class="line-title text-right"><span class="star">*</span>公共场地名称：</h4></td><td><input name="public['+ index +'][name]" style="width: 280px;" class="title-input form-control" type="text"></td></tr>';
+			line += '<tr><td><h4 class="line-title text-right"><span class="star">*</span>公共场地说明：</h4></td><td><textarea class="form-control" style="width: 280px; height: 100px;" name="public['+ index +'][synopsis]" id="" cols="30" rows="10"></textarea></tr>';
+			line += '<tr><td><h4 class="line-title text-right"><span class="star">*</span>公共场地照片：</h4></td><td><input name="pic_'+index+'" type="file" ></td></tr>'
+			console.log(index);
+			$('.publish-table').append(line);
+			index++;
+		})
+	</script>
+<include file="Public:footer"/>

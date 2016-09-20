@@ -79,9 +79,19 @@ class PartnerController extends BaseController {
 	 * @return json
 	 */
 	public function search_get() {
+		$page = !empty(I('get.page')) ? I('get.page') : 1;
+		$pageSize = !empty(I('get.size')) ? I('get.size') : 10;
+
 		$condition = I('get.condition');
-		$where['demands'] = array('like',"%".$condition."%",'OR');
-		$data = M('seekRecords')->where($where)->select();
+		$where['find_mahor'] = array('like',"%".$condition."%",'OR');
+		$where['description'] = array('like',"%".$condition."%",'OR');
+		$where['specialty'] = array('like',"%".$condition."%",'OR');
+		$where['_logic'] = 'or';
+		$data = M('seekRecords')->where($where)->page($page,$pageSize)->select();
+
+		$count = count(M('seekRecords')->where($where)->select());
+		$data['pages'] = ceil($count/$pageSize);
+
 		if( !empty($data) ) {
 			$json = $this->jsonReturn(200,"搜索成功",$data);
 		} else {

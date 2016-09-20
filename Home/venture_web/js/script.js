@@ -6,7 +6,7 @@ function getHotNews() {
 	var num;
 	$.ajax({
 		type: "get",
-		url: "../../API/index.php/home/notice/hotList.html",
+		url:  baseUrl + "notice/hotList.html",
 		dataType: "json",
 	}).done(function(result) {
 		var data = result.data;
@@ -28,7 +28,7 @@ function getInfo(type) {
 	var types=['news','notice','policy'];
 	$.ajax({
 		type: "get",
-		url: "../../API/index.php/home/notice/list.html",
+		url: baseUrl + "notice/list.html",
 		dataType: "json",
 		data: { type: type }
 	}).done(function(result) {
@@ -122,13 +122,14 @@ function tab() {
 function getBase() {
 	$.ajax({
 		type: "get",
-		url: "../../API/index.php/home/field/list.html",
+		url:  baseUrl + "field/list.html",
 		dataType: "json",
 	}).done(function(result) {
 		var data = result.data;
+		console.log(data);
 			var template = Handlebars.compile($('#base-template').html()); //注册模板
 			Handlebars.registerHelper("compare", function(_index, options){
-          	 	if(_index < 3){
+    	 	if(_index < 3){
 				//满足添加继续执行
 					return options.fn(this);
 				}	
@@ -146,7 +147,7 @@ function getBase() {
 function getProject() {
 	$.ajax({
 		type: "get",
-		url: "../../API/index.php/home/project/list.html"
+		url:  baseUrl + "project/list.html"
 	}).done(function(result) {
 		var data = result.data;
 		// console.log(data);

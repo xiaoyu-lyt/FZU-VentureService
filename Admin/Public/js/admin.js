@@ -55,35 +55,35 @@ allBtn.forEach(function(elem) {
 /**
  * 管理操作弹窗
  */
-var operation = document.querySelectorAll('.admin-operation');
-operation = [].slice.call(operation);
-operation.forEach(function(elem,index) {
-	elem.onclick = function(event) {
-		tr = event.target.parentNode.parentNode;
-		if(hasClass(event.target, 'admin-article-delete')){
-			var popup = document.querySelector('.popup-delete');
-			popup.style.display = 'block';
-			popup.onclick = function(e) {
-				if(hasClass(e.target, 'yes')) {
-					tr.parentNode.removeChild(tr);
-					popup.style.display = 'none';
-				} else if(hasClass(e.target, 'no')) {
-					popup.style.display = 'none';
-				}
-			}
-		} else if(hasClass(event.target, 'admin-refuse')) {
-			var popup = document.querySelector('.popup-refuse');
-			popup.style.display = 'block';
-			popup.onclick = function(e) {
-				if(hasClass(e.target, 'yes')) {
-					popup.style.display = 'none';
-				} else if(hasClass(e.target, 'no')) {
-					popup.style.display = 'none';
-				}
-			}
-		}
-	}
-})
+// var operation = document.querySelectorAll('.admin-operation');
+// operation = [].slice.call(operation);
+// operation.forEach(function(elem,index) {
+// 	elem.onclick = function(event) {
+// 		tr = event.target.parentNode.parentNode;
+// 		if(hasClass(event.target, 'admin-article-delete')){
+// 			var popup = document.querySelector('.popup-delete');
+// 			popup.style.display = 'block';
+// 			popup.onclick = function(e) {
+// 				if(hasClass(e.target, 'yes')) {
+// 					tr.parentNode.removeChild(tr);
+// 					popup.style.display = 'none';
+// 				} else if(hasClass(e.target, 'no')) {
+// 					popup.style.display = 'none';
+// 				}
+// 			}
+// 		} else if(hasClass(event.target, 'admin-refuse')) {
+// 			var popup = document.querySelector('.popup-refuse');
+// 			popup.style.display = 'block';
+// 			popup.onclick = function(e) {
+// 				if(hasClass(e.target, 'yes')) {
+// 					popup.style.display = 'none';
+// 				} else if(hasClass(e.target, 'no')) {
+// 					popup.style.display = 'none';
+// 				}
+// 			}
+// 		}
+// 	}
+// })
 
 /**
  * 切换选项卡
@@ -141,3 +141,4 @@ psbtn.onclick = function() {
 		}
 	})
 }
+

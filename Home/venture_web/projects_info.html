@@ -59,7 +59,7 @@
 		</a>
 		<div class="main-nav">
 			<ul class='clearfix'>
-				<li class='pull-left on'><a href="index.html">首页</a></li>
+				<li class='pull-left'><a href="index.html">首页</a></li>
 				<li class='pull-left'><a href="information.html">新闻资讯</a></li>
 				<li class='pull-left'><a href="base.html">孵化基地</a></li>
 				<li class='pull-left'><a href="projects.html">创业项目</a></li>
@@ -96,7 +96,7 @@
 	<div class="projects-info-wrapper">
 		<div class="container">
 			<div id="projects-info-box" class="projects-info-box">
-				<div class="projects-info-top clearfix">
+				<!-- <div class="projects-info-top clearfix">
 					<div class="projects-info-img pull-left"><img src="" alt="logo"></div>
 					<div id="projects-info-top" class="projects-info-list pull-left">
 						<div class="projects-info-name projects-info-line"><span class="projects-info-title">项目名称：</span><span id="project-name"></span></div>
@@ -105,7 +105,7 @@
 						<div class="projects-info-team projects-info-line"><span class="projects-info-title">团队人数：</span><span id="project-members"></span></div>
 						<div class="projects-info-leader projects-info-line"><span class="projects-info-title">项目负责人：</span><span id="project-principal"></span> <a href=""><img class="icon-chat"src="images/chat.png" alt=""></a></div>
 					</div>
-				</div>
+				</div> -->
 				<div id="projects-info-detail" class="projects-info-details">
 					<div class="projects-info-detail projects-info-introduction">
 						<img class="icon-info-detail" src="images/icon-info-detail1.png" alt="">
@@ -169,7 +169,7 @@
 	<script src="js/handlebars-v4.0.5.js"></script>
 	<script id="project-template" type="text/x-handlebars-template">
 		<div class="projects-info-top clearfix">
-			<div class="projects-info-img pull-left"><img src="logo" alt=""></div>
+			<div class="projects-info-img pull-left"><img src="{{pic}}" alt=""></div>
 			<div  class="projects-info-list pull-left">
 				<div class="projects-info-name projects-info-line"><span class="projects-info-title">项目名称：</span><span id="project-name">{{name}}</span></div>
 				<div class="projects-info-field projects-info-line"><span class="projects-info-title">项目所属领域：</span><span id="project-area">{{area}}</span></div>
@@ -209,17 +209,14 @@
 					<p id="next-stage">{{stage}}</p>
 				</div>
 			</div>
-			<div class="projects-info-detail projects-info-bright">
+			<!-- <div class="projects-info-detail projects-info-bright">
 				<img class="icon-info-detail" src="images/icon-info-detail2.png" alt="">
 				<h3>项目展示</h3>
 				<div class="projects-pic-box owl-carousel">
 					<div class="item"><img class="projects-pic item" src="pic" alt=""></div>
-				    <!-- <div class="item"><img class="projects-pic item" src="images/225368.png"></div>
-				    <div class="item"><img class="projects-pic item" src="images/225046.jpg" alt=""></div>
-				    <div class="item"><img class="projects-pic item" src="images/227735.jpg" alt=""></div>
-				    <div class="item"><img class="projects-pic item" src="images/225368.png"></div> -->
+				    <div class="item"><img class="projects-pic item" src="images/225368.png"></div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</script>
 	<script id="popup4-template" type="text/x-handlebars-template">

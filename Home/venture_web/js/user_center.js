@@ -7,7 +7,7 @@ isPass = ['待审核','审核通过'];
 function getInfo() {
     $.ajax({
     type: "get",
-    url: "../../API/index.php/home/user/getUserInfo.html",
+    url:  baseUrl + "user/getUserInfo.html",
     error: function () {
       console.log("error!");
     },
@@ -37,7 +37,7 @@ submit.onclick = function() {
 function upload() {
   $.ajax({
     type: "post",
-    url: "../../API/index.php/home/user/uploadAvatar.html",
+    url:  baseUrl + "user/uploadAvatar.html",
     data: new FormData($('#head-form')[0]),
     processData: false,
     cache: false,
@@ -83,7 +83,7 @@ function showList(listName) {
 function getFindList(uid) {
   $.ajax({
     type: "get",
-    url:"../../API/index.php/home/user/mySeek.html",
+    url: baseUrl + "user/mySeek.html",
     data: {uid: uid }
   }).done(function(result) {
     var dataArr = result.data;
@@ -114,7 +114,7 @@ function getFindList(uid) {
 function getBaseList() {
   $.ajax({
     type: "get",
-    url:"../../API/index.php/home/user/myFieldApply.html",
+    url: baseUrl + "user/myFieldApply.html",
   }).done(function(result) {
   
     var dataArr = result.data;
@@ -137,7 +137,7 @@ function getBaseList() {
 function getProjectList() {
   $.ajax({
     type: "get",
-    url:"../../API/index.php/home/user/myProjects.html",
+    url: baseUrl + "user/myProjects.html",
   }).done(function(result) {
     var dataArr = result.data;
     // console.log(dataArr);
@@ -159,7 +159,7 @@ function getProjectList() {
  */
 function getPartnerInfo(_sid) {
   $.ajax({
-    url: "../../API/index.php/home/Partner/seekDetail.html",
+    url:  baseUrl + "Partner/seekDetail.html",
     type: "get",
     data: { sid: _sid}
   }).done(function(result) {

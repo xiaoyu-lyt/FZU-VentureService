@@ -87,7 +87,7 @@ $('.modify-password').click(function() {
  * @return {[type]}        [description]
  */
 function modifyInfo(target) {
-	var _url = "../../API/index.php/home/user/";
+	var _url =  baseUrl + "user/";
 	$('.modify-wrapper').show();
 	$('.modify-'+ target +'-box').show();
 	sendCode(target);

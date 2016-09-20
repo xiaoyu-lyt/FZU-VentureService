@@ -34,7 +34,7 @@ function getData(_type, _page) {
 		pages;
 	$.ajax({
 		type: "get",
-		url: "../../API/index.php/home/notice/list.html",
+		url:  baseUrl + "notice/list.html",
 		data: {
 			type: _type,
 			size: _size, //页大小
