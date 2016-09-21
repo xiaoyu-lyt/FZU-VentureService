@@ -39,6 +39,8 @@ class CompetitionController extends AdminController {
 			$data = I('post.');
 			$data['issue_time'] = time();
 			$data['number'] = $this->getRandNum();
+			$data['issue_time'] = !empty($data['issue_time']) ? strtotime($data['issue_time']) : time();
+
 			$data['deadline'] = strtotime($data['deadline']);
 			if ($data['name'] != NULL&&$data['url'] != NULL&&$data['description'] != NULL && $data['times'] != NULL && $data['deadline'] != NULL) {
 				if(M('Competitions')->add($data)) {
@@ -51,7 +53,8 @@ class CompetitionController extends AdminController {
 			}
 		} elseif ($action == 'domodify') {
 			$data = I('post.');
-			$data['issue_time'] = time();
+			$data['issue_time'] = strtotime($data['issue_time']);
+
 			$data['deadline'] = strtotime($data['deadline']);
 			M('Competitions')->where(array('cid'=>$cid))->save($data);
 			$this->success("修改成功",U('index'));
@@ -64,6 +67,7 @@ class CompetitionController extends AdminController {
 	public function modify($cid) {
 		$competition = M('Competitions')->where(array('cid'=>$cid))->find();
 		$competition['deadline'] = date('Y-m-d',$competition['deadline']);
+		$competition['issue_time'] = date('Y-m-d',$competition['issue_time']);
 		$this->assign('competition',$competition);
 		$this->assign('MODULE',$this->MODULE_NAME);
 		$this->display('modify');

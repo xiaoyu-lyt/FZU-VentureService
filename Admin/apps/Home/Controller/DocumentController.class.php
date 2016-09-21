@@ -52,7 +52,7 @@ class DocumentController extends AdminController {
 		    }else{//上传错误提示错误信息
 		        $this->error($upload->getError());
 		    }
-		    $data['issue_time'] = time();
+		    $data['issue_time'] = !empty($data['issue_time']) ? strtotime($data['issue_time']) : time();
 
 		    if(M('Documents')->add($data)) {
 		    	$this->success('发布成功',U('index'));
@@ -87,7 +87,7 @@ class DocumentController extends AdminController {
 		       	if($info['pic'])
 		       		$data['pic_url'] = $info['pic']['savepath'].$info['pic']['savename'];
 		    }
-		    $data['issue_time'] = time();
+		    $data['issue_time'] = strtotime($data['issue_time']);
 
 		    if(M('Documents')->where(array('id'=>$id))->save($data)) {
 		    	$this->success('修改成功',U('index'));
@@ -98,6 +98,7 @@ class DocumentController extends AdminController {
 		} else {
 			$doc = M('Documents')->where(array('id'=>$id))->find();
 			$doc['pic_url'] = SITE_URL.$doc['pic_url'];
+			$doc['issue_time'] = date('Y-m-d',$doc['issue_time']);
 			$this->assign('doc',$doc);
 
 			$this->assign('MODULE',$this->MODULE_NAME);

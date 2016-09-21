@@ -102,7 +102,9 @@ class NoticeController extends AdminController {
 			    }
 			 }
 			 if (isset($data['type'])&&isset($data['theme'])&&isset($data['content'])) {
-			 	$data['date'] = time();
+
+			 	$data['date'] = !empty($data['date']) ? strtotime($data['date']) : time();
+
 				$data['uid'] = $login_manager['uid'];
 				$count = count(M('Notice')->where(array('overhead'=>1))->select());
 				if ($data['overhead'] == 1) {
@@ -151,7 +153,7 @@ class NoticeController extends AdminController {
 				}
 			}
 
-			$data['date'] = time();
+			$data['date'] = strtotime($data['date']);
 			$data['uid'] = $login_manager['uid'];
 			if(M('Notice')->where(array('nid'=>$nid))->save($data)){
 				$this->success('修改成功',U($type));
@@ -169,6 +171,7 @@ class NoticeController extends AdminController {
 	public function modify($type,$nid) {
 		$article = M('Notice')->where(array('nid'=>$nid))->find();
 		$article['pic'] = SITE_URL.$article['pic'];
+		$article['date'] = date('Y-m-d',$article['date']);
 		$this->assign('type',$type);	
 		$this->assign('article',$article);
 		$this->assign('MODULE',$this->MODULE_NAME);

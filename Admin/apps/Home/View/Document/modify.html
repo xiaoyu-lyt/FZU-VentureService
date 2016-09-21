@@ -33,6 +33,19 @@
 				</td>
 			</tr>
 			<tr>
+				<td><h4 class="line-title text-right"><span class="star">*</span>发布时间：</h4></td>
+				<td>
+					<!-- 日期插件 -->
+					<div class="input-group date form_date col-md-4" data-date="" data-date-format="yyyy-mm-dd" data-link-field="issue_time" data-link-format="yyyy-mm-dd">
+	                    <input  class="form-control" size="16" type="text" placeholder="点击选择日期" value="{$doc.issue_time}" readonly>
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+	                </div>
+	                <input type="hidden" id="issue_time" name="issue_time" value="{$doc.issue_time}" ><br/>
+	                <!-- 日期插件结束 -->
+				</td>
+			</tr>
+			<tr>
 				<td></td>
 				<td><button class="btn btn-publish">发布</button></td>
 			</tr>
